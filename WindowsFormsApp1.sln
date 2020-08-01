@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNH", "WindowsFormsApp1\QLNH.csproj", "{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B680312-5AB6-4552-BE9A-7B2DB020C45D}
+	EndGlobalSection
+EndGlobal
