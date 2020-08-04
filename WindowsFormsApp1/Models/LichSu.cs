@@ -88,6 +88,13 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.FillDataSet("getamountofCustomerbyWeekinMonth", CommandType.StoredProcedure, paras, values);
         }
 
+        internal static DataSet getTypeofCustomerinWeek(DateTime dateTime)
+        {
+            string[] paras = new string[] { "@date", "@user" };
+            object[] values = new object[] { dateTime,User.getUser().pid };
+            return Models.Connection.FillDataSet("getTypeCustomerinWeek", CommandType.StoredProcedure, paras, values);
+        }
+
         internal static DataSet getStaticalMonthinQuarter(int val, int year)
         {
             string[] paras = new string[] { "@user", "@quarter", "@year" };

@@ -88,5 +88,10 @@ namespace WindowsFormsApp1.Controllers
         {
             return LichSu.getStaticalInWeekofMonth(table);
         }
+
+        internal static DataSet getTypeOfCusmtomerinWeek(DateTime dateTime)
+        {
+            return LichSu.getTypeofCustomerinWeek(dateTime);
+        }
     }
 }

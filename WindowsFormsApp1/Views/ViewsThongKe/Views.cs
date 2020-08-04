@@ -70,13 +70,14 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         {
             textBox1.Visible = false;
             button1.Visible = false;
+            
             if(signal==0)
             {
                 comboBox1.Items.Clear();
                 TaoComboBox1();
                 TaoComboBox2();
                 dataGridView2.Visible = false;
-                thietlap(DateTime.Now.ToString());
+                thietlapSignal0(DateTime.Now.ToString());
             }
             if(signal==1)
             {
@@ -343,9 +344,11 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dtgv = sender as DataGridView;
-            thietlap(dtgv.Rows[e.RowIndex].Cells["ngaybatdau"].Value.ToString());
+            thietlapSignal0(dtgv.Rows[e.RowIndex].Cells["ngaybatdau"].Value.ToString());
+           
+          
         }
-        private void thietlap(string a)
+        private void thietlapSignal0(string a)
         {
             DataTable dtb = ThongKeControllers.getSLKHinDay(Convert.ToDateTime(a));
             foreach (var series in chart1.Series)
@@ -357,6 +360,25 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 DateTime dt = Convert.ToDateTime(dtb.Rows[i][0].ToString());
                 chart1.Series["ngay"].Points.AddXY(dt.Day + "/" + dt.Month + "/" + dt.Year, int.Parse(dtb.Rows[i][1].ToString()));
             }
+            txtKHM.Text = dataGridView1.CurrentRow.Cells["soluong"].Value.ToString();
+            txtLKH.Text = dataGridView1.CurrentRow.Cells["soluongkhmoi"].Value.ToString();
+            dataGridView3.DataSource = ThongKeControllers.getTypeOfCusmtomerinWeek(Convert.ToDateTime(a)).Tables[0];
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

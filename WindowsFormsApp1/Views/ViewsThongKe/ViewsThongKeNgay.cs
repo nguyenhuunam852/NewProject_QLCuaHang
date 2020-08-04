@@ -51,6 +51,10 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             }
            
         }
-     
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

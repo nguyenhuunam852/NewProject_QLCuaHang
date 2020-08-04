@@ -38,15 +38,15 @@
             this.ca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.att = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbLTV = new System.Windows.Forms.Label();
+            this.lbTVM = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbTVM = new System.Windows.Forms.Label();
-            this.lbLTV = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -139,6 +139,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // lbLTV
+            // 
+            this.lbLTV.AutoSize = true;
+            this.lbLTV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLTV.Location = new System.Drawing.Point(266, 82);
+            this.lbLTV.Name = "lbLTV";
+            this.lbLTV.Size = new System.Drawing.Size(163, 21);
+            this.lbLTV.TabIndex = 7;
+            this.lbLTV.Text = "Tổng thành viên mới";
+            // 
+            // lbTVM
+            // 
+            this.lbTVM.AutoSize = true;
+            this.lbTVM.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTVM.Location = new System.Drawing.Point(266, 37);
+            this.lbTVM.Name = "lbTVM";
+            this.lbTVM.Size = new System.Drawing.Size(163, 21);
+            this.lbTVM.TabIndex = 6;
+            this.lbTVM.Text = "Tổng thành viên mới";
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -152,6 +172,26 @@
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(222, 120);
             this.dataGridView3.TabIndex = 5;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // id1
+            // 
+            this.id1.DataPropertyName = "id";
+            this.id1.HeaderText = "id1";
+            this.id1.Name = "id1";
+            this.id1.Visible = false;
+            // 
+            // name1
+            // 
+            this.name1.DataPropertyName = "name";
+            this.name1.HeaderText = "Tên loại";
+            this.name1.Name = "name1";
+            // 
+            // sl
+            // 
+            this.sl.DataPropertyName = "amount";
+            this.sl.HeaderText = "Số lượng";
+            this.sl.Name = "sl";
             // 
             // label3
             // 
@@ -179,48 +219,9 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(33, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 21);
+            this.label1.Size = new System.Drawing.Size(209, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tổng thành viên mới";
-            // 
-            // id1
-            // 
-            this.id1.DataPropertyName = "id";
-            this.id1.HeaderText = "id1";
-            this.id1.Name = "id1";
-            this.id1.Visible = false;
-            // 
-            // name1
-            // 
-            this.name1.DataPropertyName = "name";
-            this.name1.HeaderText = "Tên loại";
-            this.name1.Name = "name1";
-            // 
-            // sl
-            // 
-            this.sl.DataPropertyName = "amount";
-            this.sl.HeaderText = "Số lượng";
-            this.sl.Name = "sl";
-            // 
-            // lbTVM
-            // 
-            this.lbTVM.AutoSize = true;
-            this.lbTVM.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTVM.Location = new System.Drawing.Point(266, 37);
-            this.lbTVM.Name = "lbTVM";
-            this.lbTVM.Size = new System.Drawing.Size(163, 21);
-            this.lbTVM.TabIndex = 6;
-            this.lbTVM.Text = "Tổng thành viên mới";
-            // 
-            // lbLTV
-            // 
-            this.lbLTV.AutoSize = true;
-            this.lbLTV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLTV.Location = new System.Drawing.Point(266, 82);
-            this.lbLTV.Name = "lbLTV";
-            this.lbLTV.Size = new System.Drawing.Size(163, 21);
-            this.lbLTV.TabIndex = 7;
-            this.lbLTV.Text = "Tổng thành viên mới";
+            this.label1.Text = "Tổng số lượng khách hàng";
             // 
             // ViewsThongKeNgay
             // 
