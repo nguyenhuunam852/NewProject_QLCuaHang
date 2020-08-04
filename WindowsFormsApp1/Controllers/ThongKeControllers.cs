@@ -33,7 +33,7 @@ namespace WindowsFormsApp1.Controllers
         {
             return LichSu.getminmaxyear();
         }
-        public static DataTable getSLKHinDay(int pass)
+        public static DataTable getSLKHinDay(DateTime pass )
         {
             return LichSu.getSl(pass).Tables[0];
         }
@@ -82,6 +82,11 @@ namespace WindowsFormsApp1.Controllers
         internal static DataSet getStaticalMonthinYear(int year)
         {
             return LichSu.getStaticalinMonthbyYear(year);
+        }
+
+        internal static DataSet getStaticalInWeekofMonth(DataTable table)
+        {
+            return LichSu.getStaticalInWeekofMonth(table);
         }
     }
 }

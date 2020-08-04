@@ -76,7 +76,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 TaoComboBox1();
                 TaoComboBox2();
                 dataGridView2.Visible = false;
-               
+                thietlap(DateTime.Now.ToString());
             }
             if(signal==1)
             {
@@ -128,6 +128,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             }
            
         }
+        DataTable table;
         private void TaoComboBox1()
         {
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -135,32 +136,14 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
          
             if (signal == 0)
             {
-                //int numofIte = ThongKeControllers.GetActiveWeek();
-                //for (int i = 0; i < numofIte; i++)
-                //{
-                //    comboBox1.Items.Add("Tuần " + (i + 1).ToString());
-                //}
-                //if (comboBox1.Items.Count > 0)
-                //{
-                //    comboBox1.SelectedIndex = 0;
-                //    comboBox1.SelectedIndex = numofIte - 1;
-                //}
+
                 comboBox1.DataSource = ThongKeControllers.getMonth();
                 comboBox1.DisplayMember = "thang";
                 comboBox1.ValueMember = "thang";
-                DataTable table = new DataTable();
-                table.Columns.Add("id", typeof(int));
-                table.Columns.Add("day", typeof(DateTime));
-                int i = 0;
-                List<DateTime> ldt = GetWeeks(new DateTime(int.Parse(getNam(comboBox1.SelectedValue.ToString())), int.Parse(getThang(comboBox1.SelectedValue.ToString())), 1), DayOfWeek.Sunday);
-                foreach(DateTime dt in ldt)
-                {
-                    DataRow dtr = table.NewRow();
-                    dtr["id"] = i;
-                    dtr["day"] = dt;
-                    i += 1;
-                    table.Rows.Add(dtr);
-                }
+                comboBox1.SelectedIndex = 0;
+                getThongKeinWeek();
+
+
             }
             if(signal==1)
             {
@@ -190,11 +173,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (signal == 0)
-            {
-                ComboBox cb = sender as ComboBox;
-                getThongKeinWeek(cb.SelectedIndex);
-            }
+           
             if(signal==1)
             {
                 setChart();
@@ -255,20 +234,26 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
 
             return rs;
         }
-        private void getThongKeinWeek(int a)
+        private void getThongKeinWeek()
         {
             comboBox2.Visible = false;
+
+            table = new DataTable();
+            table.Columns.Add("id", typeof(int));
+            table.Columns.Add("day", typeof(DateTime));
+            int i = 0;
+            List<DateTime> ldt = GetWeeks(new DateTime(int.Parse(getNam(comboBox1.SelectedValue.ToString())), int.Parse(getThang(comboBox1.SelectedValue.ToString())), 1), DayOfWeek.Sunday);
+            foreach (DateTime dt in ldt)
+            {
+                DataRow dtr = table.NewRow();
+                dtr["id"] = i;
+                dtr["day"] = dt;
+                i += 1;
+                table.Rows.Add(dtr);
+            }
+            dataGridView1.DataSource = ThongKeControllers.getStaticalInWeekofMonth(table).Tables[0];
+            dataGridView1.Rows[0].Selected = true ;
             
-            DataTable dtb = ThongKeControllers.getSLKHinDay(a + 1);
-            foreach (var series in chart1.Series)
-            {
-                series.Points.Clear();
-            }
-            for (int i = 0; i < dtb.Rows.Count; i++)
-            {
-                DateTime dt = Convert.ToDateTime(dtb.Rows[i][0].ToString());
-                chart1.Series["ngay"].Points.AddXY(dt.Day + "/" + dt.Month + "/" + dt.Year, int.Parse(dtb.Rows[i][1].ToString()));
-            }
         }
         private string getStringFm(string a)
         {
@@ -335,6 +320,43 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                            where d.DayOfWeek == startOfWeek
                            select d;
             return weekends.ToList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (signal == 0)
+            {
+                getThongKeinWeek();
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dtgv = sender as DataGridView;
+            thietlap(dtgv.Rows[e.RowIndex].Cells["ngaybatdau"].Value.ToString());
+        }
+        private void thietlap(string a)
+        {
+            DataTable dtb = ThongKeControllers.getSLKHinDay(Convert.ToDateTime(a));
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                DateTime dt = Convert.ToDateTime(dtb.Rows[i][0].ToString());
+                chart1.Series["ngay"].Points.AddXY(dt.Day + "/" + dt.Month + "/" + dt.Year, int.Parse(dtb.Rows[i][1].ToString()));
+            }
         }
     }
 }

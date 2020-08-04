@@ -81,6 +81,13 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.Excute_Sql("InsertWorkProcess", CommandType.StoredProcedure,paras,values);
         }
 
+        internal static DataSet getStaticalInWeekofMonth(DataTable table)
+        {
+            string[] paras = new string[] { "@user", "@table" };
+            object[] values = new object[] { User.getUser().pid, table };
+            return Models.Connection.FillDataSet("getamountofCustomerbyWeekinMonth", CommandType.StoredProcedure, paras, values);
+        }
+
         internal static DataSet getStaticalMonthinQuarter(int val, int year)
         {
             string[] paras = new string[] { "@user", "@quarter", "@year" };
@@ -112,7 +119,7 @@ namespace WindowsFormsApp1.Models
             object[] values = new object[] { User.getUser().pid,year };
             return Models.Connection.FillDataSet("getStaticalineachDayinYear", CommandType.StoredProcedure, paras, values);
         }
-        public static DataSet getSl(int pass)
+        public static DataSet getSl(DateTime pass)
         {
             string[] paras = new string[] { "@pass", "@user" };
             object[] values = new object[] { pass,User.getUser().pid  };

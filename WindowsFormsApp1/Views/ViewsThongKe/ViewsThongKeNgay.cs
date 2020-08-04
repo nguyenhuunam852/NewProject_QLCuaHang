@@ -32,7 +32,6 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             DateTime dt = DateTime.Now;
             getData(dt);
             dataGridView1.DataSource = ThongKeControllers.getHistoryinDay(dt).Tables[0];
-            DateTime a = new DateTime(2009,2,1);
          
            
         }
