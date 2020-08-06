@@ -93,5 +93,25 @@ namespace WindowsFormsApp1.Controllers
         {
             return LichSu.getTypeofCustomerinWeek(dateTime);
         }
+
+        internal static DataSet getStaticalinEachMonth(string v)
+        {
+            return LichSu.GetStaticalInEachMonth(v);
+        }
+
+        internal static DataSet getTypeCustomerofMonth(int month, int year)
+        {
+            return LichSu.getTypeCustomerinMonth(month, year);
+        }
+
+        internal static DataSet getTypeCustomerofQuarter(int quarter, int year)
+        {
+            return LichSu.getTypeCustomerofQuarter(quarter, year);
+        }
+
+        internal static DataSet getTypeCustomerofYear(int year)
+        {
+            return LichSu.getTypeCustomerofYear(year);
+        }
     }
 }

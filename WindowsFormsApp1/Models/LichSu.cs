@@ -88,6 +88,34 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.FillDataSet("getamountofCustomerbyWeekinMonth", CommandType.StoredProcedure, paras, values);
         }
 
+        internal static DataSet getTypeCustomerinMonth(int month, int year)
+        {
+            string[] paras = new string[] { "@month", "@year","@user" };
+            object[] values = new object[] { month,year,User.getUser().pid };
+            return Models.Connection.FillDataSet("getTypeCustomerinMonth", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal static DataSet getTypeCustomerofYear(int year)
+        {
+            string[] paras = new string[] { "@year", "@user" };
+            object[] values = new object[] { year, User.getUser().pid };
+            return Models.Connection.FillDataSet("getTypeCustomerinYear", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal static DataSet getTypeCustomerofQuarter(int quarter, int year)
+        {
+            string[] paras = new string[] { "@quarter", "@year", "@user" };
+            object[] values = new object[] { quarter, year, User.getUser().pid };
+            return Models.Connection.FillDataSet("getTypeCustomerinQuater", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal static DataSet GetStaticalInEachMonth(string v)
+        {
+            string[] paras = new string[] { "@year", "@user" };
+            object[] values = new object[] { v, User.getUser().pid };
+            return Models.Connection.FillDataSet("GetAllStaticalinMonthofYear", CommandType.StoredProcedure, paras, values);
+        }
+
         internal static DataSet getTypeofCustomerinWeek(DateTime dateTime)
         {
             string[] paras = new string[] { "@date", "@user" };
@@ -124,7 +152,7 @@ namespace WindowsFormsApp1.Models
         {
             string[] paras = new string[] { "@user", "@year" };
             object[] values = new object[] { User.getUser().pid,year };
-            return Models.Connection.FillDataSet("getStaticalineachDayinYear", CommandType.StoredProcedure, paras, values);
+            return Models.Connection.FillDataSet("getStaticalineachYear", CommandType.StoredProcedure, paras, values);
         }
         public static DataSet getSl(DateTime pass)
         {

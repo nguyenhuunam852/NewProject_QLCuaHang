@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
 using System.Globalization;
 using System.Windows.Controls.Primitives;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApp1.Views.ViewsThongKe
 {
@@ -21,7 +22,6 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         }
         public static Views vtt;
         public int signal;
-        private string smonth="";
         public static Views GetViews(int sig)
         {
             Views v = new Views();
@@ -34,32 +34,9 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             comboBox1.Enabled = false;
             setChart();
         }
-
         private void setChart()
         {
-            if (comboBox1.DisplayMember!="" && signal==1 || comboBox1.Text!="" && signal==4)
-            {
-                DataTable dtb = ThongKeControllers.getSLKHinMonth(comboBox1.Text).Tables[0];
-                comboBox2.Items.Clear();
-                foreach (var series in chart1.Series)
-                {
-                    series.Points.Clear();
-                }
-                for (int i = 0; i < dtb.Rows.Count; i++)
-                {
-                    chart1.Series["ngay"].Points.AddXY(dtb.Rows[i]["DATE"].ToString() + "/" + dtb.Rows[i]["MONTH"].ToString() + "/" + dtb.Rows[i]["YEAR"].ToString(), int.Parse(dtb.Rows[i]["TONG"].ToString()));
-                    comboBox2.Items.Add(getStringFm(dtb.Rows[i]["DATE"].ToString()) + "/" + getStringFm(dtb.Rows[i]["MONTH"].ToString()) + "/" + getStringFm(dtb.Rows[i]["YEAR"].ToString()));
-                }
-                chart1.Series[0]["PointWidth"] = "1";
-                chart1.ChartAreas[0].AxisX.Interval = 1;
-
-                comboBox2.SelectedIndex = comboBox2.Items.Count-2;
-            }
-        }
-
-        public void setView(int sig)
-        {
-
+           
         }
         private void DataBinding()
         {
@@ -70,96 +47,98 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         {
             textBox1.Visible = false;
             button1.Visible = false;
-            
-            if(signal==0)
+            chart1.ChartAreas[0].AxisY.IntervalOffsetType = DateTimeIntervalType.Number;
+            if (signal==0)
             {
                 comboBox1.Items.Clear();
+                lbTVM.Text = "0";
+                lbLTV.Text = "0";
                 TaoComboBox1();
-                TaoComboBox2();
                 dataGridView2.Visible = false;
+                dataGridView4.Visible = false;
+                dataGridView5.Visible = false;
                 thietlapSignal0(DateTime.Now.ToString());
             }
             if(signal==1)
             {
+                lbTVM.Text = "0";
+                lbLTV.Text = "0";
                 comboBox1.Items.Clear();
                 TaoComboBox1();
-                TaoComboBox2();
-                dataGridView2.Visible = false;
+                dataGridView1.Visible = false;
+                dataGridView4.Visible = false;
+                dataGridView5.Visible = false;
+                thietlapSignal1(comboBox1.Text);
             }
-            if (signal == 2 || signal==3)
+            if (signal == 2)
             {
                 comboBox1.Items.Clear();
                 TaoComboBox1();
                 dataGridView1.Visible = false;
+                dataGridView2.Visible = false;
+                dataGridView5.Visible = false;
                 button1.Visible = true;
             }
-            if (signal == 4)
+            if (signal == 3)
             {
                 comboBox1.Items.Clear();
+                dataGridView1.Visible = false;
                 dataGridView2.Visible = false;
+                dataGridView4.Visible = false;
+                TaoComboBox1();
             }
 
         }
-        private void TaoComboBox2()
+
+        private void thietlapSignal1(string v)
         {
-           
-            if (signal == 2)
+            DataTable dtb= ThongKeControllers.getStaticalinEachMonth(v).Tables[0];
+            dataGridView2.DataSource = dtb;
+            foreach(DataGridViewColumn column in dataGridView2.Columns)
             {
-
-                comboBox2.Items.Clear();
-                for (int i=1;i<=4;i++)
-                {
-                    comboBox2.Items.Add("Quý " + i.ToString());
-                    if(i>Convert.ToDouble(DateTime.Now.Month-1)/3 && i<Convert.ToDouble(DateTime.Now.Month+3)/3)
-                    {
-                        comboBox2.SelectedIndex = i - 1;
-                    }
-
-                }
-                
+                column.HeaderCell.Style.BackColor = Color.Aqua;
+                column.HeaderCell.Style.ForeColor = Color.Black;
             }
-            if(signal==3)
-            {
-                comboBox2.Items.Clear();
-                for (int i = 1; i <= 12; i++)
+            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.YellowGreen;
+
+        
+            if (comboBox1.Text!="")
+            { 
+                foreach (var series in chart1.Series)
                 {
-                    comboBox2.Items.Add("Tháng " + i.ToString());
+                    series.Points.Clear();
                 }
-                comboBox2.SelectedIndex = 0;
+                for (int i = 0; i < dtb.Rows.Count; i++)
+                {
+                    chart1.Series["ngay"].Points.AddXY(dtb.Rows[i]["month"].ToString(), int.Parse(dtb.Rows[i]["sum"].ToString()));
+                  
+                }
+                chart1.Series[0]["PointWidth"] = "1";
+                chart1.ChartAreas[0].AxisX.Interval = 1;
             }
-           
+            
+
         }
+
+        List<int> gd=new List<int>(); 
         DataTable table;
         private void TaoComboBox1()
         {
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
          
             if (signal == 0)
             {
-
                 comboBox1.DataSource = ThongKeControllers.getMonth();
                 comboBox1.DisplayMember = "thang";
                 comboBox1.ValueMember = "thang";
-                comboBox1.SelectedIndex = 0;
+                comboBox1.SelectedIndex = comboBox1.Items.Count - 2;
                 getThongKeinWeek();
-
-
             }
-            if(signal==1)
-            {
-                comboBox1.DataSource = ThongKeControllers.getMonth();
-                comboBox1.DisplayMember = "thang";
-                comboBox1.ValueMember = "thang";
-                if (comboBox1.Items.Count > 0)
-                {
-                    comboBox1.SelectedIndex = comboBox1.Items.Count-1;
-                }
-            }
-            if(signal==2||signal==3)
+            if(signal==1|| signal == 2)
             {
                 DataTable dtb = ThongKeControllers.getMinYearandMaxYear().Tables[0];
-                if (dtb.Rows[0][0].ToString()!="")
+                if (dtb.Rows[0][0].ToString() != "")
                 {
                     int min = int.Parse(dtb.Rows[0][0].ToString());
                     int max = int.Parse(dtb.Rows[0][1].ToString());
@@ -167,9 +146,40 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                     {
                         comboBox1.Items.Add(i);
                     }
-                    comboBox1.SelectedIndex = 0;
+                    comboBox1.SelectedIndex = comboBox1.Items.Count - 2;
+                }
+                GetStaticalinMonth();
+            }
+            if(signal==3)
+            {
+                DataTable dtb = ThongKeControllers.getMinYearandMaxYear().Tables[0];
+                if (dtb.Rows[0][0].ToString() != "")
+                {
+                    int min = int.Parse(dtb.Rows[0][0].ToString());
+                    int max = int.Parse(dtb.Rows[0][1].ToString());
+                    int a = min;
+                    int b = a + 10;
+                    comboBox1.Items.Add("Giai đoạn " + a.ToString() + "-" + b.ToString());
+                    gd.Add(a);
+                    for (int i = min; i <= max; i++)
+                    {
+
+                        if (i % 10 == 0)
+                        {
+                            a = i ;
+                            b = a + 10;
+                            comboBox1.Items.Add("Giai đoạn " + a.ToString() + "-" + b.ToString());
+                            gd.Add(a);
+                        }
+                    }
+                    comboBox1.SelectedIndex = comboBox1.Items.Count -1;
                 }
             }
+        }
+
+        private void GetStaticalinMonth()
+        {
+          
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -177,13 +187,14 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
            
             if(signal==1)
             {
-                setChart();
+                thietlapSignal1(comboBox1.Text);
             }
             if(signal==2)
             {
                 if (comboBox1.Text != "")
                 {
                     DataTable dtb = ThongKeControllers.getSLKHinQuarter(int.Parse(comboBox1.Text)).Tables[0];
+                    dataGridView4.DataSource = dtb;
                     foreach (var series in chart1.Series)
                     {
                         series.Points.Clear();
@@ -192,27 +203,24 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                     {
                         chart1.Series["ngay"].Points.AddXY("Quý " + dtb.Rows[i][0].ToString(), int.Parse(dtb.Rows[i][1].ToString()));
                     }
-                    TaoComboBox2();
                 }
             }
             if (signal == 3)
             {
                 if (comboBox1.Text != "")
                 {
-                    comboBox2.Visible = false;
-                    DataTable dtb = ThongKeControllers.getAllStaticalinYear(int.Parse(comboBox1.Text)).Tables[0];
+                    DataTable dtb = ThongKeControllers.getAllStaticalinYear(gd[comboBox1.SelectedIndex]).Tables[0];
+                    dataGridView5.DataSource = dtb;
                     foreach (var series in chart1.Series)
                     {
                         series.Points.Clear();
                     }
                     for (int i = 0; i < dtb.Rows.Count; i++)
                     {
-                        chart1.Series["ngay"].Points.AddXY("Tháng " + dtb.Rows[i][0].ToString(), int.Parse(dtb.Rows[i][1].ToString()));
+                        chart1.Series["ngay"].Points.AddXY(dtb.Rows[i][0].ToString(), int.Parse(dtb.Rows[i][1].ToString()));
                     }
-                    chart1.Series[0]["PointWidth"] = "1";
-                    chart1.ChartAreas[0].AxisX.Interval = 1;
-                    TaoComboBox2();
                 }
+
             }
         }
         private string getThang(string a)
@@ -237,11 +245,10 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         }
         private void getThongKeinWeek()
         {
-            comboBox2.Visible = false;
-
             table = new DataTable();
             table.Columns.Add("id", typeof(int));
             table.Columns.Add("day", typeof(DateTime));
+            int save = 0;
             int i = 0;
             List<DateTime> ldt = GetWeeks(new DateTime(int.Parse(getNam(comboBox1.SelectedValue.ToString())), int.Parse(getThang(comboBox1.SelectedValue.ToString())), 1), DayOfWeek.Sunday);
             foreach (DateTime dt in ldt)
@@ -249,12 +256,16 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 DataRow dtr = table.NewRow();
                 dtr["id"] = i;
                 dtr["day"] = dt;
+                if(dt.Day<=DateTime.Now.Day && dt.Month<=DateTime.Now.Month)
+                {
+                    save = i;
+                }
                 i += 1;
                 table.Rows.Add(dtr);
             }
             dataGridView1.DataSource = ThongKeControllers.getStaticalInWeekofMonth(table).Tables[0];
-            dataGridView1.Rows[0].Selected = true ;
-            
+            dataGridView1.ClearSelection();
+            dataGridView1.CurrentCell=dataGridView1.Rows[save].Cells[0];
         }
         private string getStringFm(string a)
         {
@@ -266,30 +277,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             else return a;
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cb = sender as ComboBox;
-            if (signal == 0 || signal == 1||signal==4)
-            {
-                DateTime dt = DateTime.ParseExact(cb.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                dataGridView1.DataSource = ThongKeControllers.getHistoryinDay(dt).Tables[0];
-
-            }
-            if(signal==2)
-            {
-                int val = getInterget(cb.Text);
-                int year = int.Parse(comboBox1.Text);
-                dataGridView2.DataSource = ThongKeControllers.getStaticalMonthinQuater(val, year).Tables[0];
-                DataBinding();
-            }
-            if (signal==3)
-            {
-                int val = getInterget(cb.Text);
-                int year = int.Parse(comboBox1.Text);
-                dataGridView2.DataSource = ThongKeControllers.getStaticalMonthinYear(year).Tables[0];
-                DataBinding();
-            }
-        }
+       
         private int getInterget(string a)
         {
             string b = "";
@@ -344,7 +332,11 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dtgv = sender as DataGridView;
-            thietlapSignal0(dtgv.Rows[e.RowIndex].Cells["ngaybatdau"].Value.ToString());
+            if (signal == 0)
+            {
+                thietlapSignal0(dtgv.Rows[e.RowIndex].Cells["ngaybatdau"].Value.ToString());
+            }
+         
            
           
         }
@@ -360,8 +352,9 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 DateTime dt = Convert.ToDateTime(dtb.Rows[i][0].ToString());
                 chart1.Series["ngay"].Points.AddXY(dt.Day + "/" + dt.Month + "/" + dt.Year, int.Parse(dtb.Rows[i][1].ToString()));
             }
-            txtKHM.Text = dataGridView1.CurrentRow.Cells["soluong"].Value.ToString();
-            txtLKH.Text = dataGridView1.CurrentRow.Cells["soluongkhmoi"].Value.ToString();
+
+            lbTVM.Text = dataGridView1.CurrentRow.Cells["soluong"].Value.ToString();
+            lbLTV.Text = dataGridView1.CurrentRow.Cells["soluongkhmoi"].Value.ToString();
             dataGridView3.DataSource = ThongKeControllers.getTypeOfCusmtomerinWeek(Convert.ToDateTime(a)).Tables[0];
 
         }
@@ -379,6 +372,44 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dtgv = sender as DataGridView;
+            if (signal==1)
+            {
+                lbLTV.Text = dtgv.Rows[e.RowIndex].Cells["Column3"].Value.ToString();
+                lbTVM.Text = dtgv.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
+                int month = int.Parse(dtgv.Rows[e.RowIndex].Cells["Column1"].Value.ToString());
+                int year = int.Parse(comboBox1.Text);
+                dataGridView3.DataSource = ThongKeControllers.getTypeCustomerofMonth(month, year).Tables[0];
+            }
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dtgv = sender as DataGridView;
+            if (signal == 2)
+            {
+                lbLTV.Text = dtgv.Rows[e.RowIndex].Cells["Column4"].Value.ToString();
+                lbTVM.Text = dtgv.Rows[e.RowIndex].Cells["Column5"].Value.ToString();
+                int quarter = int.Parse(dtgv.Rows[e.RowIndex].Cells["Column6"].Value.ToString());
+                int year = int.Parse(comboBox1.Text);
+                dataGridView3.DataSource = ThongKeControllers.getTypeCustomerofQuarter(quarter, year).Tables[0];
+            }
+        }
+
+        private void dataGridView5_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dtgv = sender as DataGridView;
+            if (signal == 3)
+            {
+                lbLTV.Text = dtgv.Rows[e.RowIndex].Cells["Column9"].Value.ToString();
+                lbTVM.Text = dtgv.Rows[e.RowIndex].Cells["Column8"].Value.ToString();
+                int year = int.Parse(dtgv.Rows[e.RowIndex].Cells["Column7"].Value.ToString());
+                dataGridView3.DataSource = ThongKeControllers.getTypeCustomerofYear(year).Tables[0];
+            }
         }
     }
 }
