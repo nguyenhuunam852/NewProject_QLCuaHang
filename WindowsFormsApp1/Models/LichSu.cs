@@ -39,10 +39,7 @@ namespace WindowsFormsApp1.Models
             get { return tghd; }
             set { tghd = value; }
         }
-        public LichSu()
-        {
-
-        }
+    
         public static DataSet getLichSu(DateTime date)
         {
             string[] paras = new string[] { "@user", "@day" };
@@ -54,6 +51,13 @@ namespace WindowsFormsApp1.Models
         public static int KTChotCa()
         {
             return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckWorkProcess(" + User.getUser().pid+",'"+DateTime.Now.ToString()+"')"));
+        }
+
+        internal static DataSet getTempSum(DateTime dateTime)
+        {
+            string[] paras = new string[] { "@user", "@ngay" };
+            object[] values = new object[] { User.getUser().pid, dateTime };
+            return Models.Connection.FillDataSet("getSumofday", CommandType.StoredProcedure, paras, values);
         }
 
         internal static DataSet getStaticalinDay(DateTime date)
@@ -160,71 +164,19 @@ namespace WindowsFormsApp1.Models
             object[] values = new object[] { pass,User.getUser().pid  };
             return Models.Connection.FillDataSet("GetnumberofCustomerinDayofWeek", CommandType.StoredProcedure,paras,values);
         }
-        public static DataSet GetAllHistoryInMonth(int month,int year)
-        {
-            string[] paras = new string[] { "@user", "@month", "@year" };
-            object[] values = new object[] { User.getUser().pid,month,year };
-            return Models.Connection.FillDataSet("getAllHistoryinMonth", CommandType.StoredProcedure, paras, values);
-        }
+    
         public static DataSet getMonth()
         {
             return Models.Connection.FillDataSet("getmonthandyear", CommandType.StoredProcedure);
         }
-        public static DataSet getSLKHinMonth(string a)
-        {
-            string[] paras = new string[] { "@user", "@month","@year" };
-            object[] values = new object[] { User.getUser().pid,getMonth(a),getYearh(a) };
-            return Models.Connection.FillDataSet("getallDayinMonth", CommandType.StoredProcedure, paras, values);
-        }
-        private static string getMonth(string a)
-        {
-            string month = "";
-            for(int i=0;i<a.Length;i++)
-            {
-                if(a[i]=='/')
-                {
-                    return month;
-                }
-                else
-                {
-                    month += a[i];
-                }
-            }
-            return "";
-        }
-        private static string getYearh(string a)
-        {
-            string month = "";
-            for (int i = a.Length-1; i>=0; i--)
-            {
-                if (a[i] == '/')
-                {
-                    return Reverse(month);
-                }
-                else
-                {
-                    month += a[i];
-                }
-            }
-            return "";
-        }
+    
+   
         public static DataSet getStaticalinQuarter(int year)
         {
             string[] paras = new string[] { "@user", "@year" };
             object[] values = new object[] { User.getUser().pid,year };
             return Models.Connection.FillDataSet("getStaticalinQuarter", CommandType.StoredProcedure, paras, values);
         }
-        public static string Reverse(string s)
-        {
-            char[] charArray = s.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-        }
-        public static DataSet getAllHistoryinQuarter(int quarter,int year)
-        {
-            string[] paras = new string[] { "@user", "@quarter", "@year" };
-            object[] values = new object[] { User.getUser().pid, quarter,year };
-            return Models.Connection.FillDataSet("getAllHistoryinQuater", CommandType.StoredProcedure, paras, values);
-        }
+      
     }
 }

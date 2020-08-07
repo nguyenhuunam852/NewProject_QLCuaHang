@@ -519,37 +519,42 @@ namespace WindowsFormsApp1.Views
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int check = Controllers.ThongKeControllers.KTChotCa();
-            if (check == 0)
+            FrmTongKet ftk = new FrmTongKet();
+            DialogResult wait = ftk.ShowDialog();
+            if (wait == DialogResult.OK)
             {
-                int check1 = Controllers.ThongKeControllers.ChotCa();
-                if (check1 > 0)
-                {
-                    DialogResult dlr = MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
-                }
-                else
-                {
-                    DialogResult dlr = MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-            }
-            else
-            {
-                DialogResult dlr = MessageBox.Show("Bạn đã chốt ca hôm nay,bạn có muốn làm lại", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dlr == DialogResult.Yes)
+                int check = Controllers.ThongKeControllers.KTChotCa();
+                if (check == 0)
                 {
                     int check1 = Controllers.ThongKeControllers.ChotCa();
                     if (check1 > 0)
                     {
-                        MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+                        DialogResult dlr = MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                     else
                     {
-                        MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        DialogResult dlr = MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                    }
+                }
+                else
+                {
+                    DialogResult dlr = MessageBox.Show("Bạn đã chốt ca hôm nay,bạn có muốn làm lại", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dlr == DialogResult.Yes)
+                    {
+                        int check1 = Controllers.ThongKeControllers.ChotCa();
+                        if (check1 > 0)
+                        {
+                            MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
                 }
             }
         }

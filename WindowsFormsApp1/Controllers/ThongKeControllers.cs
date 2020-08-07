@@ -21,10 +21,6 @@ namespace WindowsFormsApp1.Controllers
             return LichSu.ChotCa();
         }
       
-        public static int GetActiveWeek()
-        {
-            return LichSu.getWeek();
-        }
         public static DataSet getHistoryinDay(DateTime date)
         {
             return LichSu.getLichSu(date);
@@ -50,12 +46,10 @@ namespace WindowsFormsApp1.Controllers
         {
             return LichSu.getStaticalinDay(dateTime);
         }
-
-        public static DataSet getAllHistoryinQuarter(int quarter,int year)
+        internal static DataSet getTempData(DateTime dateTime)
         {
-            return LichSu.getAllHistoryinQuarter(quarter,year);
+            return LichSu.getTempSum(dateTime);
         }
-
         internal static DataTable getTypeCustomerbyDay(string v)
         {
             return LichSu.GetAmountofCustomerType(v).Tables[0];
@@ -64,24 +58,6 @@ namespace WindowsFormsApp1.Controllers
         public static DataSet getAllStaticalinYear(int year)
         {
             return LichSu.getAllStaticinYear(year);
-        }
-        public static DataSet GetAllHistoryInMonth(int year,int month)
-        {
-            return LichSu.GetAllHistoryInMonth(month, year);
-        }
-        public static DataSet getSLKHinMonth(string a)
-        {
-            return LichSu.getSLKHinMonth(a);
-        }
-
-        internal static DataSet getStaticalMonthinQuater(int val, int year)
-        {
-            return LichSu.getStaticalMonthinQuarter(val, year);
-        }
-
-        internal static DataSet getStaticalMonthinYear(int year)
-        {
-            return LichSu.getStaticalinMonthbyYear(year);
         }
 
         internal static DataSet getStaticalInWeekofMonth(DataTable table)

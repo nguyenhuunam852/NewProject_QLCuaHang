@@ -38,15 +38,10 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         {
            
         }
-        private void DataBinding()
-        {
-            textBox1.DataBindings.Clear();
-            textBox1.DataBindings.Add("Text", dataGridView2.DataSource, "month");
-        }
+
         private void ViewsTheoTuan_Load(object sender, EventArgs e)
         {
             textBox1.Visible = false;
-            button1.Visible = false;
             chart1.ChartAreas[0].AxisY.IntervalOffsetType = DateTimeIntervalType.Number;
             if (signal==0)
             {
@@ -77,7 +72,6 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 dataGridView1.Visible = false;
                 dataGridView2.Visible = false;
                 dataGridView5.Visible = false;
-                button1.Visible = true;
             }
             if (signal == 3)
             {

@@ -97,6 +97,13 @@
     <Compile Include="Views\DatGheViews.Designer.cs">
       <DependentUpon>DatGheViews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmTongKet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmTongKet.Designer.cs">
+      <DependentUpon>FrmTongKet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyDataGridViews\MyDataGridView.cs" />
     <Compile Include="Views\ThemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="Views\DatGheViews.resx">
       <DependentUpon>DatGheViews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmTongKet.resx">
+      <DependentUpon>FrmTongKet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ThemKhachHang.resx">
       <DependentUpon>ThemKhachHang.cs</DependentUpon>
