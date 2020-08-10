@@ -1,35 +1,32 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
+
 namespace WindowsFormsApp1.Models
 {
     class Connection
     {
-        public static string sqlcon = @"Data Source=DESKTOP-VT4SFHD\SQLEXPRESS;Initial Catalog=2020;Integrated Security=True";
+        public static string sqlcon = @"Data Source="+Settings.getSettings().pservername+"\\SQLEXPRESS;Initial Catalog="+Settings.getSettings().pdatabasename+";Integrated Security=True";
         public static SqlConnection Getconnection()
         {
             SqlConnection con = new SqlConnection(sqlcon);
             return con;
         }
-
-        public static void open()
+        public static void LoadRegKey()
         {
-            try
-            {
-                if (Getconnection().State == ConnectionState.Closed)
-                    Getconnection().Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error:" + ex.Message);
-            }
+           
         }
+
+
         public static void close()
         {
             try

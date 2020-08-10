@@ -12,7 +12,19 @@ namespace WindowsFormsApp1.Controllers
 {
     class MainControllers
     {
-      
-     
+        internal static int ReadFile()
+        {
+            string check = SettingsControllers.getPathOfTxtFile();
+            if (!File.Exists(check))
+            {
+                File.Create(check);
+                return 0;
+            }
+            if (new FileInfo(check).Length == 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
     }
 }

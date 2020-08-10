@@ -37,6 +37,7 @@
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabHienThi = new System.Windows.Forms.TabControl();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,8 @@
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLíBànToolStripMenuItem,
             this.quảnLíKháchHàngToolStripMenuItem,
-            this.lịchSửVàThốngKêToolStripMenuItem});
+            this.lịchSửVàThốngKêToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.msUserControl.Location = new System.Drawing.Point(0, 0);
             this.msUserControl.Name = "msUserControl";
             this.msUserControl.Size = new System.Drawing.Size(984, 24);
@@ -104,6 +106,13 @@
             this.TabHienThi.Size = new System.Drawing.Size(984, 725);
             this.TabHienThi.TabIndex = 3;
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,5 +145,6 @@
         private System.Windows.Forms.TabControl TabHienThi;
         private System.Windows.Forms.ToolStripMenuItem quảnLíKháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lịchSửVàThốngKêToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }

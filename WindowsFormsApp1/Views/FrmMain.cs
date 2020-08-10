@@ -73,30 +73,57 @@ namespace WindowsFormsApp1.Views
         {
             ThemTabPages(GheViews.dv, 2 , "Quản lí ghế");
         }
+        public void getSetting()
+        {
+            if (getFirstSetting() == 1)
+            {
+                SettingsControllers.getInformation();
+                FrmDangNhap fdn = new FrmDangNhap();
+                DialogResult dlr = fdn.ShowDialog();
+                if (dlr == DialogResult.OK)
+                {
+                    ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
+                }
+                else if (dlr == DialogResult.Abort)
+                {
+                    MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (dlr == DialogResult.Cancel)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                ThemTabPages(SettingViews.getViews(0), 5, "First Settings");
+            }
+        }
    
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            FrmDangNhap fdn = new FrmDangNhap();
-            DialogResult dlr = fdn.ShowDialog();
-            if (dlr == DialogResult.OK)
-            {
-                ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
-            }
-            else if(dlr==DialogResult.Abort)
-            {
-                MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                FrmMain_Load(sender, e);
-            }
-            else if(dlr==DialogResult.Cancel)
-            {
-                this.Close();
-            }
+            getSetting();
+        }
+        private int getFirstSetting()
+        {
+           return MainControllers.ReadFile();
         }
 
 
         public void DongTabHienTai()
         {
             TabHienThi.TabPages.Remove(TabHienThi.SelectedTab);
+        }
+        public static void dongALL()
+        {
+            int i = 0;
+            while (frm.TabHienThi.TabPages.Count > 0)
+            {
+                if (typePages[i] != 1)
+                {
+                    frm.TabHienThi.TabPages.Remove(frm.TabHienThi.TabPages[i]);
+                    
+                }
+            }
         }
         private void đóngTấtCảToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -124,6 +151,11 @@ namespace WindowsFormsApp1.Views
         private void lịchSửVàThốngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemTabPages(ThongKeViews.tkv, 4, "Thống kê");
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(SettingViews.getViews(1), 5, "First Settings");
         }
     }
 }
