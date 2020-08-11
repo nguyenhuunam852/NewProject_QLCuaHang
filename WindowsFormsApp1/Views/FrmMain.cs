@@ -77,6 +77,7 @@ namespace WindowsFormsApp1.Views
         {
             if (getFirstSetting() == 1)
             {
+                msUserControl.Visible = true;
                 SettingsControllers.getInformation();
                 FrmDangNhap fdn = new FrmDangNhap();
                 DialogResult dlr = fdn.ShowDialog();
@@ -95,6 +96,8 @@ namespace WindowsFormsApp1.Views
             }
             else
             {
+                msUserControl.Visible = false;
+
                 ThemTabPages(SettingViews.getViews(0), 5, "First Settings");
             }
         }

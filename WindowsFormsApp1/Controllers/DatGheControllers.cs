@@ -34,7 +34,11 @@ namespace WindowsFormsApp1.Controllers
             int minute = int.Parse(time.Remove(2));
             time = time.Substring(3);
             int second = int.Parse(time);
-            int max = 00 * 3600 + 30 * 60 + 00;
+
+            string time1 = Settings.getSettings().ptghd+":00";
+            string[] gettime = time1.Split(':');
+
+            int max = int.Parse(gettime[0]) * 3600 + int.Parse(gettime[1])* 60 + int.Parse(gettime[2]);
             int current = hour * 3600 + minute * 60 + second;
             int save = max - current;
             return ghe.getStateInfo().KetthucHoatDong(idkh,save); 

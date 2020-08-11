@@ -154,27 +154,17 @@ namespace WindowsFormsApp1.Views
         private void LoadText()
         {
             DataTable dtb = DatGheControllers.layDSHoatDong().Tables[0];
+            string gettime = Settings.getSettings().ptghd + ":00";
+            DateTime dt = Convert.ToDateTime(gettime);
             foreach (DataRow row in dtb.Rows)
             {
                 string id = row["iddesk"].ToString();
                 string tg = row["createat"].ToString();
                 TimeSpan value = DateTime.Now.Subtract(Convert.ToDateTime(tg));
-                int hour = 0 - value.Hours;
-                if (hour < 0)
-                {
-                    hour = 0;
-                }
-                int minute = 0 - value.Minutes;
-                if (minute < 0)
-                {
-                    minute = 0;
-                }
-                int second = 8 - value.Seconds;
-                if (second < 0)
-                {
-                    second = 0;
-                }
-                string txt = GetNumberString(hour) + ":" + GetNumberString(minute) + ":" + GetNumberString(second);
+                DateTime hd = new DateTime(1977,1,1,hour:0,minute:0,second:0) + value;
+                TimeSpan tghd = dt.Subtract(hd);
+                DateTime r = new DateTime(1977, 1, 1, hour: 0, minute: 0, second: 0) + tghd;
+                string txt = GetNumberString(r.Hour) + ":" + GetNumberString(r.Minute) + ":" + GetNumberString(r.Second);
                 truyxuat[id].Text = txt;
                 count_down.Add(truyxuat[id]);
             }
@@ -330,7 +320,7 @@ namespace WindowsFormsApp1.Views
         }
         private void create_Label(Label lb)
         {
-            lb.Text = "00" + ":" + "00" + ":" + "08";
+            lb.Text = Settings.getSettings().ptghd+":00";
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -396,6 +386,7 @@ namespace WindowsFormsApp1.Views
             txtSdt.Text = "";
             txtEmail.Text = "";
             txtDC.Text = "";
+            txtId.Text = "";
             MtxtNS.Text = "";
             label2.Text = "";
             taoTrangThai();
@@ -557,6 +548,11 @@ namespace WindowsFormsApp1.Views
                     }
                 }
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
