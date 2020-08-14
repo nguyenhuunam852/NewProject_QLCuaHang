@@ -158,7 +158,7 @@ namespace WindowsFormsApp1.Views
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(SettingViews.getViews(1), 5, "First Settings");
+            ThemTabPages(SettingViews.getViews(1), 5, "Settings");
         }
     }
 }
