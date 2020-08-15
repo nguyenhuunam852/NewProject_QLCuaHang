@@ -142,13 +142,13 @@ namespace WindowsFormsApp1.Views
    
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+
             foreach (ToolStripMenuItem ts in msUserControl.Items)
             {
                 ts.AutoSize = false;
                 ts.Size = new Size(118, 50);
-                ts.BackColor = Color.Black;
-                ts.ForeColor = Color.White;
+                //ts.BackColor = Color.Black;
+                //ts.ForeColor = Color.White;
             }
             getSetting();
         }

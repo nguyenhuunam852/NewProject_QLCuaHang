@@ -65,7 +65,7 @@ namespace WindowsFormsApp1.Views
             // 
             this.groupBox1.Location = new System.Drawing.Point(3, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(873, 622);
+            this.groupBox1.Size = new System.Drawing.Size(803, 788);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sảnh chính";
@@ -79,16 +79,16 @@ namespace WindowsFormsApp1.Views
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Location = new System.Drawing.Point(908, 37);
+            this.groupBox2.Location = new System.Drawing.Point(828, 47);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(422, 221);
+            this.groupBox2.Size = new System.Drawing.Size(344, 394);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control";
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(334, 28);
+            this.btnHuy.Location = new System.Drawing.Point(88, 77);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(81, 33);
             this.btnHuy.TabIndex = 12;
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1.Views
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(252, 28);
+            this.btnLuu.Location = new System.Drawing.Point(6, 77);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(81, 33);
             this.btnLuu.TabIndex = 11;
@@ -113,9 +113,9 @@ namespace WindowsFormsApp1.Views
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.txtTenGhe);
-            this.groupBox4.Location = new System.Drawing.Point(176, 85);
+            this.groupBox4.Location = new System.Drawing.Point(6, 260);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 116);
+            this.groupBox4.Size = new System.Drawing.Size(245, 116);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin bàn";
@@ -192,7 +192,7 @@ namespace WindowsFormsApp1.Views
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(22, 85);
+            this.groupBox3.Location = new System.Drawing.Point(6, 138);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(113, 116);
             this.groupBox3.TabIndex = 2;
@@ -213,10 +213,10 @@ namespace WindowsFormsApp1.Views
             this.trinhtrang,
             this.LX,
             this.ly});
-            this.dataGridView1.Location = new System.Drawing.Point(908, 281);
+            this.dataGridView1.Location = new System.Drawing.Point(828, 447);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(422, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 378);
             this.dataGridView1.TabIndex = 3;
             // 
             // idBan
@@ -300,7 +300,7 @@ namespace WindowsFormsApp1.Views
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GheViews";
-            this.Size = new System.Drawing.Size(1354, 687);
+            this.Size = new System.Drawing.Size(1327, 841);
             this.Load += new System.EventHandler(this.GheViews_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
