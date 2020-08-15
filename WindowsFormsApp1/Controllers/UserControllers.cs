@@ -15,6 +15,8 @@ namespace WindowsFormsApp1.Controllers
             _user.pusername = username;
             _user.ppassword = password;
             _user.pid = _user.getId();
+            _user.pgroup = int.Parse(_user.getGroupid(_user.pid));
+            _user.pbranch = int.Parse(_user.getBranchid(_user.pid));
             return _user.DangNhap();
         }
     }

@@ -40,6 +40,12 @@ namespace WindowsFormsApp1.Models
             get { return group; }
             set { group = value; }
         }
+        public int branch;
+        public int pbranch
+        {
+            get { return branch; }
+            set { branch = value; }
+        }
 
         public static User _user;
         public User()
@@ -52,6 +58,7 @@ namespace WindowsFormsApp1.Models
             this.password = _pass;
             this.id = getId();
             this.group = int.Parse(getGroupid(id));
+            this.branch = int.Parse(getBranchid(id));
         }
         public string getId()
         {
@@ -64,6 +71,12 @@ namespace WindowsFormsApp1.Models
             string[] paras = new string[1] { "@id" };
             object[] values = new object[1] { id };
             return Models.Connection.ExcuteScalar("getGroupId", CommandType.StoredProcedure, paras, values);
+        }
+        public string getBranchid(string id)
+        {
+            string[] paras = new string[1] { "@id" };
+            object[] values = new object[1] { id };
+            return Models.Connection.ExcuteScalar("getBranchId", CommandType.StoredProcedure, paras, values);
         }
         public static User getUser()
         {
