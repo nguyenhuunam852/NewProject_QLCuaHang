@@ -75,8 +75,8 @@ namespace WindowsFormsApp1.Models
 
         internal static DataSet GetAmountofCustomerType(string v)
         {
-            string[] paras = new string[] { "@id" };
-            object[] values = new object[] {  v };
+            string[] paras = new string[] { "@id","@idbranch" };
+            object[] values = new object[] {  v, User.getUser().pbranch };
             return Models.Connection.FillDataSet("getTypeCustomerbyDay", CommandType.StoredProcedure, paras, values);
         }
 

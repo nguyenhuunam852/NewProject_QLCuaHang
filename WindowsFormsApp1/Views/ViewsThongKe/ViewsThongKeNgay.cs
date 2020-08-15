@@ -31,6 +31,8 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         {
             DateTime dt = DateTime.Now;
             getData(dt);
+            dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
+            dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
             dataGridView1.DataSource = ThongKeControllers.getHistoryinDay(dt).Tables[0];
          
            
