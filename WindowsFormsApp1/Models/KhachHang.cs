@@ -98,7 +98,7 @@ namespace WindowsFormsApp1.Models
 
         internal static int checkKH(string mkh)
         {
-            return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckCustomerinDay(" + User.getUser().pid + "," + mkh + ")"));
+            return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckCustomerinDay(" + User.getUser().pgroup + "," + mkh + ")"));
         }
 
         public int themTinhTrangBenh(string idb)
@@ -120,13 +120,13 @@ namespace WindowsFormsApp1.Models
         public int insertKH()
         {
             string[] paras = new string[] { "@id","@ho","@ten","@sdt","@email","@dc","@ns","@ca", "@idlkh","@sex","@available","@user", "@temp" };
-            object[] values = new object[] { code,ho,ten,sdt,email,dc,ns,DateTime.Now,idlkh,gt,1,User.getUser().pid,dsb };
+            object[] values = new object[] { code,ho,ten,sdt,email,dc,ns,DateTime.Now,idlkh,gt,1,User.getUser().pgroup,dsb };
             return Models.Connection.Excute_Sql("insertCustomer", System.Data.CommandType.StoredProcedure,paras,values);
         }
         public int updateKH()
         {
             string[] paras = new string[] { "@id","@code", "@ho", "@ten", "@sdt", "@email", "@ca", "@dc", "@ns", "@idlkh","@sex","@available", "@user","@Temp" };
-            object[] values = new object[] { id,code, ho, ten, sdt, email,DateTime.Now, dc, ns,idlkh,gt, 1, User.getUser().pid,dsb };
+            object[] values = new object[] { id,code, ho, ten, sdt, email,DateTime.Now, dc, ns,idlkh,gt, 1, User.getUser().pgroup,dsb };
             return Models.Connection.Excute_Sql("updateCustomer", System.Data.CommandType.StoredProcedure, paras, values);
         }
         public int xoaKH()
@@ -139,13 +139,13 @@ namespace WindowsFormsApp1.Models
         public static DataSet getData()
         {
             string[] paras = new string[1] { "@user" };
-            object[] values = new object[1] { User.getUser().pid };
+            object[] values = new object[1] { User.getUser().pgroup };
             return Models.Connection.FillDataSet("GetListCustomer", CommandType.StoredProcedure,paras,values);
         }
      
         public static DataSet timTC(string st)
         {
-            string sql = "exec FindInfor N'" + st + "',"+User.getUser().pid;
+            string sql = "exec FindInfor N'" + st + "',"+User.getUser().pgroup;
             return Models.Connection.FillDataSet(sql);
         }
         public DataSet getListBenh()

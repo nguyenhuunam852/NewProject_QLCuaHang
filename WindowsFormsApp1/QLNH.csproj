@@ -154,6 +154,18 @@
     <Compile Include="Views\ThongKeViews.Designer.cs">
       <DependentUpon>ThongKeViews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewsLoaiKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewsLoaiKhachHang.Designer.cs">
+      <DependentUpon>ViewsLoaiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewsSucKhoe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ViewsSucKhoe.Designer.cs">
+      <DependentUpon>ViewsSucKhoe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewsThongKe\ThongKeNhanh.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -90,7 +90,7 @@ namespace WindowsFormsApp1.Models
         {
             DataSet dts = new DataSet();
             string[] paras = new string[] { "@iduser", "@name" };
-            object[] values = new object[] { User.getUser().pid,tenban };
+            object[] values = new object[] { User.getUser().pgroup,tenban };
             dts = Models.Connection.FillDataSet("InsertandgetInformation", CommandType.StoredProcedure, paras, values);
             this.id = dts.Tables[0].Rows[0]["id"].ToString();
             this.lx = dts.Tables[0].Rows[0]["locationx"].ToString();
@@ -125,7 +125,7 @@ namespace WindowsFormsApp1.Models
         public static DataSet layThongTin()
         {
             string[] paras = new string[1] { "@iduser" };
-            object[] values = new object[1] { User.getUser().pid };
+            object[] values = new object[1] { User.getUser().pgroup };
             return Models.Connection.FillDataSet("getdeskbyuserId", CommandType.StoredProcedure,paras,values);
         }
         public static int LuuTrangThai(DataTable dtb)

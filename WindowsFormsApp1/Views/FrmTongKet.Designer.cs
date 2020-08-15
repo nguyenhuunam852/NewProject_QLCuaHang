@@ -181,7 +181,7 @@
             // 
             this.lbLTV.AutoSize = true;
             this.lbLTV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLTV.Location = new System.Drawing.Point(221, 61);
+            this.lbLTV.Location = new System.Drawing.Point(221, 21);
             this.lbLTV.Name = "lbLTV";
             this.lbLTV.Size = new System.Drawing.Size(163, 21);
             this.lbLTV.TabIndex = 7;
@@ -201,7 +201,7 @@
             // 
             this.lbTVM.AutoSize = true;
             this.lbTVM.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTVM.Location = new System.Drawing.Point(221, 21);
+            this.lbTVM.Location = new System.Drawing.Point(221, 61);
             this.lbTVM.Name = "lbTVM";
             this.lbTVM.Size = new System.Drawing.Size(163, 21);
             this.lbTVM.TabIndex = 6;

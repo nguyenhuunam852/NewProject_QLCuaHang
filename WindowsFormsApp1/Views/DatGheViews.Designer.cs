@@ -318,9 +318,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(150, 113);
+            this.button8.Location = new System.Drawing.Point(150, 106);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 48);
+            this.button8.Size = new System.Drawing.Size(100, 55);
             this.button8.TabIndex = 3;
             this.button8.Text = "Kết thúc tính giờ";
             this.button8.UseVisualStyleBackColor = true;
@@ -357,9 +357,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(35, 113);
+            this.button2.Location = new System.Drawing.Point(35, 106);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 48);
+            this.button2.Size = new System.Drawing.Size(104, 55);
             this.button2.TabIndex = 11;
             this.button2.Text = "Thêm Khách Hàng";
             this.button2.UseVisualStyleBackColor = true;

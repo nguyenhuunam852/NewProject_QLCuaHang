@@ -34,6 +34,12 @@ namespace WindowsFormsApp1.Models
             get { return code; }
             set { code = value; }
         }
+        public int group;
+        public int pgroup
+        {
+            get { return group; }
+            set { group = value; }
+        }
 
         public static User _user;
         public User()
@@ -45,12 +51,19 @@ namespace WindowsFormsApp1.Models
             this.username = _username;
             this.password = _pass;
             this.id = getId();
+            this.group = int.Parse(getGroupid(id));
         }
         public string getId()
         {
             string[] paras = new string[1] { "@username" };
             object[] values = new object[1] { username };
             return Models.Connection.ExcuteScalar("getUserId", CommandType.StoredProcedure, paras, values);
+        }
+        public string getGroupid(string id)
+        {
+            string[] paras = new string[1] { "@id" };
+            object[] values = new object[1] { id };
+            return Models.Connection.ExcuteScalar("getGroupId", CommandType.StoredProcedure, paras, values);
         }
         public static User getUser()
         {
@@ -60,8 +73,6 @@ namespace WindowsFormsApp1.Models
             }
             return _user;
         }
-      
-
         public string DangNhap()
         {
             string sql = "select dbo.Login('" + username + "','" + password + "')";
