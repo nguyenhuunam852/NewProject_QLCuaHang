@@ -334,12 +334,11 @@
             this.dc,
             this.ngaysinh,
             this.sex});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 310);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 319);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1300, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(1226, 327);
             this.dataGridView1.TabIndex = 2;
-       
             // 
             // hovataen
             // 
@@ -484,7 +483,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(485, 259);
+            this.button9.Location = new System.Drawing.Point(345, 259);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(100, 23);
             this.button9.TabIndex = 9;
@@ -521,16 +520,16 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(443, 33);
+            this.textBox7.Location = new System.Drawing.Point(410, 32);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(142, 20);
+            this.textBox7.Size = new System.Drawing.Size(97, 20);
             this.textBox7.TabIndex = 4;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(342, 36);
+            this.label12.Location = new System.Drawing.Point(309, 36);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(95, 13);
             this.label12.TabIndex = 3;
@@ -555,7 +554,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(345, 62);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(240, 208);
+            this.dataGridView3.Size = new System.Drawing.Size(162, 208);
             this.dataGridView3.TabIndex = 1;
             // 
             // idh
@@ -616,13 +615,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
             this.Name = "KhachHangViews";
-            this.Size = new System.Drawing.Size(1354, 687);
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Size = new System.Drawing.Size(1232, 788);
             this.Load += new System.EventHandler(this.KhachHangViews_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

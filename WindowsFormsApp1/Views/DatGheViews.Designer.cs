@@ -78,7 +78,7 @@
             // 
             this.groupBox1.Location = new System.Drawing.Point(3, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(873, 622);
+            this.groupBox1.Size = new System.Drawing.Size(803, 788);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sảnh chính";
@@ -87,9 +87,9 @@
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(618, 11);
+            this.label2.Location = new System.Drawing.Point(584, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.Size = new System.Drawing.Size(80, 23);
             this.label2.TabIndex = 0;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -98,9 +98,9 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Location = new System.Drawing.Point(905, 11);
+            this.groupBox2.Location = new System.Drawing.Point(812, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(434, 648);
+            this.groupBox2.Size = new System.Drawing.Size(408, 648);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control";
@@ -137,7 +137,7 @@
             this.groupBox4.Controls.Add(this.txtTen);
             this.groupBox4.Location = new System.Drawing.Point(20, 307);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(396, 190);
+            this.groupBox4.Size = new System.Drawing.Size(380, 190);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Khách hàng";
@@ -291,7 +291,7 @@
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Location = new System.Drawing.Point(20, 26);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(396, 252);
+            this.groupBox3.Size = new System.Drawing.Size(380, 252);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Khách hàng";
@@ -369,9 +369,9 @@
             // 
             this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(778, 11);
+            this.label12.Location = new System.Drawing.Point(730, 11);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 23);
+            this.label12.Size = new System.Drawing.Size(70, 23);
             this.label12.TabIndex = 3;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -379,13 +379,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "DatGheViews";
-            this.Size = new System.Drawing.Size(1354, 687);
+            this.Size = new System.Drawing.Size(1232, 788);
             this.Load += new System.EventHandler(this.DatGheViews_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

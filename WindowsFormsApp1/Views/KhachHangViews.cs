@@ -64,6 +64,9 @@ namespace WindowsFormsApp1.Views
             label10.Visible = false;
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
+            dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
+            dataGridView2 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView2);
+            dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
         }
         private void loadDataGridViewTenLoai()
         {

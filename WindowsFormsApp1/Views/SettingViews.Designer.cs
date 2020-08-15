@@ -61,7 +61,7 @@
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(46, 27);
+            this.groupBox1.Location = new System.Drawing.Point(16, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(458, 629);
             this.groupBox1.TabIndex = 0;
@@ -247,7 +247,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(529, 15);
+            this.button3.Location = new System.Drawing.Point(503, 15);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 67);
             this.button3.TabIndex = 3;
@@ -257,7 +257,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Location = new System.Drawing.Point(529, 100);
+            this.groupBox6.Location = new System.Drawing.Point(503, 100);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(615, 556);
             this.groupBox6.TabIndex = 4;
@@ -266,7 +266,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(639, 15);
+            this.button1.Location = new System.Drawing.Point(599, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 67);
             this.button1.TabIndex = 5;
@@ -278,6 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.button3);

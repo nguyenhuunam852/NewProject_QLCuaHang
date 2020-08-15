@@ -142,7 +142,14 @@ namespace WindowsFormsApp1.Views
    
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            
+            foreach (ToolStripMenuItem ts in msUserControl.Items)
+            {
+                ts.AutoSize = false;
+                ts.Size = new Size(118, 50);
+                ts.BackColor = Color.Black;
+                ts.ForeColor = Color.White;
+            }
             getSetting();
         }
         private int getFirstSetting()
@@ -198,6 +205,11 @@ namespace WindowsFormsApp1.Views
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemTabPages(SettingViews.getViews(1), 5, "Settings");
+        }
+
+        private void quảnLíTypeKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
