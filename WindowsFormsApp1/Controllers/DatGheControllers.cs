@@ -53,6 +53,10 @@ namespace WindowsFormsApp1.Controllers
             string ssave = shour + ":" + sminute + ":" + ssecond;
             return ssave;
         }
-     
+
+        internal static int CheckKH(string text)
+        {
+            return KhachHang.checkKH(text);
+        }
     }
 }

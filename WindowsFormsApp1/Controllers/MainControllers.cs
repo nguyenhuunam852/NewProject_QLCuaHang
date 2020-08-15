@@ -26,5 +26,16 @@ namespace WindowsFormsApp1.Controllers
             }
             return 1;
         }
+
+        internal static int checkExist(DateTime dt)
+        {
+           return LichSu.CheckExistStatical(dt);
+                
+        }
+
+        internal static bool checkExist()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -34,6 +34,12 @@ namespace WindowsFormsApp1.Models
             set { ptgbd = value; }
         }
         private int tghd;
+
+        internal static int CheckExistStatical(DateTime dt)
+        {
+          return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckExistStatical_func(" + User.getUser().pid + ",'" + dt + "')"));  
+        }
+
         public int ptghd
         {
             get { return tghd; }
@@ -83,6 +89,12 @@ namespace WindowsFormsApp1.Models
             string[] paras = new string[] { "@user","@ngay" };
             object[] values = new object[] { User.getUser().pid,DateTime.Now };
             return Models.Connection.Excute_Sql("InsertWorkProcess", CommandType.StoredProcedure,paras,values);
+        }
+        public static int ChotCaTheoNgay(DateTime dt)
+        {
+            string[] paras = new string[] { "@user", "@ngay" };
+            object[] values = new object[] { User.getUser().pid, dt };
+            return Models.Connection.Excute_Sql("InsertWorkProcess", CommandType.StoredProcedure, paras, values);
         }
 
         internal static DataSet getStaticalInWeekofMonth(DataTable table)

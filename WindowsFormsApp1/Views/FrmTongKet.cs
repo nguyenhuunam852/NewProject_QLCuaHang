@@ -13,9 +13,11 @@ namespace WindowsFormsApp1.Views
 {
     public partial class FrmTongKet : Form
     {
-        public FrmTongKet()
+        private DateTime pdt;
+        public FrmTongKet(DateTime dt)
         {
             InitializeComponent();
+            pdt = dt;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -25,11 +27,11 @@ namespace WindowsFormsApp1.Views
 
         private void FrmTongKet_Load(object sender, EventArgs e)
         {
+            label2.Text = pdt.Day.ToString()+'/'+pdt.Month.ToString()+'/'+pdt.Year.ToString();
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
-            DateTime dt = DateTime.Now;
-            getData(dt);
-            dataGridView1.DataSource = ThongKeControllers.getHistoryinDay(dt).Tables[0];
+            getData(pdt);
+            dataGridView1.DataSource = ThongKeControllers.getHistoryinDay(pdt).Tables[0];
         }
         private void getData(DateTime dateTime)
         {

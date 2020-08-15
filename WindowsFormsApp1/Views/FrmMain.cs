@@ -75,14 +75,51 @@ namespace WindowsFormsApp1.Views
         }
         public void getSetting()
         {
+            DateTime dateTime = DateTime.Now;
             if (getFirstSetting() == 1)
             {
+
                 msUserControl.Visible = true;
                 SettingsControllers.getInformation();
                 FrmDangNhap fdn = new FrmDangNhap();
                 DialogResult dlr = fdn.ShowDialog();
                 if (dlr == DialogResult.OK)
                 {
+                    int sig = 0;
+                    int check;
+                    while ((check=MainControllers.checkExist(dateTime))!=3)
+                    {
+                        if(check==1)
+                        {
+                            DialogResult dlr1;
+                            if (sig == 0)
+                            {
+                                dlr1 = MessageBox.Show("Bạn chưa chốt ca những ngày gần đây,tiến hành chốt ca để tiếp tục làm việc Ngày:"+dateTime.Day.ToString() + '/' + dateTime.Month.ToString() + '/' + dateTime.Year.ToString(),"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                dlr1 = MessageBox.Show("tiến hành chốt ca cho ngày:"+dateTime.Day.ToString()+'/'+dateTime.Month.ToString()+'/'+dateTime.Year.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            if (dlr1 == DialogResult.OK)
+                            {
+                                FrmTongKet ftk = new FrmTongKet(dateTime);
+                                DialogResult wait = ftk.ShowDialog();
+                                if (wait == DialogResult.OK)
+                                {
+                                    int check1 = Controllers.ThongKeControllers.ChotCaTheoNgay(dateTime);
+                                    if (check1 >0)
+                                    {
+                                        MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                }
+                                if(sig==0)
+                                {
+                                    sig = 1;
+                                }
+                            }
+                        }
+                        dateTime = dateTime.AddDays(-1);
+                    }
                     ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
                 }
                 else if (dlr == DialogResult.Abort)
@@ -93,6 +130,7 @@ namespace WindowsFormsApp1.Views
                 {
                     this.Close();
                 }
+
             }
             else
             {
@@ -104,6 +142,7 @@ namespace WindowsFormsApp1.Views
    
         private void FrmMain_Load(object sender, EventArgs e)
         {
+
             getSetting();
         }
         private int getFirstSetting()

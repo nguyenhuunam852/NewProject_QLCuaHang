@@ -95,6 +95,12 @@ namespace WindowsFormsApp1.Models
             this.idlkh = _idlkh;
             this.gt = _gt;
         }
+
+        internal static int checkKH(string mkh)
+        {
+            return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckCustomerinDay(" + User.getUser().pid + "," + mkh + ")"));
+        }
+
         public int themTinhTrangBenh(string idb)
         {
           

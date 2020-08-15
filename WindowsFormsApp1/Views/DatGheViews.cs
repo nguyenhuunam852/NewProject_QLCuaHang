@@ -328,27 +328,43 @@ namespace WindowsFormsApp1.Views
             {
                 if (label2.Text != "")
                 {
-                    int check = DatGheControllers.InsertHoatDong(txtId.Text, label2.Text);
-                    if (check > 0)
+                    
+                    int check2 = DatGheControllers.CheckKH(txtId.Text);
+                    if (check2> 0)
                     {
-                        DialogResult dlr = MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (dlr == DialogResult.OK)
+                        DialogResult dlr2 = MessageBox.Show("Khách hàng đã dùng dịch vụ trong hôm nay bạn sẽ cho họ dùng lại chứ ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (dlr2 == DialogResult.Yes)
                         {
-                            create_Label(truyxuat[label2.Text]);
-                            count_down.Add(truyxuat[label2.Text]);
-                            textBoxbuttonRefessh();
+                            check2 = 0;
                         }
                     }
-                    if (check == -1)
+                 
+                    if (check2==0)
                     {
-                        MessageBox.Show("Ghế đang bảo trì", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
+                       
+                        int check = DatGheControllers.InsertHoatDong(txtId.Text, label2.Text);
+                        if (check > 0)
+                        {
+                            DialogResult dlr = MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (dlr == DialogResult.OK)
+                            {
+                                create_Label(truyxuat[label2.Text]);
+                                count_down.Add(truyxuat[label2.Text]);
+                                textBoxbuttonRefessh();
+                            }
+                        }
+                        if (check == -1)
+                        {
+                            MessageBox.Show("Ghế đang bảo trì", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        if (check == -2)
+                        {
+                            MessageBox.Show("Ghế đang phục vụ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
                     }
-                    if (check == -2)
-                    {
-                        MessageBox.Show("Ghế đang phục vụ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
+                   
 
                 }
                 else
@@ -510,7 +526,8 @@ namespace WindowsFormsApp1.Views
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FrmTongKet ftk = new FrmTongKet();
+            DateTime dt = DateTime.Now;
+            FrmTongKet ftk = new FrmTongKet(dt);
             DialogResult wait = ftk.ShowDialog();
             if (wait == DialogResult.OK)
             {

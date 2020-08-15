@@ -39,15 +39,16 @@
             this.att = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbLTV = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbTVM = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -57,9 +58,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(486, 426);
+            this.groupBox1.Size = new System.Drawing.Size(486, 365);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -157,6 +158,25 @@
             this.dataGridView3.Size = new System.Drawing.Size(429, 199);
             this.dataGridView3.TabIndex = 5;
             // 
+            // id1
+            // 
+            this.id1.DataPropertyName = "type";
+            this.id1.HeaderText = "id1";
+            this.id1.Name = "id1";
+            this.id1.Visible = false;
+            // 
+            // name1
+            // 
+            this.name1.DataPropertyName = "name";
+            this.name1.HeaderText = "Tên loại";
+            this.name1.Name = "name1";
+            // 
+            // sl
+            // 
+            this.sl.DataPropertyName = "sl";
+            this.sl.HeaderText = "Số lượng";
+            this.sl.Name = "sl";
+            // 
             // lbLTV
             // 
             this.lbLTV.AutoSize = true;
@@ -217,30 +237,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // id1
+            // label2
             // 
-            this.id1.DataPropertyName = "type";
-            this.id1.HeaderText = "id1";
-            this.id1.Name = "id1";
-            this.id1.Visible = false;
-            // 
-            // name1
-            // 
-            this.name1.DataPropertyName = "name";
-            this.name1.HeaderText = "Tên loại";
-            this.name1.Name = "name1";
-            // 
-            // sl
-            // 
-            this.sl.DataPropertyName = "sl";
-            this.sl.HeaderText = "Số lượng";
-            this.sl.Name = "sl";
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(29, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(404, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Ngày tháng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
@@ -279,5 +291,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn name1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sl;
+        private System.Windows.Forms.Label label2;
     }
 }

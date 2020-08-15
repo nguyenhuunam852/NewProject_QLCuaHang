@@ -20,6 +20,10 @@ namespace WindowsFormsApp1.Controllers
         {
             return LichSu.ChotCa();
         }
+        public static int ChotCaTheoNgay(DateTime dt)
+        {
+            return LichSu.ChotCaTheoNgay(dt);
+        }
       
         public static DataSet getHistoryinDay(DateTime date)
         {
