@@ -2,5 +2,5 @@ txtServerName@DESKTOP-VT4SFHD
 txtDataBase@2020
 txtDV@Người
 txtTGBD@17:00
-txtTGHD@00:50
+txtTGHD@00:08
 txtTGKT@19:00

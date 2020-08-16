@@ -120,6 +120,7 @@ namespace WindowsFormsApp1.Views
                     fdg.truyxuat.Add(ctr.Name, lb);
                     fdg.groupBox1.Controls.Add(lb);
                     fdg.themSuKien(lb);
+                    fdg.LoadDuLieu();
                 }
             }
         }
@@ -228,7 +229,7 @@ namespace WindowsFormsApp1.Views
 
 
 
-        private void LoadDuLieu()
+        public void LoadDuLieu()
         {
             dts = Controllers.GheControllers.LayThongTinGhe();
         }

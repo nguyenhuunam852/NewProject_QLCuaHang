@@ -23,6 +23,7 @@ namespace WindowsFormsApp1.Views.MyDataGridViews
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.AllowUserToResizeColumns = false;
             dgv.AllowUserToResizeRows = false;
+            dgv.ReadOnly = true;
             return dgv;
         }
     }

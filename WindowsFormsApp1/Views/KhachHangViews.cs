@@ -119,6 +119,10 @@ namespace WindowsFormsApp1.Views
             comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idlkh", true, DataSourceUpdateMode.Never);
             comboBox2.DataBindings.Clear();
             comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", true, DataSourceUpdateMode.Never);
+            textBox9.DataBindings.Clear();
+            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
+            textBox8.DataBindings.Clear();
+            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
         }
         private void button2_Click(object sender, EventArgs e)
         {
