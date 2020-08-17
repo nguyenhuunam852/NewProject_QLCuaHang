@@ -104,25 +104,25 @@ namespace WindowsFormsApp1.Views
         private void DataBinding()
         {
             textBox5.DataBindings.Clear();
-            textBox5.DataBindings.Add("Text", dataGridView1.DataSource, "code",true, DataSourceUpdateMode.Never);
+            textBox5.DataBindings.Add("Text", dataGridView1.DataSource, "code",false, DataSourceUpdateMode.Never);
             textBox1.DataBindings.Clear();
-            textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "hoten", true, DataSourceUpdateMode.Never);
+            textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "hoten", false, DataSourceUpdateMode.Never);
             textBox2.DataBindings.Clear();
-            textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "phone", true, DataSourceUpdateMode.Never);
+            textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "phone", false, DataSourceUpdateMode.Never);
             textBox3.DataBindings.Clear();
-            textBox3.DataBindings.Add("Text", dataGridView1.DataSource, "email", true, DataSourceUpdateMode.Never);
+            textBox3.DataBindings.Add("Text", dataGridView1.DataSource, "email", false, DataSourceUpdateMode.Never);
             textBox4.DataBindings.Clear();
-            textBox4.DataBindings.Add("Text", dataGridView1.DataSource, "address", true, DataSourceUpdateMode.Never);
+            textBox4.DataBindings.Add("Text", dataGridView1.DataSource, "address", false, DataSourceUpdateMode.Never);
             maskedTextBox1.DataBindings.Clear();
-            maskedTextBox1.DataBindings.Add("Text", dataGridView1.DataSource, "birthday", true, DataSourceUpdateMode.Never);
+            maskedTextBox1.DataBindings.Add("Text", dataGridView1.DataSource, "birthday", false, DataSourceUpdateMode.Never);
             comboBox1.DataBindings.Clear();
-            comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idlkh", true, DataSourceUpdateMode.Never);
+            comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idlkh", false, DataSourceUpdateMode.Never);
             comboBox2.DataBindings.Clear();
-            comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", true, DataSourceUpdateMode.Never);
+            comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", false, DataSourceUpdateMode.Never);
             textBox9.DataBindings.Clear();
-            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
+            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", false, DataSourceUpdateMode.Never);
             textBox8.DataBindings.Clear();
-            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
+            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", false, DataSourceUpdateMode.Never);
         }
         private void button2_Click(object sender, EventArgs e)
         {

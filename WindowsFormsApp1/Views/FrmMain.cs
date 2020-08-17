@@ -189,7 +189,7 @@ namespace WindowsFormsApp1.Views
 
         private void quảnLíKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(KhachHangViews.khv, 3, "Quản lí kh");
+            ThemTabPages(KhachHangViews.khv, 3, "Khách Hàng");
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -210,6 +210,11 @@ namespace WindowsFormsApp1.Views
         private void quảnLíTypeKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void quảnLíGroupUSerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(new GroupUserViews(), 5, "Group Users");
         }
     }
 }

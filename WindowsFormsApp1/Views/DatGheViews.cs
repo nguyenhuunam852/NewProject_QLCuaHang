@@ -110,6 +110,10 @@ namespace WindowsFormsApp1.Views
                         sig = 1;
                         lb.Location = ctr.Location;
                         lb.BackColor = ctr.BackColor;
+                        if(fdg.count_down.Contains(lb)==false)
+                        {
+                            lb.Text = ctr.Text;
+                        }
                         break;
                     }
                 }
@@ -120,8 +124,8 @@ namespace WindowsFormsApp1.Views
                     fdg.truyxuat.Add(ctr.Name, lb);
                     fdg.groupBox1.Controls.Add(lb);
                     fdg.themSuKien(lb);
-                    fdg.LoadDuLieu();
                 }
+                fdg.LoadDuLieu();
             }
         }
         public static void deleteGroupBox(string id)

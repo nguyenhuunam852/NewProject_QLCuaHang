@@ -24,6 +24,8 @@ namespace WindowsFormsApp1.Views.MyDataGridViews
             dgv.AllowUserToResizeColumns = false;
             dgv.AllowUserToResizeRows = false;
             dgv.ReadOnly = true;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.RowHeadersVisible = false;
             return dgv;
         }
     }

@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Controllers\DatGheControllers.cs" />
     <Compile Include="Controllers\GheControllers.cs" />
+    <Compile Include="Controllers\GroupUserControllers.cs" />
     <Compile Include="Controllers\KhachHangControllers.cs" />
     <Compile Include="Controllers\MainControllers.cs" />
     <Compile Include="Controllers\SettingsControllers.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Models\GheState\GheDangPhucVu.cs" />
     <Compile Include="Models\GheState\GheKhongPhucVu.cs" />
     <Compile Include="Models\GheState\State.cs" />
+    <Compile Include="Models\GroupUser.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\LichSu.cs" />
     <Compile Include="Models\LoaiKhachHang.cs" />
@@ -104,6 +106,12 @@
     </Compile>
     <Compile Include="Views\FrmTongKet.Designer.cs">
       <DependentUpon>FrmTongKet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GroupUserViews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\GroupUserViews.Designer.cs">
+      <DependentUpon>GroupUserViews.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MyDataGridViews\MyDataGridView.cs" />
     <Compile Include="Views\SettingViews.cs">
@@ -199,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmTongKet.resx">
       <DependentUpon>FrmTongKet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GroupUserViews.resx">
+      <DependentUpon>GroupUserViews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SettingViews.resx">
       <DependentUpon>SettingViews.cs</DependentUpon>
