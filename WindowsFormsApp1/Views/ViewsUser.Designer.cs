@@ -86,7 +86,7 @@
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(13, 25);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(396, 288);
+            this.groupBox3.Size = new System.Drawing.Size(396, 321);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Khách hàng";
@@ -136,7 +136,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(106, 200);
+            this.button6.Location = new System.Drawing.Point(25, 258);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 15;
@@ -155,7 +155,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(187, 171);
+            this.button4.Location = new System.Drawing.Point(25, 229);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 13;
@@ -164,7 +164,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(106, 171);
+            this.button3.Location = new System.Drawing.Point(25, 287);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 12;
@@ -264,13 +264,13 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // UserViews
+            // ViewsUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "UserViews";
+            this.Name = "ViewsUser";
             this.Size = new System.Drawing.Size(1121, 749);
             this.Load += new System.EventHandler(this.UserViews_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

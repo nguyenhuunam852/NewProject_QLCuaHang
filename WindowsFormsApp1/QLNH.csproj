@@ -250,6 +250,9 @@
     <EmbeddedResource Include="Views\ViewsThongKe\ViewsThongKeNgay.resx">
       <DependentUpon>ViewsThongKeNgay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewsUser.resx">
+      <DependentUpon>ViewsUser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
