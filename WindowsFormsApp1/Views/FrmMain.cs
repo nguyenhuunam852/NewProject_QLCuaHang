@@ -76,10 +76,11 @@ namespace WindowsFormsApp1.Views
         public void getSetting()
         {
             DateTime dateTime = DateTime.Now;
+            msUserControl.Visible = false;
             if (getFirstSetting() == 1)
             {
 
-                msUserControl.Visible = true;
+                
                 SettingsControllers.getInformation();
                 FrmDangNhap fdn = new FrmDangNhap();
                 DialogResult dlr = fdn.ShowDialog();
@@ -120,7 +121,12 @@ namespace WindowsFormsApp1.Views
                         }
                         dateTime = dateTime.AddDays(-1);
                     }
-                    ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
+                    DataRow dr = User.getUser().ppermission.AsEnumerable().SingleOrDefault(r => r.Field<string>("name") == "DeskCustomer");
+                    if(dr["view"].ToString()=="1")
+                    {
+                        ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
+                    }
+                    msUserControl.Visible = true;
                 }
                 else if (dlr == DialogResult.Abort)
                 {
@@ -142,7 +148,7 @@ namespace WindowsFormsApp1.Views
    
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+           
             foreach (ToolStripMenuItem ts in msUserControl.Items)
             {
                 ts.AutoSize = false;

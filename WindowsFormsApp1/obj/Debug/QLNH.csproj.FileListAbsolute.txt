@@ -43,7 +43,7 @@ C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLNH.csproj.CopyComplete
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLCH.exe
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLCH.pdb
-C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.FrmTongKet.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.SettingViews.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.GroupUserViews.resources
+C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache

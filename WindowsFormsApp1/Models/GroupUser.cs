@@ -43,7 +43,7 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.FillDataSet("getPermissionById", CommandType.StoredProcedure, paras, values);
         }
 
-        internal public int delete()
+        public int deleteGroupUSer()
         {
             string[] paras = new string[] { "@idgroup" };
             object[] values = new object[] { id };

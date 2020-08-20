@@ -28,23 +28,84 @@ namespace WindowsFormsApp1.Models
             get { return password; }
             set { password = value; }
         }
-        private string code;
-        public string pcode
+        private string ho;
+        public string pho
         {
-            get { return code; }
-            set { code = value; }
+            get { return ho; }
+            set { ho = value; }
         }
-        public int group;
+
+        private string ten;
+        public string pten
+        {
+            get { return ten; }
+            set { ten = value; }
+        }
+        private string sdt;
+        public string psdt
+        {
+            get { return sdt; }
+            set { sdt = value; }
+        }
+        private string email;
+        public string pemail
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        private string dc;
+        public string pdc
+        {
+            get { return dc; }
+            set { dc = value; }
+        }
+        private string ns;
+        public string pns
+        {
+            get { return ns; }
+            set { ns = value; }
+        }
+
+        internal int insertuser()
+        {
+            string[] paras = new string[] { "@ho", "@ten", "@sdt", "@email", "@dc", "@ns", "@ca", "@idlkh", "@sex", "@available"};
+            object[] values = new object[] { ho, ten, sdt, email, dc, ns, DateTime.Now, group, gt, 1};
+            return Models.Connection.Excute_Sql("insertCustomer", System.Data.CommandType.StoredProcedure, paras, values);
+        }
+
+        private int gt;
+        public int pgt
+        {
+            get { return gt; }
+            set { gt = value; }
+        }
+        
+       
+        private int group;
         public int pgroup
         {
             get { return group; }
             set { group = value; }
         }
-        public int branch;
+        private int branch;
         public int pbranch
         {
             get { return branch; }
             set { branch = value; }
+        }
+
+        internal static DataTable getData()
+        {
+            string[] paras = new string[1] { "@id" };
+            object[] values = new object[1] { User.getUser().pbranch };
+            return Models.Connection.FillDataSet("getAllUserinBranch", CommandType.StoredProcedure, paras, values).Tables[0];
+        }
+
+        private DataTable permission;
+        public DataTable ppermission
+        {
+            get { return permission; }
+            set { permission = value; }
         }
 
         public static User _user;
@@ -77,6 +138,12 @@ namespace WindowsFormsApp1.Models
             string[] paras = new string[1] { "@id" };
             object[] values = new object[1] { id };
             return Models.Connection.ExcuteScalar("getBranchId", CommandType.StoredProcedure, paras, values);
+        }
+        public DataTable getPermission()
+        {
+            string[] paras = new string[1] { "@id" };
+            object[] values = new object[1] { group };
+            return Models.Connection.FillDataSet("getPermissionbyIdUser", CommandType.StoredProcedure, paras, values).Tables[0];
         }
         public static User getUser()
         {

@@ -38,7 +38,7 @@ namespace WindowsFormsApp1.Controllers
         internal static int deleteGrouUser(string a)
         {
             GroupUser gu = new GroupUser(a);
-            return gu.delete();
+            return gu.deleteGroupUSer();
         }
     }
 }

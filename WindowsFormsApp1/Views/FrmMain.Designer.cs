@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.msUserControl = new System.Windows.Forms.MenuStrip();
-            this.quảnLíBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLGhe = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíTypeKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sứcKhỏeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +54,7 @@
             this.msUserControl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLíBànToolStripMenuItem,
+            this.QLGhe,
             this.quảnLíKháchHàngToolStripMenuItem,
             this.quảnLíTypeKháchHàngToolStripMenuItem,
             this.sứcKhỏeToolStripMenuItem,
@@ -67,14 +67,14 @@
             this.msUserControl.Size = new System.Drawing.Size(122, 749);
             this.msUserControl.TabIndex = 1;
             // 
-            // quảnLíBànToolStripMenuItem
+            // QLGhe
             // 
-            this.quảnLíBànToolStripMenuItem.AutoSize = false;
-            this.quảnLíBànToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quảnLíBànToolStripMenuItem.Name = "quảnLíBànToolStripMenuItem";
-            this.quảnLíBànToolStripMenuItem.Size = new System.Drawing.Size(118, 18);
-            this.quảnLíBànToolStripMenuItem.Text = "Quản lí ghế";
-            this.quảnLíBànToolStripMenuItem.Click += new System.EventHandler(this.quảnLíBànToolStripMenuItem_Click);
+            this.QLGhe.AutoSize = false;
+            this.QLGhe.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLGhe.Name = "QLGhe";
+            this.QLGhe.Size = new System.Drawing.Size(118, 18);
+            this.QLGhe.Text = "Quản lí ghế";
+            this.QLGhe.Click += new System.EventHandler(this.quảnLíBànToolStripMenuItem_Click);
             // 
             // quảnLíKháchHàngToolStripMenuItem
             // 
@@ -178,7 +178,7 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip msUserControl;
-        private System.Windows.Forms.ToolStripMenuItem quảnLíBànToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLGhe;
         private System.Windows.Forms.ContextMenuStrip cntmsTag;
         private System.Windows.Forms.ToolStripMenuItem đóngTấtCảToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đóngTrangHiệnTạiToolStripMenuItem;
