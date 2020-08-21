@@ -15,10 +15,7 @@ namespace WindowsFormsApp1.Controllers
             Models.User _user = User.getUser();
             _user.pusername = username;
             _user.ppassword = password;
-            _user.pid = _user.getId();
-            _user.pgroup = int.Parse(_user.getGroupid(_user.pid));
-            _user.pbranch = int.Parse(_user.getBranchid(_user.pid));
-            _user.ppermission = _user.getPermission();
+           
             return _user.DangNhap();
         }
 
@@ -51,6 +48,15 @@ namespace WindowsFormsApp1.Controllers
             char[] charArray = s.ToCharArray();
             Array.Reverse(charArray);
             return new string(charArray);
+        }
+
+        internal static void getAllInformation()
+        {
+            Models.User _user = User.getUser();
+            _user.pid = _user.getId();
+            _user.pgroup = int.Parse(_user.getGroupid(_user.pid));
+            _user.pbranch = int.Parse(_user.getBranchid(_user.pid));
+            _user.ppermission = _user.getPermission();
         }
 
         internal static DataTable getData()

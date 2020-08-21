@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.msUserControl = new System.Windows.Forms.MenuStrip();
             this.QLGhe = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLíKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLíTypeKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sứcKhỏeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lịchSửVàThốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLkhachhang = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLloaiKH = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLsk = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLlichSu = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLíUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLíGroupUSerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLuser = new System.Windows.Forms.ToolStripMenuItem();
+            this.QlGroupUser = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmsTag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,13 +55,13 @@
             this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QLGhe,
-            this.quảnLíKháchHàngToolStripMenuItem,
-            this.quảnLíTypeKháchHàngToolStripMenuItem,
-            this.sứcKhỏeToolStripMenuItem,
-            this.lịchSửVàThốngKêToolStripMenuItem,
+            this.QLkhachhang,
+            this.QLloaiKH,
+            this.QLsk,
+            this.QLlichSu,
             this.settingsToolStripMenuItem,
-            this.quảnLíUserToolStripMenuItem,
-            this.quảnLíGroupUSerToolStripMenuItem});
+            this.QLuser,
+            this.QlGroupUser});
             this.msUserControl.Location = new System.Drawing.Point(0, 0);
             this.msUserControl.Name = "msUserControl";
             this.msUserControl.Size = new System.Drawing.Size(122, 749);
@@ -76,32 +76,32 @@
             this.QLGhe.Text = "Quản lí ghế";
             this.QLGhe.Click += new System.EventHandler(this.quảnLíBànToolStripMenuItem_Click);
             // 
-            // quảnLíKháchHàngToolStripMenuItem
+            // QLkhachhang
             // 
-            this.quảnLíKháchHàngToolStripMenuItem.Name = "quảnLíKháchHàngToolStripMenuItem";
-            this.quảnLíKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.quảnLíKháchHàngToolStripMenuItem.Text = "Quản lí khách hàng";
-            this.quảnLíKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLíKháchHàngToolStripMenuItem_Click);
+            this.QLkhachhang.Name = "QLkhachhang";
+            this.QLkhachhang.Size = new System.Drawing.Size(118, 19);
+            this.QLkhachhang.Text = "Quản lí khách hàng";
+            this.QLkhachhang.Click += new System.EventHandler(this.quảnLíKháchHàngToolStripMenuItem_Click);
             // 
-            // quảnLíTypeKháchHàngToolStripMenuItem
+            // QLloaiKH
             // 
-            this.quảnLíTypeKháchHàngToolStripMenuItem.Name = "quảnLíTypeKháchHàngToolStripMenuItem";
-            this.quảnLíTypeKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.quảnLíTypeKháchHàngToolStripMenuItem.Text = "Loại Khách Hàng";
-            this.quảnLíTypeKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLíTypeKháchHàngToolStripMenuItem_Click);
+            this.QLloaiKH.Name = "QLloaiKH";
+            this.QLloaiKH.Size = new System.Drawing.Size(118, 19);
+            this.QLloaiKH.Text = "Loại Khách Hàng";
+            this.QLloaiKH.Click += new System.EventHandler(this.quảnLíTypeKháchHàngToolStripMenuItem_Click);
             // 
-            // sứcKhỏeToolStripMenuItem
+            // QLsk
             // 
-            this.sứcKhỏeToolStripMenuItem.Name = "sứcKhỏeToolStripMenuItem";
-            this.sứcKhỏeToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.sứcKhỏeToolStripMenuItem.Text = "Sức khỏe";
+            this.QLsk.Name = "QLsk";
+            this.QLsk.Size = new System.Drawing.Size(118, 19);
+            this.QLsk.Text = "Sức khỏe";
             // 
-            // lịchSửVàThốngKêToolStripMenuItem
+            // QLlichSu
             // 
-            this.lịchSửVàThốngKêToolStripMenuItem.Name = "lịchSửVàThốngKêToolStripMenuItem";
-            this.lịchSửVàThốngKêToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.lịchSửVàThốngKêToolStripMenuItem.Text = "Lịch sử và thống kê";
-            this.lịchSửVàThốngKêToolStripMenuItem.Click += new System.EventHandler(this.lịchSửVàThốngKêToolStripMenuItem_Click);
+            this.QLlichSu.Name = "QLlichSu";
+            this.QLlichSu.Size = new System.Drawing.Size(118, 19);
+            this.QLlichSu.Text = "Lịch sử và thống kê";
+            this.QLlichSu.Click += new System.EventHandler(this.lịchSửVàThốngKêToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -110,19 +110,19 @@
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
-            // quảnLíUserToolStripMenuItem
+            // QLuser
             // 
-            this.quảnLíUserToolStripMenuItem.Name = "quảnLíUserToolStripMenuItem";
-            this.quảnLíUserToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.quảnLíUserToolStripMenuItem.Text = "Quản lí User";
-            this.quảnLíUserToolStripMenuItem.Click += new System.EventHandler(this.quảnLíUserToolStripMenuItem_Click);
+            this.QLuser.Name = "QLuser";
+            this.QLuser.Size = new System.Drawing.Size(118, 19);
+            this.QLuser.Text = "Quản lí User";
+            this.QLuser.Click += new System.EventHandler(this.quảnLíUserToolStripMenuItem_Click);
             // 
-            // quảnLíGroupUSerToolStripMenuItem
+            // QlGroupUser
             // 
-            this.quảnLíGroupUSerToolStripMenuItem.Name = "quảnLíGroupUSerToolStripMenuItem";
-            this.quảnLíGroupUSerToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.quảnLíGroupUSerToolStripMenuItem.Text = "Quản lí Group User";
-            this.quảnLíGroupUSerToolStripMenuItem.Click += new System.EventHandler(this.quảnLíGroupUSerToolStripMenuItem_Click);
+            this.QlGroupUser.Name = "QlGroupUser";
+            this.QlGroupUser.Size = new System.Drawing.Size(118, 19);
+            this.QlGroupUser.Text = "Quản lí Group User";
+            this.QlGroupUser.Click += new System.EventHandler(this.quảnLíGroupUSerToolStripMenuItem_Click);
             // 
             // cntmsTag
             // 
@@ -184,12 +184,12 @@
         private System.Windows.Forms.ToolStripMenuItem đóngTấtCảToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đóngTrangHiệnTạiToolStripMenuItem;
         private System.Windows.Forms.TabControl TabHienThi;
-        private System.Windows.Forms.ToolStripMenuItem quảnLíKháchHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lịchSửVàThốngKêToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLkhachhang;
+        private System.Windows.Forms.ToolStripMenuItem QLlichSu;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLíUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLíGroupUSerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLíTypeKháchHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sứcKhỏeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLuser;
+        private System.Windows.Forms.ToolStripMenuItem QlGroupUser;
+        private System.Windows.Forms.ToolStripMenuItem QLloaiKH;
+        private System.Windows.Forms.ToolStripMenuItem QLsk;
     }
 }

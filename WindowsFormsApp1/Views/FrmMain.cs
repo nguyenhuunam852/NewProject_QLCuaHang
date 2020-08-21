@@ -79,64 +79,65 @@ namespace WindowsFormsApp1.Views
             msUserControl.Visible = false;
             if (getFirstSetting() == 1)
             {
-
-                
                 SettingsControllers.getInformation();
-                FrmDangNhap fdn = new FrmDangNhap();
-                DialogResult dlr = fdn.ShowDialog();
-                if (dlr == DialogResult.OK)
+                if (User.getUser().pid == null)
                 {
-                    int sig = 0;
-                    int check;
-                    while ((check=MainControllers.checkExist(dateTime))!=3)
+                    FrmDangNhap fdn = new FrmDangNhap();
+                    DialogResult dlr = fdn.ShowDialog();
+                    if (dlr == DialogResult.OK)
                     {
-                        if(check==1)
+                        int sig = 0;
+                        int check;
+                        while ((check = MainControllers.checkExist(dateTime)) != 3)
                         {
-                            DialogResult dlr1;
-                            if (sig == 0)
+                            if (check == 1)
                             {
-                                dlr1 = MessageBox.Show("Bạn chưa chốt ca những ngày gần đây,tiến hành chốt ca để tiếp tục làm việc Ngày:"+dateTime.Day.ToString() + '/' + dateTime.Month.ToString() + '/' + dateTime.Year.ToString(),"", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                dlr1 = MessageBox.Show("tiến hành chốt ca cho ngày:"+dateTime.Day.ToString()+'/'+dateTime.Month.ToString()+'/'+dateTime.Year.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            if (dlr1 == DialogResult.OK)
-                            {
-                                FrmTongKet ftk = new FrmTongKet(dateTime);
-                                DialogResult wait = ftk.ShowDialog();
-                                if (wait == DialogResult.OK)
+                                DialogResult dlr1;
+                                if (sig == 0)
                                 {
-                                    int check1 = Controllers.ThongKeControllers.ChotCaTheoNgay(dateTime);
-                                    if (check1 >0)
+                                    dlr1 = MessageBox.Show("Bạn chưa chốt ca những ngày gần đây,tiến hành chốt ca để tiếp tục làm việc Ngày:" + dateTime.Day.ToString() + '/' + dateTime.Month.ToString() + '/' + dateTime.Year.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    dlr1 = MessageBox.Show("tiến hành chốt ca cho ngày:" + dateTime.Day.ToString() + '/' + dateTime.Month.ToString() + '/' + dateTime.Year.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                if (dlr1 == DialogResult.OK)
+                                {
+                                    FrmTongKet ftk = new FrmTongKet(dateTime);
+                                    DialogResult wait = ftk.ShowDialog();
+                                    if (wait == DialogResult.OK)
                                     {
-                                        MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        int check1 = Controllers.ThongKeControllers.ChotCaTheoNgay(dateTime);
+                                        if (check1 > 0)
+                                        {
+                                            MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
+                                    }
+                                    if (sig == 0)
+                                    {
+                                        sig = 1;
                                     }
                                 }
-                                if(sig==0)
-                                {
-                                    sig = 1;
-                                }
                             }
+                            dateTime = dateTime.AddDays(-1);
                         }
-                        dateTime = dateTime.AddDays(-1);
+                        if(MyPermission.getpermission("DeskCustomer","view")==1)
+                        {
+                            ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
+                        }
+                        loadPermissionMs();
+                        msUserControl.Visible = true;
                     }
-                    DataRow dr = User.getUser().ppermission.AsEnumerable().SingleOrDefault(r => r.Field<string>("name") == "DeskCustomer");
-                    if(dr["view"].ToString()=="1")
+                    else if (dlr == DialogResult.Abort)
                     {
-                        ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
-                    }
-                    msUserControl.Visible = true;
-                }
-                else if (dlr == DialogResult.Abort)
-                {
-                    MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (dlr == DialogResult.Cancel)
-                {
-                    this.Close();
-                }
+                        MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                    }
+                    else if (dlr == DialogResult.Cancel)
+                    {
+                        this.Close();
+                    }
+                }
             }
             else
             {
@@ -145,7 +146,45 @@ namespace WindowsFormsApp1.Views
                 ThemTabPages(SettingViews.getViews(0), 5, "First Settings");
             }
         }
-   
+
+        private void loadPermissionMs()
+        {
+            if (MyPermission.getpermission("DeskCustomer", "view") == 1)
+            {
+                ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
+            }
+            if (MyPermission.getpermission("Desk", "view") == 0)
+            {
+                QLGhe.Visible = false;
+            }
+            if (MyPermission.getpermission("Customer", "view") == 0)
+            {
+                QLkhachhang.Visible = false;
+            }
+            if (MyPermission.getpermission("TypeCustomer", "view") == 0)
+            {
+                QLloaiKH.Visible = false;
+            }
+            if (MyPermission.getpermission("Health", "view") == 0)
+            {
+                QLsk.Visible = false;
+            }
+            if (MyPermission.getpermission("History", "view") == 0 && MyPermission.getpermission("Statical","view")==0)
+            {
+                QLlichSu.Visible = false;
+            }
+            if (MyPermission.getpermission("User", "view") == 0)
+            {
+                QLuser.Visible = false;
+            }
+            if (MyPermission.getpermission("Groupuser", "view") == 0)
+            {
+                QlGroupUser.Visible = false;
+            }
+
+
+        }
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
            
@@ -157,6 +196,10 @@ namespace WindowsFormsApp1.Views
                 //ts.ForeColor = Color.White;
             }
             getSetting();
+            if (User.getUser().pid == null)
+            {
+                FrmMain_Load(sender, e);
+            }
         }
         private int getFirstSetting()
         {

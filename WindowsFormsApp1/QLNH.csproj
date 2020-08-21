@@ -75,6 +75,7 @@
     <Compile Include="Controllers\GroupUserControllers.cs" />
     <Compile Include="Controllers\KhachHangControllers.cs" />
     <Compile Include="Controllers\MainControllers.cs" />
+    <Compile Include="Controllers\MyPermission.cs" />
     <Compile Include="Controllers\SettingsControllers.cs" />
     <Compile Include="Controllers\SucKhoeControllers.cs" />
     <Compile Include="Controllers\ThongKeControllers.cs" />

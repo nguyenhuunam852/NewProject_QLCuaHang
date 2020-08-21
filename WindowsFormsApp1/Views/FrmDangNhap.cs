@@ -42,6 +42,7 @@ namespace WindowsFormsApp1.Views
             if(UserControllers.DangNhap(username, hpassword)=="1")
             {
                 this.DialogResult = DialogResult.OK;
+                UserControllers.getAllInformation();
             }
             else
             {

@@ -53,6 +53,8 @@ namespace WindowsFormsApp1.Views
         }
         private void DataBinding()
         {
+            listpermission = GroupUserControllers.getlistpermisson();
+
             label8.DataBindings.Clear();
             label8.DataBindings.Add("Text", dataGridView1.DataSource, "id", false, DataSourceUpdateMode.Never);
 
@@ -168,7 +170,22 @@ namespace WindowsFormsApp1.Views
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string a=label8.Text;
+            DataTable newdtb = GroupUserControllers.getListPermissionbyId(a);
+            if(listpermission.Rows.Count>newdtb.Rows.Count)
+            {
+                foreach(DataRow data in listpermission.Rows)
+                {
+                    string name = data["name"].ToString();
+                    DataRow dr = newdtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("name") == name);
+                    if(dr==null)
+                    {
+                        return;
+                    }
+
+                }
+            }
             dataGridView2.DataSource = GroupUserControllers.getListPermissionbyId(a);
+
             button3.Enabled = true;
             button4.Enabled = true;
         }
