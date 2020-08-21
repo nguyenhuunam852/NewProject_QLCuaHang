@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.Views
         string action = "";
         private void button2_Click(object sender, EventArgs e)
         {
+           
             dataGridView1.Enabled = false;
 
             button3.Enabled = false;
@@ -173,6 +174,40 @@ namespace WindowsFormsApp1.Views
                     MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            UserViews_Load(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;
+            dataGridView1.Enabled = false;
+            button3.Enabled = false;
+            button2.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            enableTextBox();
+            action = "update";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(label10.Text);
+            int check = Controllers.UserControllers.deleteUser(id);
+            if (check > 0)
+            {
+                MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UserViews_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

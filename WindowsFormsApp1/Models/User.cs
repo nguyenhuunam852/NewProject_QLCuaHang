@@ -70,7 +70,7 @@ namespace WindowsFormsApp1.Models
         {
             string[] paras = new string[] { "@ho", "@ten", "@sdt", "@email", "@dc", "@ns", "@ca", "@idlkh", "@sex", "@available"};
             object[] values = new object[] { ho, ten, sdt, email, dc, ns, DateTime.Now, group, gt, 1};
-            return Models.Connection.Excute_Sql("insertCustomer", System.Data.CommandType.StoredProcedure, paras, values);
+            return Models.Connection.Excute_Sql("insertUser", System.Data.CommandType.StoredProcedure, paras, values);
         }
 
         private int gt;
@@ -101,6 +101,20 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.FillDataSet("getAllUserinBranch", CommandType.StoredProcedure, paras, values).Tables[0];
         }
 
+        internal int updateuser()
+        {
+            string[] paras = new string[] { "@id","@ho", "@ten", "@sdt", "@email", "@dc", "@ns", "@ca", "@idlkh", "@sex", "@available" };
+            object[] values = new object[] { id,ho, ten, sdt, email, dc, ns, DateTime.Now, group, gt, 1 };
+            return Models.Connection.Excute_Sql("updateUser", System.Data.CommandType.StoredProcedure, paras, values);
+        }
+
+        internal int deleteUser()
+        {
+            string[] paras = new string[] { "@id"};
+            object[] values = new object[] { id};
+            return Models.Connection.Excute_Sql("deleteUser", System.Data.CommandType.StoredProcedure, paras, values);
+        }
+
         private DataTable permission;
         public DataTable ppermission
         {
@@ -109,6 +123,8 @@ namespace WindowsFormsApp1.Models
         }
 
         public static User _user;
+        private int id1;
+
         public User()
         {
 
@@ -121,6 +137,12 @@ namespace WindowsFormsApp1.Models
             this.group = int.Parse(getGroupid(id));
             this.branch = int.Parse(getBranchid(id));
         }
+
+        public User(int id)
+        {
+            this.id = id.ToString();
+        }
+
         public string getId()
         {
             string[] paras = new string[1] { "@username" };

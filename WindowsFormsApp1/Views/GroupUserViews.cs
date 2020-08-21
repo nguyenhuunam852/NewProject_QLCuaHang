@@ -103,29 +103,7 @@ namespace WindowsFormsApp1.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            signal = "insert";
-            dataGridView2.Enabled = true;
-            dataGridView2.ReadOnly = false;
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button1.Enabled = true;
-            textBox1.Enabled = true;
-            listpermission = GroupUserControllers.getlistpermisson();
-            foreach (DataRow dtr in listpermission.Rows)
-            {
-                DataRow row = dtb.NewRow();
-                row["id"] = dtr["id"].ToString();
-                row["permission"] = dtr["name"].ToString();
-                row["view"] = "0";
-                row["insert"] = "0";
-                row["update"] = "0";
-                row["delete"] = "0";
-                row["option"] = "0";
-                dtb.Rows.Add(row);
-            }
-            dataGridView2.DataSource = dtb;
+          
         }
 
         private void button5_Click(object sender, EventArgs e)
