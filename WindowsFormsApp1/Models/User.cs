@@ -96,7 +96,7 @@ namespace WindowsFormsApp1.Models
 
         internal static DataTable getData()
         {
-            string[] paras = new string[1] { "@id" };
+            string[] paras = new string[1] { "@idbranch" };
             object[] values = new object[1] { User.getUser().pbranch };
             return Models.Connection.FillDataSet("getAllUserinBranch", CommandType.StoredProcedure, paras, values).Tables[0];
         }

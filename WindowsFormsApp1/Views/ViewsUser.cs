@@ -16,6 +16,7 @@ namespace WindowsFormsApp1.Views
         {
             InitializeComponent();
         }
+        public static ViewsUser vu = new ViewsUser();
         string action = "";
         private void button2_Click(object sender, EventArgs e)
         {
@@ -84,7 +85,7 @@ namespace WindowsFormsApp1.Views
             maskedTextBox1.DataBindings.Clear();
             maskedTextBox1.DataBindings.Add("Text", dataGridView1.DataSource, "birthday", false, DataSourceUpdateMode.Never);
             comboBox1.DataBindings.Clear();
-            comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idlkh", false, DataSourceUpdateMode.Never);
+            comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idgroup", false, DataSourceUpdateMode.Never);
             comboBox2.DataBindings.Clear();
             comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", false, DataSourceUpdateMode.Never);
         }

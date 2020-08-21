@@ -220,7 +220,12 @@ namespace WindowsFormsApp1.Views
 
         private void quảnLíGroupUSerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(new GroupUserViews(), 5, "Group Users");
+            ThemTabPages(GroupUserViews.guv, 6, "Group Users") ;
+        }
+
+        private void quảnLíUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(ViewsUser.vu, 7, "Users");
         }
     }
 }

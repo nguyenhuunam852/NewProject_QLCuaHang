@@ -115,6 +115,7 @@
             this.quảnLíUserToolStripMenuItem.Name = "quảnLíUserToolStripMenuItem";
             this.quảnLíUserToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
             this.quảnLíUserToolStripMenuItem.Text = "Quản lí User";
+            this.quảnLíUserToolStripMenuItem.Click += new System.EventHandler(this.quảnLíUserToolStripMenuItem_Click);
             // 
             // quảnLíGroupUSerToolStripMenuItem
             // 

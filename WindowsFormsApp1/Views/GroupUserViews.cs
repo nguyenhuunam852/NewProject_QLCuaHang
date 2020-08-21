@@ -18,6 +18,8 @@ namespace WindowsFormsApp1.Views
         {
             InitializeComponent();
         }
+  
+        public static GroupUserViews guv = new GroupUserViews();
         DataTable dtb = new DataTable();
         DataTable savedtb = new DataTable();
         DataTable listpermission = new DataTable();
@@ -64,7 +66,7 @@ namespace WindowsFormsApp1.Views
             button2.Enabled = true;
             button4.Enabled = false;
             button5.Enabled = false;
-            button6.Enabled = false;
+            button1.Enabled = false;
             textBox1.Enabled = false;
         }
 
@@ -108,7 +110,7 @@ namespace WindowsFormsApp1.Views
             button2.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = true;
-            button6.Enabled = true;
+            button1.Enabled = true;
             textBox1.Enabled = true;
             listpermission = GroupUserControllers.getlistpermisson();
             foreach (DataRow dtr in listpermission.Rows)
@@ -202,7 +204,7 @@ namespace WindowsFormsApp1.Views
             button2.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = true;
-            button6.Enabled = true;
+            button1.Enabled = true;
             textBox1.Enabled = true;
             listpermission = GroupUserControllers.getlistpermisson();
         }
@@ -214,6 +216,11 @@ namespace WindowsFormsApp1.Views
             {
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            return;
         }
     }
 }
