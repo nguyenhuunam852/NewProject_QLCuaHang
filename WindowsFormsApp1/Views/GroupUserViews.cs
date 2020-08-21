@@ -176,15 +176,24 @@ namespace WindowsFormsApp1.Views
                 foreach(DataRow data in listpermission.Rows)
                 {
                     string name = data["name"].ToString();
-                    DataRow dr = newdtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("name") == name);
+                    DataRow dr = newdtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("permission") == name);
                     if(dr==null)
                     {
-                        return;
+                        DataRow row = newdtb.NewRow();
+                        row["id"] = data["id"];
+                        row["permission"] = name;
+                        row["view"] = 0;
+                        row["insert"] = 0;
+                        row["update"] = 0;
+                        row["delete"] = 0;
+                        row["option"] = 0;
+                        newdtb.Rows.Add(row);
+          
                     }
 
                 }
             }
-            dataGridView2.DataSource = GroupUserControllers.getListPermissionbyId(a);
+            dataGridView2.DataSource = newdtb;
 
             button3.Enabled = true;
             button4.Enabled = true;

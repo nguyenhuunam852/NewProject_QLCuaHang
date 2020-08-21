@@ -35,7 +35,7 @@
             this.QLloaiKH = new System.Windows.Forms.ToolStripMenuItem();
             this.QLsk = new System.Windows.Forms.ToolStripMenuItem();
             this.QLlichSu = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLsetting = new System.Windows.Forms.ToolStripMenuItem();
             this.QLuser = new System.Windows.Forms.ToolStripMenuItem();
             this.QlGroupUser = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmsTag = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -59,7 +59,7 @@
             this.QLloaiKH,
             this.QLsk,
             this.QLlichSu,
-            this.settingsToolStripMenuItem,
+            this.QLsetting,
             this.QLuser,
             this.QlGroupUser});
             this.msUserControl.Location = new System.Drawing.Point(0, 0);
@@ -103,12 +103,12 @@
             this.QLlichSu.Text = "Lịch sử và thống kê";
             this.QLlichSu.Click += new System.EventHandler(this.lịchSửVàThốngKêToolStripMenuItem_Click);
             // 
-            // settingsToolStripMenuItem
+            // QLsetting
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            this.QLsetting.Name = "QLsetting";
+            this.QLsetting.Size = new System.Drawing.Size(118, 19);
+            this.QLsetting.Text = "Settings";
+            this.QLsetting.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // QLuser
             // 
@@ -186,7 +186,7 @@
         private System.Windows.Forms.TabControl TabHienThi;
         private System.Windows.Forms.ToolStripMenuItem QLkhachhang;
         private System.Windows.Forms.ToolStripMenuItem QLlichSu;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLsetting;
         private System.Windows.Forms.ToolStripMenuItem QLuser;
         private System.Windows.Forms.ToolStripMenuItem QlGroupUser;
         private System.Windows.Forms.ToolStripMenuItem QLloaiKH;

@@ -13,7 +13,14 @@ namespace WindowsFormsApp1.Controllers
         public static int getpermission(string table,string permission)
         {
             DataRow dr = User.getUser().ppermission.AsEnumerable().SingleOrDefault(r => r.Field<string>("name") == table);
-            return (int)dr[permission];
+            if (dr != null)
+            {
+                return (int)dr[permission];
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

@@ -181,6 +181,10 @@ namespace WindowsFormsApp1.Views
             {
                 QlGroupUser.Visible = false;
             }
+            if (MyPermission.getpermission("Setting", "view") == 0)
+            {
+                QLsetting.Visible = false;
+            }
 
 
         }

@@ -310,6 +310,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createat;
         private System.Windows.Forms.DataGridViewTextBoxColumn updateat;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn permission;
         private System.Windows.Forms.DataGridViewCheckBoxColumn view;
@@ -317,6 +318,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn update;
         private System.Windows.Forms.DataGridViewCheckBoxColumn delete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn option;
-        private System.Windows.Forms.Button button1;
     }
 }
