@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.Views
         {
             InitializeComponent();
         }
+        int close = 0;
         private static FrmMain frm;
         public object[] list_countDown = new object[2];
 
@@ -76,6 +77,7 @@ namespace WindowsFormsApp1.Views
         public void getSetting()
         {
             DateTime dateTime = DateTime.Now;
+            RemoveAll();
             msUserControl.Visible = false;
             if (getFirstSetting() == 1)
             {
@@ -136,6 +138,7 @@ namespace WindowsFormsApp1.Views
                     else if (dlr == DialogResult.Cancel)
                     {
                         this.Close();
+                        close = 1;
                     }
                 }
             }
@@ -200,7 +203,7 @@ namespace WindowsFormsApp1.Views
                 //ts.ForeColor = Color.White;
             }
             getSetting();
-            if (User.getUser().pid == null)
+            if (User.getUser().pid == null && close!=1)
             {
                 FrmMain_Load(sender, e);
             }
@@ -239,6 +242,14 @@ namespace WindowsFormsApp1.Views
                 
             }
         }
+        private void RemoveAll()
+        {
+            int i = 0;
+            while (TabHienThi.TabPages.Count > 0)
+            {
+                    TabHienThi.TabPages.Remove(TabHienThi.TabPages[i]);
+            }
+        }
 
         private void quảnLíKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -273,6 +284,12 @@ namespace WindowsFormsApp1.Views
         private void quảnLíUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemTabPages(ViewsUser.vu, 7, "Users");
+        }
+
+        private void dangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainControllers.DangXuat();
+            FrmMain_Load(sender, e);
         }
     }
 }

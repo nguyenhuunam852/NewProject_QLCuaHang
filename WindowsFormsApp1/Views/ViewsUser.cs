@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Controllers;
 
 namespace WindowsFormsApp1.Views
 {
@@ -52,7 +53,27 @@ namespace WindowsFormsApp1.Views
             textBox4.Text = "";
             maskedTextBox1.Clear();
         }
-
+        private void loadermisssion()
+        {
+            if (MyPermission.getpermission("User", "insert") == 0)
+            {
+                button2.Visible = false;
+            }
+            if (MyPermission.getpermission("User", "update") == 0)
+            {
+                button4.Visible = false;
+            }
+            if (MyPermission.getpermission("User", "update") == 0 && MyPermission.getpermission("User", "insert") == 0)
+            {
+                button5.Visible = false;
+                button6.Visible = false;
+            }
+            if (MyPermission.getpermission("User", "delete") == 0)
+            {
+                button3.Visible = false;
+            }
+         
+        }
         private void UserViews_Load(object sender, EventArgs e)
         {
             label10.Text = "";

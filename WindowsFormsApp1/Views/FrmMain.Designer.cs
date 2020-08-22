@@ -42,6 +42,7 @@
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabHienThi = new System.Windows.Forms.TabControl();
+            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,8 @@
             this.QLlichSu,
             this.QLsetting,
             this.QLuser,
-            this.QlGroupUser});
+            this.QlGroupUser,
+            this.dangToolStripMenuItem});
             this.msUserControl.Location = new System.Drawing.Point(0, 0);
             this.msUserControl.Name = "msUserControl";
             this.msUserControl.Size = new System.Drawing.Size(122, 749);
@@ -155,6 +157,13 @@
             this.TabHienThi.Size = new System.Drawing.Size(1121, 749);
             this.TabHienThi.TabIndex = 3;
             // 
+            // dangToolStripMenuItem
+            // 
+            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
+            this.dangToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
+            this.dangToolStripMenuItem.Text = "Đăng Xuất";
+            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,5 +200,6 @@
         private System.Windows.Forms.ToolStripMenuItem QlGroupUser;
         private System.Windows.Forms.ToolStripMenuItem QLloaiKH;
         private System.Windows.Forms.ToolStripMenuItem QLsk;
+        private System.Windows.Forms.ToolStripMenuItem dangToolStripMenuItem;
     }
 }

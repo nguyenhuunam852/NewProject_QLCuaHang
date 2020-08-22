@@ -32,9 +32,10 @@ namespace WindowsFormsApp1.Controllers
            return LichSu.CheckExistStatical(dt);
         }
 
-        internal static bool checkExist()
+     
+        internal static User DangXuat()
         {
-            throw new NotImplementedException();
+            return User.getUser().DangXuat();
         }
     }
 }

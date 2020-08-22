@@ -180,5 +180,10 @@ namespace WindowsFormsApp1.Models
             string sql = "select dbo.Login('" + username + "','" + password + "')";
             return Models.Connection.ExcuteScalar(sql);
         }
+        public User DangXuat()
+        {
+            _user = new User();
+            return _user;
+        }
     }
 }
