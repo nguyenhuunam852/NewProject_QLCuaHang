@@ -74,6 +74,7 @@ namespace WindowsFormsApp1.Views
         {
             ThemTabPages(GheViews.dv, 2 , "Quản lí ghế");
         }
+        
         public void getSetting()
         {
             DateTime dateTime = DateTime.Now;
@@ -282,7 +283,7 @@ namespace WindowsFormsApp1.Views
 
         private void quảnLíTypeKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ThemTabPages(ViewsLoaiKhachHang.vlkh, 10, "Loại khách hàng");
         }
 
         private void quảnLíGroupUSerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -298,12 +299,27 @@ namespace WindowsFormsApp1.Views
         private void dangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainControllers.DangXuat();
+            DatGheViews.fdg = null;
+            GheViews.dv = new GheViews();
+            GroupUserViews.guv = new GroupUserViews();
+            KhachHangViews.khv = new KhachHangViews();
+            PersonalInforViews.piv = new PersonalInforViews();
+            SettingViews.stv = new SettingViews() ;
+            ThongKeViews.tkv =new ThongKeViews();
+            ViewsUser.vu = new ViewsUser();
+            ViewsSucKhoe.vsk = new ViewsSucKhoe();
+            ViewsLoaiKhachHang.vlkh = new ViewsLoaiKhachHang();
             FrmMain_Load(sender, e);
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemTabPages(PersonalInforViews.piv, 8, "Personal Information");
+        }
+
+        private void QLsk_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(ViewsSucKhoe.vsk, 9, "Sức khỏe");
         }
     }
 }

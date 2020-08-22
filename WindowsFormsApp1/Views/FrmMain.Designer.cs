@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.msUserControl = new System.Windows.Forms.MenuStrip();
+            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QLGhe = new System.Windows.Forms.ToolStripMenuItem();
             this.QLkhachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.QLloaiKH = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,6 @@
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabHienThi = new System.Windows.Forms.TabControl();
-            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,13 @@
             this.msUserControl.Name = "msUserControl";
             this.msUserControl.Size = new System.Drawing.Size(122, 749);
             this.msUserControl.TabIndex = 1;
+            // 
+            // thôngTinCáNhânToolStripMenuItem
+            // 
+            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
+            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // QLGhe
             // 
@@ -99,6 +106,7 @@
             this.QLsk.Name = "QLsk";
             this.QLsk.Size = new System.Drawing.Size(118, 19);
             this.QLsk.Text = "Sức khỏe";
+            this.QLsk.Click += new System.EventHandler(this.QLsk_Click);
             // 
             // QLlichSu
             // 
@@ -165,13 +173,6 @@
             this.TabHienThi.SelectedIndex = 0;
             this.TabHienThi.Size = new System.Drawing.Size(1121, 749);
             this.TabHienThi.TabIndex = 3;
-            // 
-            // thôngTinCáNhânToolStripMenuItem
-            // 
-            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
-            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // FrmMain
             // 

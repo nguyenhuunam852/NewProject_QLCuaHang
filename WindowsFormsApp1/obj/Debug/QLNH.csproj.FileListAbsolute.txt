@@ -50,3 +50,5 @@ C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.PersonalInforViews.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.DoiMatKhau.resources
+C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ViewsSucKhoe.resources
+C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ViewsLoaiKhachHang.resources

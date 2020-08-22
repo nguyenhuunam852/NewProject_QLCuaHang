@@ -260,6 +260,12 @@
     <EmbeddedResource Include="Views\ThongKeViews.resx">
       <DependentUpon>ThongKeViews.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewsLoaiKhachHang.resx">
+      <DependentUpon>ViewsLoaiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewsSucKhoe.resx">
+      <DependentUpon>ViewsSucKhoe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ViewsThongKe\ThongKeNhanh.resx">
       <DependentUpon>ThongKeNhanh.cs</DependentUpon>
     </EmbeddedResource>

@@ -78,13 +78,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.idh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idbc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namebc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -550,25 +551,13 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idh,
+            this.createat,
             this.nameh});
             this.dataGridView3.Location = new System.Drawing.Point(345, 62);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(162, 208);
             this.dataGridView3.TabIndex = 1;
-            // 
-            // idh
-            // 
-            this.idh.DataPropertyName = "id";
-            this.idh.HeaderText = "idh";
-            this.idh.Name = "idh";
-            this.idh.Visible = false;
-            // 
-            // nameh
-            // 
-            this.nameh.DataPropertyName = "name";
-            this.nameh.HeaderText = "Tên bệnh";
-            this.nameh.Name = "nameh";
             // 
             // dataGridView2
             // 
@@ -610,6 +599,26 @@
             this.cabc.DataPropertyName = "createat";
             this.cabc.HeaderText = "Thời gian thêm vào";
             this.cabc.Name = "cabc";
+            // 
+            // idh
+            // 
+            this.idh.DataPropertyName = "id";
+            this.idh.HeaderText = "idh";
+            this.idh.Name = "idh";
+            this.idh.Visible = false;
+            // 
+            // createat
+            // 
+            this.createat.DataPropertyName = "createat";
+            this.createat.HeaderText = "createat";
+            this.createat.Name = "createat";
+            this.createat.Visible = false;
+            // 
+            // nameh
+            // 
+            this.nameh.DataPropertyName = "name";
+            this.nameh.HeaderText = "Tên bệnh";
+            this.nameh.Name = "nameh";
             // 
             // KhachHangViews
             // 
@@ -689,13 +698,14 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameh;
         private System.Windows.Forms.DataGridViewTextBoxColumn idbc;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcs;
         private System.Windows.Forms.DataGridViewTextBoxColumn namebc;
         private System.Windows.Forms.DataGridViewTextBoxColumn cabc;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameh;
     }
 }

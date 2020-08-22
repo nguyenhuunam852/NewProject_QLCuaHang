@@ -44,7 +44,7 @@ namespace WindowsFormsApp1.Models
         {
             string[] paras = new string[1] { "@id" };
             object[] values = new object[1] { this.id };
-            return Models.Connection.Excute_Sql("deleteSucKhoe", CommandType.StoredProcedure, paras, values);
+            return Models.Connection.Excute_Sql("deleteHealth", CommandType.StoredProcedure, paras, values);
         }
         public static DataSet GetData()
         {
@@ -61,5 +61,11 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.FillDataSet1("FindHealth", CommandType.StoredProcedure,ten,dtb);
         }
 
+        internal int UpdateSK()
+        {
+            string[] paras = new string[] { "@id","@name" };
+            object[] values = new object[] { id,ten };
+            return Models.Connection.Excute_Sql("updateHealth", CommandType.StoredProcedure, paras, values);
+        }
     }
 }

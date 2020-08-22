@@ -37,6 +37,12 @@ namespace WindowsFormsApp1.Models
             object[] values = new object[] { id };
             return Models.Connection.Excute_Sql("DeleteTypeCustomer", CommandType.StoredProcedure, paras, values);
         }
+        public int UpdateLoaiKH()
+        {
+            string[] paras = new string[] { "@id","@name" };
+            object[] values = new object[] { id,tenloai };
+            return Models.Connection.Excute_Sql("UpdateTypeCustomer", CommandType.StoredProcedure, paras, values);
+        }
         public static DataSet LayDSLoaiKH()
         {
             return Models.Connection.FillDataSet("GetListTypeCustomer", CommandType.StoredProcedure);

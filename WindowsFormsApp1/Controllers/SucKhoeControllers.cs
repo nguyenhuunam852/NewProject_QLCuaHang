@@ -54,5 +54,12 @@ namespace WindowsFormsApp1.Controllers
             //return kh.XoaTinhTrangBenh(idbenh);
             return 0;
         }
+
+        internal static int updateSucKhoe(string text1, string text2)
+        {
+            SucKhoe sk = new SucKhoe(text1);
+            sk.setTen(text2);
+            return sk.UpdateSK();
+        }
     }
 }

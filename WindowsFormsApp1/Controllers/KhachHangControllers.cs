@@ -104,6 +104,15 @@ namespace WindowsFormsApp1.Controllers
 
 
         }
+
+        internal static int SuaLoaiKhachHang(string text1, string text2)
+        {
+            LoaiKhachHang lkh = new LoaiKhachHang();
+            lkh.pid = text1;
+            lkh.ptenloai = text2;
+            return lkh.UpdateLoaiKH();
+        }
+
         private static string Reverse(string s)
         {
             char[] charArray = s.ToCharArray();

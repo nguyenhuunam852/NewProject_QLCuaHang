@@ -177,6 +177,7 @@ namespace WindowsFormsApp1.Views
                 if (GroupUserControllers.insertGroupUser(name, savedtb) > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    signal = "";
                     GroupUserViews_Load(sender, e);
                 }
             }
@@ -185,6 +186,7 @@ namespace WindowsFormsApp1.Views
                 if (GroupUserControllers.UpdateGroupUser(label8.Text, savedtb) > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    signal = "";
                     GroupUserViews_Load(sender, e);
                 }
             }
