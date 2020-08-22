@@ -127,6 +127,7 @@ namespace WindowsFormsApp1.Views
                         {
                             ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
                         }
+                        LoadAgain();
                         loadPermissionMs();
                         msUserControl.Visible = true;
                     }
@@ -189,6 +190,14 @@ namespace WindowsFormsApp1.Views
                 QLsetting.Visible = false;
             }
 
+
+        }
+        private void LoadAgain()
+        {
+            foreach(ToolStripMenuItem tsmi in msUserControl.Items)
+            {
+                tsmi.Visible = true;
+            }
 
         }
 

@@ -307,9 +307,9 @@ namespace WindowsFormsApp1.Views
             DataGridViewRow dtr = dataGridView2.Rows[i];
             foreach(string s in list)
             {
-                dtr.Cells[s] = new DataGridViewTextBoxCell();
-                dtr.Cells[s].Value = "-1";
                 dtr.Cells[s].ReadOnly = true;
+                dtr.Cells[s].Style.ForeColor=Color.Red;
+                
                 dtr.Cells[s].Style.BackColor = Color.Red;
                 dtr.Cells[s].Style.ForeColor = Color.Red;
             }
