@@ -231,5 +231,16 @@ namespace WindowsFormsApp1.Views
                 MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau dmk = new DoiMatKhau(label10.Text);
+            DialogResult dlr = dmk.ShowDialog();
+            if (dlr == DialogResult.OK)
+            {
+                MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
+        }
     }
 }

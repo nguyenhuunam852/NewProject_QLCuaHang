@@ -43,6 +43,17 @@ namespace WindowsFormsApp1.Controllers
             user.pgt = gt;
             return user.insertuser();
         }
+
+        internal static int DoiMatKhau(string id,string text1, string text2)
+        {
+            return User.DoiMatKhau(id,text1, text2);
+        }
+
+        internal static int DoiMatKhau(string id, string text)
+        {
+            return User.DoiMatKhau(id, text);
+        }
+
         private static string Reverse(string s)
         {
             char[] charArray = s.ToCharArray();

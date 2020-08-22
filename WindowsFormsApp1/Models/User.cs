@@ -60,6 +60,21 @@ namespace WindowsFormsApp1.Models
             set { dc = value; }
         }
         private string ns;
+
+        public static int DoiMatKhau(string text1, string text2, string text21)
+        {
+            string[] paras = new string[] { "@id","@mkc","@mkm" };
+            object[] values = new object[] { text1,text2,text21 };
+            return Models.Connection.Excute_Sql("DoiMatKhau", System.Data.CommandType.StoredProcedure, paras, values);
+        }
+
+        internal static int DoiMatKhau(string id, string text)
+        {
+            string[] paras = new string[] { "@id", "@mkm" };
+            object[] values = new object[] { id, text };
+            return Models.Connection.Excute_Sql("DoiMatKhau2", System.Data.CommandType.StoredProcedure, paras, values);
+        }
+
         public string pns
         {
             get { return ns; }

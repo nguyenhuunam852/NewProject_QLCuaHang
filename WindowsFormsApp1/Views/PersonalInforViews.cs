@@ -107,5 +107,16 @@ namespace WindowsFormsApp1.Views
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau dmk = new DoiMatKhau();
+            DialogResult dlr = dmk.ShowDialog();
+            if(dlr==DialogResult.OK)
+            {
+                MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        
+        }
     }
 }
