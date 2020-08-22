@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.Views
         {
             InitializeComponent();
         }
-  
+        int sig = 1;
         public static GroupUserViews guv = new GroupUserViews();
         DataTable dtb = new DataTable();
         DataTable savedtb = new DataTable();
@@ -26,6 +26,8 @@ namespace WindowsFormsApp1.Views
         string signal = "";
         private void GroupUserViews_Load(object sender, EventArgs e)
         {
+            listpermission = GroupUserControllers.getlistpermisson();
+            loadPermission();
             dtb = new DataTable();
             savedtb = new DataTable();
 
@@ -40,8 +42,37 @@ namespace WindowsFormsApp1.Views
             dataGridView2.Enabled = false;
             DataBinding();
         }
+        private void loadPermission()
+        {
+            if (MyPermission.getpermission("Permission", "view") == 0)
+            {
+                dataGridView2.Visible = false;
+            }
+            if (MyPermission.getpermission("Permission", "update") == 0)
+            {
+                sig = 0;
+            }
+            if (MyPermission.getpermission("Groupuser", "insert") == 0)
+            {
+                button2.Visible = false;
+            }
+            if (MyPermission.getpermission("Groupuser", "update") == 0)
+            {
+                button4.Visible = false;
+            }
+            if (MyPermission.getpermission("Groupuser", "delete") == 0)
+            {
+                button3.Visible = false;
+            }
+            if (MyPermission.getpermission("Groupuser", "update") == 0 && MyPermission.getpermission("Groupuser", "insert") == 0)
+            {
+                button5.Visible = false;
+                button1.Visible = false;
+            }
+        }
         private void loadDatatable()
         {
+            dtb = new DataTable();
             dtb.Columns.Add("id", typeof(System.Int32));
             dtb.Columns.Add("permission", typeof(String));
             dtb.Columns.Add("view", typeof(System.Int32));
@@ -49,12 +80,23 @@ namespace WindowsFormsApp1.Views
             dtb.Columns.Add("update", typeof(System.Int32));
             dtb.Columns.Add("delete", typeof(System.Int32));
             dtb.Columns.Add("option", typeof(System.Int32));
+            foreach(DataRow data in listpermission.Rows)
+            {
+                DataRow dataRow = dtb.NewRow();
+                dataRow["id"] = data["id"];
+                dataRow["permission"] = data["name"];
+                dataRow["view"] = 0;
+                dataRow["insert"] = 0;
+                dataRow["update"] = 0;
+                dataRow["delete"] = 0;
+                dataRow["option"] = 0;
+                dtb.Rows.Add(dataRow);
+            }
           
         }
         private void DataBinding()
         {
-            listpermission = GroupUserControllers.getlistpermisson();
-
+           
             label8.DataBindings.Clear();
             label8.DataBindings.Add("Text", dataGridView1.DataSource, "id", false, DataSourceUpdateMode.Never);
 
@@ -105,7 +147,19 @@ namespace WindowsFormsApp1.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-          
+            if (sig != 0)
+            {
+                dataGridView2.Enabled = true;
+                dataGridView2.ReadOnly = false;
+            }
+            loadDatatable();
+            dataGridView2.DataSource = dtb;
+            button3.Enabled = false;
+            button2.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = true;
+            button1.Enabled = true;
+            textBox1.Enabled = true;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -202,8 +256,11 @@ namespace WindowsFormsApp1.Views
         private void button4_Click(object sender, EventArgs e)
         {
             signal = "update";
-            dataGridView2.Enabled = true;
-            dataGridView2.ReadOnly = false;
+            if (sig != 0)
+            {
+                dataGridView2.Enabled = true;
+                dataGridView2.ReadOnly = false;
+            }
             button3.Enabled = false;
             button2.Enabled = false;
             button4.Enabled = false;
@@ -224,7 +281,7 @@ namespace WindowsFormsApp1.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            return;
+            GroupUserViews_Load(sender, e);
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
 using System.Drawing.Text;
+using System.Xaml.Permissions;
 
 namespace WindowsFormsApp1.Views
 {
@@ -46,6 +47,7 @@ namespace WindowsFormsApp1.Views
         }
         private void KhachHangViews_Load(object sender, EventArgs e)
         {
+            LoadPermission();
             label10.Text = "";
             label10.Visible = true;
             textBox1.Text = "";
@@ -68,6 +70,12 @@ namespace WindowsFormsApp1.Views
             dataGridView2 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView2);
             dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
         }
+
+        private void LoadPermission()
+        {
+           
+        }
+
         private void loadDataGridViewTenLoai()
         {
 

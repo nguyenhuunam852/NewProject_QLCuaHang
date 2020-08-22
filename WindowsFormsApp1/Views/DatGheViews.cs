@@ -75,7 +75,25 @@ namespace WindowsFormsApp1.Views
             txtSex.DataBindings.Clear();
             txtSex.DataBindings.Add("Text", check.Tables[0], "sex");
         }
-
+        private void loadPermission()
+        {
+            if (MyPermission.getpermission("Customer", "insert") == 0)
+            {
+                button2.Visible = false;
+            }
+            if (MyPermission.getpermission("DeskCustomer", "insert") == 0)
+            {
+                button1.Visible = false;
+            }
+            if (MyPermission.getpermission("History", "insert") == 0)
+            {
+                button8.Visible = false;
+            }
+            if (MyPermission.getpermission("Statical", "insert") == 0)
+            {
+                button3.Visible = false;
+            }
+        }
         public void themSuKien(Label lb)
         {
             lb.Click += Lb_Click;
@@ -258,6 +276,7 @@ namespace WindowsFormsApp1.Views
         }
         private void DatGheViews_Load(object sender, EventArgs e)
         {
+            loadPermission();
             label2.Visible = false;
             txtId.Visible = false;
             groupBox4.Enabled = false;
@@ -399,6 +418,7 @@ namespace WindowsFormsApp1.Views
         }
         private void textBoxbuttonRefessh()
         {
+            label12.Text = "";
             txtType.Text = "";
             txtSex.Text = "";
             textBox5.Text = "";
@@ -457,35 +477,38 @@ namespace WindowsFormsApp1.Views
         int sig = 0;
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
-            if (sig == 0)
+            if (MyPermission.getpermission("Customer", "view") == 1)
             {
-                TextBox txt = sender as TextBox;
-                a = KhachHangControllers.TimKiemTatCa(txt.Text).Tables[0];
-                if (txt.Text == "" || a.Rows.Count == 0)
+
+                if (sig == 0)
                 {
-                    comboBox1.Enabled = false;
-                    comboBox1.Text = "";
-                    txtCode.Text = "";
-                    txtTen.Text = "";
-                    txtSdt.Text = "";
-                    txtDC.Text = "";
-                    txtEmail.Text = "";
-                    txtType.Text = "";
-                    txtSex.Text = "";
-                    txtId.Text = "";
-                }
-                else
-                {
-                    comboBox1.Enabled = true;
-                    comboBox1.DataSource = a;
-                    comboBox1.DisplayMember = "hoten";
-                    comboBox1.ValueMember = "id";
-                    comboBox1.DroppedDown = true;
-                }
+                    TextBox txt = sender as TextBox;
+                    a = KhachHangControllers.TimKiemTatCa(txt.Text).Tables[0];
+                    if (txt.Text == "" || a.Rows.Count == 0)
+                    {
+                        comboBox1.Enabled = false;
+                        comboBox1.Text = "";
+                        txtCode.Text = "";
+                        txtTen.Text = "";
+                        txtSdt.Text = "";
+                        txtDC.Text = "";
+                        txtEmail.Text = "";
+                        txtType.Text = "";
+                        txtSex.Text = "";
+                        txtId.Text = "";
+                    }
+                    else
+                    {
+                        comboBox1.Enabled = true;
+                        comboBox1.DataSource = a;
+                        comboBox1.DisplayMember = "hoten";
+                        comboBox1.ValueMember = "id";
+                        comboBox1.DroppedDown = true;
+                    }
 
 
-                Cursor.Current = Cursors.Default;
+                    Cursor.Current = Cursors.Default;
+                }
             }
     
         }

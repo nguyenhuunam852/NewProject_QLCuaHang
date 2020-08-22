@@ -369,9 +369,9 @@
             // 
             this.label12.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(730, 11);
+            this.label12.Location = new System.Drawing.Point(670, 11);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 23);
+            this.label12.Size = new System.Drawing.Size(130, 23);
             this.label12.TabIndex = 3;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

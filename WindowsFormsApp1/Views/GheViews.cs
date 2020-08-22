@@ -52,6 +52,7 @@ namespace WindowsFormsApp1.Views
         }
         private void GheViews_Load(object sender, EventArgs e)
         {
+            loadPermissionMs();
             LoadDuLieuDataGridView();
             themUI();
             thietlapbandau();
@@ -94,6 +95,27 @@ namespace WindowsFormsApp1.Views
                     groupBox1.Controls.Add(createLabel(ghe));
                 }
             }
+        }
+        private void loadPermissionMs()
+        {
+            if (MyPermission.getpermission("Desk", "insert") == 0)
+            {
+                btnThem.Visible = false;
+            }
+            if (MyPermission.getpermission("Desk", "update") == 0)
+            {
+                btnSua.Visible = false;
+            }
+            if (MyPermission.getpermission("Desk", "update") == 0 && MyPermission.getpermission("Desk", "insert") == 0)
+            {
+                btnLuu.Visible = false;
+                btnHuy.Visible = false;
+            }
+            if (MyPermission.getpermission("Desk", "delete") == 0)
+            {
+                btnXoa.Visible = false;
+            }
+
         }
 
         private void Lb_MouseUp(object sender, MouseEventArgs e)
@@ -214,17 +236,7 @@ namespace WindowsFormsApp1.Views
            
         }
 
-        private string getNumber(string pass)
-        {
-            string number = "";
-            for (int i = 0; i < pass.Length; i++)
-            {
-                if (Char.IsDigit(pass[i]))
-                    number += pass[i];
-            }
-            return Convert.ToInt32(number).ToString();
-        }
-
+      
 
         //Lưu trạng thái ghế tại UI
         private void button3_Click(object sender, EventArgs e)
@@ -232,25 +244,22 @@ namespace WindowsFormsApp1.Views
          
       
         }
-
-
-
-
-
         //Các hàm sử lí đồ họa và di chuyển
         private void Lb_MouseMove(object sender, MouseEventArgs e)
         {
-            
-            Label lbl = sender as Label;
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            if (MyPermission.getpermission("Desk", "update") == 1)
             {
-                lbl.Left = e.X + lbl.Left - MouseDownLocation.X;
-                lbl.Top = e.Y + lbl.Top - MouseDownLocation.Y;
-                if (lbl.Location.X < groupBox1.Location.X + 480 && lbl.Location.Y < groupBox1.Location.Y + 642)
+                Label lbl = sender as Label;
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
                 {
-                    groupBox1.Controls.Add(lbl);
-                }
+                    lbl.Left = e.X + lbl.Left - MouseDownLocation.X;
+                    lbl.Top = e.Y + lbl.Top - MouseDownLocation.Y;
+                    if (lbl.Location.X < groupBox1.Location.X + 480 && lbl.Location.Y < groupBox1.Location.Y + 642)
+                    {
+                        groupBox1.Controls.Add(lbl);
+                    }
 
+                }
             }
         }
         private void Lb_MouseDown(object sender, MouseEventArgs e)
@@ -265,13 +274,19 @@ namespace WindowsFormsApp1.Views
                 Label lbl = sender as Label;
                 id = lbl.Name;
                 ContextMenu cm = new ContextMenu();
-                MenuItem item = cm.MenuItems.Add("Xóa ghế");
-                item.Click += Item_Click;
-                MenuItem item1 = cm.MenuItems.Add("Bảo trì");
-                item1.Click += Item1_Click;
-                MenuItem item2 = cm.MenuItems.Add("Đưa vào hoạt động");
-                item2.Click += Item2_Click;
-                lbl.ContextMenu = cm;
+                if (MyPermission.getpermission("Desk", "delete") == 1)
+                {
+                    MenuItem item = cm.MenuItems.Add("Xóa ghế");
+                    item.Click += Item_Click;
+                }
+                if (MyPermission.getpermission("Desk", "update") == 1)
+                {
+                    MenuItem item1 = cm.MenuItems.Add("Bảo trì");
+                    item1.Click += Item1_Click;
+                    MenuItem item2 = cm.MenuItems.Add("Đưa vào hoạt động");
+                    item2.Click += Item2_Click;
+                    lbl.ContextMenu = cm;
+                }
             }
         }
 
