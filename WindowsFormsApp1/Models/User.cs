@@ -73,6 +73,35 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.Excute_Sql("insertUser", System.Data.CommandType.StoredProcedure, paras, values);
         }
 
+        internal void getAllinfor()
+        {
+            string[] paras = new string[] { "@id" };
+            object[] values = new object[] { id };
+            DataTable dtb = Models.Connection.FillDataSet("getUserbyid", System.Data.CommandType.StoredProcedure, paras, values).Tables[0];
+            ho = dtb.Rows[0]["lastname"].ToString();
+            ten = dtb.Rows[0]["firstname"].ToString();
+            sdt = dtb.Rows[0]["phone"].ToString();
+            email = dtb.Rows[0]["email"].ToString();
+            ns = dtb.Rows[0]["birthday"].ToString();
+            if(dtb.Rows[0]["sex"].ToString()=="Nam")
+            {
+                gt = 0;
+            }
+            if (dtb.Rows[0]["sex"].ToString() == "Nữ")
+            {
+                gt = 1;
+            }
+            else
+            {
+                gt = 2;
+            }
+
+            dc = dtb.Rows[0]["address"].ToString();
+            group = Convert.ToInt32(dtb.Rows[0]["idgroup"].ToString());
+            branch = int.Parse(getBranchid(id));
+            permission = getPermission();
+        }
+
         private int gt;
         public int pgt
         {

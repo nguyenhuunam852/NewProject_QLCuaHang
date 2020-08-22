@@ -38,11 +38,12 @@
             this.QLsetting = new System.Windows.Forms.ToolStripMenuItem();
             this.QLuser = new System.Windows.Forms.ToolStripMenuItem();
             this.QlGroupUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmsTag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabHienThi = new System.Windows.Forms.TabControl();
-            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             this.msUserControl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thôngTinCáNhânToolStripMenuItem,
             this.QLGhe,
             this.QLkhachhang,
             this.QLloaiKH,
@@ -126,6 +128,13 @@
             this.QlGroupUser.Text = "Quản lí Group User";
             this.QlGroupUser.Click += new System.EventHandler(this.quảnLíGroupUSerToolStripMenuItem_Click);
             // 
+            // dangToolStripMenuItem
+            // 
+            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
+            this.dangToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
+            this.dangToolStripMenuItem.Text = "Đăng Xuất";
+            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
+            // 
             // cntmsTag
             // 
             this.cntmsTag.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -157,12 +166,12 @@
             this.TabHienThi.Size = new System.Drawing.Size(1121, 749);
             this.TabHienThi.TabIndex = 3;
             // 
-            // dangToolStripMenuItem
+            // thôngTinCáNhânToolStripMenuItem
             // 
-            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
-            this.dangToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.dangToolStripMenuItem.Text = "Đăng Xuất";
-            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
+            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
+            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -201,5 +210,6 @@
         private System.Windows.Forms.ToolStripMenuItem QLloaiKH;
         private System.Windows.Forms.ToolStripMenuItem QLsk;
         private System.Windows.Forms.ToolStripMenuItem dangToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
     }
 }

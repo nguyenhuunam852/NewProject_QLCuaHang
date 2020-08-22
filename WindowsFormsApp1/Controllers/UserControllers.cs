@@ -54,9 +54,8 @@ namespace WindowsFormsApp1.Controllers
         {
             Models.User _user = User.getUser();
             _user.pid = _user.getId();
-            _user.pgroup = int.Parse(_user.getGroupid(_user.pid));
-            _user.pbranch = int.Parse(_user.getBranchid(_user.pid));
-            _user.ppermission = _user.getPermission();
+            _user.getAllinfor();
+           
         }
 
         internal static DataTable getData()

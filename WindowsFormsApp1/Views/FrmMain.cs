@@ -300,5 +300,10 @@ namespace WindowsFormsApp1.Views
             MainControllers.DangXuat();
             FrmMain_Load(sender, e);
         }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(PersonalInforViews.piv, 8, "Personal Information");
+        }
     }
 }
