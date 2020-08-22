@@ -24,6 +24,7 @@ namespace WindowsFormsApp1.Views
         DataTable savedtb = new DataTable();
         DataTable listpermission = new DataTable();
         string signal = "";
+        string[] listhide = new string[2] { "MyTable", "StaticalTypeCustomer" };
         private void GroupUserViews_Load(object sender, EventArgs e)
         {
             listpermission = GroupUserControllers.getlistpermisson();
@@ -38,6 +39,7 @@ namespace WindowsFormsApp1.Views
             loadDatatable();
             dataGridView2.DataSource = dtb;
             dataGridView1.DataSource = GroupUserControllers.getData().Tables[0];
+  
             label8.Visible = false;
             dataGridView2.Enabled = false;
             DataBinding();
@@ -82,15 +84,18 @@ namespace WindowsFormsApp1.Views
             dtb.Columns.Add("option", typeof(System.Int32));
             foreach(DataRow data in listpermission.Rows)
             {
-                DataRow dataRow = dtb.NewRow();
-                dataRow["id"] = data["id"];
-                dataRow["permission"] = data["name"];
-                dataRow["view"] = 0;
-                dataRow["insert"] = 0;
-                dataRow["update"] = 0;
-                dataRow["delete"] = 0;
-                dataRow["option"] = 0;
-                dtb.Rows.Add(dataRow);
+                if (listhide.Contains(data["name"].ToString()) == false)
+                {
+                    DataRow dataRow = dtb.NewRow();
+                    dataRow["id"] = data["id"];
+                    dataRow["permission"] = data["name"];
+                    dataRow["view"] = 0;
+                    dataRow["insert"] = 0;
+                    dataRow["update"] = 0;
+                    dataRow["delete"] = 0;
+                    dataRow["option"] = 0;
+                    dtb.Rows.Add(dataRow);
+                }
             }
           
         }
@@ -260,7 +265,9 @@ namespace WindowsFormsApp1.Views
             {
                 dataGridView2.Enabled = true;
                 dataGridView2.ReadOnly = false;
+                disable();
             }
+
             button3.Enabled = false;
             button2.Enabled = false;
             button4.Enabled = false;
@@ -268,6 +275,45 @@ namespace WindowsFormsApp1.Views
             button1.Enabled = true;
             textBox1.Enabled = true;
             listpermission = GroupUserControllers.getlistpermisson();
+        }
+        private void disable()
+        {
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            {
+                string a = dataGridView2.Rows[i].Cells["permission"].Value.ToString();
+
+                if (a == "History")
+                {
+                    string[] per = new string[2] { "update", "delete" };
+                    disableCell(i,per);
+                }
+
+                if (a == "Statical")
+                {
+                    string[] per = new string[2] { "update", "delete" };
+                    disableCell(i, per);
+                }
+
+                if (a == "HealCustomer")
+                {
+                    string[] per = new string[1] { "update" };
+                    disableCell(i, per);
+                }
+
+            }
+        }
+        private void disableCell(int i,string[] list)
+        {
+            DataGridViewRow dtr = dataGridView2.Rows[i];
+            foreach(string s in list)
+            {
+                dtr.Cells[s] = new DataGridViewTextBoxCell();
+                dtr.Cells[s].Value = "-1";
+                dtr.Cells[s].ReadOnly = true;
+                dtr.Cells[s].Style.BackColor = Color.Red;
+                dtr.Cells[s].Style.ForeColor = Color.Red;
+            }
+           
         }
 
         private void button3_Click(object sender, EventArgs e)

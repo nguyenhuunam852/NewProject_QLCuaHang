@@ -27,13 +27,18 @@ namespace WindowsFormsApp1.Views
         public static SettingViews stv;
         public static SettingViews getViews(int check)
         {
-   
              return new SettingViews(check);
-            
         }
-
+        private void loadPermission()
+        {
+            if (MyPermission.getpermission("Setting", "update") == 0)
+            {
+                button3.Visible = false;
+            }
+        }
         private void SettingViews_Load(object sender, EventArgs e)
         {
+            loadPermission();
             txtServerName.Enabled = false;
             txtServerName.Text = Environment.MachineName;
             txtDataBase.Text = "";

@@ -73,7 +73,50 @@ namespace WindowsFormsApp1.Views
 
         private void LoadPermission()
         {
-           
+            if (MyPermission.getpermission("Customer", "insert") == 0)
+            {
+                button2.Visible = false;
+            }
+            if (MyPermission.getpermission("Customer", "update") == 0)
+            {
+                button4.Visible = false;
+            }
+            if(MyPermission.getpermission("Customer", "update") == 0 && MyPermission.getpermission("Customer", "insert") == 0)
+            {
+                button5.Visible = false;
+                button6.Visible = false;
+            }
+            if (MyPermission.getpermission("Customer", "delete") == 0)
+            {
+                button3.Visible = false;
+            }
+            if (MyPermission.getpermission("HealCustomer", "view") == 0)
+            {
+                dataGridView2.Visible = false;
+                button7.Visible = false;
+                button8.Visible = false;
+                label2.Visible = false;
+            }
+            if (MyPermission.getpermission("HealCustomer", "insert") == 0)
+            {
+                button7.Visible = false;
+            }
+            if (MyPermission.getpermission("HealCustomer", "delete") == 0)
+            {
+                button8.Visible = false;
+            }
+            if (MyPermission.getpermission("Health", "view") == 0)
+            {
+                dataGridView3.Visible = false;
+                button7.Visible = false;
+                button8.Visible = false;
+                textBox7.Visible = false;
+                label12.Visible = false;
+            }
+            if (MyPermission.getpermission("Health", "insert") == 0)
+            {
+                button9.Visible = false;
+            }
         }
 
         private void loadDataGridViewTenLoai()

@@ -61,14 +61,25 @@ namespace WindowsFormsApp1.Views
 
         private void ThongKeViews_Load(object sender, EventArgs e)
         {
+
             TabHienThi.TabPages[1].Controls.Add(ViewsThongKe.Views.GetViews(0));
             TabHienThi.TabPages[2].Controls.Add(ViewsThongKe.Views.GetViews(1));
             TabHienThi.TabPages[3].Controls.Add(ViewsThongKe.Views.GetViews(2));
             TabHienThi.TabPages[4].Controls.Add(ViewsThongKe.Views.GetViews(3));
             TabHienThi.TabPages[0].Controls.Add(new ViewsThongKeNgay());
-        
+            if (MyPermission.getpermission("History", "view") == 1 && MyPermission.getpermission("Statical", "view")==0)
+            {
+                int i = 1;
+                while(TabHienThi.TabPages.Count!=1)
+                { 
+                    TabHienThi.TabPages.Remove(TabHienThi.TabPages[i]);
+                }
+            }
+            if (MyPermission.getpermission("History", "view") == 0 && MyPermission.getpermission("Statical", "view") == 1)
+            {
+                TabHienThi.TabPages.Remove(TabHienThi.TabPages[0]);
+            }
 
-        
         }
 
         private void button2_Click(object sender, EventArgs e)
