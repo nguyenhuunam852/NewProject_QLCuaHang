@@ -42,8 +42,16 @@ namespace WindowsFormsApp1.Models
             _serverConnection.LoginSecure = false;
             _server = new Server(_serverConnection);
         }
+        public string getstring(string a)
+        {
+            if(int.Parse(a)<10)
+            {
+                return "0" + a;
+            }
+            return a;
+        }
 
-        public void BackupDatabase()
+        public int BackupDatabase()
         {
             using (SqlConnection cn = new SqlConnection(Connection.sqlcon))
             {
@@ -51,7 +59,7 @@ namespace WindowsFormsApp1.Models
                 Server svr = new Server(svCon);
                 cn.Open();
                 cn.ChangeDatabase("master");
-                string name = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
+                string name = getstring(DateTime.Now.Day.ToString()) + getstring(DateTime.Now.Month.ToString()) + getstring(DateTime.Now.Year.ToString())+'_'+getstring(DateTime.Now.Hour.ToString())+getstring(DateTime.Now.Minute.ToString())+getstring(DateTime.Now.Second.ToString());
                 string testFolder = path;
                 string databaseName = Settings.getSettings().pdatabasename;
                 Backup backup = new Backup();
@@ -72,16 +80,17 @@ namespace WindowsFormsApp1.Models
 
                 if (!VerifyBackup(svr,name))
                 {
-                    throw new Exception("Backup could not be verified.");
+                    return 0;
                 }
                 svr = null;
                 cn.Close();
             }
+            return 1;
         }
 
         public bool VerifyBackup(Server svr,string name)
         {
-            string testFolder = @"D:\";
+            string testFolder = path;
             string databaseName = Settings.getSettings().pdatabasename;
             Restore restore = new Restore();
             restore.Action = RestoreActionType.Database;
@@ -91,7 +100,7 @@ namespace WindowsFormsApp1.Models
             restore.Database = databaseName;
             restore.PercentCompleteNotification = 10;
             //restore.PercentComplete += new PercentCompleteEventHandler(ProgressEventHandler);
-
+            AddDirectorySecurity(path);
             bool verified = restore.SqlVerify(svr);
             return verified;
         }
@@ -101,7 +110,7 @@ namespace WindowsFormsApp1.Models
             var directoryInfo = new DirectoryInfo(path);
             var directorySecurity = directoryInfo.GetAccessControl();
             
-            var fileSystemRule = new FileSystemAccessRule(@"Everyone",
+            var fileSystemRule = new FileSystemAccessRule(@"Authenticated Users",
                                                           FileSystemRights.FullControl,
                                                           InheritanceFlags.ObjectInherit |
                                                           InheritanceFlags.ContainerInherit,
@@ -112,7 +121,7 @@ namespace WindowsFormsApp1.Models
             directoryInfo.SetAccessControl(directorySecurity);
         }
 
-        public void RestoreDatabase()
+        public int RestoreDatabase(string text)
         {
             using (SqlConnection cn = new SqlConnection(Connection.sqlcon))
             {
@@ -121,11 +130,11 @@ namespace WindowsFormsApp1.Models
                 cn.Open();
                 cn.ChangeDatabase("master");
 
-                string testFolder = @"D:\";
+                string testFolder = path;
                 string databaseName = Settings.getSettings().pdatabasename;
                 Restore restore = new Restore();
                 restore.Action = RestoreActionType.Database;
-                string fileName = string.Format("{0}\\{1}.bak", testFolder, databaseName);
+                string fileName = string.Format("{0}\\{1}", testFolder, text);
                 BackupDeviceItem backupItemDevice = new BackupDeviceItem(fileName, DeviceType.File);
                 restore.Devices.AddDevice(fileName, DeviceType.File);
                 restore.Database = databaseName;
@@ -137,6 +146,7 @@ namespace WindowsFormsApp1.Models
                 svr = null;
                 cn.Close();
             }
+            return 1;
         }
 
     }

@@ -252,6 +252,18 @@ namespace WindowsFormsApp1.Views
                 
             }
         }
+        public void reload()
+        {
+            int i = 1;
+            while (TabHienThi.TabPages.Count > 1)
+            {
+                if (typePages[i] != 1)
+                {
+                    TabHienThi.TabPages.Remove(TabHienThi.TabPages[i]);
+                }
+
+            }
+        }
         private void RemoveAll()
         {
             int i = 0;
