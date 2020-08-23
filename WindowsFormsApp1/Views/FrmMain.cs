@@ -321,5 +321,10 @@ namespace WindowsFormsApp1.Views
         {
             ThemTabPages(ViewsSucKhoe.vsk, 9, "Sức khỏe");
         }
+
+        private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(BackupViews.bu,11, "Backup");
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -48,6 +49,12 @@ namespace WindowsFormsApp1.Models
             set { tgkt = value; }
         }
         public Dictionary<string, string> dic ;
+        private string instance;
+        public string pinstance
+        {
+            get { return instance; }
+            set { instance = value; }
+        }
 
         public Settings()
         {
@@ -79,7 +86,7 @@ namespace WindowsFormsApp1.Models
                     setting.dic[spl[0]] = spl[1];
                 }
             }
-           
+            setting.pinstance = GetDataSources();
             setting.pservername = setting.dic["txtServerName"];
             setting.pdatabasename = setting.dic["txtDataBase"];
             setting.pdonvi = setting.dic["txtDV"];
@@ -87,6 +94,23 @@ namespace WindowsFormsApp1.Models
             setting.ptghd = setting.dic["txtTGHD"];
             setting.ptgkt = setting.dic["txtTGKT"];
             return setting.dic;
+        }
+        private static string GetDataSources()
+        {
+            string ServerName = Environment.MachineName;
+            RegistryView registryView = Environment.Is64BitOperatingSystem ? RegistryView.Registry64 : RegistryView.Registry32;
+            using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, registryView))
+            {
+                RegistryKey instanceKey = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL", false);
+                if (instanceKey != null)
+                {
+                    foreach (var instanceName in instanceKey.GetValueNames())
+                    {
+                       return instanceName;
+                    }
+                }
+            }
+            return "";
         }
         public static void setOBject()
         {

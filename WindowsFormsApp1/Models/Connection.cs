@@ -15,18 +15,18 @@ namespace WindowsFormsApp1.Models
 {
     class Connection
     {
-        public static string sqlcon = @"Data Source="+Settings.getSettings().pservername+"\\SQLEXPRESS;Initial Catalog="+Settings.getSettings().pdatabasename+";Integrated Security=True";
+        public static string sqlcon = @"Data Source="+Settings.getSettings().pservername+"\\"+Settings.getSettings().pinstance+";Initial Catalog="+Settings.getSettings().pdatabasename+";Integrated Security=True";
         public static SqlConnection Getconnection()
         {
             SqlConnection con = new SqlConnection(sqlcon);
             return con;
         }
-        public static void LoadRegKey()
+        public static SqlConnection connectMaster()
         {
-           
+            string master = @"Data Source=" + Settings.getSettings().pservername + "\\" + Settings.getSettings().pinstance + ";Initial Catalog=master;Integrated Security=True";
+            SqlConnection con = new SqlConnection(master);
+            return con;
         }
-
-
         public static void close()
         {
             try
@@ -413,6 +413,6 @@ namespace WindowsFormsApp1.Models
             }
             return efftectRecord;
         }
-
     }
+
 }
