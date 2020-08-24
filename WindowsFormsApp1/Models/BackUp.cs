@@ -121,29 +121,38 @@ namespace WindowsFormsApp1.Models
             directoryInfo.SetAccessControl(directorySecurity);
         }
 
-        public int RestoreDatabase(string text)
+        public int RestoreDatabase(string text, string text1, string text2)
         {
-            using (SqlConnection cn = new SqlConnection(Connection.master))
+            using (SqlConnection cn = new SqlConnection(Connection.server))
             {
                 ServerConnection svCon = new ServerConnection(cn);
-                Server svr = new Server(svCon);
+                Server srv = new Server(svCon);
                 cn.Open();
                 cn.ChangeDatabase("master");
 
                 string testFolder = path;
-                string databaseName = Settings.getSettings().pdatabasename;
-                Restore restore = new Restore();
-                restore.Action = RestoreActionType.Database;
-                string fileName = string.Format("{0}\\{1}", testFolder, text);
-                BackupDeviceItem backupItemDevice = new BackupDeviceItem(fileName, DeviceType.File);
-                restore.Devices.AddDevice(fileName, DeviceType.File);
-                restore.Database = databaseName;
-                restore.ReplaceDatabase = true;
-                restore.PercentCompleteNotification = 10;
-         
-                svr.KillAllProcesses(databaseName);
-                restore.SqlRestore(svr);
-                svr = null;
+                string databaseName = text;
+                Restore res = new Restore();
+                string filePath = text2 + "\\" + text1; 
+                res.Devices.AddDevice(filePath, DeviceType.File);
+
+                RelocateFile DataFile = new RelocateFile();
+                string MDF = res.ReadFileList(srv).Rows[0][1].ToString();
+                DataFile.LogicalFileName = res.ReadFileList(srv).Rows[0][0].ToString();
+                DataFile.PhysicalFileName = srv.Databases[databaseName].FileGroups[0].Files[0].FileName;
+
+                RelocateFile LogFile = new RelocateFile();
+                string LDF = res.ReadFileList(srv).Rows[1][1].ToString();
+                LogFile.LogicalFileName = res.ReadFileList(srv).Rows[1][0].ToString();
+                LogFile.PhysicalFileName = srv.Databases[databaseName].LogFiles[0].FileName;
+
+                res.RelocateFiles.Add(DataFile);
+                res.RelocateFiles.Add(LogFile);
+
+                res.Database = databaseName;
+                res.NoRecovery = false;
+                res.ReplaceDatabase = true;
+                res.SqlRestore(srv);
                 cn.Close();
             }
             return 1;

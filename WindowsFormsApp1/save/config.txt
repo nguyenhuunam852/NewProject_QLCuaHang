@@ -1,6 +1,0 @@
-txtServerName@DESKTOP-VT4SFHD
-txtDataBase@2020
-txtDV@Người
-txtTGBD@17:00
-txtTGHD@00:30
-txtTGKT@18:00

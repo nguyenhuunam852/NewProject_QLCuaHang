@@ -41,6 +41,7 @@ namespace WindowsFormsApp1.Views
         }
         private void SettingViews_Load(object sender, EventArgs e)
         {
+
             txtServerName.Enabled = false;
             txtInstance.Enabled = false;
 
@@ -52,10 +53,18 @@ namespace WindowsFormsApp1.Views
             button5.Enabled = false;
             button6.Enabled = false;
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
             if (firstsetting == 1)
             {
                 label15.Visible = true;
                 label16.Visible = false;
+                label18.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                string path = Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\backup\\");
+                textBox1.Text = path;
             }
             else
             {
@@ -195,7 +204,89 @@ namespace WindowsFormsApp1.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
+            BackupViews.bu.defaultPath=textBox1.Text;
+
             FrmMain.getFrmMain().khoiphucdatabase();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dbd = new FolderBrowserDialog();
+            DialogResult dlr= dbd.ShowDialog();
+            if(dlr==DialogResult.OK)
+            {
+                textBox1.Text = dbd.SelectedPath;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            DialogResult dlr = sfd.ShowDialog();
+            if (dlr == DialogResult.OK)
+            {
+                
+            }
+        }
+        public void loadCombobox()
+        {
+            txtDataBase.DataSource = Settings.GetAllDatabase();
+            txtDataBase.DisplayMember = "name";
+            txtDataBase.ValueMember = "name";
+        }
+
+
+        private void txtDV_TextChanged(object sender, EventArgs e)
+        {
+            if(txtDV.Text!="")
+            {
+                label18.Visible = false;
+            }
+            else
+            {
+                label18.Visible = true;
+            }
+        }
+
+        private void label20_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtTGBD_TextChanged(object sender, EventArgs e)
+        {
+            if(txtTGBD.Text!="00:00")
+            {
+                label21.Visible = false;
+            }
+            else
+            {
+                label21.Visible = true;
+            }
+        }
+
+        private void txtTGKT_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTGKT.Text != "00:00")
+            {
+                label22.Visible = false;
+            }
+            else
+            {
+                label22.Visible = true;
+            }
+        }
+
+        private void txtTGHD_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTGHD.Text != "")
+            {
+                label20.Visible = false;
+            }
+            else
+            {
+                label20.Visible = true;
+            }
         }
     }
 }

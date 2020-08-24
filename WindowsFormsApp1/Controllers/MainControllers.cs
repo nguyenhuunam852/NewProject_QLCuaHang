@@ -20,10 +20,7 @@ namespace WindowsFormsApp1.Controllers
                 File.Create(check);
                 return 0;
             }
-            if (new FileInfo(check).Length == 0)
-            {
-                return 0;
-            }
+      
             return 1;
         }
 

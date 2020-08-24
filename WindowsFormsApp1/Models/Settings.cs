@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Controllers;
+using WindowsFormsApp1.Views;
 
 namespace WindowsFormsApp1.Models
 {
@@ -49,6 +50,31 @@ namespace WindowsFormsApp1.Models
             get { return tgkt; }
             set { tgkt = value; }
         }
+        private string username;
+        public string pusername
+        {
+            get { return username; }
+            set { username = value; }
+        }
+        private string password;
+        public string ppassword
+        {
+            get { return password; }
+            set { password = value; }
+        }
+        private string savebakfile;
+        public string psavebakfile
+        {
+            get { return savebakfile; }
+            set { savebakfile = value; }
+        }
+        private string picture;
+        public string ppicture
+        {
+            get { return picture; }
+            set { picture = value; }
+        }
+
         public Dictionary<string, string> dic ;
         private string instance;
         public string pinstance
@@ -74,27 +100,40 @@ namespace WindowsFormsApp1.Models
 
         public static Dictionary<string,string> getInformation()
         {
-            setting = getSettings();
-            setting.dic = new Dictionary<string, string>();
-            string path=SettingsControllers.getPathOfTxtFile();
-            var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+            try
             {
-                string line;
-                while ((line = streamReader.ReadLine()) != null)
+                setting = getSettings();
+                setting.dic = new Dictionary<string, string>();
+                string path = SettingsControllers.getPathOfTxtFile();
+                var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
                 {
-                    string[] spl = line.Split('@');
-                    setting.dic[spl[0]] = spl[1];
+                    string line;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        string[] spl = line.Split('@');
+
+                        setting.dic[spl[0]] = spl[1];
+                    }
                 }
+                setting.pinstance = GetDataSources();
+                setting.pservername = setting.dic["txtServerName"];
+                setting.pdatabasename = setting.dic["txtDatabase"];
+                setting.pusername = setting.dic["txtUsername"];
+                setting.ppassword = setting.dic["txtPass"];
+                setting.psavebakfile = setting.dic["txtSave"];
+                setting.ppicture = setting.dic["txtPicture"];
+                setting.pdonvi = setting.dic["txtDV"];
+                setting.ptgbd = setting.dic["txtTGBD"];
+                setting.ptghd = setting.dic["txtTGHD"];
+                setting.ptgkt = setting.dic["txtTGKT"];
+                return setting.dic;
             }
-            setting.pinstance = GetDataSources();
-            setting.pservername = setting.dic["txtServerName"];
-            setting.pdatabasename = setting.dic["txtDataBase"];
-            setting.pdonvi = setting.dic["txtDV"];
-            setting.ptgbd = setting.dic["txtTGBD"];
-            setting.ptghd = setting.dic["txtTGHD"];
-            setting.ptgkt = setting.dic["txtTGKT"];
-            return setting.dic;
+            catch 
+            {
+                FrmMain.getFrmMain().lostConnect();
+            }
+            return null;
         }
         public static string GetDataSources()
         {
