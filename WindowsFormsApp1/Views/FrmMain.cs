@@ -203,7 +203,25 @@ namespace WindowsFormsApp1.Views
                 loadAllPage();
                 FrmDangNhap.getFrom().close();
                 setting = 1;
-                ThemTabPages(SettingViews.stv, 1, "Quản lí đặt ghế");
+                SettingViews s = SettingViews.stv;
+                s.firstsetting = 1;
+                ThemTabPages(SettingViews.stv, 1, "Settings");
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+        public void khoiphucdatabase()
+        {
+            DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (dlr == DialogResult.OK)
+            {
+                FrmDangNhap.getFrom().close();
+                setting = 1;
+                BackupViews buv = BackupViews.bu;
+                buv.sig = 1;
+                ThemTabPages(buv, 1, "Backup");
             }
             else
             {

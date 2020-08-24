@@ -22,7 +22,15 @@ namespace WindowsFormsApp1.Controllers
 
         internal static DataTable getlistpermisson()
         {
-            return GroupUser.getlistPermission().Tables[0];
+            try
+            {
+                return GroupUser.getlistPermission().Tables[0];
+            }
+            catch
+            {
+                return null;
+            }
+
         }
 
         internal static DataTable getListPermissionbyId(string a)

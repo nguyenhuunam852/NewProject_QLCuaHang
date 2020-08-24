@@ -21,6 +21,7 @@ namespace WindowsFormsApp1.Views
         {
             InitializeComponent();
         }
+        public int sig = 0;
         public static BackupViews bu = new BackupViews();
         private void button1_Click(object sender, EventArgs e)
         {
@@ -39,7 +40,12 @@ namespace WindowsFormsApp1.Views
 
         private void BackupViews_Load(object sender, EventArgs e)
         {
-          
+            if(sig==1)
+            {
+                button1.Visible = false;
+                button2.Visible = true;
+                button3.Visible = true;
+            }
             textBox1.Enabled = false;
             textBox3.Visible = false;
 
@@ -102,6 +108,11 @@ namespace WindowsFormsApp1.Views
                 MessageBox.Show("Restore thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 BackupViews_Load(sender, e);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
         }
     }
 }

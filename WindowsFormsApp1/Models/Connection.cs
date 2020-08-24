@@ -15,6 +15,8 @@ namespace WindowsFormsApp1.Models
 {
     class Connection
     {
+        public static string server = @"Data Source=" + Settings.getSettings().pservername+"\\"+ Settings.getSettings().pinstance + ";UserID=";
+
         public static string master = @"Data Source=" + Settings.getSettings().pservername + "\\" + Settings.getSettings().pinstance + ";Initial Catalog=master;Integrated Security=True";
 
         public static string sqlcon = @"Data Source="+Settings.getSettings().pservername+"\\"+Settings.getSettings().pinstance+";Initial Catalog="+Settings.getSettings().pdatabasename+";Integrated Security=True";
@@ -45,8 +47,43 @@ namespace WindowsFormsApp1.Models
             }
             return ds;
         }
-     
 
+        internal static int TestDataBase(string text)
+        {
+            try
+            {
+                string server1 = server;
+                server1 = server1 + ";Initial Catalog=" + text;
+                SqlConnection sql = new SqlConnection(server1);
+                sql.Open();
+                sqlcon=server1;
+                sql.Close();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return 0;
+            }
+        }
+
+        internal static int testConnect(string usn,string passw,string dts,string ins)
+        {
+            try
+            {
+                string server1 = @"Data Source=" + dts + "\\" + ins + ";User ID=" + usn + ";Password=" + passw;
+                SqlConnection sql = new SqlConnection(server1);
+                sql.Open();
+                server = server1;
+                sql.Close();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return 0;
+            }
+        }
 
         public static DataSet FillDataSet(string strQuery, CommandType cmdtype)
         {
@@ -68,7 +105,7 @@ namespace WindowsFormsApp1.Models
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+               
                 
             }
             return ds;
@@ -109,6 +146,19 @@ namespace WindowsFormsApp1.Models
             }
             return ds;
         }
+
+        internal static DataTable GetAllDatabaseInServer()
+        {
+            DataTable dtb = new DataTable();
+            SqlConnection sql = new SqlConnection(server);
+            sql.Open();
+            SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", sql);
+            SqlDataAdapter sqlda = new SqlDataAdapter(cmd);
+            sqlda.Fill(dtb);
+            sqlda.Dispose();
+            return dtb;
+        }
+
         public static DataSet FillDataSet1(string strQuery, CommandType cmdtype, string a, DataTable b)
         {
             DataSet ds = new DataSet();
@@ -361,6 +411,7 @@ namespace WindowsFormsApp1.Models
             }
             catch {
                 FrmMain.getFrmMain().lostConnect();
+
             }
             return null;
         }

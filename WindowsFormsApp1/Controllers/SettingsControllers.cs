@@ -35,5 +35,20 @@ namespace WindowsFormsApp1.Controllers
         {
             return Settings.getSettings().dic;
         }
+
+        internal static int testConnect(string text1, string text2, string text3, string text4)
+        {
+            return Connection.testConnect(text1,text2,text3,text4);   
+        }
+
+        internal static void testConnect()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static int testConnect(string text)
+        {
+            return Connection.TestDataBase(text);
+        }
     }
 }

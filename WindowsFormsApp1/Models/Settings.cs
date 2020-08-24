@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -95,7 +96,7 @@ namespace WindowsFormsApp1.Models
             setting.ptgkt = setting.dic["txtTGKT"];
             return setting.dic;
         }
-        private static string GetDataSources()
+        public static string GetDataSources()
         {
             string ServerName = Environment.MachineName;
             RegistryView registryView = Environment.Is64BitOperatingSystem ? RegistryView.Registry64 : RegistryView.Registry32;
@@ -106,7 +107,7 @@ namespace WindowsFormsApp1.Models
                 {
                     foreach (var instanceName in instanceKey.GetValueNames())
                     {
-                       return instanceName;
+                        return instanceName;
                     }
                 }
             }
@@ -119,6 +120,11 @@ namespace WindowsFormsApp1.Models
         public void setVariable()
         {
             
+        }
+
+        internal static DataTable GetAllDatabase()
+        {
+            return Connection.GetAllDatabaseInServer();
         }
     }
 }

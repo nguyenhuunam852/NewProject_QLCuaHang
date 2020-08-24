@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using WindowsFormsApp1.Controllers;
+using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1.Views
 {
     public partial class SettingViews : UserControl
     {
         private int kt;
+       
         public SettingViews()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace WindowsFormsApp1.Views
             kt = check;
         }
         public static SettingViews stv;
+        public int firstsetting = 0;
         public static SettingViews getViews(int check)
         {
              return new SettingViews(check);
@@ -38,23 +41,39 @@ namespace WindowsFormsApp1.Views
         }
         private void SettingViews_Load(object sender, EventArgs e)
         {
-            
             txtServerName.Enabled = false;
+            txtInstance.Enabled = false;
+
             txtServerName.Text = Environment.MachineName;
+            txtInstance.Text = Settings.GetDataSources();
+            txtUsername.Text = "";
+            txtPassword.Text = "";
             txtDataBase.Text = "";
-            if(kt==1)
+            button5.Enabled = false;
+            button6.Enabled = false;
+            dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
+            if (firstsetting == 1)
             {
-                Dictionary<string, string> dic = SettingsControllers.getInformation();
-                txtDataBase.Text = dic["txtDataBase"];
-                txtServerName.Text = dic["txtServerName"];
-                txtDV.Text = dic["txtDV"];
-                txtTGBD.Text = dic["txtTGBD"];
-                txtTGHD.Text = dic["txtTGHD"];
-                txtTGKT.Text = dic["txtTGKT"];
-
+                label15.Visible = true;
+                label16.Visible = false;
             }
-
+            else
+            {
+                label15.Visible = false;
+                label16.Visible = false;
+                if (kt == 1)
+                {
+                    Dictionary<string, string> dic = SettingsControllers.getInformation();
+                    txtDataBase.Text = dic["txtDataBase"];
+                    txtServerName.Text = dic["txtServerName"];
+                    txtDV.Text = dic["txtDV"];
+                    txtTGBD.Text = dic["txtTGBD"];
+                    txtTGHD.Text = dic["txtTGHD"];
+                    txtTGKT.Text = dic["txtTGKT"];
+                }
+            }
         }
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -127,6 +146,56 @@ namespace WindowsFormsApp1.Views
         private void button1_Click(object sender, EventArgs e)
         {
             SettingViews_Load(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(SettingsControllers.testConnect(txtUsername.Text, txtPassword.Text, txtServerName.Text, txtInstance.Text)>0)
+            {
+                MessageBox.Show("thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDataBase.DataSource = Settings.GetAllDatabase();
+                txtDataBase.DisplayMember = "name";
+                txtDataBase.ValueMember= "name";
+                button5.Enabled = true;
+                button6.Enabled = true;
+                label15.Visible = false;
+                label16.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void txtDataBase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(SettingsControllers.testConnect(txtDataBase.Text)>0)
+            {
+                DataTable a = GroupUserControllers.getlistpermisson();
+                if(a==null)
+                {
+                    MessageBox.Show("Đây có vẻ không phải là database phù hợp", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dataGridView1.DataSource = a;
+                }
+            }
+            else
+            {
+                MessageBox.Show("thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FrmMain.getFrmMain().khoiphucdatabase();
         }
     }
 }
