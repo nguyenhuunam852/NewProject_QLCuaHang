@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
+using WindowsFormsApp1.Views;
 
 namespace WindowsFormsApp1.Models
 {
     class Connection
     {
+        public static string master = @"Data Source=" + Settings.getSettings().pservername + "\\" + Settings.getSettings().pinstance + ";Initial Catalog=master;Integrated Security=True";
+
         public static string sqlcon = @"Data Source="+Settings.getSettings().pservername+"\\"+Settings.getSettings().pinstance+";Initial Catalog="+Settings.getSettings().pdatabasename+";Integrated Security=True";
         public static SqlConnection Getconnection()
         {
@@ -23,22 +25,10 @@ namespace WindowsFormsApp1.Models
         }
         public static SqlConnection connectMaster()
         {
-            string master = @"Data Source=" + Settings.getSettings().pservername + "\\" + Settings.getSettings().pinstance + ";Initial Catalog=master;Integrated Security=True";
             SqlConnection con = new SqlConnection(master);
             return con;
         }
-        public static void close()
-        {
-            try
-            {
-                if (Getconnection().State == ConnectionState.Open)
-                    Getconnection().Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
+        
 
         public static DataSet FillDataSet(string sql)
         {
@@ -55,21 +45,7 @@ namespace WindowsFormsApp1.Models
             }
             return ds;
         }
-        public static DataSet FillDataSet(string sql, string table)
-        {
-            DataSet ds = new DataSet();
-            try
-            {
-                SqlDataAdapter da = new SqlDataAdapter(sql, Getconnection());
-                da.Fill(ds, table);
-                da.Dispose();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error:" + ex.Message);
-            }
-            return ds;
-        }
+     
 
 
         public static DataSet FillDataSet(string strQuery, CommandType cmdtype)
@@ -93,6 +69,7 @@ namespace WindowsFormsApp1.Models
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                
             }
             return ds;
         }
@@ -302,7 +279,7 @@ namespace WindowsFormsApp1.Models
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                FrmMain.getFrmMain().lostConnect();
             }
             return i;
         }
@@ -380,9 +357,12 @@ namespace WindowsFormsApp1.Models
                 sqlconn.Open();
                 SqlCommand cmd = new SqlCommand(stringSQL, sqlconn);
                 giaTri = cmd.ExecuteScalar().ToString();
+                return giaTri;
             }
-            catch { }
-            return giaTri;
+            catch {
+                FrmMain.getFrmMain().lostConnect();
+            }
+            return null;
         }
         public static string ExcuteScalar(string strQuery, CommandType cmdtype, string[] para, object[] values)
         {

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.msUserControl = new System.Windows.Forms.MenuStrip();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLbackUp = new System.Windows.Forms.ToolStripMenuItem();
             this.QLGhe = new System.Windows.Forms.ToolStripMenuItem();
             this.QLkhachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.QLloaiKH = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabHienThi = new System.Windows.Forms.TabControl();
-            this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
-            this.backUpToolStripMenuItem,
+            this.QLbackUp,
             this.QLGhe,
             this.QLkhachhang,
             this.QLloaiKH,
@@ -79,6 +79,13 @@
             this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
+            // 
+            // QLbackUp
+            // 
+            this.QLbackUp.Name = "QLbackUp";
+            this.QLbackUp.Size = new System.Drawing.Size(118, 19);
+            this.QLbackUp.Text = "BackUp";
+            this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
             // QLGhe
             // 
@@ -176,13 +183,6 @@
             this.TabHienThi.Size = new System.Drawing.Size(1121, 749);
             this.TabHienThi.TabIndex = 3;
             // 
-            // backUpToolStripMenuItem
-            // 
-            this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
-            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
-            this.backUpToolStripMenuItem.Text = "BackUp";
-            this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem QLsk;
         private System.Windows.Forms.ToolStripMenuItem dangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLbackUp;
     }
 }

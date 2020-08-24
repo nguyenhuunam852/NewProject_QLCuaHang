@@ -18,6 +18,20 @@ namespace WindowsFormsApp1.Views
         {
             InitializeComponent();
         }
+        public static FrmDangNhap fdn;
+        public static FrmDangNhap getFrom()
+        {
+            if (fdn == null)
+            {
+                fdn = new FrmDangNhap();
+            }
+            return fdn; 
+        }
+        public void close()
+        {
+            fdn.DialogResult = DialogResult.None;
+            fdn.Close();
+        }
         private string CreateMD5Hash(string input)
         {
             // Step 1, calculate MD5 hash from input
@@ -39,15 +53,17 @@ namespace WindowsFormsApp1.Views
             string username = textBox1.Text;
             string password = textBox2.Text;
             string hpassword = CreateMD5Hash(password);
-            if(UserControllers.DangNhap(username, hpassword)=="1")
+            string check = UserControllers.DangNhap(username, hpassword);
+            if (check=="1")
             {
                 this.DialogResult = DialogResult.OK;
                 UserControllers.getAllInformation();
             }
-            else
+            if (check== "0")
             {
                 this.DialogResult = DialogResult.Abort;
             }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

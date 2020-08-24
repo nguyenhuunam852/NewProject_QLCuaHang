@@ -3,4 +3,4 @@ txtDataBase@2020
 txtDV@Người
 txtTGBD@17:00
 txtTGHD@00:30
-txtTGKT@19:00
+txtTGKT@18:00

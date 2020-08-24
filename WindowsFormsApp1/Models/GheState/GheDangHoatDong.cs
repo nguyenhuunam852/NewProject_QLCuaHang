@@ -35,10 +35,11 @@ namespace WindowsFormsApp1.Models.GheState
             {
                 return new GheDangphucVu(ghe);
             }
-            else
+            if(ck=="0")
             {
                 return new GheKhongPhucVu(ghe);
             }
+            return null;
         }
 
         public override int InsertHoatDong(string idkh)

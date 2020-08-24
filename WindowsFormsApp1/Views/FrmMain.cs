@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.Views
         int close = 0;
         private static FrmMain frm;
         public object[] list_countDown = new object[2];
-
+        int setting = 0;
 
         internal static List<byte> typePages = new List<byte>();
         public static FrmMain getFrmMain()
@@ -85,8 +85,7 @@ namespace WindowsFormsApp1.Views
                 SettingsControllers.getInformation();
                 if (User.getUser().pid == null)
                 {
-                    FrmDangNhap fdn = new FrmDangNhap();
-                    DialogResult dlr = fdn.ShowDialog();
+                    DialogResult dlr = FrmDangNhap.getFrom().ShowDialog();
                     if (dlr == DialogResult.OK)
                     {
                         int sig = 0;
@@ -137,7 +136,7 @@ namespace WindowsFormsApp1.Views
                         MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-                    else if (dlr == DialogResult.Cancel)
+                    else if (dlr == DialogResult.None)
                     {
                         this.Close();
                         close = 1;
@@ -190,8 +189,26 @@ namespace WindowsFormsApp1.Views
             {
                 QLsetting.Visible = false;
             }
-
-
+            if (MyPermission.getpermission("Backup", "view") == 0)
+            {
+                QLbackUp.Visible = false;
+            }
+        }
+        public void lostConnect()
+        {
+            DialogResult dlr = MessageBox.Show("không thể kết nối tới DataBase,bạn sẽ được chuyển hướng tới trang Settings", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            if (dlr == DialogResult.OK)
+            {
+                dongALL();
+                loadAllPage();
+                FrmDangNhap.getFrom().close();
+                setting = 1;
+                ThemTabPages(SettingViews.stv, 1, "Quản lí đặt ghế");
+            }
+            else
+            {
+                this.Close();
+            }
         }
         private void LoadAgain()
         {
@@ -212,8 +229,9 @@ namespace WindowsFormsApp1.Views
                 //ts.BackColor = Color.Black;
                 //ts.ForeColor = Color.White;
             }
+            setting = 0;
             getSetting();
-            if (User.getUser().pid == null && close!=1)
+            if (User.getUser().pid == null && close != 1 && setting !=1)
             {
                 FrmMain_Load(sender, e);
             }
@@ -307,20 +325,24 @@ namespace WindowsFormsApp1.Views
         {
             ThemTabPages(ViewsUser.vu, 7, "Users");
         }
-
-        private void dangToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loadAllPage()
         {
-            MainControllers.DangXuat();
             DatGheViews.fdg = null;
             GheViews.dv = new GheViews();
             GroupUserViews.guv = new GroupUserViews();
             KhachHangViews.khv = new KhachHangViews();
             PersonalInforViews.piv = new PersonalInforViews();
-            SettingViews.stv = new SettingViews() ;
-            ThongKeViews.tkv =new ThongKeViews();
+            SettingViews.stv = new SettingViews();
+            ThongKeViews.tkv = new ThongKeViews();
             ViewsUser.vu = new ViewsUser();
             ViewsSucKhoe.vsk = new ViewsSucKhoe();
             ViewsLoaiKhachHang.vlkh = new ViewsLoaiKhachHang();
+            BackupViews.bu = new BackupViews();
+        }
+        private void dangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainControllers.DangXuat();
+            loadAllPage();
             FrmMain_Load(sender, e);
         }
 

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Controllers;
 using System.IO;
+using System.Xaml.Permissions;
 
 namespace WindowsFormsApp1.Views
 {
@@ -38,6 +39,7 @@ namespace WindowsFormsApp1.Views
 
         private void BackupViews_Load(object sender, EventArgs e)
         {
+          
             textBox1.Enabled = false;
             textBox3.Visible = false;
 
@@ -56,6 +58,7 @@ namespace WindowsFormsApp1.Views
             dataGridView1.DataSource = dtb;
         }
 
+      
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -90,6 +93,7 @@ namespace WindowsFormsApp1.Views
                 ViewsUser.vu = new ViewsUser();
                 ViewsSucKhoe.vsk = new ViewsSucKhoe();
                 ViewsLoaiKhachHang.vlkh = new ViewsLoaiKhachHang();
+                BackupViews.bu = new BackupViews();
                 FrmMain.getFrmMain().reload();
                 BackupViews_Load(sender, e);
             }

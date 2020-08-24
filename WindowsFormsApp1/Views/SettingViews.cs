@@ -38,7 +38,7 @@ namespace WindowsFormsApp1.Views
         }
         private void SettingViews_Load(object sender, EventArgs e)
         {
-            loadPermission();
+            
             txtServerName.Enabled = false;
             txtServerName.Text = Environment.MachineName;
             txtDataBase.Text = "";

@@ -123,7 +123,7 @@ namespace WindowsFormsApp1.Models
 
         public int RestoreDatabase(string text)
         {
-            using (SqlConnection cn = new SqlConnection(Connection.sqlcon))
+            using (SqlConnection cn = new SqlConnection(Connection.master))
             {
                 ServerConnection svCon = new ServerConnection(cn);
                 Server svr = new Server(svCon);
