@@ -428,7 +428,9 @@ namespace WindowsFormsApp1.Models
                 }
                 return giaTri;
             }
-            catch {
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
                 FrmMain.getFrmMain().lostConnect();
 
             }

@@ -281,6 +281,12 @@
     <Compile Include="Views\ThemBenhNhanh.Designer.cs">
       <DependentUpon>ThemBenhNhanh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ThemNhanhLoaiKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ThemNhanhLoaiKH.Designer.cs">
+      <DependentUpon>ThemNhanhLoaiKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ThongKeViews.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ThemBenhNhanh.resx">
       <DependentUpon>ThemBenhNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ThemNhanhLoaiKH.resx">
+      <DependentUpon>ThemNhanhLoaiKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ThongKeViews.resx">
       <DependentUpon>ThongKeViews.cs</DependentUpon>

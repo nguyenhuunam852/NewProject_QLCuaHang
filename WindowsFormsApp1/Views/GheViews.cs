@@ -207,6 +207,7 @@ namespace WindowsFormsApp1.Views
             {
                 DatGheViews.refreshGroupBox();
             }
+            GheViews_Load(sender, e);
         }
 
      
@@ -394,6 +395,7 @@ namespace WindowsFormsApp1.Views
                     groupBox3.Controls.Add(createLabel(ghe));
                     DatGheViews.refreshGroupBox();
                     txtTenGhe.Enabled = false;
+                    dataGridView1.DataSource = dts.Tables[0];
                 }
                 else
                 {

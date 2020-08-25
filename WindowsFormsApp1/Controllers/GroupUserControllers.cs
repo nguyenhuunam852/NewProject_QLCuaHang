@@ -38,9 +38,9 @@ namespace WindowsFormsApp1.Controllers
             return GroupUser.getlistPermission(a).Tables[0];
         }
 
-        internal static int UpdateGroupUser(string text, DataTable savedtb)
+        internal static int UpdateGroupUser(string text,string name, DataTable savedtb)
         {
-            return GroupUser.Update(text, savedtb);
+            return GroupUser.Update(text,name, savedtb);
         }
 
         internal static int deleteGrouUser(string a)

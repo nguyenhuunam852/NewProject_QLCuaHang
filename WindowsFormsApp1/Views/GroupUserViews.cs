@@ -165,6 +165,7 @@ namespace WindowsFormsApp1.Views
             button5.Enabled = true;
             button1.Enabled = true;
             textBox1.Enabled = true;
+            signal = "insert";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -174,7 +175,7 @@ namespace WindowsFormsApp1.Views
             loadSaveData();
             if (signal == "insert")
             {
-                if (GroupUserControllers.insertGroupUser(name, savedtb) > 0)
+                if (GroupUserControllers.insertGroupUser(name,savedtb) > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     signal = "";
@@ -183,7 +184,7 @@ namespace WindowsFormsApp1.Views
             }
             if (signal == "update")
             {
-                if (GroupUserControllers.UpdateGroupUser(label8.Text, savedtb) > 0)
+                if (GroupUserControllers.UpdateGroupUser(label8.Text,textBox1.Text, savedtb) > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     signal = "";
@@ -230,34 +231,7 @@ namespace WindowsFormsApp1.Views
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string a=label8.Text;
-            DataTable newdtb = GroupUserControllers.getListPermissionbyId(a);
-            if(listpermission.Rows.Count>newdtb.Rows.Count)
-            {
-                foreach(DataRow data in listpermission.Rows)
-                {
-                    string name = data["name"].ToString();
-                    DataRow dr = newdtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("permission") == name);
-                    if(dr==null)
-                    {
-                        DataRow row = newdtb.NewRow();
-                        row["id"] = data["id"];
-                        row["permission"] = name;
-                        row["view"] = 0;
-                        row["insert"] = 0;
-                        row["update"] = 0;
-                        row["delete"] = 0;
-                        row["option"] = 0;
-                        newdtb.Rows.Add(row);
           
-                    }
-
-                }
-            }
-            dataGridView2.DataSource = newdtb;
-
-            button3.Enabled = true;
-            button4.Enabled = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -323,13 +297,56 @@ namespace WindowsFormsApp1.Views
             string a = label8.Text;
             if(GroupUserControllers.deleteGrouUser(a)>0)
             {
-
+                MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GroupUserViews_Load(sender, e);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             GroupUserViews_Load(sender, e);
+        }
+
+        private void label8_TextChanged(object sender, EventArgs e)
+        {
+            string a = label8.Text;
+            if (a != "id")
+            {
+                button4.Enabled = true;
+                button3.Enabled = true;
+                DataTable newdtb = GroupUserControllers.getListPermissionbyId(a);
+                if (listpermission.Rows.Count > newdtb.Rows.Count)
+                {
+                    foreach (DataRow data in listpermission.Rows)
+                    {
+                        string name = data["name"].ToString();
+                        DataRow dr = newdtb.AsEnumerable().SingleOrDefault(r => r.Field<string>("permission") == name);
+                        if (dr == null)
+                        {
+                            DataRow row = newdtb.NewRow();
+                            row["id"] = data["id"];
+                            row["permission"] = name;
+                            row["view"] = 0;
+                            row["insert"] = 0;
+                            row["update"] = 0;
+                            row["delete"] = 0;
+                            row["option"] = 0;
+                            newdtb.Rows.Add(row);
+
+                        }
+
+                    }
+                }
+                dataGridView2.DataSource = newdtb;
+
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

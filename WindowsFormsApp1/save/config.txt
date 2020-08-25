@@ -1,10 +1,10 @@
-txtServerName@DESKTOP-VT4SFHD
+txtServerName@NAM-PC
 txtDataBase@mydtb
-txtDV@asg
-txtTGBD@17:00
+txtDV@Nguoi
+txtTGBD@16:00
 txtTGHD@00:30
 txtTGKT@18:00
 txtUsername@sa
 txtPass@123456
-txtSave@C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\backup\
+txtSave@C:\New folder
 txtPicture@(dev)

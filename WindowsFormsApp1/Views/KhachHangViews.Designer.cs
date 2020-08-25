@@ -86,6 +86,7 @@
             this.idcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namebc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -96,6 +97,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button10);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.comboBox2);
@@ -237,7 +239,6 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Culture = new System.Globalization.CultureInfo("vi-VN");
             this.maskedTextBox1.Location = new System.Drawing.Point(269, 98);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
@@ -620,6 +621,16 @@
             this.cabc.HeaderText = "Thời gian thêm vào";
             this.cabc.Name = "cabc";
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(25, 229);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(156, 23);
+            this.button10.TabIndex = 11;
+            this.button10.Text = "Thêm nhanh loai KH";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // KhachHangViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -707,5 +718,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idh;
         private System.Windows.Forms.DataGridViewTextBoxColumn createat;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameh;
+        private System.Windows.Forms.Button button10;
     }
 }

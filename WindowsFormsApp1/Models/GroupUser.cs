@@ -47,12 +47,12 @@ namespace WindowsFormsApp1.Models
         {
             string[] paras = new string[] { "@idgroup" };
             object[] values = new object[] { id };
-            return Models.Connection.Excute_Sql("InsertNewGroupUser", CommandType.StoredProcedure, paras, values);
+            return Models.Connection.Excute_Sql("DeleteGroupUser", CommandType.StoredProcedure, paras, values);
         }
 
         internal static int Update(string text, DataTable savedtb)
         {
-            string[] paras = new string[] { "@idgroup", "@table" };
+            string[] paras = new string[] { "@idgroup", "@table","@name" };
             object[] values = new object[] { text, savedtb };
             return Models.Connection.Excute_Sql("UpdateGroupUser", CommandType.StoredProcedure, paras, values);
         }

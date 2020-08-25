@@ -214,7 +214,13 @@ namespace WindowsFormsApp1.Views
             {
                 gt = 0;
             }
+            if(comboBox1.SelectedValue==null)
+            {
+                MessageBox.Show("Them loai khach hang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             string idlkh = comboBox1.SelectedValue.ToString();
+            
             if (action == "insert")
             {
                 int check = Controllers.KhachHangControllers.insertKhachHang(id, ten, sdt, email, dc, ns,idlkh,gt,pdtb);
@@ -408,6 +414,20 @@ namespace WindowsFormsApp1.Views
             TextBox tb = sender as TextBox;
             dataGridView3.DataSource = Controllers.SucKhoeControllers.timkiem(tb.Text,pdtb).Tables[0];
             DataBinding();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ThemNhanhLoaiKH tn = new ThemNhanhLoaiKH();
+            if(tn.ShowDialog()==DialogResult.OK)
+            {
+                MessageBox.Show("Thêm thanh cong", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KhachHangViews_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Thêm that bai", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         //private void button9_Click(object sender, EventArgs e)
         //{

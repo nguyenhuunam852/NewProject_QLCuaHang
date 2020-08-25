@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Globalization;
 namespace WindowsFormsApp1.Models
 {
     class LichSu
@@ -37,7 +37,8 @@ namespace WindowsFormsApp1.Models
 
         internal static int CheckExistStatical(DateTime dt)
         {
-          return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckExistStatical_func(" + User.getUser().pbranch + ",'" + dt + "')"));  
+          string format = dt.ToString("MM/dd/yyyy",CultureInfo.InvariantCulture);
+          return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckExistStatical_func(" + User.getUser().pbranch + ",'" + format + "')"));  
         }
 
         public int ptghd
@@ -56,7 +57,8 @@ namespace WindowsFormsApp1.Models
      
         public static int KTChotCa()
         {
-            return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckWorkProcess(" + User.getUser().pbranch+",'"+DateTime.Now.ToString()+"')"));
+            string format = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt", CultureInfo.InvariantCulture);
+            return int.Parse(Models.Connection.ExcuteScalar("select dbo.CheckWorkProcess(" + User.getUser().pbranch+",'"+format+"')"));
         }
 
         internal static DataSet getTempSum(DateTime dateTime)

@@ -225,7 +225,7 @@ namespace WindowsFormsApp1.Views
             if(SettingsControllers.testConnect(txtDataBase.Text)>0)
             {
                 DataTable a = GroupUserControllers.getlistpermisson();
-                if(a==null || a.Rows.Count<15)
+                if(a==null || a.Rows.Count!=12)
                 {
                     MessageBox.Show("Đây có vẻ không phải là database phù hợp", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
