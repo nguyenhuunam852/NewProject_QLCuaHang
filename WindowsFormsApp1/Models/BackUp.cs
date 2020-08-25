@@ -96,59 +96,20 @@ namespace WindowsFormsApp1.Models
             return a;
         }
 
-        public int BackupDatabase()
+        public int BackupDatabase(string text)
         {
             using (SqlConnection cn = new SqlConnection(Connection.sqlcon))
             {
-                ServerConnection svCon = new ServerConnection(cn);
-                Server svr = new Server(svCon);
-                cn.Open();
-                cn.ChangeDatabase("master");
                 string name = getstring(DateTime.Now.Day.ToString()) + getstring(DateTime.Now.Month.ToString()) + getstring(DateTime.Now.Year.ToString())+'_'+getstring(DateTime.Now.Hour.ToString())+getstring(DateTime.Now.Minute.ToString())+getstring(DateTime.Now.Second.ToString());
-                string testFolder = path;
-                string databaseName = Settings.getSettings().pdatabasename;
-                Backup backup = new Backup();
-                backup.Action = BackupActionType.Database;
-                backup.Database = databaseName;
-                backup.Incremental = false;
-                backup.Initialize = true;
-                backup.LogTruncation = BackupTruncateLogType.Truncate;
-
-                string fileName = string.Format("{0}\\{1}.bak", testFolder, name);
-                BackupDeviceItem backupItemDevice = new BackupDeviceItem(fileName, DeviceType.File);
-                backup.Devices.Add(backupItemDevice);
-                backup.PercentCompleteNotification = 10;
-               
-                AddDirectorySecurity(path);
-
-                backup.SqlBackup(svr);
-
-                if (!VerifyBackup(svr,name))
-                {
-                    return 0;
-                }
-                svr = null;
-                cn.Close();
+                cn.Open();
+                string path = text + "\\" + name+".bak";
+                AddDirectorySecurity(text);
+                string sql = "Backup database " + Settings.getSettings().pdatabasename + " to disk= N'" + path + "'";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                return cmd.ExecuteNonQuery();
             }
-            return 1;
         }
 
-        public bool VerifyBackup(Server svr,string name)
-        {
-            string testFolder = path;
-            string databaseName = Settings.getSettings().pdatabasename;
-            Restore restore = new Restore();
-            restore.Action = RestoreActionType.Database;
-            string fileName = string.Format("{0}\\{1}.bak", testFolder, name);
-            BackupDeviceItem backupItemDevice = new BackupDeviceItem(fileName, DeviceType.File);
-            restore.Devices.AddDevice(fileName, DeviceType.File);
-            restore.Database = databaseName;
-            restore.PercentCompleteNotification = 10;
-            //restore.PercentComplete += new PercentCompleteEventHandler(ProgressEventHandler);
-            AddDirectorySecurity(path);
-            bool verified = restore.SqlVerify(svr);
-            return verified;
-        }
         public static void AddDirectorySecurity(string path)
         {
 
@@ -170,37 +131,12 @@ namespace WindowsFormsApp1.Models
         {
             using (SqlConnection cn = new SqlConnection(Connection.server))
             {
-                ServerConnection svCon = new ServerConnection(cn);
-                Server srv = new Server(svCon);
                 cn.Open();
-                cn.ChangeDatabase("master");
-
-                string testFolder = path;
-                string databaseName = text;
-                Restore res = new Restore();
-                string filePath = text2 + "\\" + text1; 
-                res.Devices.AddDevice(filePath, DeviceType.File);
-
-                RelocateFile DataFile = new RelocateFile();
-                string MDF = res.ReadFileList(srv).Rows[0][1].ToString();
-                DataFile.LogicalFileName = res.ReadFileList(srv).Rows[0][0].ToString();
-                DataFile.PhysicalFileName = srv.Databases[databaseName].FileGroups[0].Files[0].FileName;
-
-                RelocateFile LogFile = new RelocateFile();
-                string LDF = res.ReadFileList(srv).Rows[1][1].ToString();
-                LogFile.LogicalFileName = res.ReadFileList(srv).Rows[1][0].ToString();
-                LogFile.PhysicalFileName = srv.Databases[databaseName].LogFiles[0].FileName;
-
-                res.RelocateFiles.Add(DataFile);
-                res.RelocateFiles.Add(LogFile);
-
-                res.Database = databaseName;
-                res.NoRecovery = false;
-                res.ReplaceDatabase = true;
-                res.SqlRestore(srv);
-                cn.Close();
+                string path = text2 + "\\" + text1;
+                string sql = "Restore database "+text+" from disk= N'"+path+"'";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                return cmd.ExecuteNonQuery();
             }
-            return 1;
         }
 
     }

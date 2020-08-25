@@ -388,6 +388,7 @@
             this.Name = "DatGheViews";
             this.Size = new System.Drawing.Size(1232, 788);
             this.Load += new System.EventHandler(this.DatGheViews_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DatGheViews_MouseMove);
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

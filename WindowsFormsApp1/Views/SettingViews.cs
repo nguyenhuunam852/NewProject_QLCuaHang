@@ -15,22 +15,22 @@ namespace WindowsFormsApp1.Views
 {
     public partial class SettingViews : UserControl
     {
-        private int kt;
+        public int kt;
        
         public SettingViews()
         {
             InitializeComponent();
         }
-        public SettingViews(int check)
-        {
-            InitializeComponent();
-            kt = check;
-        }
+        
         public static SettingViews stv;
         public int firstsetting = 0;
-        public static SettingViews getViews(int check)
+        public static SettingViews getViews()
         {
-             return new SettingViews(check);
+            if(stv==null)
+            {
+                stv = new SettingViews();
+            }
+            return stv;
         }
         private void loadPermission()
         {
@@ -55,6 +55,20 @@ namespace WindowsFormsApp1.Views
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             textBox1.Enabled = false;
             textBox2.Enabled = false;
+            if (kt == 1)
+            {
+                Dictionary<string, string> dic = SettingsControllers.getInformation();
+                txtDataBase.Text = dic["txtDataBase"];
+                txtServerName.Text = dic["txtServerName"];
+                txtDV.Text = dic["txtDV"];
+                txtTGBD.Text = dic["txtTGBD"];
+                txtTGHD.Text = dic["txtTGHD"];
+                txtTGKT.Text = dic["txtTGKT"];
+                txtUsername.Text = dic["txtUsername"];
+                txtPassword.Text = dic["txtPass"];
+                textBox1.Text = dic["txtSave"];
+                textBox2.Text = dic["txtPicture"];
+            }
             if (firstsetting == 1)
             {
                 label15.Visible = true;
@@ -65,29 +79,21 @@ namespace WindowsFormsApp1.Views
                 label22.Visible = true;
                 string path = Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\backup\\");
                 textBox1.Text = path;
+
             }
             else
             {
                 label15.Visible = false;
                 label16.Visible = false;
-                if (kt == 1)
-                {
-                    Dictionary<string, string> dic = SettingsControllers.getInformation();
-                    txtDataBase.Text = dic["txtDataBase"];
-                    txtServerName.Text = dic["txtServerName"];
-                    txtDV.Text = dic["txtDV"];
-                    txtTGBD.Text = dic["txtTGBD"];
-                    txtTGHD.Text = dic["txtTGHD"];
-                    txtTGKT.Text = dic["txtTGKT"];
-                }
             }
+          
         }
         
 
         private void button3_Click(object sender, EventArgs e)
         {
-            object[] param = new object[] { "txtServerName", "txtDataBase","txtDV","txtTGBD","txtTGHD","txtTGKT" };
-            object[] value = new object[] { txtServerName.Text, txtDataBase.Text,txtDV.Text,txtTGBD.Text,txtTGHD.Text,txtTGKT.Text };
+            object[] param = new object[] { "txtServerName", "txtDataBase","txtDV","txtTGBD","txtTGHD","txtTGKT", "txtUsername", "txtPass", "txtSave", "txtPicture" };
+            object[] value = new object[] { txtServerName.Text, txtDataBase.Text,txtDV.Text,txtTGBD.Text,txtTGHD.Text,txtTGKT.Text,txtUsername.Text,txtPassword.Text,textBox1.Text,textBox2.Text };
             if (checkFormat(txtTGBD.Text) == false && checkFormat(txtTGHD.Text) == false && checkFormat(txtTGKT.Text) == false)
             {
                 MessageBox.Show("Điền đúng Format", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -100,6 +106,7 @@ namespace WindowsFormsApp1.Views
                 return;
 
             }
+
             foreach (object obj in value)
             {
                 if((String)obj == "")
@@ -112,7 +119,7 @@ namespace WindowsFormsApp1.Views
             SettingsControllers.WriteFileTxt(param, value);
 
             MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if(kt==0)
+            if(firstsetting==1)
             {
                 FrmMain.dongALL();
                 FrmMain.getFrmMain().getSetting();

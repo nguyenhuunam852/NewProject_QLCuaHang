@@ -118,7 +118,7 @@ namespace WindowsFormsApp1.Models
                 }
                 setting.pinstance = GetDataSources();
                 setting.pservername = setting.dic["txtServerName"];
-                setting.pdatabasename = setting.dic["txtDatabase"];
+                setting.pdatabasename = setting.dic["txtDataBase"];
                 setting.pusername = setting.dic["txtUsername"];
                 setting.ppassword = setting.dic["txtPass"];
                 setting.psavebakfile = setting.dic["txtSave"];

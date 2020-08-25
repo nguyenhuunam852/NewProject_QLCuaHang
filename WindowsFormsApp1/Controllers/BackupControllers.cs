@@ -12,10 +12,10 @@ namespace WindowsFormsApp1.Controllers
 {
     class BackupControllers
     {
-        public static int backupData()
+        public static int backupData(string text1)
         {
             BackUp bu = new BackUp(); 
-            return bu.BackupDatabase();
+            return bu.BackupDatabase(text1);
         }
 
         internal static int restoreData(string text, string text1, string text2)

@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.Views
         public static BackupViews bu = new BackupViews();
         private void button1_Click(object sender, EventArgs e)
         {
-            if(BackupControllers.backupData()>0)
+            if(BackupControllers.backupData(folderBrowserDialog1.SelectedPath)>=-1)
             {
                 MessageBox.Show("Backup thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 BackupViews_Load(sender, e);
@@ -46,6 +46,7 @@ namespace WindowsFormsApp1.Views
             label6.Visible = false;
             label8.Visible = false;
             label9.Visible = false;
+            button3.Visible = false;
             if (sig==1)
             {
                 label2.Visible = true;
@@ -55,12 +56,20 @@ namespace WindowsFormsApp1.Views
             }
             textBox1.Enabled = false;
             txtFileName.Enabled = false;
-
-            folderBrowserDialog1.SelectedPath = defaultPath;
-           
+            if (defaultPath != null)
+            {
+                folderBrowserDialog1.SelectedPath = defaultPath;
+            }
+            else
+            {
+                folderBrowserDialog1.SelectedPath = Settings.getSettings().psavebakfile;
+            }
+            
            
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView1.DataSource = loadFile();
+
+
             txtFolder.Text = folderBrowserDialog1.SelectedPath;
         }
 
@@ -124,7 +133,11 @@ namespace WindowsFormsApp1.Views
         private void button2_Click(object sender, EventArgs e)
         {
             groupBox1.Enabled = true;
-           
+            if(txtDtbName.Text=="")
+            {
+                txtDtbName.Enabled = true;
+              
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -164,7 +177,7 @@ namespace WindowsFormsApp1.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (BackupControllers.restoreData(txtDtbName.Text,txtFileName.Text,txtFolder.Text) > 0)
+            if (BackupControllers.restoreData(txtDtbName.Text,txtFileName.Text,txtFolder.Text) >=-1)
             {
                 MessageBox.Show("Restore thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SettingViews.stv.loadCombobox();

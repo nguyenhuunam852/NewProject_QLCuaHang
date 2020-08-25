@@ -182,6 +182,7 @@
             this.TabHienThi.SelectedIndex = 0;
             this.TabHienThi.Size = new System.Drawing.Size(1121, 749);
             this.TabHienThi.TabIndex = 3;
+            this.TabHienThi.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabHienThi_MouseMove);
             // 
             // FrmMain
             // 
@@ -198,6 +199,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
             this.msUserControl.ResumeLayout(false);
             this.msUserControl.PerformLayout();
             this.cntmsTag.ResumeLayout(false);

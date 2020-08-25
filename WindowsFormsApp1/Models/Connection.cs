@@ -15,22 +15,15 @@ namespace WindowsFormsApp1.Models
 {
     class Connection
     {
-        public static string server = @"Data Source=" + Settings.getSettings().pservername+"\\"+ Settings.getSettings().pinstance + ";UserID=";
+        public static string server = @"Data Source=" + Settings.getSettings().pservername + "\\" + Settings.getSettings().pinstance + ";Initial Catalog=master;User ID=" + Settings.getSettings().pusername + ";Password=" + Settings.getSettings().ppassword;
 
-        public static string master = @"Data Source=" + Settings.getSettings().pservername + "\\" + Settings.getSettings().pinstance + ";Initial Catalog=master;Integrated Security=True";
-
-        public static string sqlcon = @"Data Source="+Settings.getSettings().pservername+"\\"+Settings.getSettings().pinstance+";Initial Catalog="+Settings.getSettings().pdatabasename+";Integrated Security=True";
+        public static string sqlcon = @"Data Source=" + Settings.getSettings().pservername + "\\" + Settings.getSettings().pinstance + ";Initial Catalog="+Settings.getSettings().pdatabasename+";User ID=" + Settings.getSettings().pusername + ";Password=" + Settings.getSettings().ppassword;
         public static SqlConnection Getconnection()
         {
             SqlConnection con = new SqlConnection(sqlcon);
             return con;
         }
-        public static SqlConnection connectMaster()
-        {
-            SqlConnection con = new SqlConnection(master);
-            return con;
-        }
-        
+    
 
         public static DataSet FillDataSet(string sql)
         {

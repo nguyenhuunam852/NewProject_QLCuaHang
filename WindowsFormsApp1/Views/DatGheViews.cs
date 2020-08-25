@@ -276,6 +276,7 @@ namespace WindowsFormsApp1.Views
         }
         private void DatGheViews_Load(object sender, EventArgs e)
         {
+            
             loadPermission();
             label2.Visible = false;
             txtId.Visible = false;
@@ -598,6 +599,11 @@ namespace WindowsFormsApp1.Views
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void DatGheViews_MouseMove(object sender, MouseEventArgs e)
+        {
+           
         }
     }
 }

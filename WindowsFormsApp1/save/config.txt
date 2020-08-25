@@ -1,0 +1,10 @@
+txtServerName@DESKTOP-VT4SFHD
+txtDataBase@master
+txtDV@Người
+txtTGBD@17:00
+txtTGHD@00:30
+txtTGKT@18:00
+txtUsername@sa
+txtPass@123456
+txtSave@C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\backup\
+txtPicture@(dev)

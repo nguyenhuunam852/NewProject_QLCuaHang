@@ -82,10 +82,13 @@ namespace WindowsFormsApp1.Views
             msUserControl.Visible = false;
             if (getFirstSetting() == 1)
             {
+               
                 if (SettingsControllers.getInformation() != null)
                 {
+                    SettingViews.getViews().kt = 1;
                     if (User.getUser().pid == null)
                     {
+                        FrmDangNhap.fdn = null;
                         DialogResult dlr = FrmDangNhap.getFrom().ShowDialog();
                         if (dlr == DialogResult.OK)
                         {
@@ -182,26 +185,26 @@ namespace WindowsFormsApp1.Views
             {
                 QlGroupUser.Visible = false;
             }
-            if (MyPermission.getpermission("Setting", "view") == 0)
+            if (MyPermission.getpermission("Settings", "view") == 0)
             {
                 QLsetting.Visible = false;
             }
-            if (MyPermission.getpermission("Backup", "view") == 0)
-            {
-                QLbackUp.Visible = false;
-            }
+          
         }
         public void lostConnect()
         {
             DialogResult dlr = MessageBox.Show("không thể kết nối tới DataBase,bạn sẽ được chuyển hướng tới trang Settings", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             if (dlr == DialogResult.OK)
             {
+
                 dongALL();
                 loadAllPage();
                 FrmDangNhap.getFrom().close();
+                
                 setting = 1;
-                SettingViews s = SettingViews.stv;
+                SettingViews s = SettingViews.getViews();
                 s.firstsetting = 1;
+             
                 ThemTabPages(SettingViews.stv, 1, "Settings");
             }
             else
@@ -272,7 +275,7 @@ namespace WindowsFormsApp1.Views
             int i = 0;
             while (frm.TabHienThi.TabPages.Count > 0)
             {
-                if (typePages[i] != 1)
+                if (i==0)
                 {
                     frm.TabHienThi.TabPages.Remove(frm.TabHienThi.TabPages[i]);
                     
@@ -329,7 +332,9 @@ namespace WindowsFormsApp1.Views
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(SettingViews.getViews(1), 5, "Settings");
+            SettingViews st = SettingViews.getViews();
+            st.kt = 1;
+            ThemTabPages(st, 5, "Settings");
         }
 
         private void quảnLíTypeKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -353,7 +358,7 @@ namespace WindowsFormsApp1.Views
             GroupUserViews.guv = new GroupUserViews();
             KhachHangViews.khv = new KhachHangViews();
             PersonalInforViews.piv = new PersonalInforViews();
-            SettingViews.stv = new SettingViews();
+            
             ThongKeViews.tkv = new ThongKeViews();
             ViewsUser.vu = new ViewsUser();
             ViewsSucKhoe.vsk = new ViewsSucKhoe();
@@ -380,6 +385,16 @@ namespace WindowsFormsApp1.Views
         private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThemTabPages(BackupViews.bu,11, "Backup");
+        }
+        
+        private void FrmMain_MouseMove(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void TabHienThi_MouseMove(object sender, MouseEventArgs e)
+        {
+           
         }
     }
 }
