@@ -44,6 +44,8 @@ namespace WindowsFormsApp1.Views
             txtFolder.Enabled = false;
             groupBox1.Enabled = false;
             label6.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
             if (sig==1)
             {
                 label2.Visible = true;
@@ -66,12 +68,27 @@ namespace WindowsFormsApp1.Views
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
           
-                label2.Visible = false;
-                DataGridViewRow row = new DataGridViewRow();
-                row = dataGridView1.Rows[e.RowIndex];
-                textBox1.Text = GetDateTime(row.Cells["name"].Value.ToString());
-                txtFileName.Text = row.Cells["name"].Value.ToString();
-                
+            label2.Visible = false;
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView1.Rows[e.RowIndex];
+            textBox1.Text = GetDateTime(row.Cells["name"].Value.ToString());
+            txtFileName.Text = row.Cells["name"].Value.ToString();
+            DataTable dtb= BackupControllers.getDatabaseIfExist(txtFileName.Text,txtFolder.Text);
+            string database = BackupControllers.getBase(dtb.Rows[0][1].ToString());
+            if (database != null)
+            {
+                txtDtbName.Text = database;
+                txtDtbName.Enabled = false;
+                label8.Visible = true;
+                label9.Visible = false;
+            }
+            else {
+                txtDtbName.Text = "";
+                txtDtbName.Enabled = false;
+                label8.Visible = false;
+                label9.Visible = true;
+            }
+
         }
         private string GetDateTime(string a)
         {

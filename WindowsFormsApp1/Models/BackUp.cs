@@ -35,6 +35,51 @@ namespace WindowsFormsApp1.Models
         }
 
        
+        public DataTable getDTB(string txtFileName, string txtFolder)
+        {
+            DataTable ds = new DataTable();
+            string path = txtFolder + "\\" + txtFileName;
+            SqlConnection con = new SqlConnection(Connection.server);
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "restore filelistonly from disk= N'"+path+"'";
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            return ds;
+        }
+
+        internal static string getbase(string v)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.server);
+                con.Open();
+                string sql = "SELECT b.name FROM sys.master_files a join sys.databases b on a.database_id = b.database_id where a.physical_name =N'" + v + "'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                return cmd.ExecuteScalar().ToString();
+            }
+            catch {
+                return null;
+            }
+        }
+        internal static string getbase1(string v)
+        {
+            SqlCommand cmd;
+            try
+            {
+                SqlConnection con = new SqlConnection(Connection.server);
+                con.Open();
+                string sql = "SELECT b.name FROM sys.master_files a join sys.databases b on a.database_id = b.database_id where a.physical_name =N'1'";
+                cmd = new SqlCommand(sql, con);
+                return cmd.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                return null;
+            }
+            
+        }
 
         public void Connect()
         {
