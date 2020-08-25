@@ -50,10 +50,10 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.Excute_Sql("DeleteGroupUser", CommandType.StoredProcedure, paras, values);
         }
 
-        internal static int Update(string text, DataTable savedtb)
+        internal static int Update(string text,string name, DataTable savedtb)
         {
             string[] paras = new string[] { "@idgroup", "@table","@name" };
-            object[] values = new object[] { text, savedtb };
+            object[] values = new object[] { text, savedtb,name };
             return Models.Connection.Excute_Sql("UpdateGroupUser", CommandType.StoredProcedure, paras, values);
         }
 
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1.Models
         {
             string[] paras = new string[] { "@idbranch" };
             object[] values = new object[] { User.getUser().pbranch };
-            return Models.Connection.FillDataSet("getGroupUser", CommandType.StoredProcedure, paras, values);
+            return Models.Connection.FillDataSet("getGroupUser1", CommandType.StoredProcedure, paras, values);
         }
 
         internal static int insertAdmin(int br)

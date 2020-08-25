@@ -163,6 +163,7 @@ namespace WindowsFormsApp1.Views
             {
                 ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
             }
+          
             if (MyPermission.getpermission("Desk", "view") == 0)
             {
                 QLGhe.Visible = false;
