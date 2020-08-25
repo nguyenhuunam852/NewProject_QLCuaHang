@@ -86,6 +86,7 @@ namespace WindowsFormsApp1.Views
                 if (SettingsControllers.getInformation() != null)
                 {
                     SettingViews.getViews().kt = 1;
+                    
                     if (User.getUser().pid == null)
                     {
                         FrmDangNhap.fdn = null;
@@ -222,6 +223,14 @@ namespace WindowsFormsApp1.Views
             dongALL();
             ThemTabPages(SettingViews.stv, 1, "Settings");
         }
+        public void gotoQLUser()
+        {
+            dongALL();
+            ViewsUser v = ViewsUser.vu;
+            v.firstSettings = 1;
+            ThemTabPages(ViewsUser.vu, 1, "Users");
+        }
+
         public void khoiphucdatabase()
         {
             DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);

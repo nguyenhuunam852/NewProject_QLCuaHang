@@ -48,5 +48,10 @@ namespace WindowsFormsApp1.Controllers
             GroupUser gu = new GroupUser(a);
             return gu.deleteGroupUSer();
         }
+
+        internal static int insertAdmin(int br)
+        {
+            return GroupUser.insertAdmin(br);
+        }
     }
 }

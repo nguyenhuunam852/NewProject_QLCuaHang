@@ -75,6 +75,11 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.Excute_Sql("DoiMatKhau2", System.Data.CommandType.StoredProcedure, paras, values);
         }
 
+        internal static int CountUserinBranch(int branch)
+        {
+            return int.Parse(Models.Connection.ExcuteScalar("select dbo.countUSerinBranch("+branch.ToString()+")"));
+        }
+
         public string pns
         {
             get { return ns; }

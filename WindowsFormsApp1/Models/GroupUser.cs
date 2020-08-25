@@ -69,5 +69,11 @@ namespace WindowsFormsApp1.Models
             return Models.Connection.FillDataSet("getGroupUser", CommandType.StoredProcedure, paras, values);
         }
 
+        internal static int insertAdmin(int br)
+        {
+            string[] paras = new string[] { "@idbranch" };
+            object[] values = new object[] { br };
+            return Models.Connection.Excute_Sql("insertAdmin", CommandType.StoredProcedure, paras, values);
+        }
     }
 }

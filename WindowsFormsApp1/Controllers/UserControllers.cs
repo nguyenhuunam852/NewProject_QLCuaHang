@@ -61,6 +61,11 @@ namespace WindowsFormsApp1.Controllers
             return new string(charArray);
         }
 
+        internal static int CountUserinBranch(int v)
+        {
+            return User.CountUserinBranch(v);
+        }
+
         internal static void getAllInformation()
         {
             Models.User _user = User.getUser();

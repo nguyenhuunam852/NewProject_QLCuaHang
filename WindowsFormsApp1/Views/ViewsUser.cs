@@ -19,6 +19,7 @@ namespace WindowsFormsApp1.Views
         }
         public static ViewsUser vu = new ViewsUser();
         string action = "";
+        public int firstSettings = 0;
         private void button2_Click(object sender, EventArgs e)
         {
            
@@ -74,20 +75,32 @@ namespace WindowsFormsApp1.Views
             }
          
         }
+        
         private void UserViews_Load(object sender, EventArgs e)
         {
-            label10.Text = "";
-            label10.Visible = true;
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
+            if (firstSettings == 1)
+            {
+                
+            }
+            else
+            {
+                loadermisssion();
+                
+             
+              
+            }
             maskedTextBox1.Clear();
             loadButton();
             loadDataGridView();
             loadDataGridViewTenLoai();
             DataBinding();
 
+            label10.Text = "";
+            label10.Visible = true;
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
             dataGridView1.Enabled = true;
             label10.Visible = false;
             comboBox1.Enabled = false;
@@ -174,7 +187,16 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     action = "";
-                    UserViews_Load(sender, e);
+                    if (firstSettings == 0)
+                    {
+                        UserViews_Load(sender, e);
+                    }
+                    if(firstSettings==1)
+                    {
+                        SettingViews.stv = null;
+                        FrmMain.dongALL();
+                        FrmMain.getFrmMain().getSetting();
+                    }
                 }
                 else
                 {

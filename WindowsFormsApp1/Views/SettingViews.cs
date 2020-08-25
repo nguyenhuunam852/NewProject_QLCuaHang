@@ -129,9 +129,24 @@ namespace WindowsFormsApp1.Views
             MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(firstsetting==1)
             {
-                SettingViews.stv = null;
-                FrmMain.dongALL();
-                FrmMain.getFrmMain().getSetting();
+               
+                BranchSelection bs = new BranchSelection();
+                DialogResult dlr = bs.ShowDialog();
+                if(dlr==DialogResult.OK)
+                {
+                    SettingViews.stv = null;
+                    FrmMain.dongALL();
+                    FrmMain.getFrmMain().getSetting();
+                }
+                if(dlr==DialogResult.Abort)
+                {
+                    GroupUserControllers.insertAdmin(bs.br);
+                    SettingViews.stv = null;
+                    FrmMain.dongALL();
+                    FrmMain.getFrmMain().gotoQLUser();
+                    
+                }
+
             }
             kt = 1;
             SettingViews_Load(sender, e);

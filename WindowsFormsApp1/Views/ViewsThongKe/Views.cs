@@ -265,33 +265,9 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             dataGridView1.ClearSelection();
             dataGridView1.CurrentCell=dataGridView1.Rows[save].Cells[0];
         }
-        private string getStringFm(string a)
-        {
-            int kt = int.Parse(a);
-            if (kt < 10)
-            {
-                return "0" + a;
-            }
-            else return a;
-        }
-
+   
        
-        private int getInterget(string a)
-        {
-            string b = "";
-            int val = 0;
-            for (int i = 0; i < a.Length; i++)
-            {
-                if (Char.IsDigit(a[i]))
-                    b += a[i];
-            }
-
-            if (b.Length > 0)
-                val = int.Parse(b);
-            return val;
-        }
-
-  
+       
         public List<DateTime> GetWeeks(DateTime date, DayOfWeek startOfWeek)
         {
 

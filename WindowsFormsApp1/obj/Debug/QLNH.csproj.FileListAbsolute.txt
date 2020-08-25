@@ -103,3 +103,4 @@ C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\bin\Debug\Microsoft.SqlServer.Types.xml
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\bin\Debug\Microsoft.SqlServer.WmiEnum.xml
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache
+C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.BranchSelection.resources
