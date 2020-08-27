@@ -69,7 +69,7 @@ namespace WindowsFormsApp1.Views
                 if (dlr == DialogResult.OK)
                 {
                   
-                        BackupViews.bu.defaultPath = textBox1.Text;
+                    
                         
                         FrmMain.getFrmMain().khoiphucdatabase1();
                     
