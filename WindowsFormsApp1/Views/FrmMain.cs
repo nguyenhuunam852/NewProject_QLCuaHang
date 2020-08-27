@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.Views
         private static FrmMain frm;
         public object[] list_countDown = new object[2];
         int setting = 0;
-
+        public int firstsetting = 0;
         internal static List<byte> typePages = new List<byte>();
         public static FrmMain getFrmMain()
         {

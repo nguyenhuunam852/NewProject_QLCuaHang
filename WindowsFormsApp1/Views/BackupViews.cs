@@ -194,6 +194,7 @@ namespace WindowsFormsApp1.Views
             {
                 MessageBox.Show("Restore thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SettingViews.stv.loadCombobox();
+               
                 FrmMain.getFrmMain().reload();
             }
             else

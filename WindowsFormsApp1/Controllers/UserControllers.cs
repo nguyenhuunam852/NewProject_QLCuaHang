@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Models;
-
+using WindowsFormsApp1.Views;
 namespace WindowsFormsApp1.Controllers
 {
     class UserControllers
@@ -17,6 +17,7 @@ namespace WindowsFormsApp1.Controllers
             _user.ppassword = password;
            
             return _user.DangNhap();
+           
         }
 
         internal static int insertUser(string hoten, string sdt, string email, string dc, string ns, string idluser, int gt)

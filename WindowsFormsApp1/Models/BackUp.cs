@@ -1,5 +1,5 @@
-﻿using Microsoft.SqlServer.Smo;
-using Microsoft.SqlServer.Management.Sdk.Sfc;
+﻿
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,8 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.SqlServer.Management.Common;
-using Microsoft.SqlServer.Management.Smo;
+
 
 using System.Security.AccessControl;
 using System.Security.Principal;
@@ -19,20 +18,7 @@ namespace WindowsFormsApp1.Models
     class BackUp
     {
         string path =  Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\backup\\");
-        ServerConnection _serverConnection;
-
-        private Server _server;
-        public Server Server
-        {
-            get
-            {
-                if (_server == null)
-                {
-                    Connect();
-                }
-                return _server;
-            }
-        }
+        
 
        
         public DataTable getDTB(string txtFileName, string txtFolder)
@@ -81,12 +67,7 @@ namespace WindowsFormsApp1.Models
             
         }
 
-        public void Connect()
-        {
-            _serverConnection = new ServerConnection();
-            _serverConnection.LoginSecure = false;
-            _server = new Server(_serverConnection);
-        }
+      
         public string getstring(string a)
         {
             if(int.Parse(a)<10)

@@ -63,7 +63,24 @@ namespace WindowsFormsApp1.Views
             {
                 this.DialogResult = DialogResult.Abort;
             }
-            
+            if (check == "-1")
+            {
+                DialogResult dlr = MessageBox.Show("Hiện tại không có tài khoản nào trong database hãy khôi phục ngay", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                if (dlr == DialogResult.OK)
+                {
+                    BranchSelection bs = new BranchSelection();
+                    DialogResult dlr1 = bs.ShowDialog();
+             
+                    if (dlr1 == DialogResult.Abort)
+                    {
+                        this.Hide();
+                        BackupViews.bu.defaultPath = textBox1.Text;
+                        FrmMain.getFrmMain().khoiphucdatabase();
+                       
+                    }
+                }
+   
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

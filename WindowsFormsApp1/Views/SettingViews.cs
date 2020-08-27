@@ -132,11 +132,14 @@ namespace WindowsFormsApp1.Views
                
                 BranchSelection bs = new BranchSelection();
                 DialogResult dlr = bs.ShowDialog();
+
                 if(dlr==DialogResult.OK)
                 {
                     SettingViews.stv = null;
                     FrmMain.dongALL();
+                    FrmMain.getFrmMain().firstsetting = 1;
                     FrmMain.getFrmMain().getSetting();
+                   
                 }
                 if(dlr==DialogResult.Abort)
                 {
@@ -144,7 +147,6 @@ namespace WindowsFormsApp1.Views
                     SettingViews.stv = null;
                     FrmMain.dongALL();
                     FrmMain.getFrmMain().gotoQLUser();
-                    
                 }
 
             }
