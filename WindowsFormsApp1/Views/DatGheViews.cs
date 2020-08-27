@@ -85,7 +85,7 @@ namespace WindowsFormsApp1.Views
             {
                 button1.Visible = false;
             }
-            if (MyPermission.getpermission("History", "insert") == 0)
+            if (MyPermission.getpermission("DeskCustomer", "delete") == 0)
             {
                 button8.Visible = false;
             }
@@ -101,13 +101,16 @@ namespace WindowsFormsApp1.Views
         public static List<Label> getgroupBox()
         {
             lbs = new List<Label>();
-            if (fdg.groupBox1.Controls.Count == 0)
+            if (fdg != null)
             {
-                return new List<Label>();
-            }
-            foreach (Label ctr in fdg.groupBox1.Controls)
-            {
-                lbs.Add(fdg.createLabelfrmLabel(ctr));
+                if (fdg.groupBox1.Controls.Count == 0)
+                {
+                    return new List<Label>();
+                }
+                foreach (Label ctr in fdg.groupBox1.Controls)
+                {
+                    lbs.Add(fdg.createLabelfrmLabel(ctr));
+                }
             }
             return lbs;
         }

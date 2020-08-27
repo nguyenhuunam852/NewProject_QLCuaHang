@@ -146,7 +146,7 @@ namespace WindowsFormsApp1.Views
                             MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
-                        else if (dlr == DialogResult.None)
+                        else if (dlr == DialogResult.Cancel)
                         {
                             this.Close();
                             close = 1;
