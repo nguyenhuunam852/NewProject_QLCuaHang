@@ -43,6 +43,7 @@ namespace WindowsFormsApp1.Views
             label8.Visible = false;
             dataGridView2.Enabled = false;
             DataBinding();
+            label1.Visible = false;
         }
         private void loadPermission()
         {
@@ -166,6 +167,7 @@ namespace WindowsFormsApp1.Views
             button1.Enabled = true;
             textBox1.Enabled = true;
             signal = "insert";
+            disable();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -278,6 +280,7 @@ namespace WindowsFormsApp1.Views
 
             }
         }
+        private List<DataGridViewCell> listDisable=new List<DataGridViewCell>();
         private void disableCell(int i,string[] list)
         {
             DataGridViewRow dtr = dataGridView2.Rows[i];
@@ -285,9 +288,8 @@ namespace WindowsFormsApp1.Views
             {
                 dtr.Cells[s].ReadOnly = true;
                 dtr.Cells[s].Style.ForeColor=Color.Red;
-                
-                dtr.Cells[s].Style.BackColor = Color.Red;
-                dtr.Cells[s].Style.ForeColor = Color.Red;
+                listDisable.Add(dtr.Cells[s]);
+               
             }
            
         }
@@ -347,6 +349,15 @@ namespace WindowsFormsApp1.Views
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell a = sender as DataGridViewCell;
+            if(listDisable.Contains(a))
+            {
+                label1.Visible = true;
+            }
         }
     }
 }
