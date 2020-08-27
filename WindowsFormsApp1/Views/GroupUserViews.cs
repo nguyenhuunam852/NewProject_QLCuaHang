@@ -267,7 +267,7 @@ namespace WindowsFormsApp1.Views
                 }
                 if (a == "Branch")
                 {
-                    string[] per = new string[2] { "insert","update", "delete","option" };
+                    string[] per = new string[4] { "insert","update", "delete","option" };
                     disableCell(i, per);
                 }
 

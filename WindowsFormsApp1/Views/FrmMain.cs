@@ -192,10 +192,7 @@ namespace WindowsFormsApp1.Views
             {
                 QlGroupUser.Visible = false;
             }
-            if (MyPermission.getpermission("Settings", "view") == 0)
-            {
-                QLsetting.Visible = false;
-            }
+           
           
         }
         public void lostConnect()
