@@ -17,7 +17,7 @@ namespace WindowsFormsApp1.Models
 {
     class BackUp
     {
-        string path =  Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\backup\\");
+        string path =  Directory.GetCurrentDirectory()+"\\backup";
         
 
        

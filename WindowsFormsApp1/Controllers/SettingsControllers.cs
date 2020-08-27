@@ -12,7 +12,7 @@ namespace WindowsFormsApp1.Controllers
     {
         public static string getPathOfTxtFile()
         {
-            string path = @""+Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\save\\");
+            string path = @""+Directory.GetCurrentDirectory()+"\\save\\";
             string file = "config.txt";
             string check = path + file;
             return check;
