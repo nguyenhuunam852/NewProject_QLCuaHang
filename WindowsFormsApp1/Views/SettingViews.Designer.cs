@@ -54,6 +54,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -373,6 +374,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin Server";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(255, 220);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(186, 13);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "*Bạn phải xác nhận kết nối tới Server ";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -559,6 +570,8 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id});
             this.dataGridView1.Location = new System.Drawing.Point(42, 316);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(394, 232);
@@ -574,15 +587,12 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label23
+            // id
             // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(255, 220);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(186, 13);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "*Bạn phải xác nhận kết nối tới Server ";
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
             // 
             // SettingViews
             // 
@@ -664,5 +674,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

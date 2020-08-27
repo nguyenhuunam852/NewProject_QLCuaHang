@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permission = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.view = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -52,7 +53,6 @@
             this.update = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.option = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -225,11 +225,22 @@
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(4, 251);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Quyền này không khả dụng";
+            // 
             // id1
             // 
             this.id1.DataPropertyName = "id";
             this.id1.HeaderText = "id1";
             this.id1.Name = "id1";
+            this.id1.Visible = false;
             // 
             // permission
             // 
@@ -287,16 +298,6 @@
             this.option.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.option.TrueValue = "1";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(4, 251);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Quyền này không khả dụng";
-            // 
             // GroupUserViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,13 +332,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn permission;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn view;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn insert;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn update;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn delete;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn option;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn idbranch;
@@ -345,5 +339,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updateat;
         private System.Windows.Forms.DataGridViewTextBoxColumn available;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn permission;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn view;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn insert;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn update;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn delete;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn option;
     }
 }

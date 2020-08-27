@@ -265,6 +265,11 @@ namespace WindowsFormsApp1.Views
                     string[] per = new string[2] { "update", "delete" };
                     disableCell(i,per);
                 }
+                if (a == "Branch")
+                {
+                    string[] per = new string[2] { "insert","update", "delete","option" };
+                    disableCell(i, per);
+                }
 
                 if (a == "Statical")
                 {
@@ -353,8 +358,8 @@ namespace WindowsFormsApp1.Views
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewCell a = sender as DataGridViewCell;
-            if(listDisable.Contains(a))
+          
+            if(listDisable.Contains(dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex]))
             {
                 label1.Visible = true;
             }
