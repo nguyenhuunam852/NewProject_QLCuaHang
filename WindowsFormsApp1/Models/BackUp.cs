@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.Models
             SqlConnection con = new SqlConnection(Connection.server);
             con.Open();
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "restore filelistonly from disk= N'"+path+"'";
+            cmd.CommandText = "restore filelistonly from disk= N'" + path + "'";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(ds);
@@ -56,7 +56,7 @@ namespace WindowsFormsApp1.Models
             {
                 SqlConnection con = new SqlConnection(Connection.server);
                 con.Open();
-                string sql = "SELECT b.name FROM sys.master_files a join sys.databases b on a.database_id = b.database_id where a.physical_name =N'1'";
+                string sql = "SELECT b.name FROM sys.master_files a join sys.databases b on a.database_id = b.database_id where a.physical_name =N'1' WITH REPLACE";
                 cmd = new SqlCommand(sql, con);
                 return cmd.ExecuteScalar().ToString();
             }
@@ -120,9 +120,27 @@ namespace WindowsFormsApp1.Models
             {
                 cn.Open();
                 string path = text2 + "\\" + text1;
-                string sql = "Restore database "+text+" from disk= N'"+path+"'";
+                string sql1 = "ALTER DATABASE " + text + " set offline with rollback immediate";
+                SqlCommand cmd1 = new SqlCommand(sql1, cn);
+                cmd1.ExecuteNonQuery();
+                string sql = "Restore database " + text + " from disk= N'" + path + "' WITH REPLACE";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
+                string sql2 = "ALTER DATABASE " + text + " set online";
+                SqlCommand cmd2 = new SqlCommand(sql2, cn);
+                return cmd2.ExecuteNonQuery();
+            }
+        }
+        public int RestoreDatabase1(string text, string text1, string text2)
+        {
+            using (SqlConnection cn = new SqlConnection(Connection.server))
+            {
+                cn.Open();
+                string path = text2 + "\\" + text1;
+                string sql = "Restore database " + text + " from disk= N'" + path + "'";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 return cmd.ExecuteNonQuery();
+               
             }
         }
 

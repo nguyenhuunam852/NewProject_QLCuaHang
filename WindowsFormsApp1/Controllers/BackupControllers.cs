@@ -22,6 +22,11 @@ namespace WindowsFormsApp1.Controllers
             BackUp bu = new BackUp();
             return bu.RestoreDatabase(text,text1,text2);
         }
+        internal static int restoreData1(string text, string text1, string text2)
+        {
+            BackUp bu = new BackUp();
+            return bu.RestoreDatabase1(text, text1, text2);
+        }
 
         public static DataTable getDatabaseIfExist(string txtFileName, string txtFolder)
         {

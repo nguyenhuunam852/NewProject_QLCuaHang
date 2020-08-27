@@ -68,16 +68,11 @@ namespace WindowsFormsApp1.Views
                 DialogResult dlr = MessageBox.Show("Hiện tại không có tài khoản nào trong database hãy khôi phục ngay", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 if (dlr == DialogResult.OK)
                 {
-                    BranchSelection bs = new BranchSelection();
-                    DialogResult dlr1 = bs.ShowDialog();
-             
-                    if (dlr1 == DialogResult.Abort)
-                    {
-                        this.Hide();
+                  
                         BackupViews.bu.defaultPath = textBox1.Text;
-                        FrmMain.getFrmMain().khoiphucdatabase();
-                       
-                    }
+                        
+                        FrmMain.getFrmMain().khoiphucdatabase1();
+                    
                 }
    
             }

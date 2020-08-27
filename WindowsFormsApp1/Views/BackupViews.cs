@@ -63,6 +63,7 @@ namespace WindowsFormsApp1.Views
                 button2.Visible = true;
                 button3.Visible = true;
             }
+          
             textBox1.Enabled = false;
             txtFileName.Enabled = false;
             if (defaultPath != null)
@@ -163,7 +164,7 @@ namespace WindowsFormsApp1.Views
             }
             return dtb;
         }
-
+        int s = 0;
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (GetDateTime(txtFileName.Text) != "")
@@ -174,11 +175,13 @@ namespace WindowsFormsApp1.Views
                 {
                     txtDtbName.Text = database;
                     txtDtbName.Enabled = false;
+                    s = 1;
                     label8.Visible = true;
                     label9.Visible = false;
                 }
                 else
                 {
+                    s = 2;
                     txtDtbName.Text = "";
                     txtDtbName.Enabled = false;
                     label8.Visible = false;
@@ -189,13 +192,28 @@ namespace WindowsFormsApp1.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
-            if (BackupControllers.restoreData(txtDtbName.Text,txtFileName.Text,txtFolder.Text) >=-1)
+            int ncheck=0;
+            if(s==1)
+            {
+                ncheck=BackupControllers.restoreData(txtDtbName.Text,txtFileName.Text,txtFolder.Text);
+            }
+            else
+            {
+                 ncheck=BackupControllers.restoreData1(txtDtbName.Text,txtFileName.Text,txtFolder.Text);
+            }
+            if ( ncheck>=-1)
             {
                 MessageBox.Show("Restore thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SettingViews.stv.loadCombobox();
-               
-                FrmMain.getFrmMain().reload();
+                if (sig == 2)
+                {
+                    FrmMain.getFrmMain().getSetting();
+                }
+                else
+                {
+                    SettingViews.stv.loadCombobox();
+
+                    FrmMain.getFrmMain().reload();
+                }
             }
             else
             {
@@ -228,6 +246,11 @@ namespace WindowsFormsApp1.Views
             {
                 Settings.getInformation();
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

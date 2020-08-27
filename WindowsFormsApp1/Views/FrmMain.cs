@@ -77,8 +77,10 @@ namespace WindowsFormsApp1.Views
         
         public void getSetting()
         {
+           
             DateTime dateTime = DateTime.Now;
             RemoveAll();
+            loadAllPage();
             msUserControl.Visible = false;
             if (getFirstSetting() == 1)
             {
@@ -86,7 +88,21 @@ namespace WindowsFormsApp1.Views
                 if (SettingsControllers.getInformation() != null)
                 {
                     SettingViews.getViews().kt = 1;
-                    
+                    if (firstsetting == 1)
+                    {
+                        MessageBox.Show("Đây là lần Config đầu tiên của bạn chúng tôi sẽ tiến hành Backup tại " + Settings.getSettings().psavebakfile, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (BackupControllers.backupData(Settings.getSettings().psavebakfile) >= -1)
+                        {
+                            MessageBox.Show("Backup thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            firstsetting = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Backup thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+
+                    }
                     if (User.getUser().pid == null)
                     {
                         FrmDangNhap.fdn = null;
@@ -146,7 +162,7 @@ namespace WindowsFormsApp1.Views
                             MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
-                        else if (dlr == DialogResult.Cancel)
+                        else if (dlr == DialogResult.None)
                         {
                             this.Close();
                             close = 1;
@@ -239,6 +255,23 @@ namespace WindowsFormsApp1.Views
                 BackupViews buv = BackupViews.bu;
                 buv.sig = 1;
                 
+                ThemTabPages(buv, 1, "Backup");
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+        public void khoiphucdatabase1()
+        {
+            DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (dlr == DialogResult.OK)
+            {
+                FrmDangNhap.getFrom().close();
+                setting = 1;
+                BackupViews buv = BackupViews.bu;
+                buv.sig = 2;
+                buv.defaultPath = Settings.getSettings().psavebakfile;
                 ThemTabPages(buv, 1, "Backup");
             }
             else
