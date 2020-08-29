@@ -69,6 +69,11 @@ namespace WindowsFormsApp1.Controllers
          
             return KhachHang.timTC(id);
         }
+        public static DataSet TimKiemTatCa1(string id)
+        {
+
+            return KhachHang.timTC1(id);
+        }
        
         public static int xoaKhachHang(int id)
         {
@@ -136,6 +141,13 @@ namespace WindowsFormsApp1.Controllers
         {
             KhachHang kh = new KhachHang(id);
             return kh.layThongTinKH();
+        }
+
+        internal static int khoiphucKH(string p)
+        {
+            int id = int.Parse(p);
+            KhachHang kh = new KhachHang(id);
+            return kh.KhoiPhuc();
         }
     }
 }

@@ -47,6 +47,7 @@ namespace WindowsFormsApp1.Views
         }
         private void KhachHangViews_Load(object sender, EventArgs e)
         {
+            button11.Enabled = false;
             LoadPermission();
             label10.Text = "";
             label10.Visible = true;
@@ -66,6 +67,7 @@ namespace WindowsFormsApp1.Views
             label10.Visible = false;
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
+            textBox10.Visible = false;
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView2 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView2);
             dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
@@ -80,6 +82,7 @@ namespace WindowsFormsApp1.Views
             if (MyPermission.getpermission("Customer", "update") == 0)
             {
                 button4.Visible = false;
+                button11.Visible = false;
             }
             if(MyPermission.getpermission("Customer", "update") == 0 && MyPermission.getpermission("Customer", "insert") == 0)
             {
@@ -141,6 +144,7 @@ namespace WindowsFormsApp1.Views
         private void loadDataGridView()
         {
             dataGridView1.DataSource = Controllers.KhachHangControllers.getData().Tables[0];
+
             listhealth = Controllers.KhachHangControllers.getAllBenhLi().Tables[0];
             dataGridView3.DataSource = listhealth;
         }
@@ -174,6 +178,9 @@ namespace WindowsFormsApp1.Views
             textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", false, DataSourceUpdateMode.Never);
             textBox8.DataBindings.Clear();
             textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", false, DataSourceUpdateMode.Never);
+            textBox10.DataBindings.Clear();
+            textBox10.DataBindings.Add("Text", dataGridView1.DataSource, "available", false, DataSourceUpdateMode.Never);
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -422,11 +429,40 @@ namespace WindowsFormsApp1.Views
             if(tn.ShowDialog()==DialogResult.OK)
             {
                 MessageBox.Show("Thêm thanh cong", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                KhachHangViews_Load(sender, e);
+                loadDataGridViewTenLoai();
             }
             else
             {
                 MessageBox.Show("Thêm that bai", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if(KhachHangControllers.khoiphucKH(label10.Text)>0)
+            {
+                MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBox3.Enabled = true;
+                KhachHangViews_Load(sender, e);
+            }
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox10.Text == "0")
+            {
+                button11.Enabled = true;
+                groupBox3.Enabled = false;
+            }
+            else
+            {
+                button11.Enabled = false;
+                groupBox3.Enabled = true;
             }
         }
         //private void button9_Click(object sender, EventArgs e)

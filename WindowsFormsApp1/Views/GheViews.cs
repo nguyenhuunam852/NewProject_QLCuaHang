@@ -26,6 +26,8 @@ namespace WindowsFormsApp1.Views
         private Point MouseDownLocation;
         public static GheViews dv = new GheViews();
         public DataSet dts = new DataSet();
+        public DataSet dts1 = new DataSet();
+
         static List<Label> lbs = new List<Label>();
         string signal = "insert";
 
@@ -56,6 +58,7 @@ namespace WindowsFormsApp1.Views
             LoadDuLieuDataGridView();
             themUI();
             thietlapbandau();
+            button2.Enabled = false;
         }
         //Xóa tất cả các thành phần trên Màn Hình UI
         private void reloadUI()
@@ -105,6 +108,7 @@ namespace WindowsFormsApp1.Views
             if (MyPermission.getpermission("Desk", "update") == 0)
             {
                 btnSua.Visible = false;
+                button2.Visible = false;
             }
             if (MyPermission.getpermission("Desk", "update") == 0 && MyPermission.getpermission("Desk", "insert") == 0)
             {
@@ -127,7 +131,9 @@ namespace WindowsFormsApp1.Views
         private void LoadDuLieuDataGridView()
         {
             dts = Controllers.GheControllers.LayThongTinGhe();
-            dataGridView1.DataSource = dts.Tables[0];
+            dts1 = Controllers.GheControllers.LayThongTinGheTatCaGhe();
+            dataGridView1.DataSource = dts1.Tables[0];
+            dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
         }
         private void thietlapbandau()
         {
@@ -144,6 +150,9 @@ namespace WindowsFormsApp1.Views
             cbbtrangthai.Items.Insert(0,"Hoạt động");
             cbbtrangthai.Items.Insert(1,"Bảo Trì");
             cbbtrangthai.SelectedIndex = 0;
+
+           
+
         }
 
 
@@ -207,7 +216,8 @@ namespace WindowsFormsApp1.Views
             {
                 DatGheViews.refreshGroupBox();
             }
-            GheViews_Load(sender, e);
+            LoadDuLieuDataGridView();
+           
         }
 
      
@@ -351,12 +361,12 @@ namespace WindowsFormsApp1.Views
             DialogResult dlr=MessageBox.Show("Bạn có muốn xóa không", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dlr == DialogResult.OK)
             {
-                int check = Controllers.GheControllers.XoaGhe(id);
+                int check = Controllers.GheControllers.XoaGhe(txtId.Text);
                 if (check > 0)
                 {
                     MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GheViews_Load(sender, e);
-                    DatGheViews.deleteGroupBox(id);
+                    DatGheViews.deleteGroupBox(txtId.Text);
                     return;
                 }
                 if(check==-5)
@@ -435,12 +445,12 @@ namespace WindowsFormsApp1.Views
             DialogResult dlr = MessageBox.Show("Bạn có muốn xóa không ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dlr == DialogResult.Yes)
             {
-                int check = Controllers.GheControllers.XoaGhe(id);
+                int check = Controllers.GheControllers.XoaGhe(txtId.Text);
                 if (check > 0)
                 {
                     MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GheViews_Load(sender, e);
-                    DatGheViews.deleteGroupBox(id);
+                    DatGheViews.deleteGroupBox(txtId.Text);
                     return;
                 }
                 if (check == -5)
@@ -464,6 +474,41 @@ namespace WindowsFormsApp1.Views
         private void btnHuy_Click(object sender, EventArgs e)
         {
             GheViews_Load(sender, e);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if(dataGridView1.Rows[e.RowIndex].Cells["available"].Value.ToString()=="0")
+            {
+                txtId.Text = dataGridView1.Rows[e.RowIndex].Cells["idBan"].Value.ToString();
+                button2.Enabled = true;
+                groupBox2.Enabled = false;
+            }
+            else
+            {
+                button2.Enabled = false;
+                groupBox2.Enabled = true;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(GheControllers.khoiphucGhe(txtId.Text)>0)
+            {
+                MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                groupBox2.Enabled = true;
+                object[] ghe = GheControllers.LayThongTinGhebangID(txtId.Text);
+                groupBox5.Controls.Add(createLabel(ghe));
+                DatGheViews.refreshGroupBox();
+                dataGridView1.DataSource = dts.Tables[0];
+
+            }
+            else
+            {
+                MessageBox.Show("Thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

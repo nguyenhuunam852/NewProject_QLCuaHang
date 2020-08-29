@@ -166,5 +166,19 @@ namespace WindowsFormsApp1.Models
             object[] values = new object[1] { id };
             return Models.Connection.FillDataSet("getCustomerInfor", CommandType.StoredProcedure, paras, values);
         }
+
+        internal int KhoiPhuc()
+        {
+            string[] paras = new string[1] { "@id" };
+            object[] values = new object[1] { id };
+            return Models.Connection.Excute_Sql("Restorecustomer", CommandType.StoredProcedure, paras, values);
+
+        }
+
+        internal static DataSet timTC1(string id)
+        {
+            string sql = "exec FindInfor1 N'" + id + "'," + User.getUser().pbranch;
+            return Models.Connection.FillDataSet(sql);
+        }
     }
 }

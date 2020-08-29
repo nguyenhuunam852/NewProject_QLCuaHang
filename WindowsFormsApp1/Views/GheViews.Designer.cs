@@ -46,16 +46,18 @@ namespace WindowsFormsApp1.Views
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.idBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.available = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.trinhtrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ly = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -72,6 +74,7 @@ namespace WindowsFormsApp1.Views
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Controls.Add(this.btnLuu);
             this.groupBox2.Controls.Add(this.groupBox4);
@@ -81,7 +84,7 @@ namespace WindowsFormsApp1.Views
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(828, 47);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(504, 278);
+            this.groupBox2.Size = new System.Drawing.Size(504, 343);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control";
@@ -115,14 +118,14 @@ namespace WindowsFormsApp1.Views
             this.groupBox4.Controls.Add(this.txtTenGhe);
             this.groupBox4.Location = new System.Drawing.Point(6, 134);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(245, 116);
+            this.groupBox4.Size = new System.Drawing.Size(245, 163);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin bàn";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(70, 80);
+            this.txtId.Location = new System.Drawing.Point(73, 123);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(30, 20);
             this.txtId.TabIndex = 11;
@@ -192,9 +195,9 @@ namespace WindowsFormsApp1.Views
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(306, 28);
+            this.groupBox3.Location = new System.Drawing.Point(306, 10);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(175, 197);
+            this.groupBox3.Size = new System.Drawing.Size(175, 163);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ghế được tạo";
@@ -218,6 +221,17 @@ namespace WindowsFormsApp1.Views
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(504, 242);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(638, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 38);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Tải lại";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // idBan
             // 
@@ -255,9 +269,12 @@ namespace WindowsFormsApp1.Views
             // available
             // 
             this.available.DataPropertyName = "available";
+            this.available.FalseValue = "0";
             this.available.HeaderText = "available";
             this.available.Name = "available";
-            this.available.Visible = false;
+            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.available.TrueValue = "1";
             // 
             // trinhtrang
             // 
@@ -280,21 +297,31 @@ namespace WindowsFormsApp1.Views
             this.ly.Name = "ly";
             this.ly.Visible = false;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(638, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 38);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Tải lại";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button2.Location = new System.Drawing.Point(828, 408);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(81, 33);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Khôi phục";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Location = new System.Drawing.Point(306, 174);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(175, 163);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Ghế được khôi phục";
             // 
             // GheViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -333,9 +360,11 @@ namespace WindowsFormsApp1.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn user;
         private System.Windows.Forms.DataGridViewTextBoxColumn ca;
         private System.Windows.Forms.DataGridViewTextBoxColumn ua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn available;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn available;
         private System.Windows.Forms.DataGridViewTextBoxColumn trinhtrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn LX;
         private System.Windows.Forms.DataGridViewTextBoxColumn ly;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }

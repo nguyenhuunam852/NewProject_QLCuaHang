@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Models
         {
             this.id = _id;
         }
-        private void getInfoById()
+        public void getInfoById()
         {
             DataSet dts = new DataSet();
             string[] paras = new string[1] { "@id" };
@@ -133,6 +133,21 @@ namespace WindowsFormsApp1.Models
             string[] paras = new string[1] { "@TempTable" };
             object[] values = new object[1] { dtb };
             return Models.Connection.Excute_Sql("savedesklocation", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal static DataSet layThongTinTactCaGhe()
+        {
+            string[] paras = new string[1] { "@iduser" };
+            object[] values = new object[1] { User.getUser().pbranch };
+            return Models.Connection.FillDataSet("getdeskbyuserId1", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal static int KhoiphucGhe(string p)
+        {
+            string[] paras = new string[1] { "@idghe" };
+            object[] values = new object[1] { p };
+            return Models.Connection.Excute_Sql("RestoreDesk", CommandType.StoredProcedure, paras, values);
+
         }
     } 
 }

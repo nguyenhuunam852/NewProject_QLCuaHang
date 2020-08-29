@@ -37,6 +37,14 @@ namespace WindowsFormsApp1.Controllers
             Models.Ghe ghe = new Models.Ghe(id);
             return ghe.getStateInfo().duavaohoatdong();
         }
+        public static object[] LayThongTinGhebangID(string id)
+        {
+            Models.Ghe ghe = new Models.Ghe(id);
+            ghe.getInfoById();
+            object[] ghe_obj = { ghe.pid, ghe.ptinhtrang, ghe.plx, ghe.ply, ghe.ptenban };
+
+            return ghe_obj;
+        }
         public static int XoaGhe(string id)
         {
             Models.Ghe ghe = new Models.Ghe(id);
@@ -46,10 +54,19 @@ namespace WindowsFormsApp1.Controllers
         {
             return Models.Ghe.layThongTin();
         }
+        public static DataSet LayThongTinGheTatCaGhe()
+        {
+            return Models.Ghe.layThongTinTactCaGhe();
+        }
         public static int LuuTrangThai(DataTable dtb)
         {
             return Models.Ghe.LuuTrangThai(dtb);
         }
 
+
+        internal static int khoiphucGhe(string p)
+        {
+            return Models.Ghe.KhoiphucGhe(p);
+        }
     }
 }

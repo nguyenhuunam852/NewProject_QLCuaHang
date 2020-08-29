@@ -487,7 +487,7 @@ namespace WindowsFormsApp1.Views
                 if (sig == 0)
                 {
                     TextBox txt = sender as TextBox;
-                    a = KhachHangControllers.TimKiemTatCa(txt.Text).Tables[0];
+                    a = KhachHangControllers.TimKiemTatCa1(txt.Text).Tables[0];
                     if (txt.Text == "" || a.Rows.Count == 0)
                     {
                         comboBox1.Enabled = false;
