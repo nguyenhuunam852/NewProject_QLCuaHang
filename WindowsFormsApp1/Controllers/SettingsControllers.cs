@@ -27,6 +27,18 @@ namespace WindowsFormsApp1.Controllers
             }
             sw.Close();
         }
+        public static void saveSettings()
+        {
+            string check = getPathOfTxtFile();
+            StreamWriter sw = new StreamWriter(check);
+            
+            foreach (var k in Settings.getSettings().dic)
+            {
+                sw.WriteLine(k.Key + "@" + k.Value);
+            }
+            
+            sw.Close();
+        }
         public static Dictionary<string,string> getInformation()
         {
             return Settings.getInformation();

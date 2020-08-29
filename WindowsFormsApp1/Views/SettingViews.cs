@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.Views
         }
         private void SettingViews_Load(object sender, EventArgs e)
         {
-
+            txtDataBase.Enabled = false;
             txtServerName.Enabled = false;
             txtInstance.Enabled = false;
 
@@ -55,8 +55,33 @@ namespace WindowsFormsApp1.Views
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             textBox1.Enabled = false;
             textBox2.Enabled = false;
+            txtDataBase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            groupBox2.Enabled = false;
+            label23.Visible = false;
+
+            if (firstsetting == 1)
+            {
+                button3.Enabled = false;
+                label15.Visible = true;
+                label16.Visible = false;
+                label18.Visible = true;
+                label20.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
+                groupBox2.Enabled = true;
+                button4.Visible = false;
+                string path = Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\backup\\");
+                textBox1.Text = path;
+
+            }
+            else
+            {
+                label15.Visible = false;
+                label16.Visible = false;
+            }
             if (kt == 1)
             {
+                txtDataBase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
                 Dictionary<string, string> dic = SettingsControllers.getInformation();
                 txtDataBase.Text = dic["txtDataBase"];
                 txtServerName.Text = dic["txtServerName"];
@@ -69,24 +94,7 @@ namespace WindowsFormsApp1.Views
                 textBox1.Text = dic["txtSave"];
                 textBox2.Text = dic["txtPicture"];
             }
-            if (firstsetting == 1)
-            {
-                label15.Visible = true;
-                label16.Visible = false;
-                label18.Visible = true;
-                label20.Visible = true;
-                label21.Visible = true;
-                label22.Visible = true;
-                string path = Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\backup\\");
-                textBox1.Text = path;
 
-            }
-            else
-            {
-                label15.Visible = false;
-                label16.Visible = false;
-            }
-          
         }
         
 
@@ -121,6 +129,7 @@ namespace WindowsFormsApp1.Views
             MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(firstsetting==1)
             {
+                SettingViews.stv = null;
                 FrmMain.dongALL();
                 FrmMain.getFrmMain().getSetting();
             }
@@ -166,7 +175,8 @@ namespace WindowsFormsApp1.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(SettingsControllers.testConnect(txtUsername.Text, txtPassword.Text, txtServerName.Text, txtInstance.Text)>0)
+            int test = SettingsControllers.testConnect(txtUsername.Text, txtPassword.Text, txtServerName.Text, txtInstance.Text);
+            if (test>0)
             {
                 MessageBox.Show("thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtDataBase.DataSource = Settings.GetAllDatabase();
@@ -176,8 +186,14 @@ namespace WindowsFormsApp1.Views
                 button6.Enabled = true;
                 label15.Visible = false;
                 label16.Visible = true;
+                txtDataBase.Enabled = true;
+                txtDataBase.DropDownStyle = ComboBoxStyle.DropDownList;
             }
-            else
+            if (test > 0 && firstsetting == 0)
+            {
+                label23.Visible = false;
+            }
+            if(test==0)
             {
                 MessageBox.Show("thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -200,6 +216,8 @@ namespace WindowsFormsApp1.Views
                 }
                 else
                 {
+                    MessageBox.Show("Đã kết nối tới database thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    button3.Enabled = true;
                     dataGridView1.DataSource = a;
                 }
             }
@@ -294,6 +312,13 @@ namespace WindowsFormsApp1.Views
             {
                 label20.Visible = true;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button3.Enabled = false;
+            groupBox2.Enabled = true;
+            label23.Visible = true;
         }
     }
 }

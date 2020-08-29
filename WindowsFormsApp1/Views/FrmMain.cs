@@ -96,6 +96,11 @@ namespace WindowsFormsApp1.Views
                             int check;
                             while ((check = MainControllers.checkExist(dateTime)) != 3)
                             {
+                                if(check==4)
+                                {
+                                    MessageBox.Show("Có vẻ thời gian trong hệ thống không đồng bộ, hãy kiểm tra lại", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
                                 if (check == 1)
                                 {
                                     DialogResult dlr1;

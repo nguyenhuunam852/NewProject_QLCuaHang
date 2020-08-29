@@ -112,19 +112,25 @@ namespace WindowsFormsApp1.Models
 
         public static void AddDirectorySecurity(string path)
         {
+            try
+            {
+                var directoryInfo = new DirectoryInfo(path);
+                var directorySecurity = directoryInfo.GetAccessControl();
 
-            var directoryInfo = new DirectoryInfo(path);
-            var directorySecurity = directoryInfo.GetAccessControl();
-            
-            var fileSystemRule = new FileSystemAccessRule(@"Authenticated Users",
-                                                          FileSystemRights.FullControl,
-                                                          InheritanceFlags.ObjectInherit |
-                                                          InheritanceFlags.ContainerInherit,
-                                                          PropagationFlags.None,
-                                                          AccessControlType.Allow);
+                var fileSystemRule = new FileSystemAccessRule(@"Authenticated Users",
+                                                              FileSystemRights.FullControl,
+                                                              InheritanceFlags.ObjectInherit |
+                                                              InheritanceFlags.ContainerInherit,
+                                                              PropagationFlags.None,
+                                                              AccessControlType.Allow);
 
-            directorySecurity.AddAccessRule(fileSystemRule);
-            directoryInfo.SetAccessControl(directorySecurity);
+                directorySecurity.AddAccessRule(fileSystemRule);
+                directoryInfo.SetAccessControl(directorySecurity);
+            }
+            catch
+            {
+
+            }
         }
 
         public int RestoreDatabase(string text, string text1, string text2)

@@ -53,7 +53,6 @@
             // 
             this.msUserControl.AutoSize = false;
             this.msUserControl.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.msUserControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.msUserControl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -68,22 +67,23 @@
             this.QLuser,
             this.QlGroupUser,
             this.dangToolStripMenuItem});
+            this.msUserControl.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.msUserControl.Location = new System.Drawing.Point(0, 0);
             this.msUserControl.Name = "msUserControl";
-            this.msUserControl.Size = new System.Drawing.Size(122, 749);
+            this.msUserControl.Size = new System.Drawing.Size(1350, 30);
             this.msUserControl.TabIndex = 1;
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // QLbackUp
             // 
             this.QLbackUp.Name = "QLbackUp";
-            this.QLbackUp.Size = new System.Drawing.Size(118, 19);
+            this.QLbackUp.Size = new System.Drawing.Size(59, 26);
             this.QLbackUp.Text = "BackUp";
             this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
@@ -99,56 +99,56 @@
             // QLkhachhang
             // 
             this.QLkhachhang.Name = "QLkhachhang";
-            this.QLkhachhang.Size = new System.Drawing.Size(118, 19);
+            this.QLkhachhang.Size = new System.Drawing.Size(124, 26);
             this.QLkhachhang.Text = "Quản lí khách hàng";
             this.QLkhachhang.Click += new System.EventHandler(this.quảnLíKháchHàngToolStripMenuItem_Click);
             // 
             // QLloaiKH
             // 
             this.QLloaiKH.Name = "QLloaiKH";
-            this.QLloaiKH.Size = new System.Drawing.Size(118, 19);
+            this.QLloaiKH.Size = new System.Drawing.Size(110, 26);
             this.QLloaiKH.Text = "Loại Khách Hàng";
             this.QLloaiKH.Click += new System.EventHandler(this.quảnLíTypeKháchHàngToolStripMenuItem_Click);
             // 
             // QLsk
             // 
             this.QLsk.Name = "QLsk";
-            this.QLsk.Size = new System.Drawing.Size(118, 19);
+            this.QLsk.Size = new System.Drawing.Size(68, 26);
             this.QLsk.Text = "Sức khỏe";
             this.QLsk.Click += new System.EventHandler(this.QLsk_Click);
             // 
             // QLlichSu
             // 
             this.QLlichSu.Name = "QLlichSu";
-            this.QLlichSu.Size = new System.Drawing.Size(118, 19);
+            this.QLlichSu.Size = new System.Drawing.Size(120, 26);
             this.QLlichSu.Text = "Lịch sử và thống kê";
             this.QLlichSu.Click += new System.EventHandler(this.lịchSửVàThốngKêToolStripMenuItem_Click);
             // 
             // QLsetting
             // 
             this.QLsetting.Name = "QLsetting";
-            this.QLsetting.Size = new System.Drawing.Size(118, 19);
+            this.QLsetting.Size = new System.Drawing.Size(63, 26);
             this.QLsetting.Text = "Settings";
             this.QLsetting.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // QLuser
             // 
             this.QLuser.Name = "QLuser";
-            this.QLuser.Size = new System.Drawing.Size(118, 19);
+            this.QLuser.Size = new System.Drawing.Size(87, 26);
             this.QLuser.Text = "Quản lí User";
             this.QLuser.Click += new System.EventHandler(this.quảnLíUserToolStripMenuItem_Click);
             // 
             // QlGroupUser
             // 
             this.QlGroupUser.Name = "QlGroupUser";
-            this.QlGroupUser.Size = new System.Drawing.Size(118, 19);
+            this.QlGroupUser.Size = new System.Drawing.Size(123, 26);
             this.QlGroupUser.Text = "Quản lí Group User";
             this.QlGroupUser.Click += new System.EventHandler(this.quảnLíGroupUSerToolStripMenuItem_Click);
             // 
             // dangToolStripMenuItem
             // 
             this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
-            this.dangToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
+            this.dangToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.dangToolStripMenuItem.Text = "Đăng Xuất";
             this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
             // 
@@ -175,12 +175,14 @@
             // 
             // TabHienThi
             // 
+            this.TabHienThi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TabHienThi.ContextMenuStrip = this.cntmsTag;
-            this.TabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabHienThi.Location = new System.Drawing.Point(122, 0);
+            this.TabHienThi.Location = new System.Drawing.Point(0, 30);
             this.TabHienThi.Name = "TabHienThi";
             this.TabHienThi.SelectedIndex = 0;
-            this.TabHienThi.Size = new System.Drawing.Size(1121, 749);
+            this.TabHienThi.Size = new System.Drawing.Size(1350, 768);
             this.TabHienThi.TabIndex = 3;
             this.TabHienThi.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabHienThi_MouseMove);
             // 
@@ -188,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 749);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.TabHienThi);
             this.Controls.Add(this.msUserControl);
             this.MainMenuStrip = this.msUserControl;

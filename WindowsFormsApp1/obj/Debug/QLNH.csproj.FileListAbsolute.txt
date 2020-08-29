@@ -35,7 +35,6 @@ C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.KhachHangViews.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ThemBenhNhanh.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ThongKeViews.resources
-C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ViewsThongKe.ThongKeNhanh.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ViewsThongKe.Views.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ViewsThongKe.ViewsThongKeNgay.resources
 C:\Users\namhn\Downloads\NewProject_QLCuaHang-master\NewProject_QLCuaHang-master\WindowsFormsApp1\obj\Debug\QLNH.csproj.GenerateResource.cache

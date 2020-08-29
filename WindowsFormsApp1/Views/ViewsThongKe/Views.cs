@@ -53,6 +53,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 dataGridView4.Visible = false;
                 dataGridView5.Visible = false;
                 thietlapSignal0(DateTime.Now.ToString());
+                dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             }
             if(signal==1)
             {
@@ -126,7 +127,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 comboBox1.DataSource = ThongKeControllers.getMonth();
                 comboBox1.DisplayMember = "thang";
                 comboBox1.ValueMember = "thang";
-                comboBox1.SelectedIndex = comboBox1.Items.Count - 2;
+              
                 getThongKeinWeek();
             }
             if(signal==1|| signal == 2)
@@ -244,18 +245,21 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             table.Columns.Add("day", typeof(DateTime));
             int save = 0;
             int i = 0;
-            List<DateTime> ldt = GetWeeks(new DateTime(int.Parse(getNam(comboBox1.SelectedValue.ToString())), int.Parse(getThang(comboBox1.SelectedValue.ToString())), 1), DayOfWeek.Sunday);
-            foreach (DateTime dt in ldt)
+            if (comboBox1.SelectedValue != null)
             {
-                DataRow dtr = table.NewRow();
-                dtr["id"] = i;
-                dtr["day"] = dt;
-                if(dt.Day<=DateTime.Now.Day && dt.Month<=DateTime.Now.Month)
+                List<DateTime> ldt = GetWeeks(new DateTime(int.Parse(getNam(comboBox1.SelectedValue.ToString())), int.Parse(getThang(comboBox1.SelectedValue.ToString())), 1), DayOfWeek.Sunday);
+                foreach (DateTime dt in ldt)
                 {
-                    save = i;
+                    DataRow dtr = table.NewRow();
+                    dtr["id"] = i;
+                    dtr["day"] = dt;
+                    if (dt.Day <= DateTime.Now.Day && dt.Month <= DateTime.Now.Month)
+                    {
+                        save = i;
+                    }
+                    i += 1;
+                    table.Rows.Add(dtr);
                 }
-                i += 1;
-                table.Rows.Add(dtr);
             }
             dataGridView1.DataSource = ThongKeControllers.getStaticalInWeekofMonth(table).Tables[0];
             dataGridView1.ClearSelection();
@@ -287,12 +291,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             return val;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ThongKeNhanh tkn = new ThongKeNhanh();
-            tkn.month = textBox1.Text + "/" + comboBox1.Text;
-            tkn.ShowDialog();
-        }
+  
         public List<DateTime> GetWeeks(DateTime date, DayOfWeek startOfWeek)
         {
 

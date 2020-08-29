@@ -78,14 +78,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.idh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idbc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namebc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -338,7 +338,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 319);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1226, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(1344, 446);
             this.dataGridView1.TabIndex = 2;
             // 
             // hovataen
@@ -523,7 +523,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(410, 32);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(97, 20);
+            this.textBox7.Size = new System.Drawing.Size(184, 20);
             this.textBox7.TabIndex = 4;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
@@ -556,8 +556,28 @@
             this.dataGridView3.Location = new System.Drawing.Point(345, 62);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(162, 208);
+            this.dataGridView3.Size = new System.Drawing.Size(249, 208);
             this.dataGridView3.TabIndex = 1;
+            // 
+            // idh
+            // 
+            this.idh.DataPropertyName = "id";
+            this.idh.HeaderText = "idh";
+            this.idh.Name = "idh";
+            this.idh.Visible = false;
+            // 
+            // createat
+            // 
+            this.createat.DataPropertyName = "createat";
+            this.createat.HeaderText = "createat";
+            this.createat.Name = "createat";
+            this.createat.Visible = false;
+            // 
+            // nameh
+            // 
+            this.nameh.DataPropertyName = "name";
+            this.nameh.HeaderText = "Tên bệnh";
+            this.nameh.Name = "nameh";
             // 
             // dataGridView2
             // 
@@ -600,26 +620,6 @@
             this.cabc.HeaderText = "Thời gian thêm vào";
             this.cabc.Name = "cabc";
             // 
-            // idh
-            // 
-            this.idh.DataPropertyName = "id";
-            this.idh.HeaderText = "idh";
-            this.idh.Name = "idh";
-            this.idh.Visible = false;
-            // 
-            // createat
-            // 
-            this.createat.DataPropertyName = "createat";
-            this.createat.HeaderText = "createat";
-            this.createat.Name = "createat";
-            this.createat.Visible = false;
-            // 
-            // nameh
-            // 
-            this.nameh.DataPropertyName = "name";
-            this.nameh.HeaderText = "Tên bệnh";
-            this.nameh.Name = "nameh";
-            // 
             // KhachHangViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,7 +632,7 @@
             this.Controls.Add(this.groupBox3);
             this.Name = "KhachHangViews";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Size = new System.Drawing.Size(1232, 788);
+            this.Size = new System.Drawing.Size(1350, 768);
             this.Load += new System.EventHandler(this.KhachHangViews_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

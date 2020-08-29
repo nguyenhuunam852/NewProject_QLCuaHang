@@ -38,9 +38,18 @@ namespace WindowsFormsApp1.Views
             }
 
         }
+        private void DataBinding()
+        {
+            txtFileName.DataBindings.Clear();
+            txtFileName.DataBindings.Add("Text", dataGridView1.DataSource, "name", false, DataSourceUpdateMode.Never);
 
+            textBox1.DataBindings.Clear();
+            textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "time", false, DataSourceUpdateMode.Never);
+
+        }
         private void BackupViews_Load(object sender, EventArgs e)
         {
+           
             txtFolder.Enabled = false;
             groupBox1.Enabled = false;
             label6.Visible = false;
@@ -68,9 +77,11 @@ namespace WindowsFormsApp1.Views
            
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView1.DataSource = loadFile();
+           
 
 
             txtFolder.Text = folderBrowserDialog1.SelectedPath;
+            DataBinding();
         }
 
       
@@ -78,25 +89,8 @@ namespace WindowsFormsApp1.Views
         {
           
             label2.Visible = false;
-            DataGridViewRow row = new DataGridViewRow();
-            row = dataGridView1.Rows[e.RowIndex];
-            textBox1.Text = GetDateTime(row.Cells["name"].Value.ToString());
-            txtFileName.Text = row.Cells["name"].Value.ToString();
-            DataTable dtb= BackupControllers.getDatabaseIfExist(txtFileName.Text,txtFolder.Text);
-            string database = BackupControllers.getBase(dtb.Rows[0][1].ToString());
-            if (database != null)
-            {
-                txtDtbName.Text = database;
-                txtDtbName.Enabled = false;
-                label8.Visible = true;
-                label9.Visible = false;
-            }
-            else {
-                txtDtbName.Text = "";
-                txtDtbName.Enabled = false;
-                label8.Visible = false;
-                label9.Visible = true;
-            }
+         
+          
 
         }
         private string GetDateTime(string a)
@@ -148,6 +142,8 @@ namespace WindowsFormsApp1.Views
                 txtFolder.Text = folderBrowserDialog1.SelectedPath;
                 loadFile();
                 dataGridView1.DataSource = loadFile();
+                defaultPath = folderBrowserDialog1.SelectedPath;
+                DataBinding();
             }
         }
         private DataTable loadFile()
@@ -157,10 +153,12 @@ namespace WindowsFormsApp1.Views
                                          SearchOption.TopDirectoryOnly);
             DataTable dtb = new DataTable();
             dtb.Columns.Add("name", typeof(String));
+            dtb.Columns.Add("time", typeof(String));
             foreach (string a in filePaths)
             {
                 DataRow dtr = dtb.NewRow();
                 dtr["name"] = Path.GetFileName(a);
+                dtr["time"] = GetDateTime(dtr["name"].ToString());
                 dtb.Rows.Add(dtr);
             }
             return dtb;
@@ -168,15 +166,30 @@ namespace WindowsFormsApp1.Views
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(textBox1.Text=="")
+            if (GetDateTime(txtFileName.Text) != "")
             {
-                button2.Enabled = false;
-                button3.Enabled = false;
+                DataTable dtb = BackupControllers.getDatabaseIfExist(txtFileName.Text, txtFolder.Text);
+                string database = BackupControllers.getBase(dtb.Rows[0][1].ToString());
+                if (database != null)
+                {
+                    txtDtbName.Text = database;
+                    txtDtbName.Enabled = false;
+                    label8.Visible = true;
+                    label9.Visible = false;
+                }
+                else
+                {
+                    txtDtbName.Text = "";
+                    txtDtbName.Enabled = false;
+                    label8.Visible = false;
+                    label9.Visible = true;
+                }
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            
             if (BackupControllers.restoreData(txtDtbName.Text,txtFileName.Text,txtFolder.Text) >=-1)
             {
                 MessageBox.Show("Restore thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -203,6 +216,18 @@ namespace WindowsFormsApp1.Views
             {
                 FrmMain.getFrmMain().reload();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Settings.getSettings().dic["txtSave"]= folderBrowserDialog1.SelectedPath;
+            SettingsControllers.saveSettings();
+            DialogResult dlr = MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dlr == DialogResult.OK)
+            {
+                Settings.getInformation();
+            }
+
         }
     }
 }

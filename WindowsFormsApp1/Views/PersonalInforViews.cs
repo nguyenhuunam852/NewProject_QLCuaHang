@@ -118,5 +118,10 @@ namespace WindowsFormsApp1.Views
             }
         
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PersonalInforViews_Load(sender, e);
+        }
     }
 }

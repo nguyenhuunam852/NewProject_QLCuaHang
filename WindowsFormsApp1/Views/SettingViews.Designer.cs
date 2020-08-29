@@ -75,6 +75,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -347,6 +349,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.button6);
@@ -524,7 +527,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(624, 15);
+            this.button1.Location = new System.Drawing.Point(599, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 67);
             this.button1.TabIndex = 5;
@@ -561,11 +564,32 @@
             this.dataGridView1.Size = new System.Drawing.Size(394, 232);
             this.dataGridView1.TabIndex = 8;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1113, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 67);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Thay đổi Database";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(255, 220);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(186, 13);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "*Bạn phải xác nhận kết nối tới Server ";
+            // 
             // SettingViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
@@ -638,5 +662,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label23;
     }
 }

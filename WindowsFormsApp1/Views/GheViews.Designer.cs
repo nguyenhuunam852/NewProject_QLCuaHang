@@ -65,7 +65,7 @@ namespace WindowsFormsApp1.Views
             // 
             this.groupBox1.Location = new System.Drawing.Point(3, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(803, 788);
+            this.groupBox1.Size = new System.Drawing.Size(803, 652);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sảnh chính";
@@ -81,7 +81,7 @@ namespace WindowsFormsApp1.Views
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(828, 47);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(344, 394);
+            this.groupBox2.Size = new System.Drawing.Size(504, 278);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control";
@@ -113,7 +113,7 @@ namespace WindowsFormsApp1.Views
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.txtTenGhe);
-            this.groupBox4.Location = new System.Drawing.Point(6, 260);
+            this.groupBox4.Location = new System.Drawing.Point(6, 134);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(245, 116);
             this.groupBox4.TabIndex = 10;
@@ -192,9 +192,9 @@ namespace WindowsFormsApp1.Views
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(6, 138);
+            this.groupBox3.Location = new System.Drawing.Point(306, 28);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(113, 116);
+            this.groupBox3.Size = new System.Drawing.Size(175, 197);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ghế được tạo";
@@ -216,7 +216,7 @@ namespace WindowsFormsApp1.Views
             this.dataGridView1.Location = new System.Drawing.Point(828, 447);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(344, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(504, 242);
             this.dataGridView1.TabIndex = 3;
             // 
             // idBan
@@ -300,7 +300,7 @@ namespace WindowsFormsApp1.Views
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "GheViews";
-            this.Size = new System.Drawing.Size(1327, 841);
+            this.Size = new System.Drawing.Size(1350, 768);
             this.Load += new System.EventHandler(this.GheViews_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

@@ -59,6 +59,24 @@ namespace WindowsFormsApp1.Models
                 return 0;
             }
         }
+        internal static int TestDataBase1(string usn, string passw, string dts, string ins,string dtb)
+        {
+            try
+            {
+                string server1 = @"Data Source=" + dts + "\\" + ins + ";User ID=" + usn + ";Password=" + passw;
+                server1 = server1 + ";Initial Catalog=" + dtb;
+                SqlConnection sql = new SqlConnection(server1);
+                sql.Open();
+                sqlcon = server1;
+                sql.Close();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return 0;
+            }
+        }
 
         internal static int testConnect(string usn,string passw,string dts,string ins)
         {
@@ -400,6 +418,14 @@ namespace WindowsFormsApp1.Models
                 sqlconn.Open();
                 SqlCommand cmd = new SqlCommand(stringSQL, sqlconn);
                 giaTri = cmd.ExecuteScalar().ToString();
+                if(int.Parse(giaTri)<0)
+                {
+                    DataTable a = GroupUser.getlistPermission().Tables[0];
+                    if (a==null)
+                    {
+                        throw new Exception();
+                    }
+                }
                 return giaTri;
             }
             catch {

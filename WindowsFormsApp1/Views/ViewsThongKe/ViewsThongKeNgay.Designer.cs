@@ -45,7 +45,6 @@
             this.name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -130,7 +129,6 @@
             this.groupBox1.Controls.Add(this.lbTVM);
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(715, 23);
             this.groupBox1.Name = "groupBox1";
@@ -143,7 +141,7 @@
             // 
             this.lbLTV.AutoSize = true;
             this.lbLTV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLTV.Location = new System.Drawing.Point(266, 82);
+            this.lbLTV.Location = new System.Drawing.Point(266, 37);
             this.lbLTV.Name = "lbLTV";
             this.lbLTV.Size = new System.Drawing.Size(163, 21);
             this.lbLTV.TabIndex = 7;
@@ -153,7 +151,7 @@
             // 
             this.lbTVM.AutoSize = true;
             this.lbTVM.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTVM.Location = new System.Drawing.Point(266, 37);
+            this.lbTVM.Location = new System.Drawing.Point(266, 82);
             this.lbTVM.Name = "lbTVM";
             this.lbTVM.Size = new System.Drawing.Size(163, 21);
             this.lbTVM.TabIndex = 6;
@@ -167,10 +165,11 @@
             this.id1,
             this.name1,
             this.sl});
-            this.dataGridView3.Location = new System.Drawing.Point(270, 132);
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 214);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(222, 120);
+            this.dataGridView3.Size = new System.Drawing.Size(608, 120);
             this.dataGridView3.TabIndex = 5;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -197,26 +196,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(33, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tổng thành viên mới";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Số lượng thành viên các loại";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(33, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 21);
@@ -227,11 +218,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.monthCalendar1);
             this.Name = "ViewsThongKeNgay";
-            this.Size = new System.Drawing.Size(1347, 681);
+            this.Size = new System.Drawing.Size(1342, 742);
             this.Load += new System.EventHandler(this.ViewsThongKeNgay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -255,7 +247,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn name1;

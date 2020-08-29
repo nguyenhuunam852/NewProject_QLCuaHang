@@ -144,5 +144,14 @@ namespace WindowsFormsApp1.Views
                 button1.Visible = false;
             }
         }
+
+        private void label8_TextChanged(object sender, EventArgs e)
+        {
+            if (label8.Text != "id")
+            {
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+        }
     }
 }

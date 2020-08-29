@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.TabHienThi = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.TabHienThi.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +47,18 @@
             this.TabHienThi.Location = new System.Drawing.Point(4, 3);
             this.TabHienThi.Name = "TabHienThi";
             this.TabHienThi.SelectedIndex = 0;
-            this.TabHienThi.Size = new System.Drawing.Size(1347, 684);
+            this.TabHienThi.Size = new System.Drawing.Size(1350, 768);
             this.TabHienThi.TabIndex = 7;
             this.TabHienThi.SelectedIndexChanged += new System.EventHandler(this.TabHienThi_SelectedIndexChanged);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1342, 742);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Lịch sử theo ngày";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -88,15 +97,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Thống kê theo năm";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1339, 658);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Lịch sử theo ngày";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // ThongKeViews
             // 

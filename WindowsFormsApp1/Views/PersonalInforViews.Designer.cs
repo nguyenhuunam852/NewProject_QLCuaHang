@@ -72,9 +72,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.hovatenText);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(175, 51);
+            this.groupBox1.Location = new System.Drawing.Point(41, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 621);
+            this.groupBox1.Size = new System.Drawing.Size(908, 621);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cá nhân";
@@ -96,6 +96,7 @@
             this.button4.TabIndex = 30;
             this.button4.Text = "Hủy";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
