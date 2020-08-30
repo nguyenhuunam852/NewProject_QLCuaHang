@@ -99,10 +99,6 @@ namespace WindowsFormsApp1.Views
             loadButton();
             loadDataGridView();
             loadDataGridViewTenLoai();
-            label10.Text = "";
-            DataBinding();
-
-           
             label10.Visible = true;
             textBox1.Text = "";
             textBox2.Text = "";
@@ -115,9 +111,16 @@ namespace WindowsFormsApp1.Views
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             button7.Enabled = false;
             groupBox3.Enabled = true;
+            label10.Text = "";
+            DataBinding();
+
+           
+            
         }
         private void DataBinding()
         {
+            label10.DataBindings.Clear();
+            label10.DataBindings.Add("Text", dataGridView1.DataSource, "id", false, DataSourceUpdateMode.Never);
             textBox1.DataBindings.Clear();
             textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "hoten", false, DataSourceUpdateMode.Never);
             textBox2.DataBindings.Clear();
@@ -296,14 +299,14 @@ namespace WindowsFormsApp1.Views
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "0")
+            if (textBox5.Text == "0")
             {
                 button7.Enabled = true;
                 groupBox3.Enabled = false;
             }
             else
             {
-                button7.Enabled = false;
+                button5.Enabled = false;
                 groupBox3.Enabled = true;
             }
         }

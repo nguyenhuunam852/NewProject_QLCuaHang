@@ -25,7 +25,8 @@ namespace WindowsFormsApp1.Views
         DataTable listhealth = new DataTable();
         private void clearTExtBox()
         {
-            textBox1.Text = "";
+            textBoxTen.Text = "";
+            textBoxHo.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
@@ -38,7 +39,8 @@ namespace WindowsFormsApp1.Views
             button4.Enabled = false;
             button5.Enabled = false;
             button6.Enabled = false;
-            textBox1.Enabled = false;
+            textBoxTen.Enabled = false;
+            textBoxHo.Enabled = false;
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
@@ -51,7 +53,8 @@ namespace WindowsFormsApp1.Views
             LoadPermission();
             label10.Text = "";
             label10.Visible = true;
-            textBox1.Text = "";
+            textBoxHo.Text = "";
+            textBoxTen.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
@@ -153,15 +156,18 @@ namespace WindowsFormsApp1.Views
             textBox2.Enabled = true;
             textBox3.Enabled = true;
             textBox4.Enabled = true;
-            textBox1.Enabled = true;
+            textBoxHo.Enabled = true;
+            textBoxTen.Enabled = true;
             maskedTextBox1.Enabled = true;
         }
         private void DataBinding()
         {
             textBox5.DataBindings.Clear();
             textBox5.DataBindings.Add("Text", dataGridView1.DataSource, "code",false, DataSourceUpdateMode.Never);
-            textBox1.DataBindings.Clear();
-            textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "hoten", false, DataSourceUpdateMode.Never);
+            textBoxHo.DataBindings.Clear();
+            textBoxHo.DataBindings.Add("Text", dataGridView1.DataSource, "lastname", false, DataSourceUpdateMode.Never);
+            textBoxTen.DataBindings.Clear();
+            textBoxTen.DataBindings.Add("Text", dataGridView1.DataSource, "firstname", false, DataSourceUpdateMode.Never);
             textBox2.DataBindings.Clear();
             textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "phone", false, DataSourceUpdateMode.Never);
             textBox3.DataBindings.Clear();
@@ -203,7 +209,8 @@ namespace WindowsFormsApp1.Views
         private void button5_Click(object sender, EventArgs e)
         {
             string id = textBox5.Text;
-            string ten = textBox1.Text;
+            string ten = textBoxTen.Text;
+            string ho = textBoxHo.Text;
             string sdt = textBox2.Text;
             string email = textBox3.Text;
             string dc = textBox4.Text;
@@ -230,7 +237,7 @@ namespace WindowsFormsApp1.Views
             
             if (action == "insert")
             {
-                int check = Controllers.KhachHangControllers.insertKhachHang(id, ten, sdt, email, dc, ns,idlkh,gt,pdtb);
+                int check = Controllers.KhachHangControllers.insertKhachHang(id, ten,ho, sdt, email, dc, ns,idlkh,gt,pdtb);
                 if (check > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -244,7 +251,7 @@ namespace WindowsFormsApp1.Views
             }
             else
             {
-                int check = Controllers.KhachHangControllers.updateKhachHang(int.Parse(label10.Text),id, ten, sdt, email, dc, ns,idlkh,gt,pdtb);
+                int check = Controllers.KhachHangControllers.updateKhachHang(int.Parse(label10.Text), id, ten, ho, sdt, email, dc, ns, idlkh, gt, pdtb);
                 if (check > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

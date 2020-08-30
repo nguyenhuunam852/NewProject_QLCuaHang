@@ -21,6 +21,10 @@ namespace WindowsFormsApp1.Views
         DataTable listhealth = new DataTable();
         private void ThemKhachHang_Load(object sender, EventArgs e)
         {
+            label11.Visible = false;
+           
+            textBox8.Visible = false;
+            textBox9.Visible = false;
             groupBox3.Enabled = true;
             groupBox2.Enabled = true;
             textBox5.Text = KhachHangControllers.getMaMoi();
@@ -57,7 +61,8 @@ namespace WindowsFormsApp1.Views
         private void button5_Click(object sender, EventArgs e)
         {
             string id = textBox5.Text;
-            string ten = textBox1.Text;
+            string ten = txtTen.Text;
+            string ho = txtHo.Text;
             string sdt = textBox2.Text;
             string email = textBox3.Text;
             string dc = textBox4.Text;
@@ -76,7 +81,7 @@ namespace WindowsFormsApp1.Views
                 gt = 0;
             }
             string idlkh = comboBox1.SelectedValue.ToString();
-            int check = Controllers.KhachHangControllers.insertKhachHang(id, ten, sdt, email, dc, ns, idlkh, gt, pdtb);
+            int check = Controllers.KhachHangControllers.insertKhachHang(id, ten,ho, sdt, email, dc, ns, idlkh, gt, pdtb);
             if (check > 0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -170,6 +175,41 @@ namespace WindowsFormsApp1.Views
             {
                 MessageBox.Show("Thêm that bai", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button5_TabIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBox8_Enter(object sender, EventArgs e)
+        {
+            label11.Visible = true;
+        }
+
+        private void txtHo_Enter(object sender, EventArgs e)
+        {
+            return;
+        }
+
+        private void textBox8_Leave(object sender, EventArgs e)
+        {
+            label11.Visible = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            label11.Visible = true;
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            label11.Visible = false;
         }
     }
 }

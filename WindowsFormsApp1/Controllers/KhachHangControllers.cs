@@ -22,19 +22,8 @@ namespace WindowsFormsApp1.Controllers
         {
             return RandomString(4) + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
         }
-        public static int insertKhachHang(string id,string hoten,string sdt,string email,string diachi,string ns,string idlkh,int sex,DataTable dsbenh)
+        public static int insertKhachHang(string id,string ten,string ho,string sdt,string email,string diachi,string ns,string idlkh,int sex,DataTable dsbenh)
         {
-            string ten = "";
-            int i = hoten.Length-1;
-            while(hoten[i]!=' ')
-            {
-                ten += hoten[i];
-                hoten=hoten.Remove(i);
-                i -= 1;
-            }
-            hoten = hoten.Remove(i);
-            ten = Reverse(ten);
-            string ho = hoten;
             KhachHang kh = new KhachHang();
             kh.pcode = id;
             kh.pho = ho;
@@ -80,19 +69,9 @@ namespace WindowsFormsApp1.Controllers
             KhachHang kh = new KhachHang(id);
             return kh.xoaKH();
         }
-        public static int updateKhachHang(int id,string code, string hoten, string sdt, string email, string diachi, string ns,string idlkh,int sex,DataTable dtb)
+        public static int updateKhachHang(int id,string code, string ten,string ho, string sdt, string email, string diachi, string ns,string idlkh,int sex,DataTable dtb)
         {
-            string ten = "";
-            int i = hoten.Length - 1;
-            while (hoten[i] != ' ')
-            {
-                ten += hoten[i];
-                hoten = hoten.Remove(i);
-                i -= 1;
-            }
-            hoten = hoten.Remove(i);
-            ten = Reverse(ten);
-            string ho = hoten;
+           
             KhachHang kh = new KhachHang();
             kh.pid = id;
             kh.pcode = code;
