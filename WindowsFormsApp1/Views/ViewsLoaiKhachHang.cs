@@ -22,18 +22,16 @@ namespace WindowsFormsApp1.Views
 
         private void ViewsLoaiKhachHang_Load(object sender, EventArgs e)
         {
-            textBox2.Visible = false;
+          
             loadPermission();
             loadbutton();
 
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView1.DataSource = KhachHangControllers.LoadLoaiKh().Tables[0];
             label8.Visible = false;
-
+            textBox2.Text = "";
             DataBinding();
-            groupBox3.Enabled = true;
-            button6.Enabled = false;
-           
+          
         }
         private void loadbutton()
         {
@@ -90,7 +88,9 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
+                    KhachHangViews.khv.load();
                     ViewsLoaiKhachHang_Load(sender, e);
+                    
 
                 }
             }
@@ -101,6 +101,7 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thay đổi tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
+                    KhachHangViews.khv.load();
                     ViewsLoaiKhachHang_Load(sender, e);
 
                 }
@@ -113,6 +114,7 @@ namespace WindowsFormsApp1.Views
             if (check > 0)
             {
                 MessageBox.Show("Xóa thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KhachHangViews.khv.load();
                 ViewsLoaiKhachHang_Load(sender, e);
 
             }
@@ -155,10 +157,15 @@ namespace WindowsFormsApp1.Views
 
         private void label8_TextChanged(object sender, EventArgs e)
         {
-            if (label8.Text != "id")
+            if (label8.Text != "")
             {
                 button3.Enabled = true;
                 button4.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+                button4.Enabled = false;
             }
         }
 
@@ -181,11 +188,13 @@ namespace WindowsFormsApp1.Views
             if(KhachHangControllers.restoreTypeCustomer(label8.Text)>0)
             {
                 MessageBox.Show("Phục hồi thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KhachHangViews.khv.load();
                 ViewsLoaiKhachHang_Load(sender, e);
             }
             else
             {
                 MessageBox.Show("Phục hồi thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 ViewsLoaiKhachHang_Load(sender, e);
             }
         }

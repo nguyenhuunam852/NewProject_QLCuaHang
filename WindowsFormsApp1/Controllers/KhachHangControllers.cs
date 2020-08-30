@@ -136,5 +136,10 @@ namespace WindowsFormsApp1.Controllers
             return lkh.RestoreLKH();
 
         }
+
+        internal static DataSet LoadLoaiKh1()
+        {
+            return LoaiKhachHang.LayDSLoaiKH1();
+        }
     }
 }

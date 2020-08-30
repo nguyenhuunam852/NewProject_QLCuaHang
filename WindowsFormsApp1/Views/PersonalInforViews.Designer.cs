@@ -46,13 +46,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.sdtText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.hovatenText = new System.Windows.Forms.TextBox();
+            this.txtHo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTen = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTen);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
@@ -70,7 +74,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.sdtText);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.hovatenText);
+            this.groupBox1.Controls.Add(this.txtHo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(41, 51);
             this.groupBox1.Name = "groupBox1";
@@ -130,7 +134,6 @@
             // 
             // nsText
             // 
-            this.nsText.Culture = new System.Globalization.CultureInfo("vi-VN");
             this.nsText.Location = new System.Drawing.Point(176, 258);
             this.nsText.Mask = "00/00/0000";
             this.nsText.Name = "nsText";
@@ -235,22 +238,39 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Số điện thoại";
             // 
-            // hovatenText
+            // txtHo
             // 
-            this.hovatenText.Location = new System.Drawing.Point(176, 59);
-            this.hovatenText.Name = "hovatenText";
-            this.hovatenText.Size = new System.Drawing.Size(190, 20);
-            this.hovatenText.TabIndex = 1;
+            this.txtHo.Location = new System.Drawing.Point(176, 27);
+            this.txtHo.Name = "txtHo";
+            this.txtHo.Size = new System.Drawing.Size(190, 20);
+            this.txtHo.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 57);
+            this.label1.Location = new System.Drawing.Point(51, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 21);
+            this.label1.Size = new System.Drawing.Size(33, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Họ và Tên";
+            this.label1.Text = "Họ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(51, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Tên";
+            // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(176, 65);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(190, 20);
+            this.txtTen.TabIndex = 33;
             // 
             // PersonalInforViews
             // 
@@ -271,7 +291,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox hovatenText;
+        private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.TextBox sdtText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox emailText;
@@ -289,5 +309,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTen;
     }
 }

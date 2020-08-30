@@ -52,9 +52,8 @@
             // msUserControl
             // 
             this.msUserControl.AutoSize = false;
-            this.msUserControl.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.msUserControl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.msUserControl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
             this.QLbackUp,

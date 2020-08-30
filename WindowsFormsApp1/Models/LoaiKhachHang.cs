@@ -56,5 +56,10 @@ namespace WindowsFormsApp1.Models
             object[] values = new object[] { id };
             return Models.Connection.Excute_Sql("RestoreTypeCustomer", CommandType.StoredProcedure, paras, values);
         }
+
+        internal static DataSet LayDSLoaiKH1()
+        {
+            return Models.Connection.FillDataSet("GetListTypeCustomer", CommandType.StoredProcedure);
+        }
     }
 }

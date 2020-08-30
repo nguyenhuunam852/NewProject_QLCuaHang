@@ -20,19 +20,9 @@ namespace WindowsFormsApp1.Controllers
            
         }
 
-        internal static int insertUser(string hoten, string sdt, string email, string dc, string ns, string idluser, int gt)
+        internal static int insertUser(string ten,string ho, string sdt, string email, string dc, string ns, string idluser, int gt)
         {
-            string ten = "";
-            int i = hoten.Length - 1;
-            while (hoten[i] != ' ')
-            {
-                ten += hoten[i];
-                hoten = hoten.Remove(i);
-                i -= 1;
-            }
-            hoten = hoten.Remove(i);
-            ten = Reverse(ten);
-            string ho = hoten;
+            
             User user = new User();
             user.pho = ho;
             user.pten = ten;
@@ -80,19 +70,9 @@ namespace WindowsFormsApp1.Controllers
             return User.getData();
         }
 
-        internal static int updateUser(int id, string hoten, string sdt, string email, string dc, string ns, string idluser, int gt)
+        internal static int updateUser(int id, string ten,string ho, string sdt, string email, string dc, string ns, string idluser, int gt)
         {
-            string ten = "";
-            int i = hoten.Length - 1;
-            while (hoten[i] != ' ')
-            {
-                ten += hoten[i];
-                hoten = hoten.Remove(i);
-                i -= 1;
-            }
-            hoten = hoten.Remove(i);
-            ten = Reverse(ten);
-            string ho = hoten;
+           
             User user = new User();
             user.pid = id.ToString();
             user.pho = ho;

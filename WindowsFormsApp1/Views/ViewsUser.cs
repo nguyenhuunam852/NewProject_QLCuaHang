@@ -37,23 +37,20 @@ namespace WindowsFormsApp1.Views
             clearTExtBox();
             action = "insert";
             label10.Text = "";
-
-            if(User.getUser().pid==null)
-            {
-                button1.Visible = false;
-            }
         }
         private void enableTextBox()
         {
             textBox2.Enabled = true;
             textBox3.Enabled = true;
             textBox4.Enabled = true;
-            textBox1.Enabled = true;
+            txtTen.Enabled = true;
+            txtHo.Enabled = true;
             maskedTextBox1.Enabled = true;
         }
         private void clearTExtBox()
         {
-            textBox1.Text = "";
+            txtTen.Text = "";
+            txtHo.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
@@ -100,7 +97,8 @@ namespace WindowsFormsApp1.Views
             loadDataGridView();
             loadDataGridViewTenLoai();
             label10.Visible = true;
-            textBox1.Text = "";
+            txtTen.Text = "";
+            txtHo.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
@@ -121,8 +119,11 @@ namespace WindowsFormsApp1.Views
         {
             label10.DataBindings.Clear();
             label10.DataBindings.Add("Text", dataGridView1.DataSource, "id", false, DataSourceUpdateMode.Never);
-            textBox1.DataBindings.Clear();
-            textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "hoten", false, DataSourceUpdateMode.Never);
+            txtHo.DataBindings.Clear();
+            txtHo.DataBindings.Add("Text", dataGridView1.DataSource, "lastname", false, DataSourceUpdateMode.Never);
+            txtTen.DataBindings.Clear();
+            txtTen.DataBindings.Add("Text", dataGridView1.DataSource, "firstname", false, DataSourceUpdateMode.Never);
+      
             textBox2.DataBindings.Clear();
             textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "phone", false, DataSourceUpdateMode.Never);
             textBox3.DataBindings.Clear();
@@ -166,7 +167,8 @@ namespace WindowsFormsApp1.Views
             button4.Enabled = true;
             button5.Enabled = false;
             button6.Enabled = false;
-            textBox1.Enabled = false;
+            txtTen.Enabled = false;
+            txtHo.Enabled = false;
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
@@ -175,7 +177,8 @@ namespace WindowsFormsApp1.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string ten = textBox1.Text;
+            string ten = txtTen.Text;
+            string ho = txtHo.Text;
             string sdt = textBox2.Text;
             string email = textBox3.Text;
             string dc = textBox4.Text;
@@ -196,7 +199,7 @@ namespace WindowsFormsApp1.Views
             string idlkh = comboBox1.SelectedValue.ToString();
             if (action == "insert")
             {
-                int check = Controllers.UserControllers.insertUser(ten, sdt, email, dc, ns, idlkh, gt);
+                int check = Controllers.UserControllers.insertUser(ten,ho, sdt, email, dc, ns, idlkh, gt);
                 if (check > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -220,7 +223,7 @@ namespace WindowsFormsApp1.Views
             }
             else
             {
-                int check = Controllers.UserControllers.updateUser(int.Parse(label10.Text), ten, sdt, email, dc, ns, idlkh, gt);
+                int check = Controllers.UserControllers.updateUser(int.Parse(label10.Text), ten,ho, sdt, email, dc, ns, idlkh, gt);
                 if (check > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -323,6 +326,11 @@ namespace WindowsFormsApp1.Views
                 MessageBox.Show("Thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 UserViews_Load(sender, e);
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
        

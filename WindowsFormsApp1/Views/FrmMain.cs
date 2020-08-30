@@ -105,7 +105,6 @@ namespace WindowsFormsApp1.Views
                     }
                     if (User.getUser().pid == null)
                     {
-                        FrmDangNhap.fdn = null;
                         DialogResult dlr = FrmDangNhap.getFrom().ShowDialog();
                         if (dlr == DialogResult.OK)
                         {
@@ -162,7 +161,7 @@ namespace WindowsFormsApp1.Views
                             MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
-                        else if (dlr == DialogResult.None)
+                        else if (dlr == DialogResult.Cancel)
                         {
                             this.Close();
                             close = 1;
@@ -219,7 +218,7 @@ namespace WindowsFormsApp1.Views
 
                 dongALL();
                 loadAllPage();
-                FrmDangNhap.getFrom().close();
+                FrmDangNhap.getFrom().Hide();
                 
                 setting = 1;
                 SettingViews s = SettingViews.getViews();
@@ -250,7 +249,7 @@ namespace WindowsFormsApp1.Views
             DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dlr == DialogResult.OK)
             {
-                FrmDangNhap.getFrom().close();
+                FrmDangNhap.getFrom().Hide();
                 setting = 1;
                 BackupViews buv = BackupViews.bu;
                 buv.sig = 1;
@@ -267,7 +266,7 @@ namespace WindowsFormsApp1.Views
             DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dlr == DialogResult.OK)
             {
-                FrmDangNhap.getFrom().close();
+                FrmDangNhap.getFrom().Hide();
                 setting = 1;
                 BackupViews buv = BackupViews.bu;
                 buv.sig = 2;
@@ -332,7 +331,7 @@ namespace WindowsFormsApp1.Views
             int i = 1;
             while(TabHienThi.TabPages.Count>1)
             {
-                if(typePages[i]!=1)
+                if(i==1)
                 {
                     TabHienThi.TabPages.Remove(TabHienThi.TabPages[i]);
                 }

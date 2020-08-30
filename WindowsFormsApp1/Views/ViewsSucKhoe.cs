@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.Views
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView1.DataSource = SucKhoeControllers.getData().Tables[0];
             label8.Visible = false;
-          
+            label8.Text = "";
             DataBinding();
 
             button6.Enabled = false;
@@ -174,6 +174,20 @@ namespace WindowsFormsApp1.Views
             {
                 MessageBox.Show("Phục hồi thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ViewsSucKhoe_Load(sender, e);
+            }
+        }
+
+        private void label8_TextChanged(object sender, EventArgs e)
+        {
+            if (label8.Text != "")
+            {
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+                button4.Enabled = false;
             }
         }
 

@@ -47,6 +47,11 @@ namespace WindowsFormsApp1.Views
             textBox5.Enabled = false;
             maskedTextBox1.Enabled = false;
         }
+        public void load()
+        {
+            loadDataGridView();
+            loadDataGridViewTenLoai();
+        }
         private void KhachHangViews_Load(object sender, EventArgs e)
         {
             button11.Enabled = false;
@@ -128,7 +133,7 @@ namespace WindowsFormsApp1.Views
         private void loadDataGridViewTenLoai()
         {
 
-            comboBox1.DataSource = Controllers.KhachHangControllers.LoadLoaiKh().Tables[0];
+            comboBox1.DataSource = Controllers.KhachHangControllers.LoadLoaiKh1().Tables[0];
             comboBox1.DisplayMember = "name";
             comboBox1.ValueMember = "id";
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

@@ -23,14 +23,16 @@ namespace WindowsFormsApp1.Views
             label8.Visible = false;
             loadDataGridViewTenLoai();
             label8.Text = User.getUser().pid;
-            hovatenText.Text = User.getUser().pho + " " + User.getUser().pten;
+            txtHo.Text = User.getUser().pho;
+            txtTen.Text = User.getUser().pten;
+            txtTen.Enabled = false;
             sdtText.Text = User.getUser().psdt;
             emailText.Text = User.getUser().pemail;
             dcText.Text = User.getUser().pdc;
             nsText.Text = User.getUser().pns;
             TypeText.SelectedValue = User.getUser().pgroup;
             gtText.SelectedValue = User.getUser().pgroup;
-            hovatenText.Enabled = false;
+            txtHo.Enabled = false;
             sdtText.Enabled=false;
             emailText.Enabled = false ;
             dcText.Enabled = false ;
@@ -61,7 +63,7 @@ namespace WindowsFormsApp1.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            hovatenText.Enabled = true;
+            txtHo.Enabled = true;
             sdtText.Enabled =true;
             emailText.Enabled = true;
             dcText.Enabled = true;
@@ -75,7 +77,8 @@ namespace WindowsFormsApp1.Views
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string ten = hovatenText.Text;
+            string ten = txtTen.Text;
+            string ho = txtHo.Text;
             string sdt = sdtText.Text;
             string email = emailText.Text;
             string dc = dcText.Text;
@@ -94,7 +97,7 @@ namespace WindowsFormsApp1.Views
                 gt = 2;
             }
             string idlkh = TypeText.SelectedValue.ToString();
-            int check = Controllers.UserControllers.updateUser(int.Parse(label8.Text), ten, sdt, email, dc, ns, idlkh, gt);
+            int check = Controllers.UserControllers.updateUser(int.Parse(label8.Text), ten,ho, sdt, email, dc, ns, idlkh, gt);
             if (check > 0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
