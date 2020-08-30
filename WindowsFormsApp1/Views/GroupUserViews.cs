@@ -44,8 +44,7 @@ namespace WindowsFormsApp1.Views
             dataGridView2.Enabled = false;
             DataBinding();
             label1.Visible = false;
-            groupBox3.Enabled = true;
-            button6.Enabled = false;
+            
             textBox2.Visible = false;
         }
         private void loadPermission()
@@ -65,6 +64,7 @@ namespace WindowsFormsApp1.Views
             if (MyPermission.getpermission("Groupuser", "update") == 0)
             {
                 button4.Visible = false;
+                button6.Visible = false;
             }
             if (MyPermission.getpermission("Groupuser", "delete") == 0)
             {
@@ -111,6 +111,9 @@ namespace WindowsFormsApp1.Views
 
             textBox1.DataBindings.Clear();
             textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "name", false, DataSourceUpdateMode.Never);
+
+            textBox2.DataBindings.Clear();
+            textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "available", false, DataSourceUpdateMode.Never);
         }
 
         private void loadbutton()
@@ -184,6 +187,7 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     signal = "";
+                    ViewsUser.vu.load();
                     GroupUserViews_Load(sender, e);
                 }
             }
@@ -193,6 +197,7 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     signal = "";
+                    ViewsUser.vu.load();
                     GroupUserViews_Load(sender, e);
                 }
             }
@@ -308,6 +313,7 @@ namespace WindowsFormsApp1.Views
             if(GroupUserControllers.deleteGrouUser(a)>0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewsUser.vu.load();
                 GroupUserViews_Load(sender, e);
             }
         }
@@ -387,6 +393,7 @@ namespace WindowsFormsApp1.Views
             if(GroupUserControllers.RestoreGU(label8.Text)>0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewsUser.vu.load();
                 GroupUserViews_Load(sender, e);
             }
             else

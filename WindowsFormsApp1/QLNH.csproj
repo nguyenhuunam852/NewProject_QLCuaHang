@@ -84,6 +84,12 @@
     <Compile Include="Controllers\SucKhoeControllers.cs" />
     <Compile Include="Controllers\ThongKeControllers.cs" />
     <Compile Include="Controllers\UserControllers.cs" />
+    <Compile Include="firstpage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="firstpage.Designer.cs">
+      <DependentUpon>firstpage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BackUp.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Connection.cs" />
@@ -229,6 +235,9 @@
     <Compile Include="Views\ViewsUser.Designer.cs">
       <DependentUpon>ViewsUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="firstpage.resx">
+      <DependentUpon>firstpage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

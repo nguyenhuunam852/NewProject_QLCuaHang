@@ -19,7 +19,11 @@ namespace WindowsFormsApp1.Views
         }
         public static ViewsLoaiKhachHang vlkh = new ViewsLoaiKhachHang();
         private string act;
-
+        public void load()
+        {
+            dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
+            dataGridView1.DataSource = KhachHangControllers.LoadLoaiKh().Tables[0];
+        }
         private void ViewsLoaiKhachHang_Load(object sender, EventArgs e)
         {
           
@@ -30,6 +34,7 @@ namespace WindowsFormsApp1.Views
             dataGridView1.DataSource = KhachHangControllers.LoadLoaiKh().Tables[0];
             label8.Visible = false;
             textBox2.Text = "";
+            textBox2.Visible = false;
             DataBinding();
           
         }
@@ -143,6 +148,7 @@ namespace WindowsFormsApp1.Views
             if (MyPermission.getpermission("TypeCustomer", "update") == 0)
             {
                 button4.Visible = false;
+                button6.Visible = false;
             }
             if (MyPermission.getpermission("TypeCustomer", "delete") == 0)
             {

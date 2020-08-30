@@ -68,7 +68,12 @@ namespace WindowsFormsApp1.Models
             object[] values = new object[] { User.getUser().pbranch };
             return Models.Connection.FillDataSet("getGroupUser", CommandType.StoredProcedure, paras, values);
         }
-
+        public static DataSet GetData1()
+        {
+            string[] paras = new string[] { "@idbranch" };
+            object[] values = new object[] { User.getUser().pbranch };
+            return Models.Connection.FillDataSet("getGroupUser1", CommandType.StoredProcedure, paras, values);
+        }
         internal static int insertAdmin(int br)
         {
             string[] paras = new string[] { "@idbranch" };

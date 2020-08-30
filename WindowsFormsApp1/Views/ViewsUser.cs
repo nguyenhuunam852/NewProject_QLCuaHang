@@ -107,8 +107,7 @@ namespace WindowsFormsApp1.Views
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
-            button7.Enabled = false;
-            groupBox3.Enabled = true;
+       
             label10.Text = "";
             DataBinding();
 
@@ -146,7 +145,7 @@ namespace WindowsFormsApp1.Views
         private void loadDataGridViewTenLoai()
         {
 
-            comboBox1.DataSource = Controllers.GroupUserControllers.getData().Tables[0];
+            comboBox1.DataSource = Controllers.GroupUserControllers.getData1().Tables[0];
             comboBox1.DisplayMember = "name";
             comboBox1.ValueMember = "id";
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -313,12 +312,19 @@ namespace WindowsFormsApp1.Views
                 groupBox3.Enabled = true;
             }
         }
+        public void load()
+        {
+            loadButton();
+            loadDataGridView();
+            loadDataGridViewTenLoai();
+        }
 
         private void button7_Click(object sender, EventArgs e)
         {
             if (UserControllers.RestoreUser(label10.Text) > 0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 UserViews_Load(sender, e);
             }
             else

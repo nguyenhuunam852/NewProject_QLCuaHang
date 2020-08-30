@@ -20,6 +20,7 @@ namespace WindowsFormsApp1.Views
         private void button1_Click(object sender, EventArgs e)
         {
             tenbenh = textBox1.Text;
+            ViewsSucKhoe.vsk.load();
             this.DialogResult = DialogResult.OK;
         }
     }

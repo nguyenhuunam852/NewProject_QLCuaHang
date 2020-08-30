@@ -82,6 +82,7 @@ namespace WindowsFormsApp1.Views
             RemoveAll();
             loadAllPage();
             msUserControl.Visible = false;
+            groupBox1.Visible = true;
             if (getFirstSetting() == 1)
             {
                
@@ -105,9 +106,13 @@ namespace WindowsFormsApp1.Views
                     }
                     if (User.getUser().pid == null)
                     {
+
+                        groupBox1.Controls.Add(new firstpage());
+                        
                         DialogResult dlr = FrmDangNhap.getFrom().ShowDialog();
                         if (dlr == DialogResult.OK)
                         {
+                            groupBox1.Visible = false;
                             int sig = 0;
                             int check;
                             while ((check = MainControllers.checkExist(dateTime)) != 3)
@@ -212,6 +217,7 @@ namespace WindowsFormsApp1.Views
         }
         public void lostConnect()
         {
+            groupBox1.Visible = false;
             DialogResult dlr = MessageBox.Show("không thể kết nối tới DataBase,bạn sẽ được chuyển hướng tới trang Settings", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             if (dlr == DialogResult.OK)
             {
@@ -233,11 +239,13 @@ namespace WindowsFormsApp1.Views
         }
         public void gotoSettings()
         {
+            groupBox1.Visible = false;
             dongALL();
             ThemTabPages(SettingViews.stv, 1, "Settings");
         }
         public void gotoQLUser()
         {
+            groupBox1.Visible = false;
             dongALL();
             ViewsUser v = ViewsUser.vu;
             v.firstSettings = 1;
@@ -246,6 +254,7 @@ namespace WindowsFormsApp1.Views
 
         public void khoiphucdatabase()
         {
+            groupBox1.Visible = false;
             DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dlr == DialogResult.OK)
             {
@@ -263,6 +272,7 @@ namespace WindowsFormsApp1.Views
         }
         public void khoiphucdatabase1()
         {
+            groupBox1.Visible = false;
             DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dlr == DialogResult.OK)
             {
@@ -280,6 +290,7 @@ namespace WindowsFormsApp1.Views
         }
         private void LoadAgain()
         {
+            groupBox1.Visible = false;
             foreach(ToolStripMenuItem tsmi in msUserControl.Items)
             {
                 tsmi.Visible = true;
@@ -289,7 +300,7 @@ namespace WindowsFormsApp1.Views
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-           
+            
             foreach (ToolStripMenuItem ts in msUserControl.Items)
             {
                 ts.AutoSize = false;
@@ -299,6 +310,7 @@ namespace WindowsFormsApp1.Views
             }
             setting = 0;
             getSetting();
+
             if (User.getUser().pid == null && close != 1 && setting !=1)
             {
                 FrmMain_Load(sender, e);

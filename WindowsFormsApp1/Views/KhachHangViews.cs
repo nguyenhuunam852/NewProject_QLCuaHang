@@ -49,10 +49,13 @@ namespace WindowsFormsApp1.Views
         }
         public void load()
         {
-            loadDataGridView();
-            loadDataGridViewTenLoai();
+            loadAgain();
         }
-        private void KhachHangViews_Load(object sender, EventArgs e)
+        public void load1()
+        {
+            loadAgain();
+        }
+        private void loadAgain()
         {
             button11.Enabled = false;
             LoadPermission();
@@ -68,7 +71,7 @@ namespace WindowsFormsApp1.Views
             loadDataGridView();
             loadDataGridViewTenLoai();
             DataBinding();
-            groupBox2.Enabled = false ;
+            groupBox2.Enabled = false;
             dataGridView1.Enabled = true;
             textBox8.Visible = false;
             textBox9.Visible = false;
@@ -79,6 +82,10 @@ namespace WindowsFormsApp1.Views
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView2 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView2);
             dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
+        }
+        private void KhachHangViews_Load(object sender, EventArgs e)
+        {
+            loadAgain();
         }
 
         private void LoadPermission()

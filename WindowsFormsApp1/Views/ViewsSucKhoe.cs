@@ -19,6 +19,11 @@ namespace WindowsFormsApp1.Views
         }
         string act = "";
         public static ViewsSucKhoe vsk = new ViewsSucKhoe();
+        public void load()
+        {
+            dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
+            dataGridView1.DataSource = SucKhoeControllers.getData().Tables[0];
+        }
         private void ViewsSucKhoe_Load(object sender, EventArgs e)
         {
             textBox2.Visible = false;
@@ -31,8 +36,6 @@ namespace WindowsFormsApp1.Views
             label8.Text = "";
             DataBinding();
 
-            button6.Enabled = false;
-            groupBox3.Enabled = true;
         }
         private void loadbutton()
         {
@@ -51,6 +54,9 @@ namespace WindowsFormsApp1.Views
 
             textBox1.DataBindings.Clear();
             textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "name", false, DataSourceUpdateMode.Never);
+
+            textBox2.DataBindings.Clear();
+            textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "available", false, DataSourceUpdateMode.Never);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -74,6 +80,7 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
+                    KhachHangViews.khv.load();
                     ViewsSucKhoe_Load(sender, e);
           
                 }
@@ -85,6 +92,7 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thay đổi tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
+                    KhachHangViews.khv.load();
                     ViewsSucKhoe_Load(sender, e);
 
                 }
@@ -111,6 +119,7 @@ namespace WindowsFormsApp1.Views
             if (MyPermission.getpermission("Health", "update") == 0)
             {
                 button4.Visible = false;
+                button6.Visible = false;
             }
             if (MyPermission.getpermission("Health", "delete") == 0)
             {
@@ -144,6 +153,7 @@ namespace WindowsFormsApp1.Views
             {
                 MessageBox.Show("Xóa thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 act = "";
+                KhachHangViews.khv.load();
                 ViewsSucKhoe_Load(sender, e);
 
             }

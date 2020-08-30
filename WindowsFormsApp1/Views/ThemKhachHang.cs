@@ -85,6 +85,7 @@ namespace WindowsFormsApp1.Views
             if (check > 0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                KhachHangViews.khv.load1();
                 this.DialogResult = DialogResult.OK;
             }
             else

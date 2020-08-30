@@ -59,5 +59,10 @@ namespace WindowsFormsApp1.Controllers
             GroupUser gu = new GroupUser(p);
             return gu.RestoreGroupUSer();
         }
+
+        internal static DataSet getData1()
+        {
+            return GroupUser.GetData1();
+        }
     }
 }

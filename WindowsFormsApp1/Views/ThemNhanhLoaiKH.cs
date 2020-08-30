@@ -28,6 +28,7 @@ namespace WindowsFormsApp1.Views
             if (check > 0)
             {
                 MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewsLoaiKhachHang.vlkh.load();
                 this.DialogResult = DialogResult.OK;
             }
         }
