@@ -157,5 +157,19 @@ namespace WindowsFormsApp1.Views
                 }
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ThemNhanhLoaiKH tn = new ThemNhanhLoaiKH();
+            if (tn.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Thêm thanh cong", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadDataGridViewTenLoai();
+            }
+            else
+            {
+                MessageBox.Show("Thêm that bai", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

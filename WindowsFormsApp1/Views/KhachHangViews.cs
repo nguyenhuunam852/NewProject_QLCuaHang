@@ -33,9 +33,9 @@ namespace WindowsFormsApp1.Views
         }
         private void loadButton()
         {
-            button3.Enabled = true;
+            button3.Enabled = false;
             button2.Enabled = true;
-            button4.Enabled = true;
+            button4.Enabled = false;
             button5.Enabled = false;
             button6.Enabled = false;
             textBox1.Enabled = false;
@@ -398,6 +398,8 @@ namespace WindowsFormsApp1.Views
             {
                 pdtb = Controllers.KhachHangControllers.getBenhLiData(int.Parse(lb.Text)).Tables[0];
                 dataGridView2.DataSource = pdtb;
+                button3.Enabled = true;
+                button4.Enabled = true;
             }
             else
             {
@@ -407,6 +409,8 @@ namespace WindowsFormsApp1.Views
                 pdtb.Columns.Add("name", typeof(String));
                 pdtb.Columns.Add("createat", typeof(DateTime));
                 dataGridView2.DataSource = pdtb;
+                button3.Enabled = false;
+                button4.Enabled = false;
             }
             dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
             textBox9.DataBindings.Clear();

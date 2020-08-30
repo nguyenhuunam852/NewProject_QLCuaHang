@@ -63,6 +63,7 @@
             this.idcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namebc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -71,6 +72,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.comboBox1);
@@ -98,7 +100,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(209, 130);
+            this.label9.Location = new System.Drawing.Point(246, 130);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 13);
             this.label9.TabIndex = 23;
@@ -107,7 +109,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(269, 124);
+            this.comboBox2.Location = new System.Drawing.Point(299, 124);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(70, 21);
             this.comboBox2.TabIndex = 22;
@@ -157,7 +159,6 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Culture = new System.Globalization.CultureInfo("vi-VN");
             this.maskedTextBox1.Location = new System.Drawing.Point(269, 98);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
@@ -394,6 +395,16 @@
             this.cabc.HeaderText = "Thời gian thêm vào";
             this.cabc.Name = "cabc";
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(198, 120);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(26, 23);
+            this.button10.TabIndex = 24;
+            this.button10.Text = "Thêm nhanh loai KH";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // ThemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,5 +462,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn namebc;
         private System.Windows.Forms.DataGridViewTextBoxColumn cabc;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button10;
     }
 }

@@ -31,6 +31,9 @@ namespace WindowsFormsApp1.Views
             label8.Visible = false;
 
             DataBinding();
+            groupBox3.Enabled = true;
+            button6.Enabled = false;
+           
         }
         private void loadbutton()
         {

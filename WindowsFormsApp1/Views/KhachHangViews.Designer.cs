@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,6 +54,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.hovataen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.create = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loaikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -75,21 +89,7 @@
             this.idcs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namebc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hovataen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.create = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button11 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -131,6 +131,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Khách hàng";
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(259, 166);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(20, 20);
+            this.textBox10.TabIndex = 25;
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(198, 151);
@@ -146,9 +154,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(51, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(13, 13);
             this.label10.TabIndex = 24;
-            this.label10.Text = "label10";
+            this.label10.Text = "a";
             this.label10.TextChanged += new System.EventHandler(this.label10_TextChanged_1);
             // 
             // label9
@@ -358,6 +366,93 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // hovataen
+            // 
+            this.hovataen.DataPropertyName = "hoten";
+            this.hovataen.HeaderText = "Họ và Tên";
+            this.hovataen.Name = "hovataen";
+            this.hovataen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // idl
+            // 
+            this.idl.DataPropertyName = "idlkh";
+            this.idl.HeaderText = "idlkh";
+            this.idl.Name = "idl";
+            this.idl.Visible = false;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // create
+            // 
+            this.create.DataPropertyName = "CreateAt";
+            this.create.HeaderText = "Ngày tạo";
+            this.create.Name = "create";
+            this.create.Visible = false;
+            // 
+            // loaikh
+            // 
+            this.loaikh.DataPropertyName = "type";
+            this.loaikh.HeaderText = "Loại Khách Hàng";
+            this.loaikh.Name = "loaikh";
+            this.loaikh.Visible = false;
+            // 
+            // ho
+            // 
+            this.ho.DataPropertyName = "lastname";
+            this.ho.HeaderText = "Họ";
+            this.ho.Name = "ho";
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "firstname";
+            this.ten.HeaderText = "Tên ";
+            this.ten.Name = "ten";
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "phone";
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.Name = "sdt";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            // 
+            // dc
+            // 
+            this.dc.DataPropertyName = "address";
+            this.dc.HeaderText = "Địa chỉ";
+            this.dc.Name = "dc";
+            // 
+            // ngaysinh
+            // 
+            this.ngaysinh.DataPropertyName = "birthday";
+            this.ngaysinh.HeaderText = "Ngày sinh";
+            this.ngaysinh.Name = "ngaysinh";
+            // 
+            // sex
+            // 
+            this.sex.DataPropertyName = "sex";
+            this.sex.HeaderText = "Giới tính";
+            this.sex.Name = "sex";
+            // 
+            // available
+            // 
+            this.available.DataPropertyName = "available";
+            this.available.FalseValue = "0";
+            this.available.HeaderText = "Available";
+            this.available.Name = "available";
+            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.available.TrueValue = "1";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label11);
@@ -561,93 +656,6 @@
             this.cabc.HeaderText = "Thời gian thêm vào";
             this.cabc.Name = "cabc";
             // 
-            // hovataen
-            // 
-            this.hovataen.DataPropertyName = "hoten";
-            this.hovataen.HeaderText = "Họ và Tên";
-            this.hovataen.Name = "hovataen";
-            this.hovataen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // idl
-            // 
-            this.idl.DataPropertyName = "idlkh";
-            this.idl.HeaderText = "idlkh";
-            this.idl.Name = "idl";
-            this.idl.Visible = false;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // create
-            // 
-            this.create.DataPropertyName = "CreateAt";
-            this.create.HeaderText = "Ngày tạo";
-            this.create.Name = "create";
-            this.create.Visible = false;
-            // 
-            // loaikh
-            // 
-            this.loaikh.DataPropertyName = "type";
-            this.loaikh.HeaderText = "Loại Khách Hàng";
-            this.loaikh.Name = "loaikh";
-            this.loaikh.Visible = false;
-            // 
-            // ho
-            // 
-            this.ho.DataPropertyName = "lastname";
-            this.ho.HeaderText = "Họ";
-            this.ho.Name = "ho";
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "firstname";
-            this.ten.HeaderText = "Tên ";
-            this.ten.Name = "ten";
-            // 
-            // sdt
-            // 
-            this.sdt.DataPropertyName = "phone";
-            this.sdt.HeaderText = "Số điện thoại";
-            this.sdt.Name = "sdt";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // dc
-            // 
-            this.dc.DataPropertyName = "address";
-            this.dc.HeaderText = "Địa chỉ";
-            this.dc.Name = "dc";
-            // 
-            // ngaysinh
-            // 
-            this.ngaysinh.DataPropertyName = "birthday";
-            this.ngaysinh.HeaderText = "Ngày sinh";
-            this.ngaysinh.Name = "ngaysinh";
-            // 
-            // sex
-            // 
-            this.sex.DataPropertyName = "sex";
-            this.sex.HeaderText = "Giới tính";
-            this.sex.Name = "sex";
-            // 
-            // available
-            // 
-            this.available.DataPropertyName = "available";
-            this.available.FalseValue = "0";
-            this.available.HeaderText = "Available";
-            this.available.Name = "available";
-            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.available.TrueValue = "1";
-            // 
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(6, 275);
@@ -657,14 +665,6 @@
             this.button11.Text = "Khôi phục";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(259, 166);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(20, 20);
-            this.textBox10.TabIndex = 25;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // KhachHangViews
             // 

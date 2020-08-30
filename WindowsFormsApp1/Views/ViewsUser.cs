@@ -99,9 +99,10 @@ namespace WindowsFormsApp1.Views
             loadButton();
             loadDataGridView();
             loadDataGridViewTenLoai();
+            label10.Text = "";
             DataBinding();
 
-            label10.Text = "";
+           
             label10.Visible = true;
             textBox1.Text = "";
             textBox2.Text = "";
@@ -282,10 +283,14 @@ namespace WindowsFormsApp1.Views
             if(label10.Text=="")
             {
                 button1.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
             }
             else
             {
                 button1.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
             }
         }
 

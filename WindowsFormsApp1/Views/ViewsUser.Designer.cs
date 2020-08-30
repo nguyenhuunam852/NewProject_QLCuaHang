@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,6 +103,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "User";
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(313, 247);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(54, 20);
+            this.textBox5.TabIndex = 26;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(25, 341);
@@ -118,8 +126,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(51, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 13);
+            this.label10.Size = new System.Drawing.Size(13, 13);
             this.label10.TabIndex = 24;
+            this.label10.Text = "a";
             this.label10.TextChanged += new System.EventHandler(this.label10_TextChanged);
             // 
             // label9
@@ -428,14 +437,6 @@
             this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.available.TrueValue = "1";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(313, 247);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(54, 20);
-            this.textBox5.TabIndex = 26;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // button7
             // 
