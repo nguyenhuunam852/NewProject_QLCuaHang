@@ -25,6 +25,7 @@ namespace WindowsFormsApp1.Models
         {
 
         }
+       
         public int InsertLoaiKH()
         {
             string[] paras = new string[] { "@name" };
@@ -45,8 +46,15 @@ namespace WindowsFormsApp1.Models
         }
         public static DataSet LayDSLoaiKH()
         {
-            return Models.Connection.FillDataSet("GetListTypeCustomer", CommandType.StoredProcedure);
+            return Models.Connection.FillDataSet("GetListTypeCustomer1", CommandType.StoredProcedure);
         }
 
+
+        internal int RestoreLKH()
+        {
+            string[] paras = new string[] { "@id" };
+            object[] values = new object[] { id };
+            return Models.Connection.Excute_Sql("RestoreTypeCustomer", CommandType.StoredProcedure, paras, values);
+        }
     }
 }

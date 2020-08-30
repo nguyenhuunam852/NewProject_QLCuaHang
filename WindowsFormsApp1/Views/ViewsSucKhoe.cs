@@ -21,6 +21,7 @@ namespace WindowsFormsApp1.Views
         public static ViewsSucKhoe vsk = new ViewsSucKhoe();
         private void ViewsSucKhoe_Load(object sender, EventArgs e)
         {
+            textBox2.Visible = false;
             loadPermission();
             loadbutton();
 
@@ -29,6 +30,9 @@ namespace WindowsFormsApp1.Views
             label8.Visible = false;
           
             DataBinding();
+
+            button6.Enabled = false;
+            groupBox3.Enabled = true;
         }
         private void loadbutton()
         {
@@ -144,5 +148,34 @@ namespace WindowsFormsApp1.Views
 
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "0")
+            {
+                button6.Enabled = true;
+                groupBox3.Enabled = false;
+            }
+            else
+            {
+                button6.Enabled = false;
+                groupBox3.Enabled = true;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(SucKhoeControllers.restoreSK(label8.Text)>0)
+            {
+                MessageBox.Show("Phục hồi thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewsSucKhoe_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Phục hồi thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewsSucKhoe_Load(sender, e);
+            }
+        }
+
     }
 }

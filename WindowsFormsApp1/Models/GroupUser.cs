@@ -66,7 +66,7 @@ namespace WindowsFormsApp1.Models
         {
             string[] paras = new string[] { "@idbranch" };
             object[] values = new object[] { User.getUser().pbranch };
-            return Models.Connection.FillDataSet("getGroupUser1", CommandType.StoredProcedure, paras, values);
+            return Models.Connection.FillDataSet("getGroupUser", CommandType.StoredProcedure, paras, values);
         }
 
         internal static int insertAdmin(int br)
@@ -74,6 +74,13 @@ namespace WindowsFormsApp1.Models
             string[] paras = new string[] { "@idbranch" };
             object[] values = new object[] { br };
             return Models.Connection.Excute_Sql("insertAdmin", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal int RestoreGroupUSer()
+        {
+            string[] paras = new string[] { "@id" };
+            object[] values = new object[] { a };
+            return Models.Connection.Excute_Sql("RestoregroupUser", CommandType.StoredProcedure, paras, values);
         }
     }
 }

@@ -22,6 +22,7 @@ namespace WindowsFormsApp1.Views
 
         private void ViewsLoaiKhachHang_Load(object sender, EventArgs e)
         {
+            textBox2.Visible = false;
             loadPermission();
             loadbutton();
 
@@ -48,6 +49,10 @@ namespace WindowsFormsApp1.Views
 
             textBox1.DataBindings.Clear();
             textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "name", false, DataSourceUpdateMode.Never);
+
+            textBox2.DataBindings.Clear();
+            textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "available", false, DataSourceUpdateMode.Never);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -151,6 +156,34 @@ namespace WindowsFormsApp1.Views
             {
                 button3.Enabled = true;
                 button4.Enabled = true;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "0")
+            {
+                button6.Enabled = true;
+                groupBox3.Enabled = false;
+            }
+            else
+            {
+                button6.Enabled = false;
+                groupBox3.Enabled = true;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(KhachHangControllers.restoreTypeCustomer(label8.Text)>0)
+            {
+                MessageBox.Show("Phục hồi thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewsLoaiKhachHang_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Phục hồi thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewsLoaiKhachHang_Load(sender, e);
             }
         }
     }

@@ -44,6 +44,9 @@ namespace WindowsFormsApp1.Views
             dataGridView2.Enabled = false;
             DataBinding();
             label1.Visible = false;
+            groupBox3.Enabled = true;
+            button6.Enabled = false;
+            textBox2.Visible = false;
         }
         private void loadPermission()
         {
@@ -364,5 +367,35 @@ namespace WindowsFormsApp1.Views
                 label1.Visible = true;
             }
         }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "0")
+            {
+                button6.Enabled = true;
+                groupBox3.Enabled = false;
+            }
+            else
+            {
+                button6.Enabled = false;
+                groupBox3.Enabled = true;
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if(GroupUserControllers.RestoreGU(label8.Text)>0)
+            {
+                MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GroupUserViews_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GroupUserViews_Load(sender, e);
+            }
+        }
+
+   
     }
 }

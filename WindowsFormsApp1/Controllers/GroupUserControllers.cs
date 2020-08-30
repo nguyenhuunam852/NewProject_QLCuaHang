@@ -53,5 +53,11 @@ namespace WindowsFormsApp1.Controllers
         {
             return GroupUser.insertAdmin(br);
         }
+
+        internal static int RestoreGU(string p)
+        {
+            GroupUser gu = new GroupUser(p);
+            return gu.RestoreGroupUSer();
+        }
     }
 }

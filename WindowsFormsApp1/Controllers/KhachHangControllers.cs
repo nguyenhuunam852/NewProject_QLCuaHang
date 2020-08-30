@@ -149,5 +149,13 @@ namespace WindowsFormsApp1.Controllers
             KhachHang kh = new KhachHang(id);
             return kh.KhoiPhuc();
         }
+
+        internal static int restoreTypeCustomer(string p)
+        {
+            LoaiKhachHang lkh = new LoaiKhachHang();
+            lkh.pid = p;
+            return lkh.RestoreLKH();
+
+        }
     }
 }

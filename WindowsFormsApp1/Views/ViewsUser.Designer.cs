@@ -65,12 +65,16 @@
             this.dc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox5);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
@@ -114,15 +118,15 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(51, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(0, 13);
             this.label10.TabIndex = 24;
-            this.label10.Text = "label10";
+            this.label10.TextChanged += new System.EventHandler(this.label10_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(32, 241);
+            this.label9.Location = new System.Drawing.Point(31, 248);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 20);
             this.label9.TabIndex = 23;
@@ -208,7 +212,6 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Culture = new System.Globalization.CultureInfo("vi-VN");
             this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.Location = new System.Drawing.Point(284, 131);
             this.maskedTextBox1.Mask = "00/00/0000";
@@ -317,7 +320,8 @@
             this.email,
             this.dc,
             this.ngaysinh,
-            this.sex});
+            this.sex,
+            this.available});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 441);
             this.dataGridView1.Name = "dataGridView1";
@@ -415,11 +419,41 @@
             this.sex.HeaderText = "Giới tính";
             this.sex.Name = "sex";
             // 
+            // available
+            // 
+            this.available.DataPropertyName = "available";
+            this.available.FalseValue = "0";
+            this.available.HeaderText = "available";
+            this.available.Name = "available";
+            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.available.TrueValue = "1";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(313, 247);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(54, 20);
+            this.textBox5.TabIndex = 26;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(612, 25);
+            this.button7.Name = "button7";
+            this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button7.Size = new System.Drawing.Size(109, 53);
+            this.button7.TabIndex = 27;
+            this.button7.Text = "Khôi phục";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // ViewsUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
             this.Name = "ViewsUser";
@@ -470,5 +504,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn sex;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn available;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button7;
     }
 }

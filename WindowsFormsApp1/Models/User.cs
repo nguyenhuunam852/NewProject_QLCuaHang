@@ -145,9 +145,19 @@ namespace WindowsFormsApp1.Models
 
         internal static DataTable getData()
         {
-            string[] paras = new string[1] { "@idbranch" };
-            object[] values = new object[1] { User.getUser().pbranch };
-            return Models.Connection.FillDataSet("getAllUserinBranch", CommandType.StoredProcedure, paras, values).Tables[0];
+            if (User.getUser().pid != null)
+            {
+                string[] paras = new string[2] { "@idbranch","@iduser" };
+                object[] values = new object[2] { User.getUser().pbranch, User.getUser().pid };
+                return Models.Connection.FillDataSet("getAllUserinBranch1", CommandType.StoredProcedure, paras, values).Tables[0];
+            }
+            else
+            {
+                string[] paras = new string[1] { "@idbranch" };
+                object[] values = new object[1] { User.getUser().pbranch };
+                return Models.Connection.FillDataSet("getAllUserinBranch", CommandType.StoredProcedure, paras, values).Tables[0];
+
+            }
         }
 
         internal int updateuser()
@@ -233,6 +243,14 @@ namespace WindowsFormsApp1.Models
         {
             _user = new User();
             return _user;
+        }
+
+        internal int RestoreUser()
+        {
+            string[] paras = new string[1] { "@id" };
+            object[] values = new object[1] { id };
+            return Models.Connection.Excute_Sql("RestoreUser", CommandType.StoredProcedure, paras, values);
+       
         }
     }
 }

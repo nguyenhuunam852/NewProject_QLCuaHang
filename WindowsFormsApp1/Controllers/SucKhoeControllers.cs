@@ -61,5 +61,12 @@ namespace WindowsFormsApp1.Controllers
             sk.setTen(text2);
             return sk.UpdateSK();
         }
+
+        internal static int restoreSK(string p)
+        {
+            SucKhoe sk = new SucKhoe(p);
+            return sk.Restore();
+               
+        }
     }
 }

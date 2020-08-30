@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
-
+using WindowsFormsApp1.Models;
 namespace WindowsFormsApp1.Views
 {
     public partial class ViewsUser : UserControl
@@ -37,6 +37,11 @@ namespace WindowsFormsApp1.Views
             clearTExtBox();
             action = "insert";
             label10.Text = "";
+
+            if(User.getUser().pid==null)
+            {
+                button1.Visible = false;
+            }
         }
         private void enableTextBox()
         {
@@ -89,6 +94,7 @@ namespace WindowsFormsApp1.Views
              
               
             }
+            textBox5.Visible = false;
             maskedTextBox1.Clear();
             loadButton();
             loadDataGridView();
@@ -106,6 +112,8 @@ namespace WindowsFormsApp1.Views
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
+            button7.Enabled = false;
+            groupBox3.Enabled = true;
         }
         private void DataBinding()
         {
@@ -121,6 +129,8 @@ namespace WindowsFormsApp1.Views
             maskedTextBox1.DataBindings.Add("Text", dataGridView1.DataSource, "birthday", false, DataSourceUpdateMode.Never);
             comboBox1.DataBindings.Clear();
             comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idgroup", false, DataSourceUpdateMode.Never);
+            comboBox2.DataBindings.Clear();
+            comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", false, DataSourceUpdateMode.Never);
             comboBox2.DataBindings.Clear();
             comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", false, DataSourceUpdateMode.Never);
         }
@@ -266,5 +276,47 @@ namespace WindowsFormsApp1.Views
             }
            
         }
+
+        private void label10_TextChanged(object sender, EventArgs e)
+        {
+            if(label10.Text=="")
+            {
+                button1.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "0")
+            {
+                button7.Enabled = true;
+                groupBox3.Enabled = false;
+            }
+            else
+            {
+                button7.Enabled = false;
+                groupBox3.Enabled = true;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (UserControllers.RestoreUser(label10.Text) > 0)
+            {
+                MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UserViews_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UserViews_Load(sender, e);
+            }
+        }
+
+       
     }
 }

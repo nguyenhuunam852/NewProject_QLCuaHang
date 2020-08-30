@@ -111,5 +111,12 @@ namespace WindowsFormsApp1.Controllers
             User us = new User(id);
             return us.deleteUser();
         }
+
+        internal static int RestoreUser(string p)
+        {
+            int id = int.Parse(p);
+            User us = new User(id);
+            return us.RestoreUser();
+        }
     }
 }

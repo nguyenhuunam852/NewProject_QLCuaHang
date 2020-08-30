@@ -70,7 +70,7 @@ namespace WindowsFormsApp1.Views
                 label22.Visible = true;
                 groupBox2.Enabled = true;
                 button4.Visible = false;
-                string path = Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "\\backup\\");
+                string path = Directory.GetCurrentDirectory()+"\\backup\\";
                 textBox1.Text = path;
 
             }

@@ -48,7 +48,7 @@ namespace WindowsFormsApp1.Models
         }
         public static DataSet GetData()
         {
-            return Models.Connection.FillDataSet("getListHeath", CommandType.StoredProcedure);
+            return Models.Connection.FillDataSet("getListHeath1", CommandType.StoredProcedure);
         }
         public static DataSet LayThongTinVuaThem()
         {
@@ -66,6 +66,13 @@ namespace WindowsFormsApp1.Models
             string[] paras = new string[] { "@id","@name" };
             object[] values = new object[] { id,ten };
             return Models.Connection.Excute_Sql("updateHealth", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal int Restore()
+        {
+            string[] paras = new string[] { "@id" };
+            object[] values = new object[] { id };
+            return Models.Connection.Excute_Sql("RestoreHealth", CommandType.StoredProcedure, paras, values);
         }
     }
 }
