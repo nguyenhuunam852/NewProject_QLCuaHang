@@ -52,6 +52,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label8);
@@ -61,9 +62,9 @@
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Location = new System.Drawing.Point(16, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(556, 323);
+            this.groupBox3.Size = new System.Drawing.Size(565, 368);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sức khỏe";
@@ -80,9 +81,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(320, 154);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(320, 172);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 65);
+            this.button1.Size = new System.Drawing.Size(84, 84);
             this.button1.TabIndex = 18;
             this.button1.Text = "Hủy";
             this.button1.UseVisualStyleBackColor = true;
@@ -100,9 +104,12 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(226, 154);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(226, 173);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 65);
+            this.button5.Size = new System.Drawing.Size(84, 83);
             this.button5.TabIndex = 14;
             this.button5.Text = "Lưu";
             this.button5.UseVisualStyleBackColor = true;
@@ -110,9 +117,12 @@
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Location = new System.Drawing.Point(414, 57);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 65);
+            this.button4.Size = new System.Drawing.Size(84, 87);
             this.button4.TabIndex = 13;
             this.button4.Text = "Sửa";
             this.button4.UseVisualStyleBackColor = true;
@@ -120,9 +130,12 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Location = new System.Drawing.Point(320, 57);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 65);
+            this.button3.Size = new System.Drawing.Size(84, 87);
             this.button3.TabIndex = 12;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
@@ -130,9 +143,12 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(226, 57);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 65);
+            this.button2.Size = new System.Drawing.Size(84, 87);
             this.button2.TabIndex = 11;
             this.button2.Text = "Thêm";
             this.button2.UseVisualStyleBackColor = true;
@@ -159,6 +175,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -167,7 +186,6 @@
             this.createat,
             this.updateat,
             this.available});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 377);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1350, 391);
@@ -218,7 +236,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(565, 24);
+            this.button6.Location = new System.Drawing.Point(602, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 65);
             this.button6.TabIndex = 19;

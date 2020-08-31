@@ -82,14 +82,11 @@ namespace WindowsFormsApp1.Views
         {
             if (firstSettings == 1)
             {
-                
+                textBox5.Text = "1";
             }
             else
             {
-                loadermisssion();
-                
-             
-              
+                loadermisssion(); 
             }
             textBox5.Visible = false;
             maskedTextBox1.Clear();
@@ -129,6 +126,8 @@ namespace WindowsFormsApp1.Views
             textBox3.DataBindings.Add("Text", dataGridView1.DataSource, "email", false, DataSourceUpdateMode.Never);
             textBox4.DataBindings.Clear();
             textBox4.DataBindings.Add("Text", dataGridView1.DataSource, "address", false, DataSourceUpdateMode.Never);
+            textBox5.DataBindings.Clear();
+            textBox5.DataBindings.Add("Text", dataGridView1.DataSource, "available", false, DataSourceUpdateMode.Never);
             maskedTextBox1.DataBindings.Clear();
             maskedTextBox1.DataBindings.Add("Text", dataGridView1.DataSource, "birthday", false, DataSourceUpdateMode.Never);
             comboBox1.DataBindings.Clear();

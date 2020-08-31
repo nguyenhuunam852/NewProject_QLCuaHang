@@ -76,8 +76,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -89,6 +89,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -528,7 +531,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(503, 15);
+            this.button3.Location = new System.Drawing.Point(659, 15);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 67);
             this.button3.TabIndex = 3;
@@ -538,7 +541,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(599, 15);
+            this.button1.Location = new System.Drawing.Point(755, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 67);
             this.button1.TabIndex = 5;
@@ -548,6 +551,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.groupBox4);
@@ -577,8 +581,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(394, 232);
             this.dataGridView1.TabIndex = 8;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Location = new System.Drawing.Point(1113, 15);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 67);
@@ -586,13 +598,6 @@
             this.button4.Text = "Thay đổi Database";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
             // 
             // SettingViews
             // 

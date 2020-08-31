@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNH", "WindowsFormsApp1\QLNH.csproj", "{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}"
 EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "QLCH", "QLCH\QLCH.aiproj", "{8BDE642B-6DFC-4024-AF54-E987CD0E2531}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -20,12 +18,6 @@ Global
 		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BDE642B-6DFC-4024-AF54-E987CD0E2531}.All|Any CPU.ActiveCfg = DefaultBuild
-		{8BDE642B-6DFC-4024-AF54-E987CD0E2531}.All|Any CPU.Build.0 = DefaultBuild
-		{8BDE642B-6DFC-4024-AF54-E987CD0E2531}.Debug|Any CPU.ActiveCfg = DefaultBuild
-		{8BDE642B-6DFC-4024-AF54-E987CD0E2531}.Debug|Any CPU.Build.0 = DefaultBuild
-		{8BDE642B-6DFC-4024-AF54-E987CD0E2531}.Release|Any CPU.ActiveCfg = DefaultBuild
-		{8BDE642B-6DFC-4024-AF54-E987CD0E2531}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -217,3 +217,4 @@ C:\Users\nam\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\WindowsFor
 C:\Users\nam\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.ViewsUser.resources
 C:\Users\nam\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csproj.GenerateResource.Cache
 C:\Users\nam\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csprojResolveAssemblyReference.cache
+C:\Users\nam\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.firstpage.resources

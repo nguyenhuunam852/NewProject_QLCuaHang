@@ -184,9 +184,9 @@ namespace WindowsFormsApp1.Views
                 //Bảo trì là màu đỏ
                 lb.BackColor = Color.FromArgb(240, 128, 128);
             }
+            lb.Anchor = AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Left;
             lb.Location = new System.Drawing.Point(int.Parse(infor[2].ToString()),int.Parse(infor[3].ToString()));
             lb.Name = infor[0].ToString();
-            lb.Size = new System.Drawing.Size(100, 100);
             lb.Text = infor[4].ToString();//Lấy số trong id Bàn
             lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             lb.MouseDown += Lb_MouseDown;
@@ -509,6 +509,14 @@ namespace WindowsFormsApp1.Views
                 MessageBox.Show("Thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void groupBox1_SizeChanged(object sender, EventArgs e)
+        {
+         foreach(Label lb in groupBox1.Controls)
+         {
+             lb.Size = new Size(groupBox1.Size.Width / 10, groupBox1.Size.Height / 10);
+         }
         }
     }
 }

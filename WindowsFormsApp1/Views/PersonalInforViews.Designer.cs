@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtHo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cá nhân";
+            // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(176, 65);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(190, 20);
+            this.txtTen.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(51, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Tên";
             // 
             // label8
             // 
@@ -138,7 +155,7 @@
             this.nsText.Mask = "00/00/0000";
             this.nsText.Name = "nsText";
             this.nsText.Size = new System.Drawing.Size(71, 20);
-            this.nsText.TabIndex = 26;
+            this.nsText.TabIndex = 6;
             this.nsText.ValidatingType = typeof(System.DateTime);
             // 
             // TypeText
@@ -192,7 +209,7 @@
             this.dcText.Location = new System.Drawing.Point(176, 208);
             this.dcText.Name = "dcText";
             this.dcText.Size = new System.Drawing.Size(190, 20);
-            this.dcText.TabIndex = 7;
+            this.dcText.TabIndex = 5;
             // 
             // label4
             // 
@@ -209,7 +226,7 @@
             this.emailText.Location = new System.Drawing.Point(176, 156);
             this.emailText.Name = "emailText";
             this.emailText.Size = new System.Drawing.Size(190, 20);
-            this.emailText.TabIndex = 5;
+            this.emailText.TabIndex = 4;
             // 
             // label3
             // 
@@ -254,23 +271,6 @@
             this.label1.Size = new System.Drawing.Size(33, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(51, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 21);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Tên";
-            // 
-            // txtTen
-            // 
-            this.txtTen.Location = new System.Drawing.Point(176, 65);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(190, 20);
-            this.txtTen.TabIndex = 33;
             // 
             // PersonalInforViews
             // 

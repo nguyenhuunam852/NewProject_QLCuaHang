@@ -31,21 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.msUserControl = new System.Windows.Forms.MenuStrip();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLbackUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QLGhe = new System.Windows.Forms.ToolStripMenuItem();
             this.QLkhachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.QLloaiKH = new System.Windows.Forms.ToolStripMenuItem();
             this.QLsk = new System.Windows.Forms.ToolStripMenuItem();
             this.QLlichSu = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLsetting = new System.Windows.Forms.ToolStripMenuItem();
             this.QLuser = new System.Windows.Forms.ToolStripMenuItem();
             this.QlGroupUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLsetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLbackUp = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmsTag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabHienThi = new System.Windows.Forms.TabControl();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.SuspendLayout();
@@ -54,103 +53,124 @@
             // 
             this.msUserControl.AutoSize = false;
             this.msUserControl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.msUserControl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msUserControl.Font = new System.Drawing.Font("Times New Roman", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
-            this.QLbackUp,
+            this.dangToolStripMenuItem,
             this.QLGhe,
             this.QLkhachhang,
             this.QLloaiKH,
             this.QLsk,
             this.QLlichSu,
-            this.QLsetting,
             this.QLuser,
             this.QlGroupUser,
-            this.dangToolStripMenuItem});
-            this.msUserControl.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.QLsetting,
+            this.QLbackUp});
             this.msUserControl.Location = new System.Drawing.Point(0, 0);
             this.msUserControl.Name = "msUserControl";
-            this.msUserControl.Size = new System.Drawing.Size(1350, 30);
+            this.msUserControl.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.msUserControl.Size = new System.Drawing.Size(784, 24);
             this.msUserControl.TabIndex = 1;
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
+            this.thôngTinCáNhânToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
-            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông Tin Cá Nhân";
+            this.thôngTinCáNhânToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.thôngTinCáNhânToolStripMenuItem.Text = "CÁ NHÂN";
+            this.thôngTinCáNhânToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
-            // QLbackUp
+            // dangToolStripMenuItem
             // 
-            this.QLbackUp.Name = "QLbackUp";
-            this.QLbackUp.Size = new System.Drawing.Size(59, 26);
-            this.QLbackUp.Text = "BackUp";
-            this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
+            this.dangToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
+            this.dangToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.dangToolStripMenuItem.Text = "ĐĂNG XUẤT";
+            this.dangToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
             // 
             // QLGhe
             // 
-            this.QLGhe.AutoSize = false;
-            this.QLGhe.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLGhe.Name = "QLGhe";
-            this.QLGhe.Size = new System.Drawing.Size(118, 18);
-            this.QLGhe.Text = "Quản lí ghế";
+            this.QLGhe.Size = new System.Drawing.Size(37, 20);
+            this.QLGhe.Text = "GHẾ";
+            this.QLGhe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLGhe.Click += new System.EventHandler(this.quảnLíBànToolStripMenuItem_Click);
             // 
             // QLkhachhang
             // 
+            this.QLkhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLkhachhang.Name = "QLkhachhang";
-            this.QLkhachhang.Size = new System.Drawing.Size(124, 26);
-            this.QLkhachhang.Text = "Quản lí khách hàng";
+            this.QLkhachhang.Size = new System.Drawing.Size(81, 20);
+            this.QLkhachhang.Text = "KHÁCH HÀNG";
+            this.QLkhachhang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLkhachhang.Click += new System.EventHandler(this.quảnLíKháchHàngToolStripMenuItem_Click);
             // 
             // QLloaiKH
             // 
+            this.QLloaiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLloaiKH.Name = "QLloaiKH";
-            this.QLloaiKH.Size = new System.Drawing.Size(110, 26);
-            this.QLloaiKH.Text = "Loại Khách Hàng";
+            this.QLloaiKH.Size = new System.Drawing.Size(105, 20);
+            this.QLloaiKH.Text = "LOẠI KHÁCH HÀNG";
+            this.QLloaiKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLloaiKH.Click += new System.EventHandler(this.quảnLíTypeKháchHàngToolStripMenuItem_Click);
             // 
             // QLsk
             // 
+            this.QLsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLsk.Name = "QLsk";
-            this.QLsk.Size = new System.Drawing.Size(68, 26);
-            this.QLsk.Text = "Sức khỏe";
+            this.QLsk.Size = new System.Drawing.Size(65, 20);
+            this.QLsk.Text = "SỨC KHỎE";
+            this.QLsk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLsk.Click += new System.EventHandler(this.QLsk_Click);
             // 
             // QLlichSu
             // 
+            this.QLlichSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLlichSu.Name = "QLlichSu";
-            this.QLlichSu.Size = new System.Drawing.Size(120, 26);
-            this.QLlichSu.Text = "Lịch sử và thống kê";
+            this.QLlichSu.Size = new System.Drawing.Size(64, 20);
+            this.QLlichSu.Text = "THỐNG KÊ";
+            this.QLlichSu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLlichSu.Click += new System.EventHandler(this.lịchSửVàThốngKêToolStripMenuItem_Click);
-            // 
-            // QLsetting
-            // 
-            this.QLsetting.Name = "QLsetting";
-            this.QLsetting.Size = new System.Drawing.Size(63, 26);
-            this.QLsetting.Text = "Settings";
-            this.QLsetting.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // QLuser
             // 
+            this.QLuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLuser.Name = "QLuser";
-            this.QLuser.Size = new System.Drawing.Size(87, 26);
-            this.QLuser.Text = "Quản lí User";
+            this.QLuser.Size = new System.Drawing.Size(49, 20);
+            this.QLuser.Text = "USERS";
+            this.QLuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLuser.Click += new System.EventHandler(this.quảnLíUserToolStripMenuItem_Click);
             // 
             // QlGroupUser
             // 
+            this.QlGroupUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QlGroupUser.Name = "QlGroupUser";
-            this.QlGroupUser.Size = new System.Drawing.Size(123, 26);
-            this.QlGroupUser.Text = "Quản lí Group User";
+            this.QlGroupUser.Size = new System.Drawing.Size(79, 20);
+            this.QlGroupUser.Text = "GROUP USER";
+            this.QlGroupUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QlGroupUser.Click += new System.EventHandler(this.quảnLíGroupUSerToolStripMenuItem_Click);
             // 
-            // dangToolStripMenuItem
+            // QLsetting
             // 
-            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
-            this.dangToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
-            this.dangToolStripMenuItem.Text = "Đăng Xuất";
-            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
+            this.QLsetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLsetting.Name = "QLsetting";
+            this.QLsetting.Size = new System.Drawing.Size(62, 20);
+            this.QLsetting.Text = "SETTINGS";
+            this.QLsetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QLsetting.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // QLbackUp
+            // 
+            this.QLbackUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLbackUp.Name = "QLbackUp";
+            this.QLbackUp.Size = new System.Drawing.Size(56, 20);
+            this.QLbackUp.Text = "BACKUP";
+            this.QLbackUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
             // cntmsTag
             // 
@@ -179,29 +199,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TabHienThi.ContextMenuStrip = this.cntmsTag;
-            this.TabHienThi.Location = new System.Drawing.Point(0, 30);
+            this.TabHienThi.Location = new System.Drawing.Point(0, 27);
             this.TabHienThi.Name = "TabHienThi";
             this.TabHienThi.SelectedIndex = 0;
-            this.TabHienThi.Size = new System.Drawing.Size(1350, 768);
+            this.TabHienThi.Size = new System.Drawing.Size(784, 604);
             this.TabHienThi.TabIndex = 3;
             this.TabHienThi.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabHienThi_MouseMove);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 30);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1350, 699);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.TabHienThi);
             this.Controls.Add(this.msUserControl);
             this.MainMenuStrip = this.msUserControl;
@@ -235,6 +244,5 @@
         private System.Windows.Forms.ToolStripMenuItem dangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QLbackUp;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
