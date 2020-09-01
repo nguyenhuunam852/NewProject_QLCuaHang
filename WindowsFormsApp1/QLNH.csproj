@@ -314,7 +314,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\App.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

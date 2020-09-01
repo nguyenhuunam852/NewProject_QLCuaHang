@@ -303,12 +303,18 @@ namespace WindowsFormsApp1.Views
             if (textBox5.Text == "0")
             {
                 button7.Enabled = true;
-                groupBox3.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+                button1.Enabled = false;
             }
             else
             {
-                button5.Enabled = false;
-                groupBox3.Enabled = true;
+                button7.Enabled = false;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button1.Enabled = true;
             }
         }
         public void load()

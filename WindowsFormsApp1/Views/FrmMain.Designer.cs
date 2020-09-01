@@ -47,6 +47,7 @@
             this.TabHienThi = new System.Windows.Forms.TabControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -247,11 +248,22 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(784, 562);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TabHienThi);
             this.MainMenuStrip = this.msUserControl;
@@ -289,5 +301,6 @@
         private System.Windows.Forms.ToolStripMenuItem QLbackUp;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

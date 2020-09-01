@@ -27,6 +27,7 @@ namespace WindowsFormsApp1.Views
         string[] listhide = new string[2] { "MyTable", "StaticalTypeCustomer" };
         private void GroupUserViews_Load(object sender, EventArgs e)
         {
+            label8.Text = "";
             listpermission = GroupUserControllers.getlistpermisson();
             loadPermission();
             dtb = new DataTable();
@@ -40,7 +41,7 @@ namespace WindowsFormsApp1.Views
             dataGridView2.DataSource = dtb;
             dataGridView1.DataSource = GroupUserControllers.getData().Tables[0];
   
-            label8.Visible = false;
+            label8.Visible = true;
             dataGridView2.Enabled = false;
             DataBinding();
             label1.Visible = false;
@@ -325,10 +326,13 @@ namespace WindowsFormsApp1.Views
         private void label8_TextChanged(object sender, EventArgs e)
         {
             string a = label8.Text;
-            if (a != "id")
+            if (a != "")
             {
-                button4.Enabled = true;
-                button3.Enabled = true;
+                if(textBox2.Text!="0")
+                {
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                }
                 DataTable newdtb = GroupUserControllers.getListPermissionbyId(a);
                 if (listpermission.Rows.Count > newdtb.Rows.Count)
                 {
@@ -353,9 +357,6 @@ namespace WindowsFormsApp1.Views
                     }
                 }
                 dataGridView2.DataSource = newdtb;
-
-                button3.Enabled = true;
-                button4.Enabled = true;
             }
         }
 
@@ -378,11 +379,18 @@ namespace WindowsFormsApp1.Views
             if (textBox2.Text == "0")
             {
                 button6.Enabled = true;
+                button3.Enabled = false;
+                button5.Enabled = false;
+                button4.Enabled = false;
+                button1.Enabled = false;
             }
             else
             {
-
                 button6.Enabled = false;
+                button3.Enabled = true;
+                button4.Enabled = true;
+              
+
             }
         }
 

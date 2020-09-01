@@ -88,7 +88,6 @@
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.maskedTextBox1);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
@@ -223,9 +222,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(376, 29);
+            this.button2.Location = new System.Drawing.Point(575, 187);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 21);
+            this.button2.Size = new System.Drawing.Size(84, 64);
             this.button2.TabIndex = 11;
             this.button2.Text = "Thêm";
             this.button2.UseVisualStyleBackColor = true;
@@ -483,6 +482,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Name = "ViewsUser";
             this.Size = new System.Drawing.Size(784, 536);
             this.Load += new System.EventHandler(this.UserViews_Load);

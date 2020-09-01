@@ -106,7 +106,7 @@ namespace WindowsFormsApp1.Views
             RemoveAll();
             loadAllPage();
             msUserControl.Visible = false;
-
+            groupBox2.Visible =true;
             if (getFirstSetting() == 1)
             {
                
@@ -144,6 +144,7 @@ namespace WindowsFormsApp1.Views
                         DialogResult dlr = FrmDangNhap.getFrom().ShowDialog();
                         if (dlr == DialogResult.OK)
                         {
+                            groupBox2.Visible = false;
                             int sig = 0;
                             int check;
                             while ((check = MainControllers.checkExist(dateTime)) != 3)
@@ -325,8 +326,9 @@ namespace WindowsFormsApp1.Views
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            Image myimage = new Bitmap(Directory.GetCurrentDirectory()+"\\picture\\bgp.jpg");
+            groupBox2.BackgroundImage = myimage;
             
-       
             setting = 0;
             getSetting();
 
