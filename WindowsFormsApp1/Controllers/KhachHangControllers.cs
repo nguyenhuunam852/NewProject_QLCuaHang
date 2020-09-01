@@ -116,6 +116,10 @@ namespace WindowsFormsApp1.Controllers
         {
             return SucKhoe.GetData();
         }
+        public static DataSet getAllBenhLi1()
+        {
+            return SucKhoe.GetData1();
+        }
         public static DataSet LayThongTinKH(int id)
         {
             KhachHang kh = new KhachHang(id);

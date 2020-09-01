@@ -50,6 +50,10 @@ namespace WindowsFormsApp1.Models
         {
             return Models.Connection.FillDataSet("getListHeath1", CommandType.StoredProcedure);
         }
+        public static DataSet GetData1()
+        {
+            return Models.Connection.FillDataSet("getListHeath", CommandType.StoredProcedure);
+        }
         public static DataSet LayThongTinVuaThem()
         {
             return Models.Connection.FillDataSet("getinfoHealthafterInsert", CommandType.StoredProcedure);

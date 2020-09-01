@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
 using WindowsFormsApp1.Models;
-
+using System.Text.RegularExpressions;
 namespace WindowsFormsApp1.Views
 {
     public partial class FrmMain : Form
@@ -77,7 +77,28 @@ namespace WindowsFormsApp1.Views
         {
             ThemTabPages(GheViews.dv, 2 , "Quản lí ghế");
         }
-        
+        private bool checkPath(string path)
+        {
+            Regex driveCheck = new Regex(@"^[a-zA-Z]:\\$");
+            if (string.IsNullOrWhiteSpace(path) || path.Length < 3)
+            {
+                return false;
+            }
+
+            if (!driveCheck.IsMatch(path.Substring(0, 3)))
+            {
+                return false;
+            }
+            string strTheseAreInvalidFileNameChars = new string(Path.GetInvalidPathChars());
+            strTheseAreInvalidFileNameChars += @":/?*" + "\"";
+            Regex containsABadCharacter = new Regex("[" + Regex.Escape(strTheseAreInvalidFileNameChars) + "]");
+            if (containsABadCharacter.IsMatch(path.Substring(3, path.Length - 3)))
+            {
+                return false;
+            }
+            return true;
+
+        }
         public void getSetting()
         {
            
@@ -91,6 +112,14 @@ namespace WindowsFormsApp1.Views
                
                 if (SettingsControllers.getInformation() != null)
                 {
+
+                    if (checkPath(Settings.getSettings().ppicture) == true)
+                    {
+                        Image img = Image.FromFile(Settings.getSettings().ppicture);
+                        pictureBox1.Image = img;
+                        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                     
                     SettingViews.getViews().kt = 1;
                     if (firstsetting == 1)
                     {
@@ -296,8 +325,7 @@ namespace WindowsFormsApp1.Views
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-           
-           
+            
        
             setting = 0;
             getSetting();

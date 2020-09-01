@@ -72,7 +72,8 @@ namespace WindowsFormsApp1.Views
                 button4.Visible = false;
                 string path = Directory.GetCurrentDirectory()+"\\backup\\";
                 textBox1.Text = path;
-
+                string path1 = Directory.GetCurrentDirectory() + "\\picture\\logo.jpg";
+                textBox2.Text = path1;
             }
             else
             {
@@ -263,11 +264,11 @@ namespace WindowsFormsApp1.Views
 
         private void button9_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
+            OpenFileDialog sfd = new OpenFileDialog();
             DialogResult dlr = sfd.ShowDialog();
             if (dlr == DialogResult.OK)
             {
-                
+                textBox2.Text=sfd.FileName;
             }
         }
         public void loadCombobox()

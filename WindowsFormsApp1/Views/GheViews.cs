@@ -189,6 +189,8 @@ namespace WindowsFormsApp1.Views
             lb.Name = infor[0].ToString();
             lb.Text = infor[4].ToString();//Lấy số trong id Bàn
             lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lb.Size = new Size(groupBox1.Size.Width / 10, groupBox1.Size.Height / 10);
+
             lb.MouseDown += Lb_MouseDown;
             lb.MouseMove += Lb_MouseMove;
             lb.MouseUp += Lb_MouseUp1; 

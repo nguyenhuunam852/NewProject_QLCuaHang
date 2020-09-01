@@ -160,7 +160,7 @@ namespace WindowsFormsApp1.Views
         {
             dataGridView1.DataSource = Controllers.KhachHangControllers.getData().Tables[0];
 
-            listhealth = Controllers.KhachHangControllers.getAllBenhLi().Tables[0];
+            listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
             dataGridView3.DataSource = listhealth;
         }
         private void enableTextBox()
@@ -355,7 +355,7 @@ namespace WindowsFormsApp1.Views
                     }
                     if (action == "insert" || action=="update")
                     {
-                        listhealth = Controllers.KhachHangControllers.getAllBenhLi().Tables[0];
+                        listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
                         dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
                         textBox9.DataBindings.Clear();
                         textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
@@ -487,6 +487,11 @@ namespace WindowsFormsApp1.Views
                 button11.Enabled = false;
                 groupBox3.Enabled = true;
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
         //private void button9_Click(object sender, EventArgs e)
         //{

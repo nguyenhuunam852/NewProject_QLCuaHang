@@ -167,7 +167,6 @@ namespace WindowsFormsApp1.Views
             loadDatatable();
             dataGridView2.DataSource = dtb;
             button3.Enabled = false;
-            button2.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = true;
             button1.Enabled = true;
@@ -255,7 +254,7 @@ namespace WindowsFormsApp1.Views
             }
 
             button3.Enabled = false;
-            button2.Enabled = false;
+        
             button4.Enabled = false;
             button5.Enabled = true;
             button1.Enabled = true;
@@ -379,12 +378,11 @@ namespace WindowsFormsApp1.Views
             if (textBox2.Text == "0")
             {
                 button6.Enabled = true;
-                groupBox3.Enabled = false;
             }
             else
             {
+
                 button6.Enabled = false;
-                groupBox3.Enabled = true;
             }
         }
 

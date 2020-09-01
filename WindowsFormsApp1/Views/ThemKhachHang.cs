@@ -29,7 +29,7 @@ namespace WindowsFormsApp1.Views
             groupBox2.Enabled = true;
             textBox5.Text = KhachHangControllers.getMaMoi();
             textBox5.Enabled = false;
-            listhealth = Controllers.KhachHangControllers.getAllBenhLi().Tables[0];
+            listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
             dataGridView3.DataSource = listhealth;
             pdtb = new DataTable();
             pdtb.Columns.Add("idcustomer", typeof(int));
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1.Views
         private void loadDataGridViewTenLoai()
         {
 
-            comboBox1.DataSource = Controllers.KhachHangControllers.LoadLoaiKh().Tables[0];
+            comboBox1.DataSource = Controllers.KhachHangControllers.LoadLoaiKh1().Tables[0];
             comboBox1.DisplayMember = "name";
             comboBox1.ValueMember = "id";
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -150,7 +150,7 @@ namespace WindowsFormsApp1.Views
                 if (check > 0)
                 {
                     MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    listhealth = Controllers.KhachHangControllers.getAllBenhLi().Tables[0];
+                    listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
                     dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
                     textBox9.DataBindings.Clear();
                     textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
