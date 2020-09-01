@@ -249,6 +249,7 @@ namespace WindowsFormsApp1.Views
         }
         public void lostConnect()
         {
+            groupBox2.Hide();
             DialogResult dlr = MessageBox.Show("không thể kết nối tới DataBase,bạn sẽ được chuyển hướng tới trang Settings", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             if (dlr == DialogResult.OK)
             {
@@ -275,6 +276,7 @@ namespace WindowsFormsApp1.Views
         }
         public void gotoQLUser()
         {
+            groupBox2.Hide();
             dongALL();
             ViewsUser v = ViewsUser.vu;
             v.firstSettings = 1;
@@ -283,6 +285,7 @@ namespace WindowsFormsApp1.Views
 
         public void khoiphucdatabase()
         {
+            groupBox2.Hide();
             DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dlr == DialogResult.OK)
             {
@@ -300,6 +303,7 @@ namespace WindowsFormsApp1.Views
         }
         public void khoiphucdatabase1()
         {
+            groupBox2.Hide();
             DialogResult dlr = MessageBox.Show("Bạn cần tìm tới danh sách các file .Bak đã lưu để khôi phục lại database của bạn", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dlr == DialogResult.OK)
             {

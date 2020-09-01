@@ -1,0 +1,10 @@
+txtServerName@NAM-PC
+txtDataBase@mydtb
+txtDV@Nguoi
+txtTGBD@17:00
+txtTGHD@00:30
+txtTGKT@18:00
+txtUsername@sa
+txtPass@123456
+txtSave@C:\Users\nam\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Release
+txtPicture@(dev)

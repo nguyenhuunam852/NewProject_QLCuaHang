@@ -56,7 +56,8 @@
             this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.monthCalendar1.Location = new System.Drawing.Point(3, 23);
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 3);
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
@@ -76,10 +77,10 @@
             this.tenkh,
             this.ca,
             this.att});
-            this.dataGridView1.Location = new System.Drawing.Point(402, 331);
+            this.dataGridView1.Location = new System.Drawing.Point(462, 331);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(367, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(307, 244);
             this.dataGridView1.TabIndex = 2;
             // 
             // id
@@ -135,9 +136,9 @@
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(399, 23);
+            this.groupBox1.Location = new System.Drawing.Point(462, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 277);
+            this.groupBox1.Size = new System.Drawing.Size(307, 277);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -174,7 +175,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(3, 154);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(364, 120);
+            this.dataGridView3.Size = new System.Drawing.Size(301, 120);
             this.dataGridView3.TabIndex = 5;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 

@@ -41,9 +41,14 @@ namespace WindowsFormsApp1.Models
             {
                 SqlConnection con = new SqlConnection(Connection.server);
                 con.Open();
-                string sql = "SELECT b.name FROM sys.master_files a join sys.databases b on a.database_id = b.database_id where a.physical_name =N'" + v + "'";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                return cmd.ExecuteScalar().ToString();
+                if(File.Exists(v)==true)
+                {
+                    string sql = "SELECT b.name FROM sys.master_files a join sys.databases b on a.database_id = b.database_id where a.physical_name =N'" + v + "'";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    return cmd.ExecuteScalar().ToString();
+                }
+                return null;
+             
             }
             catch {
                 return null;

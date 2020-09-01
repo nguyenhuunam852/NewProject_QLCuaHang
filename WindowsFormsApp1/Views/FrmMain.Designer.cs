@@ -65,7 +65,6 @@
             this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
-            this.dangToolStripMenuItem,
             this.QLGhe,
             this.QLkhachhang,
             this.QLloaiKH,
@@ -74,121 +73,123 @@
             this.QLuser,
             this.QlGroupUser,
             this.QLsetting,
-            this.QLbackUp});
+            this.QLbackUp,
+            this.dangToolStripMenuItem});
             this.msUserControl.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.msUserControl.Location = new System.Drawing.Point(2, 121);
             this.msUserControl.Name = "msUserControl";
-            this.msUserControl.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.msUserControl.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.msUserControl.Size = new System.Drawing.Size(143, 441);
             this.msUserControl.TabIndex = 1;
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
-            this.thôngTinCáNhânToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.thôngTinCáNhânToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.thôngTinCáNhânToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
             this.thôngTinCáNhânToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(139, 20);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.thôngTinCáNhânToolStripMenuItem.Text = "CÁ NHÂN";
             this.thôngTinCáNhânToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // dangToolStripMenuItem
             // 
-            this.dangToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dangToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.dangToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dangToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
-            this.dangToolStripMenuItem.Size = new System.Drawing.Size(139, 20);
+            this.dangToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
             this.dangToolStripMenuItem.Text = "ĐĂNG XUẤT";
             this.dangToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
             // 
             // QLGhe
             // 
-            this.QLGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLGhe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLGhe.Name = "QLGhe";
-            this.QLGhe.Size = new System.Drawing.Size(139, 20);
+            this.QLGhe.Size = new System.Drawing.Size(139, 24);
             this.QLGhe.Text = "GHẾ";
             this.QLGhe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLGhe.Click += new System.EventHandler(this.quảnLíBànToolStripMenuItem_Click);
             // 
             // QLkhachhang
             // 
-            this.QLkhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLkhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLkhachhang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLkhachhang.Name = "QLkhachhang";
-            this.QLkhachhang.Size = new System.Drawing.Size(139, 20);
+            this.QLkhachhang.Size = new System.Drawing.Size(139, 24);
             this.QLkhachhang.Text = "KHÁCH HÀNG";
             this.QLkhachhang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLkhachhang.Click += new System.EventHandler(this.quảnLíKháchHàngToolStripMenuItem_Click);
             // 
             // QLloaiKH
             // 
-            this.QLloaiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLloaiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLloaiKH.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLloaiKH.Name = "QLloaiKH";
-            this.QLloaiKH.Size = new System.Drawing.Size(139, 20);
-            this.QLloaiKH.Text = "LOẠI KHÁCH HÀNG";
+            this.QLloaiKH.Size = new System.Drawing.Size(139, 24);
+            this.QLloaiKH.Text = "LOẠI KH";
             this.QLloaiKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLloaiKH.Click += new System.EventHandler(this.quảnLíTypeKháchHàngToolStripMenuItem_Click);
             // 
             // QLsk
             // 
-            this.QLsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLsk.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLsk.Name = "QLsk";
-            this.QLsk.Size = new System.Drawing.Size(139, 20);
+            this.QLsk.Size = new System.Drawing.Size(139, 24);
             this.QLsk.Text = "SỨC KHỎE";
             this.QLsk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLsk.Click += new System.EventHandler(this.QLsk_Click);
             // 
             // QLlichSu
             // 
-            this.QLlichSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLlichSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLlichSu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLlichSu.Name = "QLlichSu";
-            this.QLlichSu.Size = new System.Drawing.Size(139, 20);
+            this.QLlichSu.Size = new System.Drawing.Size(139, 24);
             this.QLlichSu.Text = "THỐNG KÊ";
             this.QLlichSu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLlichSu.Click += new System.EventHandler(this.lịchSửVàThốngKêToolStripMenuItem_Click);
             // 
             // QLuser
             // 
-            this.QLuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLuser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLuser.Name = "QLuser";
-            this.QLuser.Size = new System.Drawing.Size(139, 20);
+            this.QLuser.Size = new System.Drawing.Size(139, 24);
             this.QLuser.Text = "USERS";
             this.QLuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLuser.Click += new System.EventHandler(this.quảnLíUserToolStripMenuItem_Click);
             // 
             // QlGroupUser
             // 
-            this.QlGroupUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QlGroupUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QlGroupUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QlGroupUser.Name = "QlGroupUser";
-            this.QlGroupUser.Size = new System.Drawing.Size(139, 20);
+            this.QlGroupUser.Size = new System.Drawing.Size(139, 24);
             this.QlGroupUser.Text = "GROUP USER";
             this.QlGroupUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QlGroupUser.Click += new System.EventHandler(this.quảnLíGroupUSerToolStripMenuItem_Click);
             // 
             // QLsetting
             // 
-            this.QLsetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLsetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLsetting.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLsetting.Name = "QLsetting";
-            this.QLsetting.Size = new System.Drawing.Size(139, 20);
+            this.QLsetting.Size = new System.Drawing.Size(139, 24);
             this.QLsetting.Text = "SETTINGS";
             this.QLsetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLsetting.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // QLbackUp
             // 
-            this.QLbackUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QLbackUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QLbackUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.QLbackUp.Name = "QLbackUp";
-            this.QLbackUp.Size = new System.Drawing.Size(139, 20);
+            this.QLbackUp.Size = new System.Drawing.Size(139, 24);
             this.QLbackUp.Text = "BACKUP";
             this.QLbackUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);

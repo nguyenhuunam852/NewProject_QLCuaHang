@@ -1,0 +1,10 @@
+txtServerName@DESKTOP-VT4SFHD
+txtDataBase@mynewdtb
+txtDV@Người
+txtTGBD@17:00
+txtTGHD@00:30
+txtTGKT@18:00
+txtUsername@sa
+txtPass@123456
+txtSave@C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\backup\
+txtPicture@C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\picture\logo.jpg

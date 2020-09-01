@@ -131,7 +131,11 @@ namespace WindowsFormsApp1.Views
             if(txtDtbName.Text=="")
             {
                 txtDtbName.Enabled = true;
-              
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button4.Enabled = false;
+
+                button7.Enabled = false;
             }
         }
 
@@ -160,7 +164,12 @@ namespace WindowsFormsApp1.Views
                 DataRow dtr = dtb.NewRow();
                 dtr["name"] = Path.GetFileName(a);
                 dtr["time"] = GetDateTime(dtr["name"].ToString());
-                dtb.Rows.Add(dtr);
+                DataTable dtb1 = BackupControllers.getDatabaseIfExist(dtr["name"].ToString(), path);
+                string database = BackupControllers.getBase(dtb1.Rows[0][1].ToString());
+                if (database!=null)
+                {
+                    dtb.Rows.Add(dtr);
+                }
             }
             return dtb;
         }
@@ -224,8 +233,7 @@ namespace WindowsFormsApp1.Views
 
         private void button6_Click(object sender, EventArgs e)
         {
-            txtDtbName.Text = "";
-            groupBox1.Enabled = false;
+            BackupViews_Load(sender, e);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -250,6 +258,11 @@ namespace WindowsFormsApp1.Views
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
