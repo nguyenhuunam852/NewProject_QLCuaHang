@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Views
 
         private void ThongKeViews_Load(object sender, EventArgs e)
         {
-
+            
             TabHienThi.TabPages[1].Controls.Add(ViewsThongKe.Views.GetViews(0));
             TabHienThi.TabPages[2].Controls.Add(ViewsThongKe.Views.GetViews(1));
             TabHienThi.TabPages[3].Controls.Add(ViewsThongKe.Views.GetViews(2));
@@ -115,6 +115,15 @@ namespace WindowsFormsApp1.Views
             }
              
             
+        }
+
+        private void TabHienThi_SizeChanged(object sender, EventArgs e)
+        {
+         
+            for(int i=0;i<=4;i++)
+            {
+                TabHienThi.TabPages[i].Controls[0].Size = TabHienThi.TabPages[0].Size;
+            }
         }
     }
 }

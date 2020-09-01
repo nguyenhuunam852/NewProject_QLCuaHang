@@ -76,9 +76,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtHo);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(41, 51);
+            this.groupBox1.Location = new System.Drawing.Point(0, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(908, 621);
+            this.groupBox1.Size = new System.Drawing.Size(784, 536);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cá nhân";
@@ -279,7 +279,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.groupBox1);
             this.Name = "PersonalInforViews";
-            this.Size = new System.Drawing.Size(1232, 788);
+            this.Size = new System.Drawing.Size(784, 536);
             this.Load += new System.EventHandler(this.PersonalInforViews_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

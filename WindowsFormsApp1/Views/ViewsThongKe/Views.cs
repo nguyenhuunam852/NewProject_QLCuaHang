@@ -124,9 +124,26 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
          
             if (signal == 0)
             {
-                comboBox1.DataSource = ThongKeControllers.getMonth();
-                comboBox1.DisplayMember = "thang";
-                comboBox1.ValueMember = "thang";
+                List<DateTime> ldt = GetWeeks(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1), DayOfWeek.Sunday);
+                if (DateTime.Now.Date < ldt[0].Date)
+                {
+                    int month = DateTime.Now.Month - 1;
+                    int year = DateTime.Now.Year;
+                    if (month == 0)
+                    {
+                        month = 12;
+                        year = year - 1;
+                    }
+                    DataTable db = ThongKeControllers.getMonth();
+                    DataRow dtr = db.NewRow();
+                    dtr[0] = 0;
+                    dtr[1] = month.ToString() + "/" + year.ToString();
+                    db.Rows.InsertAt(dtr, 0);
+                    comboBox1.DataSource = db;
+                    comboBox1.DisplayMember = "thang";
+                    comboBox1.ValueMember = "thang";
+                    comboBox1.SelectedIndex = db.Rows.Count - 1;
+                }
               
                 getThongKeinWeek();
             }
@@ -260,7 +277,10 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                     i += 1;
                     table.Rows.Add(dtr);
                 }
+                
+               
             }
+           
             dataGridView1.DataSource = ThongKeControllers.getStaticalInWeekofMonth(table).Tables[0];
             dataGridView1.ClearSelection();
             dataGridView1.CurrentCell=dataGridView1.Rows[save].Cells[0];

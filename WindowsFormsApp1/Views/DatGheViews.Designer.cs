@@ -32,13 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -58,11 +51,18 @@
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +81,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Location = new System.Drawing.Point(3, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 424);
+            this.groupBox1.Size = new System.Drawing.Size(408, 473);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sảnh chính";
@@ -105,95 +105,15 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(417, 37);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(364, 424);
+            this.groupBox2.Size = new System.Drawing.Size(364, 473);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(6, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(352, 132);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tim kiem";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button3.Location = new System.Drawing.Point(19, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 45);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Chốt ca";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(19, 100);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(283, 20);
-            this.textBox5.TabIndex = 19;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(311, 21);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
-            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged_1);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(144, 51);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(180, 25);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Kết thúc tính giờ";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 84);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(243, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Nhập thông tin liên quan để tìm kiếm khách hàng:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(144, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 26);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Bắt đầu tính giờ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox4.Controls.Add(this.txtId);
-            this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.txtSex);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.txtType);
@@ -210,7 +130,7 @@
             this.groupBox4.Controls.Add(this.txtSdt);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.txtTen);
-            this.groupBox4.Location = new System.Drawing.Point(6, 151);
+            this.groupBox4.Location = new System.Drawing.Point(6, 200);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(355, 267);
             this.groupBox4.TabIndex = 2;
@@ -226,8 +146,8 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(15, 154);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(423, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(169, 26);
             this.button2.TabIndex = 11;
@@ -429,6 +349,85 @@
             this.txtTen.Size = new System.Drawing.Size(90, 21);
             this.txtTen.TabIndex = 0;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.button8);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Location = new System.Drawing.Point(6, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(352, 132);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tim kiem";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button3.Location = new System.Drawing.Point(19, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 45);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Chốt ca";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Location = new System.Drawing.Point(19, 100);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(283, 20);
+            this.textBox5.TabIndex = 19;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(19, 100);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(311, 21);
+            this.comboBox1.TabIndex = 18;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged_1);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(144, 51);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(180, 25);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Kết thúc tính giờ";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(243, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Nhập thông tin liên quan để tìm kiếm khách hàng:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(144, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 26);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Bắt đầu tính giờ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -457,20 +456,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "DatGheViews";
-            this.Size = new System.Drawing.Size(784, 532);
+            this.Size = new System.Drawing.Size(784, 536);
             this.Load += new System.EventHandler(this.DatGheViews_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DatGheViews_MouseMove);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

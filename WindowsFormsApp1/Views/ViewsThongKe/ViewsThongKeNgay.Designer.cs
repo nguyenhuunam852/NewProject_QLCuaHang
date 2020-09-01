@@ -53,7 +53,6 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(3, 4);
             this.monthCalendar1.Location = new System.Drawing.Point(14, 23);
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
@@ -62,6 +61,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -72,10 +73,10 @@
             this.tenkh,
             this.ca,
             this.att});
-            this.dataGridView1.Location = new System.Drawing.Point(715, 385);
+            this.dataGridView1.Location = new System.Drawing.Point(272, 331);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(614, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(497, 244);
             this.dataGridView1.TabIndex = 2;
             // 
             // id
@@ -125,14 +126,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lbLTV);
             this.groupBox1.Controls.Add(this.lbTVM);
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(715, 23);
+            this.groupBox1.Location = new System.Drawing.Point(272, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(614, 337);
+            this.groupBox1.Size = new System.Drawing.Size(497, 277);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -166,10 +168,10 @@
             this.name1,
             this.sl});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 214);
+            this.dataGridView3.Location = new System.Drawing.Point(3, 154);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(608, 120);
+            this.dataGridView3.Size = new System.Drawing.Size(491, 120);
             this.dataGridView3.TabIndex = 5;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
@@ -223,7 +225,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.monthCalendar1);
             this.Name = "ViewsThongKeNgay";
-            this.Size = new System.Drawing.Size(1342, 742);
+            this.Size = new System.Drawing.Size(775, 578);
             this.Load += new System.EventHandler(this.ViewsThongKeNgay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

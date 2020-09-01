@@ -202,7 +202,7 @@
             this.TabHienThi.Location = new System.Drawing.Point(0, 27);
             this.TabHienThi.Name = "TabHienThi";
             this.TabHienThi.SelectedIndex = 0;
-            this.TabHienThi.Size = new System.Drawing.Size(784, 604);
+            this.TabHienThi.Size = new System.Drawing.Size(784, 536);
             this.TabHienThi.TabIndex = 3;
             this.TabHienThi.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabHienThi_MouseMove);
             // 

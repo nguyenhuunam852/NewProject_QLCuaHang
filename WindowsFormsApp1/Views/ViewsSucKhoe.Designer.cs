@@ -64,7 +64,7 @@
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(16, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(565, 368);
+            this.groupBox3.Size = new System.Drawing.Size(512, 228);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sức khỏe";
@@ -81,12 +81,9 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(320, 172);
+            this.button1.Location = new System.Drawing.Point(320, 136);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 84);
+            this.button1.Size = new System.Drawing.Size(69, 62);
             this.button1.TabIndex = 18;
             this.button1.Text = "Hủy";
             this.button1.UseVisualStyleBackColor = true;
@@ -104,12 +101,9 @@
             // 
             // button5
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(226, 173);
+            this.button5.Location = new System.Drawing.Point(241, 136);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 83);
+            this.button5.Size = new System.Drawing.Size(73, 62);
             this.button5.TabIndex = 14;
             this.button5.Text = "Lưu";
             this.button5.UseVisualStyleBackColor = true;
@@ -117,12 +111,9 @@
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(414, 57);
+            this.button4.Location = new System.Drawing.Point(359, 57);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 87);
+            this.button4.Size = new System.Drawing.Size(70, 61);
             this.button4.TabIndex = 13;
             this.button4.Text = "Sửa";
             this.button4.UseVisualStyleBackColor = true;
@@ -130,12 +121,9 @@
             // 
             // button3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(320, 57);
+            this.button3.Location = new System.Drawing.Point(286, 57);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 87);
+            this.button3.Size = new System.Drawing.Size(67, 61);
             this.button3.TabIndex = 12;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
@@ -143,12 +131,9 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(226, 57);
+            this.button2.Location = new System.Drawing.Point(210, 57);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 87);
+            this.button2.Size = new System.Drawing.Size(70, 61);
             this.button2.TabIndex = 11;
             this.button2.Text = "Thêm";
             this.button2.UseVisualStyleBackColor = true;
@@ -186,9 +171,9 @@
             this.createat,
             this.updateat,
             this.available});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 377);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 299);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1350, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(1350, 469);
             this.dataGridView1.TabIndex = 4;
             // 
             // id
@@ -236,7 +221,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(602, 3);
+            this.button6.Location = new System.Drawing.Point(534, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 65);
             this.button6.TabIndex = 19;

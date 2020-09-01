@@ -72,7 +72,7 @@ namespace WindowsFormsApp1.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Location = new System.Drawing.Point(3, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(408, 424);
+            this.groupBox1.Size = new System.Drawing.Size(408, 473);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sảnh chính";
@@ -262,7 +262,7 @@ namespace WindowsFormsApp1.Views
             this.dataGridView1.Location = new System.Drawing.Point(0, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(349, 139);
+            this.dataGridView1.Size = new System.Drawing.Size(349, 188);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -359,7 +359,7 @@ namespace WindowsFormsApp1.Views
             this.groupBox6.Controls.Add(this.dataGridView1);
             this.groupBox6.Location = new System.Drawing.Point(432, 275);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(349, 186);
+            this.groupBox6.Size = new System.Drawing.Size(349, 235);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             // 

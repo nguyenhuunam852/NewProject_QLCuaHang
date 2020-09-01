@@ -19,6 +19,9 @@ namespace WindowsFormsApp1.Views
         public FrmMain()
         {
             InitializeComponent();
+            Left = Top = 0;
+            this.Width = Screen.PrimaryScreen.WorkingArea.Width;
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
         int close = 0;
         private static FrmMain frm;
@@ -293,7 +296,8 @@ namespace WindowsFormsApp1.Views
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+           
+           
        
             setting = 0;
             getSetting();

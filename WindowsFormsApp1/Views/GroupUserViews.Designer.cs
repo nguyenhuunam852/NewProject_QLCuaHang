@@ -62,6 +62,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -70,9 +72,9 @@
             this.createat,
             this.updateat,
             this.available});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 287);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 284);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(495, 481);
+            this.dataGridView1.Size = new System.Drawing.Size(355, 249);
             this.dataGridView1.TabIndex = 0;
             // 
             // id
@@ -131,7 +133,7 @@
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(495, 241);
+            this.groupBox3.Size = new System.Drawing.Size(355, 241);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Group User";
@@ -139,7 +141,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 176);
+            this.textBox2.Location = new System.Drawing.Point(90, 195);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 19;
@@ -148,7 +150,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(370, 99);
+            this.button1.Location = new System.Drawing.Point(146, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
@@ -168,7 +170,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(265, 99);
+            this.button5.Location = new System.Drawing.Point(65, 147);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 14;
@@ -178,7 +180,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(414, 57);
+            this.button4.Location = new System.Drawing.Point(196, 108);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 13;
@@ -188,7 +190,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(320, 57);
+            this.button3.Location = new System.Drawing.Point(115, 108);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 12;
@@ -198,7 +200,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(226, 57);
+            this.button2.Location = new System.Drawing.Point(34, 108);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
@@ -225,6 +227,9 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id1,
@@ -234,10 +239,9 @@
             this.update,
             this.delete,
             this.option});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView2.Location = new System.Drawing.Point(511, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(375, -3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(839, 768);
+            this.dataGridView2.Size = new System.Drawing.Size(409, 536);
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -316,7 +320,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(396, 250);
+            this.button6.Location = new System.Drawing.Point(256, 251);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(102, 31);
             this.button6.TabIndex = 19;
@@ -335,7 +339,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Name = "GroupUserViews";
-            this.Size = new System.Drawing.Size(1350, 768);
+            this.Size = new System.Drawing.Size(784, 536);
             this.Load += new System.EventHandler(this.GroupUserViews_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
