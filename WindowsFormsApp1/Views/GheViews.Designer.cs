@@ -81,9 +81,9 @@ namespace WindowsFormsApp1.Views
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnLuu);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.btnHuy);
-            this.groupBox2.Controls.Add(this.btnLuu);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
@@ -127,7 +127,7 @@ namespace WindowsFormsApp1.Views
             this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuu.Location = new System.Drawing.Point(9, 77);
+            this.btnLuu.Location = new System.Drawing.Point(9, 129);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(171, 23);
             this.btnLuu.TabIndex = 11;
@@ -202,7 +202,7 @@ namespace WindowsFormsApp1.Views
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.Location = new System.Drawing.Point(9, 128);
+            this.btnSua.Location = new System.Drawing.Point(9, 75);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(171, 23);
             this.btnSua.TabIndex = 8;

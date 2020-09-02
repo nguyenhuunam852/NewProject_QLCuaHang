@@ -57,6 +57,17 @@ namespace WindowsFormsApp1.Views
         }
         private void loadAgain()
         {
+            foreach(Control c in tableLayoutPanel1.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.TextChanged += C_TextChanged;
+                }
+                if(c is MaskedTextBox)
+                {
+                    c.TextChanged += C_TextChanged1;
+                }
+            }    
             button11.Enabled = false;
             LoadPermission();
             label10.Text = "";
@@ -83,6 +94,19 @@ namespace WindowsFormsApp1.Views
             dataGridView2 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView2);
             dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
         }
+
+        private void C_TextChanged1(object sender, EventArgs e)
+        {
+            MaskedTextBox mtb = sender as MaskedTextBox;
+            mtb.ForeColor = Color.Black;
+        }
+
+        private void C_TextChanged(object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            tb.ForeColor = Color.Black;
+        }
+
         private void KhachHangViews_Load(object sender, EventArgs e)
         {
             loadAgain();
@@ -220,6 +244,33 @@ namespace WindowsFormsApp1.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
+            int t = 0;
+            foreach (Control c in tableLayoutPanel1.Controls)
+            {
+                if(c is TextBox)
+                {
+                    if(c.Text=="")
+                    {
+                        c.Text = "Điền thêm thông tin";
+                        c.ForeColor = Color.Red;
+                        t += 1;
+                    }
+                }
+                if(c is MaskedTextBox)
+                {
+                    if (c.Text == "00/00/0000")
+                    {
+                        c.Text = "00/00/0000";
+                        c.ForeColor = Color.Red;
+                        t += 1;
+                    }
+                }
+            }
+            if (t > 0)
+            {
+                MessageBox.Show("Bạn chưa điền đủ thông tin", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string id = textBox5.Text;
             string ten = textBoxTen.Text;
             string ho = textBoxHo.Text;

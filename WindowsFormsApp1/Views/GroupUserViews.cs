@@ -28,6 +28,7 @@ namespace WindowsFormsApp1.Views
         private void GroupUserViews_Load(object sender, EventArgs e)
         {
             label8.Text = "";
+            label8.Visible = false;
             listpermission = GroupUserControllers.getlistpermisson();
             loadPermission();
             dtb = new DataTable();
@@ -40,8 +41,7 @@ namespace WindowsFormsApp1.Views
             loadDatatable();
             dataGridView2.DataSource = dtb;
             dataGridView1.DataSource = GroupUserControllers.getData().Tables[0];
-  
-            label8.Visible = true;
+
             dataGridView2.Enabled = false;
             DataBinding();
             label1.Visible = false;
@@ -160,6 +160,7 @@ namespace WindowsFormsApp1.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.Enabled = false;
             if (sig != 0)
             {
                 dataGridView2.Enabled = true;

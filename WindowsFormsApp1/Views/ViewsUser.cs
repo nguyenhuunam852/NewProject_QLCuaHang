@@ -80,6 +80,17 @@ namespace WindowsFormsApp1.Views
         
         private void UserViews_Load(object sender, EventArgs e)
         {
+            foreach (Control c in groupBox3.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.TextChanged += C_TextChanged;
+                }
+                if (c is MaskedTextBox)
+                {
+                    c.TextChanged += C_TextChanged1;
+                }
+            }
             if (firstSettings == 1)
             {
                 textBox5.Text = "1";
@@ -110,6 +121,17 @@ namespace WindowsFormsApp1.Views
 
            
             
+        }
+        private void C_TextChanged1(object sender, EventArgs e)
+        {
+            MaskedTextBox mtb = sender as MaskedTextBox;
+            mtb.ForeColor = Color.Black;
+        }
+
+        private void C_TextChanged(object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            tb.ForeColor = Color.Black;
         }
         private void DataBinding()
         {
@@ -175,6 +197,33 @@ namespace WindowsFormsApp1.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
+            int t = 0;
+            foreach (Control c in groupBox3.Controls)
+            {
+                if (c is TextBox && c.Name!="textBox5")
+                {
+                    if (c.Text == "")
+                    {
+                        c.Text = "Điền thêm thông tin";
+                        c.ForeColor = Color.Red;
+                        t += 1;
+                    }
+                }
+                if (c is MaskedTextBox)
+                {
+                    if (c.Text == "00/00/0000")
+                    {
+                        c.Text = "00/00/0000";
+                        c.ForeColor = Color.Red;
+                        t += 1;
+                    }
+                }
+            }
+            if (t > 0)
+            {
+                MessageBox.Show("Bạn chưa điền đủ thông tin", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string ten = txtTen.Text;
             string ho = txtHo.Text;
             string sdt = textBox2.Text;
@@ -286,15 +335,26 @@ namespace WindowsFormsApp1.Views
         {
             if(label10.Text=="")
             {
-                button1.Enabled = false;
-                button3.Enabled = false;
-                button4.Enabled = false;
+               
+                    button1.Enabled = false;
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                
             }
             else
             {
-                button1.Enabled = true;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                if (textBox5.Text == "0")
+                {
+                    button1.Enabled = false;
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                }
+                else
+                {
+                    button1.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                }
             }
         }
 

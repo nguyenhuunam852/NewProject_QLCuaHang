@@ -227,7 +227,7 @@ namespace WindowsFormsApp1.Views
         private void Lb_Click(object sender, EventArgs e)
         {
             Label lb = sender as Label;
-            btnThem.Enabled = false;
+           
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnLuu.Enabled = false;

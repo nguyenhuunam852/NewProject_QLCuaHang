@@ -164,12 +164,18 @@ namespace WindowsFormsApp1.Views
             if (textBox2.Text == "0")
             {
                 button6.Enabled = true;
-                groupBox3.Enabled = false;
+                button2.Enabled = true;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                button5.Enabled = false;
+                button1.Enabled = false;
             }
             else
             {
                 button6.Enabled = false;
-                groupBox3.Enabled = true;
+                button3.Enabled =true;
+                button4.Enabled = true;
+               
             }
         }
 
@@ -191,13 +197,24 @@ namespace WindowsFormsApp1.Views
         {
             if (label8.Text != "")
             {
-                button3.Enabled = true;
-                button4.Enabled = true;
+
+                if (textBox2.Text == "0")
+                {
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                }
+                else
+                {
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                }
             }
             else
             {
+
                 button3.Enabled = false;
                 button4.Enabled = false;
+
             }
         }
 

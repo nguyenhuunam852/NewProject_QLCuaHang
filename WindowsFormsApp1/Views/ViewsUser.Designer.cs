@@ -41,7 +41,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.hovataen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +79,7 @@
             this.groupBox3.Controls.Add(this.txtHo);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.comboBox2);
@@ -220,24 +221,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(575, 187);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 64);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.maskedTextBox1.Location = new System.Drawing.Point(95, 141);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(197, 22);
+            this.maskedTextBox1.PromptChar = '0';
+            this.maskedTextBox1.Size = new System.Drawing.Size(80, 22);
             this.maskedTextBox1.TabIndex = 4;
+            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label7
@@ -323,11 +316,21 @@
             this.txtTen.Size = new System.Drawing.Size(265, 22);
             this.txtTen.TabIndex = 2;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(575, 88);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 64);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Thêm";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(575, 97);
+            this.button1.Location = new System.Drawing.Point(376, 32);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 69);
+            this.button1.Size = new System.Drawing.Size(170, 21);
             this.button1.TabIndex = 25;
             this.button1.Text = "Đổi mật khẩu";
             this.button1.UseVisualStyleBackColor = true;
@@ -481,7 +484,6 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Name = "ViewsUser";
             this.Size = new System.Drawing.Size(784, 536);

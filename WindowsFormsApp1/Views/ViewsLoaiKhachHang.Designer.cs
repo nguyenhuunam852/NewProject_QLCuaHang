@@ -58,12 +58,11 @@
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(538, 192);
+            this.groupBox3.Size = new System.Drawing.Size(512, 228);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Loại khách hàng";
@@ -76,16 +75,16 @@
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(67, 143);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(51, 26);
+            this.textBox2.Size = new System.Drawing.Size(25, 26);
             this.textBox2.TabIndex = 19;
             this.textBox2.Text = "afs";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(354, 107);
+            this.button1.Location = new System.Drawing.Point(262, 115);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 62);
+            this.button1.Size = new System.Drawing.Size(170, 21);
             this.button1.TabIndex = 18;
             this.button1.Text = "Hủy";
             this.button1.UseVisualStyleBackColor = true;
@@ -103,9 +102,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(262, 108);
+            this.button5.Location = new System.Drawing.Point(262, 88);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 60);
+            this.button5.Size = new System.Drawing.Size(170, 21);
             this.button5.TabIndex = 14;
             this.button5.Text = "Lưu";
             this.button5.UseVisualStyleBackColor = true;
@@ -123,9 +122,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(444, 34);
+            this.button4.Location = new System.Drawing.Point(262, 34);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 61);
+            this.button4.Size = new System.Drawing.Size(170, 21);
             this.button4.TabIndex = 13;
             this.button4.Text = "Sửa";
             this.button4.UseVisualStyleBackColor = true;
@@ -133,9 +132,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(262, 34);
+            this.button2.Location = new System.Drawing.Point(534, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 61);
+            this.button2.Size = new System.Drawing.Size(75, 54);
             this.button2.TabIndex = 11;
             this.button2.Text = "Thêm";
             this.button2.UseVisualStyleBackColor = true;
@@ -143,9 +142,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(354, 34);
+            this.button3.Location = new System.Drawing.Point(262, 61);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 61);
+            this.button3.Size = new System.Drawing.Size(170, 21);
             this.button3.TabIndex = 12;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
@@ -222,7 +221,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(547, 3);
+            this.button6.Location = new System.Drawing.Point(534, 74);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 54);
             this.button6.TabIndex = 15;
@@ -238,6 +237,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.button2);
             this.Name = "ViewsLoaiKhachHang";
             this.Size = new System.Drawing.Size(784, 604);
             this.Load += new System.EventHandler(this.ViewsLoaiKhachHang_Load);

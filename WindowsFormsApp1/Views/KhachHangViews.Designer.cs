@@ -279,8 +279,10 @@
             this.maskedTextBox1.Location = new System.Drawing.Point(186, 55);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PromptChar = '0';
             this.maskedTextBox1.Size = new System.Drawing.Size(94, 20);
             this.maskedTextBox1.TabIndex = 6;
+            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label7

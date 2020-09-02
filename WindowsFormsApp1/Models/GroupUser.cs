@@ -84,7 +84,7 @@ namespace WindowsFormsApp1.Models
         internal int RestoreGroupUSer()
         {
             string[] paras = new string[] { "@id" };
-            object[] values = new object[] { a };
+            object[] values = new object[] { id };
             return Models.Connection.Excute_Sql("RestoregroupUser", CommandType.StoredProcedure, paras, values);
         }
     }
