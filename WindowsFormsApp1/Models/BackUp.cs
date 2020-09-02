@@ -23,16 +23,23 @@ namespace WindowsFormsApp1.Models
        
         public DataTable getDTB(string txtFileName, string txtFolder)
         {
-            DataTable ds = new DataTable();
-            string path = txtFolder + "\\" + txtFileName;
-            SqlConnection con = new SqlConnection(Connection.server);
-            con.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "restore filelistonly from disk= N'" + path + "'";
-            cmd.Connection = con;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-            return ds;
+            try
+            {
+                DataTable ds = new DataTable();
+                string path = txtFolder + "\\" + txtFileName;
+                SqlConnection con = new SqlConnection(Connection.server);
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "restore filelistonly from disk= N'" + path + "'";
+                cmd.Connection = con;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                return ds;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         internal static string getbase(string v)
@@ -84,18 +91,49 @@ namespace WindowsFormsApp1.Models
 
         public int BackupDatabase(string text)
         {
-            using (SqlConnection cn = new SqlConnection(Connection.sqlcon))
+            try
             {
-                string name = getstring(DateTime.Now.Day.ToString()) + getstring(DateTime.Now.Month.ToString()) + getstring(DateTime.Now.Year.ToString())+'_'+getstring(DateTime.Now.Hour.ToString())+getstring(DateTime.Now.Minute.ToString())+getstring(DateTime.Now.Second.ToString());
-                cn.Open();
-                string path = text + "\\" + name+".bak";
-                AddDirectorySecurity(text);
-                string sql = "Backup database " + Settings.getSettings().pdatabasename + " to disk= N'" + path + "'";
-                SqlCommand cmd = new SqlCommand(sql, cn);
-                return cmd.ExecuteNonQuery();
+                using (SqlConnection cn = new SqlConnection(Connection.sqlcon))
+                {
+                    string name = getstring(DateTime.Now.Day.ToString()) + getstring(DateTime.Now.Month.ToString()) + getstring(DateTime.Now.Year.ToString()) + '_' + getstring(DateTime.Now.Hour.ToString()) + getstring(DateTime.Now.Minute.ToString()) + getstring(DateTime.Now.Second.ToString());
+                    cn.Open();
+                    string path = text + "\\" + name + ".bak";
+                    string sql = "Backup database " + Settings.getSettings().pdatabasename + " to disk= N'" + path + "'";
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+                    return cmd.ExecuteNonQuery();
+                }
             }
+            catch {
+                using (SqlConnection cn = new SqlConnection(Connection.sqlcon))
+                {
+                    string name = getstring(DateTime.Now.Day.ToString()) + getstring(DateTime.Now.Month.ToString()) + getstring(DateTime.Now.Year.ToString()) + '_' + getstring(DateTime.Now.Hour.ToString()) + getstring(DateTime.Now.Minute.ToString()) + getstring(DateTime.Now.Second.ToString());
+                    cn.Open();
+                    string path = text + "\\" + name + ".bak";
+                    AddDirectorySecurity(text, @"Authenticated Users", FileSystemRights.FullControl, AccessControlType.Allow);
+                    string sql = "Backup database " + Settings.getSettings().pdatabasename + " to disk= N'" + path + "'";
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+          
         }
+        public static void AddDirectorySecurity(string FileName, string Account, FileSystemRights Rights, AccessControlType ControlType)
+        {
+            // Create a new DirectoryInfo object.
+            DirectoryInfo dInfo = new DirectoryInfo(FileName);
 
+            // Get a DirectorySecurity object that represents the
+            // current security settings.
+            DirectorySecurity dSecurity = dInfo.GetAccessControl();
+
+            // Add the FileSystemAccessRule to the security settings.
+            dSecurity.AddAccessRule(new FileSystemAccessRule(Account,
+                                                            Rights,
+                                                            ControlType));
+
+            // Set the new access settings.
+            dInfo.SetAccessControl(dSecurity);
+        }
         public static void AddDirectorySecurity(string path)
         {
             try
@@ -103,7 +141,7 @@ namespace WindowsFormsApp1.Models
                 var directoryInfo = new DirectoryInfo(path);
                 var directorySecurity = directoryInfo.GetAccessControl();
 
-                var fileSystemRule = new FileSystemAccessRule(@"Authenticated Users",
+                var fileSystemRule = new FileSystemAccessRule(@"Everyone",
                                                               FileSystemRights.FullControl,
                                                               InheritanceFlags.ObjectInherit |
                                                               InheritanceFlags.ContainerInherit,

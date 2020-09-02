@@ -165,10 +165,13 @@ namespace WindowsFormsApp1.Views
                 dtr["name"] = Path.GetFileName(a);
                 dtr["time"] = GetDateTime(dtr["name"].ToString());
                 DataTable dtb1 = BackupControllers.getDatabaseIfExist(dtr["name"].ToString(), path);
-                string database = BackupControllers.getBase(dtb1.Rows[0][1].ToString());
-                if (database!=null)
+                if (dtb1 != null)
                 {
-                    dtb.Rows.Add(dtr);
+                    string database = BackupControllers.getBase(dtb1.Rows[0][1].ToString());
+                    if (database != null)
+                    {
+                        dtb.Rows.Add(dtr);
+                    }
                 }
             }
             return dtb;

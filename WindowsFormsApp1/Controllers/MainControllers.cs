@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Models;
@@ -12,6 +13,7 @@ namespace WindowsFormsApp1.Controllers
 {
     class MainControllers
     {
+
         internal static int ReadFile()
         {
             string check = SettingsControllers.getPathOfTxtFile();
