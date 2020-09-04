@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.Controllers
         {
             return Ghe.layDSHoatDong();
         }
-        public static int Ketthucdatghe(string idghe,string idkh,string time)
+        public static int Ketthucdatghe(string idghe,string idkh,string time,string activetime)
         {
             Ghe ghe = new Ghe(idghe);
             int hour = int.Parse(time.Remove(2));
@@ -35,7 +35,7 @@ namespace WindowsFormsApp1.Controllers
             time = time.Substring(3);
             int second = int.Parse(time);
 
-            string time1 = Settings.getSettings().ptghd+":00";
+            string time1 = activetime + ":00";
             string[] gettime = time1.Split(':');
 
             int max = int.Parse(gettime[0]) * 3600 + int.Parse(gettime[1])* 60 + int.Parse(gettime[2]);

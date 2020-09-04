@@ -119,10 +119,16 @@ namespace WindowsFormsApp1.Views
 
         private void TabHienThi_SizeChanged(object sender, EventArgs e)
         {
-         
-            for(int i=0;i<=4;i++)
+            if (TabHienThi.TabPages.Count > 1)
             {
-                TabHienThi.TabPages[i].Controls[0].Size = TabHienThi.TabPages[0].Size;
+                for (int i = 0; i <= 4; i++)
+                {
+                    TabHienThi.TabPages[i].Controls[0].Size = TabHienThi.TabPages[0].Size;
+                }
+            }
+            else
+            {
+                TabHienThi.TabPages[0].Controls[0].Size = TabHienThi.TabPages[0].Size;
             }
         }
     }

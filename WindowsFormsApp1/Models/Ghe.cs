@@ -116,12 +116,7 @@ namespace WindowsFormsApp1.Models
         {
             return Models.Connection.FillDataSet("getlistdeskcustomer", CommandType.StoredProcedure);
         }
-        public int InsertHoatDon1g(string idkh)
-        {
-            string[] paras = new string[3] { "@idghe", "@idkh", "@tg" };
-            object[] values = new object[3] { id,idkh,DateTime.Now };
-            return Models.Connection.Excute_Sql("InsertHoatDong", CommandType.StoredProcedure, paras, values);
-        }
+     
         public static DataSet layThongTin()
         {
             string[] paras = new string[1] { "@iduser" };

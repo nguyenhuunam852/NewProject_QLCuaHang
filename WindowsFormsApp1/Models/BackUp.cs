@@ -48,7 +48,8 @@ namespace WindowsFormsApp1.Models
             {
                 SqlConnection con = new SqlConnection(Connection.server);
                 con.Open();
-                if(File.Exists(v)==true)
+                string path = Path.GetDirectoryName(v);
+                if(Directory.Exists(path)==true)
                 {
                     string sql = "SELECT b.name FROM sys.master_files a join sys.databases b on a.database_id = b.database_id where a.physical_name =N'" + v + "'";
                     SqlCommand cmd = new SqlCommand(sql, con);

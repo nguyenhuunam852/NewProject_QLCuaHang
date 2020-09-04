@@ -139,7 +139,11 @@ namespace WindowsFormsApp1.Views
                     SettingViews.stv = null;
                     FrmMain.dongALL();
                     FrmMain.getFrmMain().firstsetting = 1;
-                    FrmMain.getFrmMain().getSetting();
+                   
+                    while (User.getUser().pid==null)
+                    {
+                        FrmMain.getFrmMain().getSetting();
+                    }
                    
                 }
                 if(dlr==DialogResult.Abort)

@@ -223,7 +223,6 @@ C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\QLCH.pdb
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
-C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.BackupViews.resources
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.BranchSelection.resources
@@ -251,3 +250,4 @@ C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csproj.CopyComplete
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLCH.exe
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLCH.pdb
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache

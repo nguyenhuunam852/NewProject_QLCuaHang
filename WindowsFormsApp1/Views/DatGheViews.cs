@@ -181,12 +181,13 @@ namespace WindowsFormsApp1.Views
         private void LoadText()
         {
             DataTable dtb = DatGheControllers.layDSHoatDong().Tables[0];
-            string gettime = Settings.getSettings().ptghd + ":00";
-            DateTime dt = Convert.ToDateTime(gettime);
+            
             foreach (DataRow row in dtb.Rows)
             {
                 string id = row["iddesk"].ToString();
                 string tg = row["createat"].ToString();
+                string activetime = row["activetime"].ToString()+":00";
+                DateTime dt = Convert.ToDateTime(activetime);
                 TimeSpan value = DateTime.Now.Subtract(Convert.ToDateTime(tg));
                 DateTime hd = new DateTime(1977,1,1,hour:0,minute:0,second:0) + value;
                 if (dt.Hour <= hd.Hour && dt.Minute<=hd.Minute && dt.Second<=hd.Second)
@@ -470,7 +471,7 @@ namespace WindowsFormsApp1.Views
 
             if (txtCode.Text != "")
             {
-                int check = Controllers.DatGheControllers.Ketthucdatghe(label2.Text, txtId.Text, truyxuat[label2.Text].Text);
+                int check = Controllers.DatGheControllers.Ketthucdatghe(label2.Text, txtId.Text, truyxuat[label2.Text].Text,Settings.getSettings().ptghd);
                 if (check > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

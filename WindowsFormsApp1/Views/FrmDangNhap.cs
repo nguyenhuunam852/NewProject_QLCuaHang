@@ -54,6 +54,10 @@ namespace WindowsFormsApp1.Views
             string password = textBox2.Text;
             string hpassword = CreateMD5Hash(password);
             string check = UserControllers.DangNhap(username, hpassword);
+            if(check==null)
+            {
+                this.DialogResult = DialogResult.No;
+            }
             if (check=="1")
             {
                 this.DialogResult = DialogResult.OK;
@@ -68,11 +72,7 @@ namespace WindowsFormsApp1.Views
                 DialogResult dlr = MessageBox.Show("Hiện tại không có tài khoản nào trong database hãy khôi phục ngay", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 if (dlr == DialogResult.OK)
                 {
-                  
-                    
-                        
                         FrmMain.getFrmMain().khoiphucdatabase1();
-                    
                 }
    
             }

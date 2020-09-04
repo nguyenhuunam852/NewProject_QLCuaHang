@@ -28,7 +28,6 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="Data_Dir" Directory_Parent="APPDIR" DefaultDir="Data"/>
-    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="backup_Dir" Directory_Parent="APPDIR" DefaultDir="backup"/>
     <ROW Directory="picture_Dir" Directory_Parent="APPDIR" DefaultDir="picture"/>
@@ -38,7 +37,6 @@
     <ROW Component="APPDIR" ComponentId="{31CD0E92-EAF5-4F87-82D8-3CF93E3B9FA8}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="Createdatabase.bat" ComponentId="{311031A2-08AF-4181-B7D5-932BEE149D4D}" Directory_="Data_Dir" Attributes="0" KeyPath="Createdatabase.bat" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{437E4508-68DE-490D-A602-5FDCE7E2B172}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="QLCH.exe" ComponentId="{1A844DF3-6951-4081-AB35-C7C4404CCE6A}" Directory_="APPDIR" Attributes="0" KeyPath="QLCH.exe"/>
     <ROW Component="backup" ComponentId="{7D308B4C-461B-41CE-A4B5-D6B6667D4FC0}" Directory_="backup_Dir" Attributes="0"/>
     <ROW Component="batchparser.dll" ComponentId="{6BDED1BA-6E35-427A-A103-294B4C6C58F4}" Directory_="Data_Dir" Attributes="256" KeyPath="batchparser.dll"/>
     <ROW Component="bgp.jpg" ComponentId="{C8C1DB11-02F5-4922-A851-5A3B8BFAFF72}" Directory_="picture_Dir" Attributes="0" KeyPath="bgp.jpg" Type="0"/>
@@ -55,7 +53,6 @@
     <ROW File="SQLCMD.rll" Component_="Createdatabase.bat" FileName="SQLCMD.rll" Attributes="2" SourcePath="..\WindowsFormsApp1\bin\Release\Data\SQLCMD.rll" SelfReg="false"/>
     <ROW File="bgp.jpg" Component_="bgp.jpg" FileName="bgp.jpg" Attributes="0" SourcePath="..\WindowsFormsApp1\bin\Release\picture\bgp.jpg" SelfReg="false"/>
     <ROW File="logo.jpg" Component_="bgp.jpg" FileName="logo.jpg" Attributes="0" SourcePath="..\WindowsFormsApp1\bin\Release\picture\logo.jpg" SelfReg="false"/>
-    <ROW File="QLCH.exe" Component_="QLCH.exe" FileName="QLCH.exe" Attributes="0" SourcePath="..\WindowsFormsApp1\bin\Release\QLCH.exe" SelfReg="false" DigSign="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -150,10 +147,6 @@
     <ROW Feature_="MainFeature" Component_="bgp.jpg"/>
     <ROW Feature_="MainFeature" Component_="backup"/>
     <ROW Feature_="MainFeature" Component_="save"/>
-    <ROW Feature_="MainFeature" Component_="QLCH.exe"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="QLCH.exe" SourcePath="H:\New folder (8)\bluehousehousehome_azulcasa_cas_6791.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -192,9 +185,6 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="QLCH" Directory_="DesktopFolder" Name="QLCH" Component_="QLCH.exe" Target="[#QLCH.exe]" Hotkey="0" Icon_="QLCH.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR" CustomFlags="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>

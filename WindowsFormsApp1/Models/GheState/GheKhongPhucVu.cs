@@ -33,8 +33,8 @@ namespace WindowsFormsApp1.Models.GheState
 
         public override int InsertHoatDong(string idkh)
         {
-            string[] paras = new string[3] { "@idghe", "@idkh", "@tg" };
-            object[] values = new object[3] { ghe.pid, idkh, DateTime.Now };
+            string[] paras = new string[4] { "@idghe", "@idkh", "@tg", "@activetime" };
+            object[] values = new object[4] { ghe.pid, idkh, DateTime.Now,Settings.getSettings().ptghd };
             return Models.Connection.Excute_Sql("InsertDeskCustomer", CommandType.StoredProcedure, paras, values);
         }
 

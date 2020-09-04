@@ -428,11 +428,10 @@ namespace WindowsFormsApp1.Models
                 }
                 return giaTri;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error:" + ex.Message);
                 FrmMain.getFrmMain().lostConnect();
-
+               
             }
             return null;
         }

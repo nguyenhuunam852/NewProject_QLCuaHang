@@ -2,7 +2,7 @@ txtServerName@DESKTOP-VT4SFHD
 txtDataBase@mynewdtb
 txtDV@Người
 txtTGBD@17:00
-txtTGHD@00:30
+txtTGHD@00:05
 txtTGKT@18:00
 txtUsername@sa
 txtPass@123456

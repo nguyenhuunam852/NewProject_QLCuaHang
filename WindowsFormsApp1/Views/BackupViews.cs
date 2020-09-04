@@ -168,10 +168,8 @@ namespace WindowsFormsApp1.Views
                 if (dtb1 != null)
                 {
                     string database = BackupControllers.getBase(dtb1.Rows[0][1].ToString());
-                    if (database != null)
-                    {
-                        dtb.Rows.Add(dtr);
-                    }
+                    dtb.Rows.Add(dtr);
+                   
                 }
             }
             return dtb;
@@ -218,7 +216,10 @@ namespace WindowsFormsApp1.Views
                 MessageBox.Show("Restore thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (sig == 2)
                 {
-                    FrmMain.getFrmMain().getSetting();
+                    while (User.getUser().pid == null)
+                    {
+                        FrmMain.getFrmMain().getSetting();
+                    }
                 }
                 else
                 {
@@ -266,6 +267,11 @@ namespace WindowsFormsApp1.Views
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
