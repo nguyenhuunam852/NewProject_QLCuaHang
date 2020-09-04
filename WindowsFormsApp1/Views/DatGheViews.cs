@@ -189,11 +189,20 @@ namespace WindowsFormsApp1.Views
                 string tg = row["createat"].ToString();
                 TimeSpan value = DateTime.Now.Subtract(Convert.ToDateTime(tg));
                 DateTime hd = new DateTime(1977,1,1,hour:0,minute:0,second:0) + value;
-                TimeSpan tghd = dt.Subtract(hd);
-                DateTime r = new DateTime(1977, 1, 1, hour: 0, minute: 0, second: 0) + tghd;
-                string txt = GetNumberString(r.Hour) + ":" + GetNumberString(r.Minute) + ":" + GetNumberString(r.Second);
-                truyxuat[id].Text = txt;
-                count_down.Add(truyxuat[id]);
+                if (dt.Hour <= hd.Hour && dt.Minute<=hd.Minute && dt.Second<=hd.Second)
+                {
+                    string txt = "00:00:00";
+                    truyxuat[id].Text = txt;
+                    count_down.Add(truyxuat[id]);
+                }
+                else
+                {
+                    TimeSpan tghd = dt.Subtract(hd);
+                    DateTime r = new DateTime(1977, 1, 1, hour: 0, minute: 0, second: 0) + tghd;
+                    string txt = GetNumberString(r.Hour) + ":" + GetNumberString(r.Minute) + ":" + GetNumberString(r.Second);
+                    truyxuat[id].Text = txt;
+                    count_down.Add(truyxuat[id]);
+                }
             }
         }
         private Label createLabel(object[] infor)
@@ -341,11 +350,15 @@ namespace WindowsFormsApp1.Views
         {
             foreach (Label lb in count_down)
             {
-                countdown(lb);
+               
                 if (lb.Text == "00:00:00")
                 {
                     lb.BackColor = Color.Green;
-                };
+                }
+                else
+                {
+                    countdown(lb);
+                }
             }
             string[] th = Settings.getSettings().ptgbd.Split(':');
             DateTime a = DateTime.Now;
