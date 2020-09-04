@@ -24,9 +24,9 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         public int signal;
         public static Views GetViews(int sig)
         {
-            Views v = new Views();
-            v.signal = sig;
-            return v;
+            vtt = new Views();
+            vtt.signal = sig;
+            return vtt;
         }
         public void setMonth(string month)
         {
@@ -38,12 +38,11 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         {
            
         }
-
-        private void ViewsTheoTuan_Load(object sender, EventArgs e)
+        public void load()
         {
             textBox1.Visible = false;
             chart1.ChartAreas[0].AxisY.IntervalOffsetType = DateTimeIntervalType.Number;
-            if (signal==0)
+            if (signal == 0)
             {
                 comboBox1.Items.Clear();
                 lbTVM.Text = "0";
@@ -55,7 +54,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 thietlapSignal0(DateTime.Now.ToString());
                 dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             }
-            if(signal==1)
+            if (signal == 1)
             {
                 lbTVM.Text = "0";
                 lbLTV.Text = "0";
@@ -83,6 +82,10 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                 TaoComboBox1();
             }
 
+        }
+        private void ViewsTheoTuan_Load(object sender, EventArgs e)
+        {
+            load();
         }
 
         private void thietlapSignal1(string v)

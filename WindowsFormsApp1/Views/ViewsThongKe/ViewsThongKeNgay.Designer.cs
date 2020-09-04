@@ -41,11 +41,11 @@
             this.lbLTV = new System.Windows.Forms.Label();
             this.lbTVM = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -136,9 +136,9 @@
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(462, 23);
+            this.groupBox1.Location = new System.Drawing.Point(462, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 277);
+            this.groupBox1.Size = new System.Drawing.Size(307, 284);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -147,7 +147,7 @@
             // 
             this.lbLTV.AutoSize = true;
             this.lbLTV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLTV.Location = new System.Drawing.Point(266, 37);
+            this.lbLTV.Location = new System.Drawing.Point(223, 37);
             this.lbLTV.Name = "lbLTV";
             this.lbLTV.Size = new System.Drawing.Size(163, 21);
             this.lbLTV.TabIndex = 7;
@@ -157,7 +157,7 @@
             // 
             this.lbTVM.AutoSize = true;
             this.lbTVM.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTVM.Location = new System.Drawing.Point(266, 82);
+            this.lbTVM.Location = new System.Drawing.Point(223, 82);
             this.lbTVM.Name = "lbTVM";
             this.lbTVM.Size = new System.Drawing.Size(163, 21);
             this.lbTVM.TabIndex = 6;
@@ -172,38 +172,19 @@
             this.name1,
             this.sl});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 154);
+            this.dataGridView3.Location = new System.Drawing.Point(3, 161);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(301, 120);
             this.dataGridView3.TabIndex = 5;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
-            // id1
-            // 
-            this.id1.DataPropertyName = "id";
-            this.id1.HeaderText = "id1";
-            this.id1.Name = "id1";
-            this.id1.Visible = false;
-            // 
-            // name1
-            // 
-            this.name1.DataPropertyName = "name";
-            this.name1.HeaderText = "Tên loại";
-            this.name1.Name = "name1";
-            // 
-            // sl
-            // 
-            this.sl.DataPropertyName = "amount";
-            this.sl.HeaderText = "Số lượng";
-            this.sl.Name = "sl";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(33, 82);
+            this.label3.Location = new System.Drawing.Point(8, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(163, 21);
             this.label3.TabIndex = 2;
@@ -214,11 +195,30 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(33, 37);
+            this.label1.Location = new System.Drawing.Point(8, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng số lượng khách hàng";
+            // 
+            // id1
+            // 
+            this.id1.DataPropertyName = "id";
+            this.id1.HeaderText = "id1";
+            this.id1.Name = "id1";
+            this.id1.Visible = false;
+            // 
+            // name1
+            // 
+            this.name1.DataPropertyName = "type";
+            this.name1.HeaderText = "Tên loại";
+            this.name1.Name = "name1";
+            // 
+            // sl
+            // 
+            this.sl.DataPropertyName = "sl";
+            this.sl.HeaderText = "Số lượng";
+            this.sl.Name = "sl";
             // 
             // ViewsThongKeNgay
             // 
@@ -254,10 +254,10 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbLTV;
+        private System.Windows.Forms.Label lbTVM;
         private System.Windows.Forms.DataGridViewTextBoxColumn id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn name1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sl;
-        private System.Windows.Forms.Label lbLTV;
-        private System.Windows.Forms.Label lbTVM;
     }
 }

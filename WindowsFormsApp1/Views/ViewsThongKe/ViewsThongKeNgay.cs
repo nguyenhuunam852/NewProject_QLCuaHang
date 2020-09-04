@@ -17,6 +17,7 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
         {
             InitializeComponent();
         }
+        public static ViewsThongKeNgay vtkngay = new ViewsThongKeNgay();
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
@@ -26,32 +27,36 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
             dataGridView1.DataSource = ThongKeControllers.getHistoryinDay(dt).Tables[0];
 
         }
-
-        private void ViewsThongKeNgay_Load(object sender, EventArgs e)
+        public void load()
         {
             DateTime dt = DateTime.Now;
             getData(dt);
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
             dataGridView1.DataSource = ThongKeControllers.getHistoryinDay(dt).Tables[0];
+        }
+        private void ViewsThongKeNgay_Load(object sender, EventArgs e)
+        {
+            load();
          
            
         }
         private void getData(DateTime dateTime)
         {
-            DataTable a = ThongKeControllers.getStaticinDay(dateTime).Tables[0];
+            DataTable a = ThongKeControllers.getTempData(dateTime).Tables[0];
+            DataTable b = ThongKeControllers.getTempData(dateTime).Tables[1];
+            DataTable c = ThongKeControllers.getTempData(dateTime).Tables[2];
             if (a.Rows.Count > 0)
             {
-                lbTVM.Text = a.Rows[0][0].ToString();
-                lbLTV.Text = a.Rows[0][1].ToString();
-                dataGridView3.DataSource = ThongKeControllers.getTypeCustomerbyDay(a.Rows[0][2].ToString());
+                lbLTV.Text = a.Rows[0][0].ToString();
+                lbTVM.Text = c.Rows[0][0].ToString();
+                dataGridView3.DataSource = b;
             }
             else
             {
                 lbTVM.Text = "0";
                 lbLTV.Text = "0";
             }
-           
         }
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)

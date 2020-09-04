@@ -56,5 +56,10 @@ namespace WindowsFormsApp1.Views
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

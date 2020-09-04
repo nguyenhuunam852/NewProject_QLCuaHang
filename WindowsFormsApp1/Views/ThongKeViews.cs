@@ -66,7 +66,7 @@ namespace WindowsFormsApp1.Views
             TabHienThi.TabPages[2].Controls.Add(ViewsThongKe.Views.GetViews(1));
             TabHienThi.TabPages[3].Controls.Add(ViewsThongKe.Views.GetViews(2));
             TabHienThi.TabPages[4].Controls.Add(ViewsThongKe.Views.GetViews(3));
-            TabHienThi.TabPages[0].Controls.Add(new ViewsThongKeNgay());
+            TabHienThi.TabPages[0].Controls.Add(ViewsThongKeNgay.vtkngay);
             if (MyPermission.getpermission("History", "view") == 1 && MyPermission.getpermission("Statical", "view")==0)
             {
                 int i = 1;

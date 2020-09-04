@@ -12,6 +12,7 @@ using WindowsFormsApp1.Controllers;
 using System.IO;
 using WindowsFormsApp1.Models;
 using System.Collections.Specialized;
+using WindowsFormsApp1.Views.ViewsThongKe;
 
 namespace WindowsFormsApp1.Views
 {
@@ -470,6 +471,7 @@ namespace WindowsFormsApp1.Views
                     }
                     count_down.Remove(truyxuat[label2.Text]);
                     textBoxbuttonRefessh();
+                    ViewsThongKeNgay.vtkngay.load();
                 }
                 else
                 {
@@ -586,7 +588,10 @@ namespace WindowsFormsApp1.Views
                     if (check1 > 0)
                     {
                         DialogResult dlr = MessageBox.Show("Chốt ca thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        ViewsThongKe.Views.GetViews(0).load();
+                        ViewsThongKe.Views.GetViews(1).load();
+                        ViewsThongKe.Views.GetViews(2).load();
+                        ViewsThongKe.Views.GetViews(3).load();
                     }
                     else
                     {
