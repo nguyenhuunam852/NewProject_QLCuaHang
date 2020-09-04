@@ -164,7 +164,7 @@ namespace WindowsFormsApp1.Views
         {
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            btnThem.Enabled = false;
+          
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             txtTenGhe.Enabled = true;
@@ -434,7 +434,7 @@ namespace WindowsFormsApp1.Views
         {
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            btnThem.Enabled = false;
+           
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
             txtTenGhe.Enabled = true;
