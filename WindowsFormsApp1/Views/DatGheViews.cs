@@ -495,6 +495,7 @@ namespace WindowsFormsApp1.Views
         int sig = 0;
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+            
             if (MyPermission.getpermission("Customer", "view") == 1)
             {
 
@@ -565,6 +566,7 @@ namespace WindowsFormsApp1.Views
                     txtEmail.Text = a.Rows[0]["email"].ToString();
                     txtType.Text = a.Rows[0]["typename"].ToString();
                     txtSex.Text = a.Rows[0]["sex"].ToString();
+                    MtxtNS.Text = a.Rows[0]["birthday"].ToString();
                     sig = 0;
                 }
             }
@@ -628,6 +630,66 @@ namespace WindowsFormsApp1.Views
             foreach (Label lb in groupBox1.Controls)
             {
                 lb.Size = new Size(groupBox1.Size.Width / 10, groupBox1.Size.Height / 10);
+            }
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+             
+              
+                    if (comboBox1.SelectedValue != null)
+                    {
+                       
+                        DataTable a = KhachHangControllers.LayThongTinKH(int.Parse(comboBox1.SelectedValue.ToString())).Tables[0];
+                        txtId.Text = a.Rows[0]["id"].ToString();
+                        txtCode.Text = a.Rows[0]["code"].ToString();
+                        txtTen.Text = a.Rows[0]["hoten"].ToString();
+                        txtSdt.Text = a.Rows[0]["phone"].ToString();
+                        txtDC.Text = a.Rows[0]["address"].ToString();
+                        txtEmail.Text = a.Rows[0]["email"].ToString();
+                        txtType.Text = a.Rows[0]["typename"].ToString();
+                        txtSex.Text = a.Rows[0]["sex"].ToString();
+                        textBox5.Text = txtTen.Text;    
+                        MtxtNS.Text = a.Rows[0]["birthday"].ToString();
+                        comboBox1.Enabled = false;
+                        sig = 0;
+                    }
+                comboBox1.Enabled = true;
+
+            }
+            if(e.KeyCode==Keys.Up)
+            {
+                if (comboBox1.SelectedIndex == 0)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox1.SelectedIndex -= 1;
+                }
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                if (comboBox1.SelectedIndex == comboBox1.Items.Count-1)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox1.SelectedIndex += 1;
+                }
             }
         }
     }
