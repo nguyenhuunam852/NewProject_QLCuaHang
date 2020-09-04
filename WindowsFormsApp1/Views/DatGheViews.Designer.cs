@@ -359,7 +359,7 @@
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button3.Location = new System.Drawing.Point(19, 19);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 45);
+            this.button3.Size = new System.Drawing.Size(93, 57);
             this.button3.TabIndex = 3;
             this.button3.Text = "Chốt ca";
             this.button3.UseVisualStyleBackColor = true;

@@ -35,9 +35,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +46,7 @@
             this.updateat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -130,16 +131,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(534, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 54);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(262, 61);
@@ -158,6 +149,16 @@
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(521, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 54);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Thêm";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -221,7 +222,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(534, 74);
+            this.button6.Location = new System.Drawing.Point(521, 74);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 54);
             this.button6.TabIndex = 15;
@@ -229,11 +230,22 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(521, 134);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 54);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "Reload";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // ViewsLoaiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
@@ -268,5 +280,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updateat;
         private System.Windows.Forms.DataGridViewCheckBoxColumn available;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button7;
     }
 }

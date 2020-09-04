@@ -218,5 +218,9 @@ namespace WindowsFormsApp1.Views
             }
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ViewsSucKhoe_Load(sender, e);
+        }
     }
 }

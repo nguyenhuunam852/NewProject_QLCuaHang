@@ -42,9 +42,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permission = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +55,7 @@
             this.option = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -122,6 +123,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label8);
@@ -197,16 +199,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(161, 250);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 32);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -223,6 +215,16 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(161, 250);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 32);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Thêm";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView2
             // 
@@ -327,6 +329,16 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(253, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(89, 47);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "Reload";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // GroupUserViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,5 +391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updateat;
         private System.Windows.Forms.DataGridViewCheckBoxColumn available;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button7;
     }
 }

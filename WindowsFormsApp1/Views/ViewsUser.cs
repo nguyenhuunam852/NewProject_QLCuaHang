@@ -94,6 +94,7 @@ namespace WindowsFormsApp1.Views
             if (firstSettings == 1)
             {
                 textBox5.Text = "1";
+                button1.Enabled = false;
             }
             else
             {
@@ -404,6 +405,9 @@ namespace WindowsFormsApp1.Views
 
         }
 
-       
+        private void button8_Click(object sender, EventArgs e)
+        {
+            UserViews_Load(sender, e);
+        }
     }
 }

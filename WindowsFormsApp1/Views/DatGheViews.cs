@@ -346,6 +346,19 @@ namespace WindowsFormsApp1.Views
                     lb.BackColor = Color.Green;
                 };
             }
+            string[] th = Settings.getSettings().ptgbd.Split(':');
+            DateTime a = DateTime.Now;
+            string[] ho = a.ToString("HH:mm").Split(':');
+
+
+            if (int.Parse(ho[0]) > int.Parse(th[0]) && int.Parse(ho[1])>int.Parse(th[1]))
+            {
+                button3.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+            }
         }
         private void create_Label(Label lb)
         {

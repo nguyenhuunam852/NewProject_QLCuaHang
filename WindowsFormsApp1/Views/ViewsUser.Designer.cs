@@ -32,6 +32,7 @@
             this.txtHo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.hovataen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idl = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +70,7 @@
             this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -132,6 +133,16 @@
             this.textBox5.TabIndex = 26;
             this.textBox5.Text = "gag";
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(376, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 21);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Đổi mật khẩu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
@@ -326,16 +337,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(376, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 21);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Đổi mật khẩu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -476,11 +477,22 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(575, 165);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(84, 64);
+            this.button8.TabIndex = 28;
+            this.button8.Text = "Reload";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // ViewsUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
@@ -538,5 +550,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHo;
+        private System.Windows.Forms.Button button8;
     }
 }
