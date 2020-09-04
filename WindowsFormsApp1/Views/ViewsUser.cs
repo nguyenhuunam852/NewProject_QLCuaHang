@@ -258,6 +258,7 @@ namespace WindowsFormsApp1.Views
                     }
                     if(firstSettings==1)
                     {
+                        button1.Enabled = false;
                         SettingViews.stv = null;
                         FrmMain.dongALL();
                         FrmMain.getFrmMain().firstsetting = 1;

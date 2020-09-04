@@ -36,13 +36,13 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{31CD0E92-EAF5-4F87-82D8-3CF93E3B9FA8}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="Createdatabase.bat" ComponentId="{6657494B-9290-4B50-9B2F-154C987F0E1B}" Directory_="Data_Dir" Attributes="0" KeyPath="Createdatabase.bat" Type="0"/>
+    <ROW Component="Createdatabase.bat" ComponentId="{311031A2-08AF-4181-B7D5-932BEE149D4D}" Directory_="Data_Dir" Attributes="0" KeyPath="Createdatabase.bat" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{437E4508-68DE-490D-A602-5FDCE7E2B172}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="QLCH.exe" ComponentId="{A351628E-C902-4D74-936B-2876988F073F}" Directory_="APPDIR" Attributes="0" KeyPath="QLCH.exe"/>
-    <ROW Component="backup" ComponentId="{E6D91FE4-507B-419A-8881-C00F42E34A1B}" Directory_="backup_Dir" Attributes="0"/>
-    <ROW Component="batchparser.dll" ComponentId="{C5A2241B-FDBA-4A73-915B-F993AC746494}" Directory_="Data_Dir" Attributes="256" KeyPath="batchparser.dll"/>
-    <ROW Component="bgp.jpg" ComponentId="{A8FB3BB7-A5AC-4AB7-89FB-0B208D2E1089}" Directory_="picture_Dir" Attributes="0" KeyPath="bgp.jpg" Type="0"/>
-    <ROW Component="save" ComponentId="{0D5206B5-4F11-43D9-B1FA-1103EE1FD49E}" Directory_="save_Dir" Attributes="0"/>
+    <ROW Component="QLCH.exe" ComponentId="{1A844DF3-6951-4081-AB35-C7C4404CCE6A}" Directory_="APPDIR" Attributes="0" KeyPath="QLCH.exe"/>
+    <ROW Component="backup" ComponentId="{7D308B4C-461B-41CE-A4B5-D6B6667D4FC0}" Directory_="backup_Dir" Attributes="0"/>
+    <ROW Component="batchparser.dll" ComponentId="{6BDED1BA-6E35-427A-A103-294B4C6C58F4}" Directory_="Data_Dir" Attributes="256" KeyPath="batchparser.dll"/>
+    <ROW Component="bgp.jpg" ComponentId="{C8C1DB11-02F5-4922-A851-5A3B8BFAFF72}" Directory_="picture_Dir" Attributes="0" KeyPath="bgp.jpg" Type="0"/>
+    <ROW Component="save" ComponentId="{3B634D83-1A64-4F16-829A-5423AB4FBAAC}" Directory_="save_Dir" Attributes="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -115,8 +115,8 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
-    <ROW Directory_="backup_Dir" Component_="backup" ManualDelete="false"/>
-    <ROW Directory_="save_Dir" Component_="save" ManualDelete="false"/>
+    <ROW Directory_="backup_Dir" Component_="backup" ManualDelete="true"/>
+    <ROW Directory_="save_Dir" Component_="save" ManualDelete="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_ApplyShortcutFlags" Type="3073" Source="ShortcutFlags.dll" Target="UpdateShortcutFlags" WithoutSeq="true"/>
@@ -145,15 +145,15 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
-    <ROW Feature_="MainFeature" Component_="backup"/>
     <ROW Feature_="MainFeature" Component_="batchparser.dll"/>
     <ROW Feature_="MainFeature" Component_="Createdatabase.bat"/>
     <ROW Feature_="MainFeature" Component_="bgp.jpg"/>
-    <ROW Feature_="MainFeature" Component_="QLCH.exe"/>
+    <ROW Feature_="MainFeature" Component_="backup"/>
     <ROW Feature_="MainFeature" Component_="save"/>
+    <ROW Feature_="MainFeature" Component_="QLCH.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="QLCH.exe" SourcePath="..\..\..\..\Downloads\bluehousehousehome_azulcasa_cas_6791.ico" Index="0"/>
+    <ROW Name="QLCH.exe" SourcePath="H:\New folder (8)\bluehousehousehome_azulcasa_cas_6791.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -164,10 +164,10 @@
     <ROW Action="AI_EnableDebugLog" Sequence="52"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
     <ROW Action="AI_DETECT_MODERNWIN" Condition="(VersionNT &gt;= 603)" Sequence="54" MsiKey="AI_DETECT_MODERNWIN"/>
-    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="51"/>
     <ROW Action="AI_PrepareShortcutFlags" Condition="(VersionNT &gt; 501) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="4501"/>
     <ROW Action="AI_PinShortcuts" Condition="(VersionNT &gt; 600) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="6499"/>
     <ROW Action="AI_UnpinShortcuts" Condition="(VersionNT &gt; 600) AND (REMOVE = &quot;ALL&quot;)" Sequence="3199"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="51"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -186,15 +186,15 @@
     <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLockPermComponent">
-    <ROW LockObject="save_Dir" Table="CreateFolder" User="[GRP_EVERYONE]" Permission="1880096767" Flags="0"/>
     <ROW LockObject="backup_Dir" Table="CreateFolder" User="[GRP_EVERYONE]" Permission="1880096767" Flags="0"/>
+    <ROW LockObject="save_Dir" Table="CreateFolder" User="[GRP_EVERYONE]" Permission="1880096767" Flags="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="NhatViet" Directory_="DesktopFolder" Name="NhatViet" Component_="QLCH.exe" Target="[#QLCH.exe]" Hotkey="0" Icon_="QLCH.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR" CustomFlags="1"/>
+    <ROW Shortcut="QLCH" Directory_="DesktopFolder" Name="QLCH" Component_="QLCH.exe" Target="[#QLCH.exe]" Hotkey="0" Icon_="QLCH.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR" CustomFlags="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
