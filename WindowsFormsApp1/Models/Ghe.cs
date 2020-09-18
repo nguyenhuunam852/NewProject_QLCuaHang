@@ -98,6 +98,18 @@ namespace WindowsFormsApp1.Models
             this.quanli = Convert.ToInt32(dts.Tables[0].Rows[0]["iduser"].ToString());
             this.tenban = dts.Tables[0].Rows[0]["name"].ToString();
         }
+        public void insertGhe1(int x,int y)
+        {
+            DataSet dts = new DataSet();
+            string[] paras = new string[] { "@iduser", "@name","@lx","@ly" };
+            object[] values = new object[] { User.getUser().pbranch, tenban,x,y };
+            dts = Models.Connection.FillDataSet("InsertandgetInformation1", CommandType.StoredProcedure, paras, values);
+            this.id = dts.Tables[0].Rows[0]["id"].ToString();
+            this.lx = dts.Tables[0].Rows[0]["locationx"].ToString();
+            this.ly = dts.Tables[0].Rows[0]["locationy"].ToString();
+            this.quanli = Convert.ToInt32(dts.Tables[0].Rows[0]["iduser"].ToString());
+            this.tenban = dts.Tables[0].Rows[0]["name"].ToString();
+        }
         public int updateGhe()
         {
             DataSet dts = new DataSet();

@@ -19,6 +19,15 @@ namespace WindowsFormsApp1.Controllers
             object[] ghe_obj = { ghe.pid, ghe.ptinhtrang, ghe.plx, ghe.ply,ghe.ptenban };
             return ghe_obj;
         }
+        public static object[] themGhe1(string tinhtrang, string tenban,int x,int y)
+        {
+            Models.Ghe ghe = new Models.Ghe();
+            ghe.ptinhtrang = tinhtrang;
+            ghe.ptenban = tenban;
+            ghe.insertGhe1(x,y);
+            object[] ghe_obj = { ghe.pid, ghe.ptinhtrang, ghe.plx, ghe.ply, ghe.ptenban };
+            return ghe_obj;
+        }
         public static int suathongtinGhe(string id,string tinhtrang, string tenban)
         {
             Models.Ghe ghe = new Models.Ghe();

@@ -86,6 +86,7 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sảnh chính";
             this.groupBox1.SizeChanged += new System.EventHandler(this.groupBox1_SizeChanged);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label2
             // 
@@ -349,7 +350,7 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Location = new System.Drawing.Point(6, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(352, 132);
+            this.groupBox3.Size = new System.Drawing.Size(352, 166);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tim kiem";
@@ -392,9 +393,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(144, 51);
+            this.button8.Location = new System.Drawing.Point(174, 127);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(180, 25);
+            this.button8.Size = new System.Drawing.Size(164, 25);
             this.button8.TabIndex = 3;
             this.button8.Text = "Kết thúc tính giờ";
             this.button8.UseVisualStyleBackColor = true;
@@ -412,10 +413,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(144, 19);
+            this.button1.Location = new System.Drawing.Point(15, 126);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 26);
-            this.button1.TabIndex = 1;
+            this.button1.Size = new System.Drawing.Size(153, 26);
+            this.button1.TabIndex = 20;
             this.button1.Text = "Bắt đầu tính giờ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

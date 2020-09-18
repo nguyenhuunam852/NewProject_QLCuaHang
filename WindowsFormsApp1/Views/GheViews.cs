@@ -52,6 +52,8 @@ namespace WindowsFormsApp1.Views
             }
             return lbs;
         }
+        private int px = 0;
+        private int py = 0;
         private void GheViews_Load(object sender, EventArgs e)
         {
             loadPermissionMs();
@@ -59,7 +61,26 @@ namespace WindowsFormsApp1.Views
             themUI();
             thietlapbandau();
             button2.Enabled = false;
+            groupBox1.MouseMove += GroupBox1_MouseMove;
+          
+           
+       
+
         }
+
+        private void GroupBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            px = e.X;
+            py = e.Y;
+        }
+
+        private void Cxitem_Click(object sender, EventArgs e)
+        {
+            object[] ghe = Controllers.GheControllers.themGhe1("1", txtTenGhe.Text,px,py);
+            groupBox1.Controls.Add(createLabel(ghe));
+            GheViews_Load(sender, e);
+        }
+
         //Xóa tất cả các thành phần trên Màn Hình UI
         private void reloadUI()
         {
@@ -197,6 +218,7 @@ namespace WindowsFormsApp1.Views
             lb.Click += Lb_Click;
             return lb;
         }
+      
 
         private void Lb_MouseUp1(object sender, MouseEventArgs e)
         {
@@ -275,6 +297,7 @@ namespace WindowsFormsApp1.Views
                 }
             }
         }
+        private List<Label> copy_list = new List<Label>();
         private void Lb_MouseDown(object sender, MouseEventArgs e)
         {
           
@@ -298,9 +321,31 @@ namespace WindowsFormsApp1.Views
                     item1.Click += Item1_Click;
                     MenuItem item2 = cm.MenuItems.Add("Đưa vào hoạt động");
                     item2.Click += Item2_Click;
+                    MenuItem item3 = cm.MenuItems.Add("Copy");
+                    item3.Click += Item3_Click; ;
                     lbl.ContextMenu = cm;
+                
+        
                 }
             }
+        }
+
+        private void Item3_Click(object sender, EventArgs e)
+        {
+            Label lb = sender as Label;
+            if (copy_list.Count == 1)
+            {
+                copy_list.RemoveAt(0);
+                copy_list.Add(lb);
+            }
+            else
+            {
+                copy_list.Add(lb);
+            }
+            ContextMenu cm = new ContextMenu();
+            MenuItem cxitem = cm.MenuItems.Add("Paste");
+            cxitem.Click += Cxitem_Click;
+            groupBox1.ContextMenu = cm;
         }
 
         private void Item2_Click(object sender, EventArgs e)
@@ -519,6 +564,11 @@ namespace WindowsFormsApp1.Views
          {
              lb.Size = new Size(groupBox1.Size.Width / 10, groupBox1.Size.Height / 10);
          }
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            return;
         }
     }
 }

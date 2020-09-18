@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.msUserControl = new System.Windows.Forms.MenuStrip();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QLGhe = new System.Windows.Forms.ToolStripMenuItem();
             this.QLkhachhang = new System.Windows.Forms.ToolStripMenuItem();
             this.QLloaiKH = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +40,7 @@
             this.QlGroupUser = new System.Windows.Forms.ToolStripMenuItem();
             this.QLsetting = new System.Windows.Forms.ToolStripMenuItem();
             this.QLbackUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmsTag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,17 +92,6 @@
             this.thôngTinCáNhânToolStripMenuItem.Text = "CÁ NHÂN";
             this.thôngTinCáNhânToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
-            // 
-            // dangToolStripMenuItem
-            // 
-            this.dangToolStripMenuItem.BackColor = System.Drawing.Color.Red;
-            this.dangToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dangToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
-            this.dangToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
-            this.dangToolStripMenuItem.Text = "ĐĂNG XUẤT";
-            this.dangToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
             // 
             // QLGhe
             // 
@@ -194,6 +183,17 @@
             this.QLbackUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
             // 
+            // dangToolStripMenuItem
+            // 
+            this.dangToolStripMenuItem.BackColor = System.Drawing.Color.Red;
+            this.dangToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dangToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
+            this.dangToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.dangToolStripMenuItem.Text = "ĐĂNG XUẤT";
+            this.dangToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
+            // 
             // cntmsTag
             // 
             this.cntmsTag.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -284,7 +284,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip msUserControl;
         private System.Windows.Forms.ToolStripMenuItem QLGhe;
         private System.Windows.Forms.ContextMenuStrip cntmsTag;
         private System.Windows.Forms.ToolStripMenuItem đóngTấtCảToolStripMenuItem;
@@ -300,8 +299,9 @@
         private System.Windows.Forms.ToolStripMenuItem dangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QLbackUp;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.MenuStrip msUserControl;
+        public System.Windows.Forms.GroupBox groupBox1;
     }
 }

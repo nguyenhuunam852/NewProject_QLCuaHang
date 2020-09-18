@@ -305,7 +305,7 @@ namespace WindowsFormsApp1.Views
             txtEmail.Enabled = false;
             txtDC.Enabled = false;
             MtxtNS.Enabled = false;
-
+          
             if (lbs.Count == 0)
             {
                 themUI();
@@ -710,6 +710,11 @@ namespace WindowsFormsApp1.Views
                     comboBox1.SelectedIndex += 1;
                 }
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
