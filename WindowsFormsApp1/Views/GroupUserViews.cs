@@ -27,6 +27,11 @@ namespace WindowsFormsApp1.Views
         string[] listhide = new string[2] { "MyTable", "StaticalTypeCustomer" };
         private void GroupUserViews_Load(object sender, EventArgs e)
         {
+            updatebutton = buttonStyle.updateBtn(updatebutton);
+            addbutton = buttonStyle.createBtn(addbutton);
+            deletebutton = buttonStyle.deleteBtn(deletebutton);
+            closebutton = buttonStyle.closeBtn(closebutton);
+            savebutton = buttonStyle.saveBtn(savebutton);
             label8.Text = "";
             label8.Visible = false;
             listpermission = GroupUserControllers.getlistpermisson();
@@ -60,21 +65,21 @@ namespace WindowsFormsApp1.Views
             }
             if (MyPermission.getpermission("Groupuser", "insert") == 0)
             {
-                button2.Visible = false;
+                addbutton.Visible = false;
             }
             if (MyPermission.getpermission("Groupuser", "update") == 0)
             {
-                button4.Visible = false;
+                updatebutton.Visible = false;
                 button6.Visible = false;
             }
             if (MyPermission.getpermission("Groupuser", "delete") == 0)
             {
-                button3.Visible = false;
+                deletebutton.Visible = false;
             }
             if (MyPermission.getpermission("Groupuser", "update") == 0 && MyPermission.getpermission("Groupuser", "insert") == 0)
             {
-                button5.Visible = false;
-                button1.Visible = false;
+                savebutton.Visible = false;
+                closebutton.Visible = false;
             }
         }
         private void loadDatatable()
@@ -119,11 +124,11 @@ namespace WindowsFormsApp1.Views
 
         private void loadbutton()
         {
-            button3.Enabled = false;
-            button2.Enabled = true;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button1.Enabled = false;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = true;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = false;
+            closebutton.Enabled = false;
             textBox1.Enabled = false;
         }
 
@@ -160,7 +165,7 @@ namespace WindowsFormsApp1.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button2.Enabled = false;
+            addbutton.Enabled = false;
             if (sig != 0)
             {
                 dataGridView2.Enabled = true;
@@ -168,10 +173,10 @@ namespace WindowsFormsApp1.Views
             }
             loadDatatable();
             dataGridView2.DataSource = dtb;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button1.Enabled = true;
+            deletebutton.Enabled = false;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             textBox1.Enabled = true;
             signal = "insert";
             disable();
@@ -255,11 +260,11 @@ namespace WindowsFormsApp1.Views
                 disable();
             }
 
-            button3.Enabled = false;
+            deletebutton.Enabled = false;
         
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button1.Enabled = true;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             textBox1.Enabled = true;
             listpermission = GroupUserControllers.getlistpermisson();
         }
@@ -331,8 +336,8 @@ namespace WindowsFormsApp1.Views
             {
                 if(textBox2.Text!="0")
                 {
-                    button3.Enabled = true;
-                    button4.Enabled = true;
+                    deletebutton.Enabled = true;
+                    updatebutton.Enabled = true;
                 }
                 DataTable newdtb = GroupUserControllers.getListPermissionbyId(a);
                 if (listpermission.Rows.Count > newdtb.Rows.Count)
@@ -380,16 +385,16 @@ namespace WindowsFormsApp1.Views
             if (textBox2.Text == "0")
             {
                 button6.Enabled = true;
-                button3.Enabled = false;
-                button5.Enabled = false;
-                button4.Enabled = false;
-                button1.Enabled = false;
+                deletebutton.Enabled = false;
+                savebutton.Enabled = false;
+                updatebutton.Enabled = false;
+                closebutton.Enabled = false;
             }
             else
             {
                 button6.Enabled = false;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                deletebutton.Enabled = true;
+                updatebutton.Enabled = true;
               
 
             }

@@ -92,13 +92,92 @@ namespace WindowsFormsApp1.Views
             }
             if (MyPermission.getpermission("Statical", "insert") == 0)
             {
-                button3.Visible = false;
+                datghebtn.Visible = false;
             }
         }
         public void themSuKien(Label lb)
         {
             lb.Click += Lb_Click;
+            lb.MouseDown += Lb_MouseDown;
         }
+        List<Label> stop_list = new List<Label>();
+        Label select_label;
+        private void Lb_MouseDown(object sender, MouseEventArgs e)
+        {
+        
+            Label lb = sender as Label;
+            label2.Text = lb.Name;
+           
+            check = Controllers.DatGheControllers.laytinhtrangHoatDong(label2.Text);
+            DataBinding();
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                ContextMenu cm1 = new ContextMenu();
+                select_label = lb;
+                if(stop_list.Contains(lb))
+                {
+                    MenuItem item2 = cm1.MenuItems.Add("Dua vao hoat dong");
+                    item2.Click += Item2_Click;
+                }
+                else if(count_down.Contains(lb))
+                {
+                    MenuItem item = cm1.MenuItems.Add("Tam dung");
+                    item.Click += Item_Click;
+                    MenuItem item1 = cm1.MenuItems.Add("Ket thuc");
+                    item1.Click += Item1_Click;
+                }
+                lb.ContextMenu = cm1;
+            }
+        }
+        private void ketthucDatGhe()
+        {
+            if (txtCode.Text != "")
+            {
+                int check = Controllers.DatGheControllers.Ketthucdatghe(label2.Text, txtId.Text, truyxuat[label2.Text].Text, Settings.getSettings().ptghd);
+                if (check > 0)
+                {
+                    MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    foreach (DataRow row in dts.Tables[0].Rows)
+                    {
+                        if (label2.Text == row["id"].ToString())
+                        {
+                            truyxuat[label2.Text].Text = row["name"].ToString();
+                            truyxuat[label2.Text].BackColor = Color.FromArgb(135, 206, 250);
+                        }
+                    }
+                    count_down.Remove(truyxuat[label2.Text]);
+                    textBoxbuttonRefessh();
+                    ViewsThongKeNgay.vtkngay.load();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chọn Bàn trước", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void Item1_Click(object sender, EventArgs e)
+        {
+            ketthucDatGhe();
+        }
+
+        private void Item2_Click(object sender, EventArgs e)
+        {
+            stop_list.Remove(select_label);
+            count_down.Add(select_label);
+            GheControllers.TiepTucHoatDong(label2.Text);
+        }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            count_down.Remove(select_label);
+            stop_list.Add(select_label);
+            GheControllers.NgungHoatDong(label2.Text);
+        }
+
         public static List<Label> getgroupBox()
         {
             lbs = new List<Label>();
@@ -186,6 +265,7 @@ namespace WindowsFormsApp1.Views
             {
                 string id = row["iddesk"].ToString();
                 string tg = row["createat"].ToString();
+                string available = row["available"].ToString();
                 string activetime = row["activetime"].ToString()+":00";
                 DateTime dt = Convert.ToDateTime(activetime);
                 TimeSpan value = DateTime.Now.Subtract(Convert.ToDateTime(tg));
@@ -202,7 +282,14 @@ namespace WindowsFormsApp1.Views
                     DateTime r = new DateTime(1977, 1, 1, hour: 0, minute: 0, second: 0) + tghd;
                     string txt = GetNumberString(r.Hour) + ":" + GetNumberString(r.Minute) + ":" + GetNumberString(r.Second);
                     truyxuat[id].Text = txt;
-                    count_down.Add(truyxuat[id]);
+                    if (available == "1")
+                    {
+                        count_down.Add(truyxuat[id]);
+                    }
+                    else
+                    {
+                        stop_list.Add(truyxuat[id]);
+                    }
                 }
             }
         }
@@ -226,8 +313,11 @@ namespace WindowsFormsApp1.Views
             lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             lb.Size = new Size(groupBox1.Size.Width / 10, groupBox1.Size.Height / 10);
             lb.Click += Lb_Click;
+            lb.MouseDown += Lb_MouseDown;
             return lb;
         }
+
+
 
         private void Lb_Click(object sender, EventArgs e)
         {
@@ -260,6 +350,7 @@ namespace WindowsFormsApp1.Views
                 button8.Enabled = false;
                 label12.Text = lbl.Text;
             }
+            textBox5.Focus();
             
         }
 
@@ -368,11 +459,11 @@ namespace WindowsFormsApp1.Views
 
             if (int.Parse(ho[0]) > int.Parse(th[0]) && int.Parse(ho[1])>int.Parse(th[1]))
             {
-                button3.Enabled = true;
+                datghebtn.Enabled = true;
             }
             else
             {
-                button3.Enabled = false;
+                datghebtn.Enabled = false;
             }
         }
         private void create_Label(Label lb)
@@ -469,33 +560,7 @@ namespace WindowsFormsApp1.Views
         private void button8_Click(object sender, EventArgs e)
         {
 
-            if (txtCode.Text != "")
-            {
-                int check = Controllers.DatGheControllers.Ketthucdatghe(label2.Text, txtId.Text, truyxuat[label2.Text].Text,Settings.getSettings().ptghd);
-                if (check > 0)
-                {
-                    MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    foreach (DataRow row in dts.Tables[0].Rows)
-                    {
-                        if (label2.Text == row["id"].ToString())
-                        {
-                            truyxuat[label2.Text].Text = row["name"].ToString();
-                            truyxuat[label2.Text].BackColor = Color.FromArgb(135, 206, 250);
-                        }
-                    }
-                    count_down.Remove(truyxuat[label2.Text]);
-                    textBoxbuttonRefessh();
-                    ViewsThongKeNgay.vtkngay.load();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Chọn Bàn trước", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            ketthucDatGhe();
             //Controllers.DatGheControllers.Ketthucdatghe(label2.Text, textBox5.Text, "00:20:00");
         }
 
@@ -686,6 +751,7 @@ namespace WindowsFormsApp1.Views
                         sig = 0;
                     }
                 comboBox1.Enabled = true;
+                button1.Focus();
 
             }
             if(e.KeyCode==Keys.Up)

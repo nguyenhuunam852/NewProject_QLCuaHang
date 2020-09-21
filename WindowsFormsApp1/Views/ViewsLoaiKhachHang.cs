@@ -26,7 +26,11 @@ namespace WindowsFormsApp1.Views
         }
         private void ViewsLoaiKhachHang_Load(object sender, EventArgs e)
         {
-          
+            updatebutton = buttonStyle.updateBtn(updatebutton);
+            addbutton = buttonStyle.createBtn(addbutton);
+            deletebutton = buttonStyle.deleteBtn(deletebutton);
+            closebutton = buttonStyle.closeBtn(closebutton);
+            savebutton = buttonStyle.saveBtn(savebutton);
             loadPermission();
             loadbutton();
 
@@ -40,11 +44,11 @@ namespace WindowsFormsApp1.Views
         }
         private void loadbutton()
         {
-            button3.Enabled = false;
-            button2.Enabled = true;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button1.Enabled = false;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = true;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = false;
+            closebutton.Enabled = false;
             textBox1.Enabled = false;
         }
         private void DataBinding()
@@ -65,22 +69,22 @@ namespace WindowsFormsApp1.Views
         {
             act = "insert";
             textBox1.Text = "";
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button1.Enabled = true;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = false;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             textBox1.Enabled = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             act = "update";
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button1.Enabled = true;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = false;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             textBox1.Enabled = true;
         }
 
@@ -129,8 +133,8 @@ namespace WindowsFormsApp1.Views
         {
             if (textBox1.Text != "" && act=="")
             {
-                button3.Enabled = true;
-                button4.Enabled = true;
+                deletebutton.Enabled = true;
+                updatebutton.Enabled = true;
             }
         }
 
@@ -143,21 +147,21 @@ namespace WindowsFormsApp1.Views
 
             if (MyPermission.getpermission("TypeCustomer", "insert") == 0)
             {
-                button2.Visible = false;
+                addbutton.Visible = false;
             }
             if (MyPermission.getpermission("TypeCustomer", "update") == 0)
             {
-                button4.Visible = false;
+                updatebutton.Visible = false;
                 button6.Visible = false;
             }
             if (MyPermission.getpermission("TypeCustomer", "delete") == 0)
             {
-                button3.Visible = false;
+                deletebutton.Visible = false;
             }
             if (MyPermission.getpermission("TypeCustomer", "update") == 0 && MyPermission.getpermission("TypeCustomer", "insert") == 0)
             {
-                button5.Visible = false;
-                button1.Visible = false;
+                savebutton.Visible = false;
+                closebutton.Visible = false;
             }
         }
 
@@ -168,20 +172,20 @@ namespace WindowsFormsApp1.Views
          
                 if (textBox2.Text == "0")
                 {
-                    button3.Enabled = false;
-                    button4.Enabled = false;
+                    deletebutton.Enabled = false;
+                    updatebutton.Enabled = false;
                 }
                 else
                 {
-                    button3.Enabled = true;
-                    button4.Enabled = true;
+                    deletebutton.Enabled = true;
+                    updatebutton.Enabled = true;
                 }
             }
             else
             {
               
-               button3.Enabled = false;
-               button4.Enabled = false;
+               deletebutton.Enabled = false;
+               updatebutton.Enabled = false;
                 
             }
         }
@@ -191,17 +195,17 @@ namespace WindowsFormsApp1.Views
             if (textBox2.Text == "0")
             {
                 button6.Enabled = true;
-                button2.Enabled = true;
-                button3.Enabled = false;
-                button4.Enabled = false;
-                button5.Enabled = false;
-                button1.Enabled = false;
+                addbutton.Enabled = true;
+                deletebutton.Enabled = false;
+                updatebutton.Enabled = false;
+                savebutton.Enabled = false;
+                closebutton.Enabled = false;
             }
             else
             {
                 button6.Enabled = false;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                deletebutton.Enabled = true;
+                updatebutton.Enabled = true;
             }
         }
 

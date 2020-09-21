@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
 using System.Drawing.Text;
 using System.Xaml.Permissions;
+using System.Drawing.Drawing2D;
 
 namespace WindowsFormsApp1.Views
 {
@@ -34,11 +35,11 @@ namespace WindowsFormsApp1.Views
         }
         private void loadButton()
         {
-            button3.Enabled = false;
-            button2.Enabled = true;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = true;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = false;
+            closebutton.Enabled = false;
             textBoxTen.Enabled = false;
             textBoxHo.Enabled = false;
             textBox2.Enabled = false;
@@ -57,17 +58,17 @@ namespace WindowsFormsApp1.Views
         }
         private void loadAgain()
         {
-            foreach(Control c in tableLayoutPanel1.Controls)
+            foreach (Control c in tableLayoutPanel1.Controls)
             {
                 if (c is TextBox)
                 {
                     c.TextChanged += C_TextChanged;
                 }
-                if(c is MaskedTextBox)
+                if (c is MaskedTextBox)
                 {
                     c.TextChanged += C_TextChanged1;
                 }
-            }    
+            }
             button11.Enabled = false;
             LoadPermission();
             label10.Text = "";
@@ -84,15 +85,11 @@ namespace WindowsFormsApp1.Views
             DataBinding();
             groupBox2.Enabled = false;
             dataGridView1.Enabled = true;
-            textBox8.Visible = false;
-            textBox9.Visible = false;
             label10.Visible = false;
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
             textBox10.Visible = false;
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
-            dataGridView2 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView2);
-            dataGridView3 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView3);
         }
 
         private void C_TextChanged1(object sender, EventArgs e)
@@ -109,6 +106,13 @@ namespace WindowsFormsApp1.Views
 
         private void KhachHangViews_Load(object sender, EventArgs e)
         {
+            typecustomerbtn = buttonStyle.createBtn(typecustomerbtn);
+            updatebutton = buttonStyle.updateBtn(updatebutton);
+            addbutton = buttonStyle.createBtn(addbutton);
+            deletebutton = buttonStyle.deleteBtn(deletebutton);
+            closebutton = buttonStyle.closeBtn(closebutton);
+            savebutton = buttonStyle.saveBtn(savebutton);
+            warnDC.Visible = false;
             loadAgain();
         }
 
@@ -116,48 +120,37 @@ namespace WindowsFormsApp1.Views
         {
             if (MyPermission.getpermission("Customer", "insert") == 0)
             {
-                button2.Visible = false;
+                addbutton.Visible = false;
             }
             if (MyPermission.getpermission("Customer", "update") == 0)
             {
-                button4.Visible = false;
+                updatebutton.Visible = false;
                 button11.Visible = false;
             }
-            if(MyPermission.getpermission("Customer", "update") == 0 && MyPermission.getpermission("Customer", "insert") == 0)
+            if (MyPermission.getpermission("Customer", "update") == 0 && MyPermission.getpermission("Customer", "insert") == 0)
             {
-                button5.Visible = false;
-                button6.Visible = false;
+                savebutton.Visible = false;
+                closebutton.Visible = false;
             }
             if (MyPermission.getpermission("Customer", "delete") == 0)
             {
-                button3.Visible = false;
+                deletebutton.Visible = false;
             }
             if (MyPermission.getpermission("HealCustomer", "view") == 0)
             {
-                dataGridView2.Visible = false;
-                button7.Visible = false;
-                button8.Visible = false;
-                label2.Visible = false;
+
             }
             if (MyPermission.getpermission("HealCustomer", "insert") == 0)
             {
-                button7.Visible = false;
             }
             if (MyPermission.getpermission("HealCustomer", "delete") == 0)
             {
-                button8.Visible = false;
             }
             if (MyPermission.getpermission("Health", "view") == 0)
             {
-                dataGridView3.Visible = false;
-                button7.Visible = false;
-                button8.Visible = false;
-                textBox7.Visible = false;
-                label12.Visible = false;
             }
             if (MyPermission.getpermission("Health", "insert") == 0)
             {
-                button9.Visible = false;
             }
         }
 
@@ -169,15 +162,14 @@ namespace WindowsFormsApp1.Views
             comboBox1.ValueMember = "id";
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboBox2.Items.Clear();
-            comboBox2.Items.Insert(0,"Nam");
-            comboBox2.Items.Insert(1,"Nữ");
-            comboBox2.Items.Insert(2,"None");
+            comboBox2.Items.Insert(0, "Nam");
+            comboBox2.Items.Insert(1, "Nữ");
+            comboBox2.Items.Insert(2, "None");
             comboBox2.SelectedIndex = 0;
             comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            textBox8.DataBindings.Clear();
-            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id");
             label10.DataBindings.Clear();
-            label10.DataBindings.Add("Text", dataGridView1.DataSource, "id");
+            label10.DataBindings.Add("Text", dataGridView1.DataSource, "id", false, DataSourceUpdateMode.Never);
+
         }
 
         private void loadDataGridView()
@@ -185,7 +177,7 @@ namespace WindowsFormsApp1.Views
             dataGridView1.DataSource = Controllers.KhachHangControllers.getData().Tables[0];
 
             listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
-            dataGridView3.DataSource = listhealth;
+
         }
         private void enableTextBox()
         {
@@ -199,7 +191,7 @@ namespace WindowsFormsApp1.Views
         private void DataBinding()
         {
             textBox5.DataBindings.Clear();
-            textBox5.DataBindings.Add("Text", dataGridView1.DataSource, "code",false, DataSourceUpdateMode.Never);
+            textBox5.DataBindings.Add("Text", dataGridView1.DataSource, "code", false, DataSourceUpdateMode.Never);
             textBoxHo.DataBindings.Clear();
             textBoxHo.DataBindings.Add("Text", dataGridView1.DataSource, "lastname", false, DataSourceUpdateMode.Never);
             textBoxTen.DataBindings.Clear();
@@ -216,26 +208,25 @@ namespace WindowsFormsApp1.Views
             comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idlkh", false, DataSourceUpdateMode.Never);
             comboBox2.DataBindings.Clear();
             comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", false, DataSourceUpdateMode.Never);
-            textBox9.DataBindings.Clear();
-            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", false, DataSourceUpdateMode.Never);
-            textBox8.DataBindings.Clear();
-            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", false, DataSourceUpdateMode.Never);
             textBox10.DataBindings.Clear();
             textBox10.DataBindings.Add("Text", dataGridView1.DataSource, "available", false, DataSourceUpdateMode.Never);
+            textBox7.DataBindings.Clear();
+            textBox7.DataBindings.Add("Text", dataGridView1.DataSource, "customerid", false, DataSourceUpdateMode.Never);
 
         }
         private void button2_Click(object sender, EventArgs e)
         {
             dataGridView1.Enabled = false;
             groupBox2.Enabled = true;
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button6.Enabled = true;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = false;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             comboBox1.Enabled = true;
             comboBox2.Enabled = true;
             textBox5.Text = KhachHangControllers.getMaMoi();
+            textBox7.Text = KhachHangControllers.getMaKHMoi();
             enableTextBox();
             clearTExtBox();
             action = "insert";
@@ -244,31 +235,10 @@ namespace WindowsFormsApp1.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int t = 0;
-            foreach (Control c in tableLayoutPanel1.Controls)
+     
+            if (textBoxTen.Text==""|| textBoxHo.Text=="" || textBox2.Text=="" || textBox4.Text=="")
             {
-                if(c is TextBox)
-                {
-                    if(c.Text=="")
-                    {
-                        c.Text = "Điền thêm thông tin";
-                        c.ForeColor = Color.Red;
-                        t += 1;
-                    }
-                }
-                if(c is MaskedTextBox)
-                {
-                    if (c.Text == "00/00/0000")
-                    {
-                        c.Text = "00/00/0000";
-                        c.ForeColor = Color.Red;
-                        t += 1;
-                    }
-                }
-            }
-            if (t > 0)
-            {
-                MessageBox.Show("Bạn chưa điền đủ thông tin", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                warnDC.Visible =true;
                 return;
             }
             string id = textBox5.Text;
@@ -291,16 +261,16 @@ namespace WindowsFormsApp1.Views
             {
                 gt = 0;
             }
-            if(comboBox1.SelectedValue==null)
+            if (comboBox1.SelectedValue == null)
             {
                 MessageBox.Show("Them loai khach hang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             string idlkh = comboBox1.SelectedValue.ToString();
-            
+
             if (action == "insert")
             {
-                int check = Controllers.KhachHangControllers.insertKhachHang(id, ten,ho, sdt, email, dc, ns,idlkh,gt,pdtb);
+                int check = Controllers.KhachHangControllers.insertKhachHang(id, ten, ho, sdt, email, dc, ns, idlkh, gt, pdtb,textBox7.Text);
                 if (check > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -314,7 +284,7 @@ namespace WindowsFormsApp1.Views
             }
             else
             {
-                int check = Controllers.KhachHangControllers.updateKhachHang(int.Parse(label10.Text), id, ten, ho, sdt, email, dc, ns, idlkh, gt, pdtb);
+                int check = Controllers.KhachHangControllers.updateKhachHang(int.Parse(label10.Text), id, ten, ho, sdt, email, dc, ns, idlkh, gt, pdtb, textBox7.Text);
                 if (check > 0)
                 {
                     MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -336,11 +306,11 @@ namespace WindowsFormsApp1.Views
             comboBox2.Enabled = true;
             dataGridView1.Enabled = false;
             groupBox2.Enabled = true;
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button6.Enabled = true;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = false;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             enableTextBox();
             action = "update";
         }
@@ -383,13 +353,13 @@ namespace WindowsFormsApp1.Views
             DatGheViews.setTextBox(textBox5.Text);
         }
 
-     
+
         private void button6_Click(object sender, EventArgs e)
         {
             KhachHangViews_Load(sender, e);
         }
 
-  
+
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -400,18 +370,15 @@ namespace WindowsFormsApp1.Views
                 if (check > 0)
                 {
                     MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (action =="")
+                    if (action == "")
                     {
                         KhachHangViews_Load(sender, e);
                     }
-                    if (action == "insert" || action=="update")
+                    if (action == "insert" || action == "update")
                     {
                         listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
-                        dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
-                        textBox9.DataBindings.Clear();
-                        textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-                        textBox8.DataBindings.Clear();
-                        textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
+                        //pdtb
+
                     }
                 }
                 else
@@ -420,56 +387,40 @@ namespace WindowsFormsApp1.Views
                 }
             }
         }
-
-        private void button7_Click_1(object sender, EventArgs e)
+        private void loadpdtb()
         {
-                foreach(DataRow row in listhealth.Rows)
-                {
-                    if (row["id"].ToString() == textBox8.Text)
-                    {
-                        DataRow newrow = pdtb.NewRow();
-                        newrow["idhealth"] = row["id"].ToString();
-                        newrow["name"] = row["name"].ToString();
-                        newrow["createat"] = DateTime.Now.ToString();
-                        pdtb.Rows.Add(newrow);
-                        break;
-                    }
-                }
-                dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
-                dataGridView2.DataSource = pdtb;
-                textBox9.DataBindings.Clear();
-                textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-                textBox8.DataBindings.Clear();
-                textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
+          
+            flowLayoutPanel1.Controls.Clear();
+            foreach (DataRow dtr in pdtb.Rows)
+            {
+                Label btn = new Label();
+                btn.Click += Btn_Click;
+                myTab.MyTab mt = new myTab.MyTab();
+                btn.Name = dtr["idhealth"].ToString();
+                btn = mt.getbuttonx(btn);
+                Label slb = new Label();
+                slb.Text = dtr["name"].ToString();
+                slb = mt.getLabel(slb);
+                Panel pn = new Panel();
+               
+                pn = mt.createTab(slb, btn);
+                pn.Margin = new Padding(0, 0, 0, 0);
+                flowLayoutPanel1.Controls.Add(pn);
+            }
         }
+        
 
-        private void button8_Click_1(object sender, EventArgs e)
-        {
-                foreach (DataRow row in pdtb.Rows)
-                {
-                    if (row["idhealth"].ToString() == textBox9.Text)
-                    {
-                        pdtb.Rows.Remove(row);
-                        break;
-                    }
-                }
-                dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
-                dataGridView2.DataSource = pdtb;
-                textBox9.DataBindings.Clear();
-                textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-                textBox8.DataBindings.Clear();
-                textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
-        }
-
+       
         private void label10_TextChanged_1(object sender, EventArgs e)
         {
             Label lb = sender as Label;
             if (lb.Text != "")
             {
+              
                 pdtb = Controllers.KhachHangControllers.getBenhLiData(int.Parse(lb.Text)).Tables[0];
-                dataGridView2.DataSource = pdtb;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                loadpdtb();
+                deletebutton.Enabled = true;
+                updatebutton.Enabled = true;
             }
             else
             {
@@ -478,47 +429,47 @@ namespace WindowsFormsApp1.Views
                 pdtb.Columns.Add("idhealth", typeof(int));
                 pdtb.Columns.Add("name", typeof(String));
                 pdtb.Columns.Add("createat", typeof(DateTime));
-                dataGridView2.DataSource = pdtb;
-                button3.Enabled = false;
-                button4.Enabled = false;
+                deletebutton.Enabled = false;
+                updatebutton.Enabled = false;
             }
-            dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
-            textBox9.DataBindings.Clear();
-            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-            textBox8.DataBindings.Clear();
-            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
+
 
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
+        private void Btn_Click(object sender, EventArgs e)
         {
-            TextBox tb = sender as TextBox;
-            dataGridView3.DataSource = Controllers.SucKhoeControllers.timkiem(tb.Text,pdtb).Tables[0];
-            DataBinding();
+
+            Label lb = sender as Label;
+            foreach(DataRow ctr in pdtb.Rows)
+            {
+                if(ctr["idhealth"].ToString()==lb.Name)
+                {
+                    pdtb.Rows.Remove(ctr);
+                    break;
+                }
+            }
+            loadpdtb();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             ThemNhanhLoaiKH tn = new ThemNhanhLoaiKH();
-            if(tn.ShowDialog()==DialogResult.OK)
+            if (tn.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Thêm thanh cong", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadDataGridViewTenLoai();
             }
-            else
-            {
-                MessageBox.Show("Thêm that bai", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+         
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            if(KhachHangControllers.khoiphucKH(label10.Text)>0)
+            if (KhachHangControllers.khoiphucKH(label10.Text) > 0)
             {
                 MessageBox.Show("thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 groupBox3.Enabled = true;
@@ -544,6 +495,34 @@ namespace WindowsFormsApp1.Views
         {
 
         }
+        DataTable dtb = new DataTable();
+        int sig = 0;
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (sig == 0)
+            {
+                TextBox txt = sender as TextBox;
+               
+                dtb = SucKhoeControllers.timkiem(txt.Text, pdtb).Tables[0];
+                if (txt.Text == "" || dtb.Rows.Count == 0)
+                {
+                    comboBox3.Enabled = false;
+                    comboBox3.Text = "";
+
+                }
+                else
+                {
+                    comboBox3.Enabled = true;
+                    comboBox3.DataSource = dtb;
+                    comboBox3.DisplayMember = "name";
+                    comboBox3.ValueMember = "id";
+                    comboBox3.DroppedDown = true;
+                }
+
+                comboBox3.SelectedIndex = -1;
+                Cursor.Current = Cursors.Default;
+            }
+        }
         //private void button9_Click(object sender, EventArgs e)
         //{
         //    KhachHangControllers.ThemLoaiKhachHang(txtTenLoaiKH.Text);
@@ -555,5 +534,139 @@ namespace WindowsFormsApp1.Views
         //    KhachHangControllers.XoaLoaiKhachHang(txtTenLKH.Text);
         //    KhachHangViews_Load(sender, e);
         //}
+
+
+        private void comboBox3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+          
+            if (dtb.Rows.Count > 0 && textBox1.Text != "")
+            {
+                sig = 1;
+                textBox1.Text = comboBox3.Text;
+            }
+            textBox1.Focus();
+        }
+
+        private void comboBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (sig == 1)
+            {
+                textBox1.Text = comboBox3.Text;
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sig == 1)
+            {
+                if (comboBox3.SelectedValue != null)
+                {
+             
+                    sig = 0;
+                }
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (comboBox3.SelectedIndex != -1)
+                {
+                                         
+                    comboBox3.Enabled = false;
+                    sig = 0;
+                    if(dtb.Rows.Count==0)
+                    {
+                        DataRow dtr = pdtb.NewRow();
+                        if (label10.Text == "")
+                        {
+                            dtr["idcustomer"] = 0;
+                        }
+                        else
+                        {
+                            dtr["idcustomer"] = label10.Text;
+                        }
+                        dtr["idhealth"] = 0;
+                        dtr["name"] = textBox1.Text;
+                        dtr["createat"] = DateTime.Now;
+                        pdtb.Rows.Add(dtr);
+                       
+                    }
+                    else
+                    {
+                        DataRow dtr = pdtb.NewRow();
+                        if (label10.Text == "")
+                        {
+                            dtr["idcustomer"] = 0;
+                        }
+                        else
+                        {
+                            dtr["idcustomer"] = label10.Text;
+                        }
+                        dtr["idhealth"] = comboBox3.SelectedValue.ToString();
+                        dtr["name"] = textBox1.Text;
+                        dtr["createat"] = DateTime.Now;
+                        pdtb.Rows.Add(dtr);
+
+                    }
+                }
+                else
+                {
+                    DataRow dtr = pdtb.NewRow();
+                    if (label10.Text == "")
+                    {
+                        dtr["idcustomer"] = 0;
+                    }
+                    else
+                    {
+                        dtr["idcustomer"] = label10.Text;
+                    }
+                    dtr["idhealth"] = 0;
+                    dtr["name"] = textBox1.Text;
+                    dtr["createat"] = DateTime.Now;
+                    pdtb.Rows.Add(dtr);
+
+                }
+                textBox1.Text = "";
+          
+                comboBox3.Enabled = true;
+                loadpdtb();
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                if (comboBox3.SelectedIndex == 0)
+                {
+                    comboBox3.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox3.SelectedIndex -= 1;
+                }
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                if (comboBox3.SelectedIndex == comboBox3.Items.Count - 1)
+                {
+                    comboBox3.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox3.SelectedIndex += 1;
+                }
+            }
+        }
+
+        private void KhachHangViews_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
     }
 }

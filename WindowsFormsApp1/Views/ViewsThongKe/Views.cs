@@ -127,21 +127,33 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
          
             if (signal == 0)
             {
-                List<DateTime> ldt = GetWeeks(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1), DayOfWeek.Sunday);
-                if (DateTime.Now.Date < ldt[0].Date)
+                int month = DateTime.Now.Month - 1;
+                int year = DateTime.Now.Year;
+                if (month == 0)
                 {
-                    int month = DateTime.Now.Month - 1;
-                    int year = DateTime.Now.Year;
-                    if (month == 0)
-                    {
-                        month = 12;
-                        year = year - 1;
-                    }
+                    month = 12;
+                    year = year - 1;
+                }
+                List<DateTime> ldt = GetWeeks(new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1), DayOfWeek.Sunday);
+                List<DateTime> ldt1 = GetWeeks(new DateTime(year, month, 1), DayOfWeek.Sunday);
+
+                if (ldt1[ldt1.Count-1].AddDays(7)>= new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1))
+                {
+                  
                     DataTable db = ThongKeControllers.getMonth();
                     DataRow dtr = db.NewRow();
                     dtr[0] = 0;
                     dtr[1] = month.ToString() + "/" + year.ToString();
                     db.Rows.InsertAt(dtr, 0);
+                    comboBox1.DataSource = db;
+                    comboBox1.DisplayMember = "thang";
+                    comboBox1.ValueMember = "thang";
+                    comboBox1.SelectedIndex = db.Rows.Count - 1;
+                }
+                else
+                {
+                    DataTable db = ThongKeControllers.getMonth();
+                  
                     comboBox1.DataSource = db;
                     comboBox1.DisplayMember = "thang";
                     comboBox1.ValueMember = "thang";

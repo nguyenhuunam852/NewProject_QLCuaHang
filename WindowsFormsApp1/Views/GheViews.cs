@@ -56,6 +56,11 @@ namespace WindowsFormsApp1.Views
         private int py = 0;
         private void GheViews_Load(object sender, EventArgs e)
         {
+            updatebutton = buttonStyle.updateBtn(updatebutton);
+            addbutton = buttonStyle.createBtn(addbutton);
+            deletebutton = buttonStyle.deleteBtn(deletebutton);
+            closebutton = buttonStyle.closeBtn(closebutton);
+            savebutton = buttonStyle.saveBtn(savebutton);
             loadPermissionMs();
             LoadDuLieuDataGridView();
             themUI();
@@ -124,21 +129,21 @@ namespace WindowsFormsApp1.Views
         {
             if (MyPermission.getpermission("Desk", "insert") == 0)
             {
-                btnThem.Visible = false;
+                addbutton.Visible = false;
             }
             if (MyPermission.getpermission("Desk", "update") == 0)
             {
-                btnSua.Visible = false;
+                updatebutton.Visible = false;
                 button2.Visible = false;
             }
             if (MyPermission.getpermission("Desk", "update") == 0 && MyPermission.getpermission("Desk", "insert") == 0)
             {
-                btnLuu.Visible = false;
-                btnHuy.Visible = false;
+                savebutton.Visible = false;
+                closebutton.Visible = false;
             }
             if (MyPermission.getpermission("Desk", "delete") == 0)
             {
-                btnXoa.Visible = false;
+                deletebutton.Visible = false;
             }
 
         }
@@ -158,11 +163,11 @@ namespace WindowsFormsApp1.Views
         }
         private void thietlapbandau()
         {
-            btnThem.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
-            btnLuu.Enabled = false;
-            btnHuy.Enabled = false;
+            addbutton.Enabled = true;
+            updatebutton.Enabled = false;
+            deletebutton.Enabled = false;
+            savebutton.Enabled = false;
+            closebutton.Enabled = false;
             txtTenGhe.Enabled = false;
             txtTenGhe.Text = "";
             txtId.Visible = false;
@@ -183,11 +188,11 @@ namespace WindowsFormsApp1.Views
         // Cấu trúc object { ghe.pid, ghe.ptinhtrang, ghe.ptrangthai, ghe.plx, ghe.ply };
         private void button1_Click(object sender, EventArgs e)
         {
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            updatebutton.Enabled = false;
+            deletebutton.Enabled = false;
           
-            btnLuu.Enabled = true;
-            btnHuy.Enabled = true;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             txtTenGhe.Enabled = true;
             signal = "insert";
         }
@@ -250,10 +255,10 @@ namespace WindowsFormsApp1.Views
         {
             Label lb = sender as Label;
            
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            btnLuu.Enabled = false;
-            btnHuy.Enabled = false;
+            updatebutton.Enabled = true;
+            deletebutton.Enabled = true;
+            savebutton.Enabled = false;
+            closebutton.Enabled = false;
             txtTenGhe.Text = lb.Text;
             txtId.Text = lb.Name;
             if(lb.BackColor== Color.FromArgb(135, 206, 250))
@@ -477,11 +482,11 @@ namespace WindowsFormsApp1.Views
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            updatebutton.Enabled = false;
+            deletebutton.Enabled = false;
            
-            btnLuu.Enabled = true;
-            btnHuy.Enabled = true;
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
             txtTenGhe.Enabled = true;
             cbbtrangthai.Enabled = true;
             signal = "update";

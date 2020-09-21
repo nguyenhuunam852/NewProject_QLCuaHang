@@ -77,5 +77,15 @@ namespace WindowsFormsApp1.Controllers
         {
             return Models.Ghe.KhoiphucGhe(p);
         }
+
+        internal static int NgungHoatDong(string text)
+        {
+            return Models.Ghe.TamDung(text);
+        }
+
+        internal static int TiepTucHoatDong(string text)
+        {
+            return Models.Ghe.TiepTucHoatDong(text);
+        }
     }
 }

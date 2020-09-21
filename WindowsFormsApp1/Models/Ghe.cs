@@ -98,6 +98,21 @@ namespace WindowsFormsApp1.Models
             this.quanli = Convert.ToInt32(dts.Tables[0].Rows[0]["iduser"].ToString());
             this.tenban = dts.Tables[0].Rows[0]["name"].ToString();
         }
+
+        internal static int TiepTucHoatDong(string text)
+        {
+            string[] paras = new string[] { "@id" };
+            object[] values = new object[] { text };
+            return Models.Connection.Excute_Sql("Continue_to_work", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal static int TamDung(string text)
+        {
+            string[] paras = new string[] { "@id"};
+            object[] values = new object[] { text };
+            return Models.Connection.Excute_Sql("Stop_now", CommandType.StoredProcedure, paras, values);
+        }
+
         public void insertGhe1(int x,int y)
         {
             DataSet dts = new DataSet();

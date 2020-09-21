@@ -70,6 +70,12 @@ namespace WindowsFormsApp1.Models
             get { return idlkh; }
             set { idlkh = value; }
         }
+        private string customerid;
+        public string pcustomerid
+        {
+            get { return customerid; }
+            set { customerid = value; }
+        }
         private DataTable dsb;
         public DataTable pdsb
         {
@@ -119,14 +125,14 @@ namespace WindowsFormsApp1.Models
         }
         public int insertKH()
         {
-            string[] paras = new string[] { "@id","@ho","@ten","@sdt","@email","@dc","@ns","@ca", "@idlkh","@sex","@available","@user", "@temp" };
-            object[] values = new object[] { code,ho,ten,sdt,email,dc,ns,DateTime.Now,idlkh,gt,1,User.getUser().pbranch,dsb };
+            string[] paras = new string[] { "@id","@ho","@ten","@sdt","@email","@dc","@ns","@ca", "@idlkh","@sex","@available","@user", "@temp","@makh" };
+            object[] values = new object[] { code,ho,ten,sdt,email,dc,ns,DateTime.Now,idlkh,gt,1,User.getUser().pbranch,dsb,customerid };
             return Models.Connection.Excute_Sql("insertCustomer", System.Data.CommandType.StoredProcedure,paras,values);
         }
         public int updateKH()
         {
-            string[] paras = new string[] { "@id","@code", "@ho", "@ten", "@sdt", "@email", "@ca", "@dc", "@ns", "@idlkh","@sex","@available", "@user","@Temp" };
-            object[] values = new object[] { id,code, ho, ten, sdt, email,DateTime.Now, dc, ns,idlkh,gt, 1, User.getUser().pbranch,dsb };
+            string[] paras = new string[] { "@id","@code", "@ho", "@ten", "@sdt", "@email", "@ca", "@dc", "@ns", "@idlkh","@sex","@available", "@user","@Temp","@mkh" };
+            object[] values = new object[] { id,code, ho, ten, sdt, email,DateTime.Now, dc, ns,idlkh,gt, 1, User.getUser().pbranch,dsb,customerid };
             return Models.Connection.Excute_Sql("updateCustomer", System.Data.CommandType.StoredProcedure, paras, values);
         }
         public int xoaKH()

@@ -31,6 +31,11 @@ namespace WindowsFormsApp1.Views
                 ViewsLoaiKhachHang.vlkh.load();
                 this.DialogResult = DialogResult.OK;
             }
+            else
+            {
+                MessageBox.Show("Thêm that bai", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

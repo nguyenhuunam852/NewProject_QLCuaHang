@@ -25,10 +25,10 @@ namespace WindowsFormsApp1.Views
            
             dataGridView1.Enabled = false;
 
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = false;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
             button6.Enabled = true;
             comboBox1.Enabled = true;
             comboBox2.Enabled = true;
@@ -60,37 +60,31 @@ namespace WindowsFormsApp1.Views
         {
             if (MyPermission.getpermission("User", "insert") == 0)
             {
-                button2.Visible = false;
+                addbutton.Visible = false;
             }
             if (MyPermission.getpermission("User", "update") == 0)
             {
-                button4.Visible = false;
+                updatebutton.Visible = false;
             }
             if (MyPermission.getpermission("User", "update") == 0 && MyPermission.getpermission("User", "insert") == 0)
             {
-                button5.Visible = false;
+                savebutton.Visible = false;
                 button6.Visible = false;
             }
             if (MyPermission.getpermission("User", "delete") == 0)
             {
-                button3.Visible = false;
+                deletebutton.Visible = false;
             }
          
         }
         
         private void UserViews_Load(object sender, EventArgs e)
         {
-            foreach (Control c in groupBox3.Controls)
-            {
-                if (c is TextBox)
-                {
-                    c.TextChanged += C_TextChanged;
-                }
-                if (c is MaskedTextBox)
-                {
-                    c.TextChanged += C_TextChanged1;
-                }
-            }
+            updatebutton = buttonStyle.updateBtn(updatebutton);
+            addbutton = buttonStyle.createBtn(addbutton);
+            deletebutton = buttonStyle.deleteBtn(deletebutton);
+            closebutton = buttonStyle.closeBtn(closebutton);
+            savebutton = buttonStyle.saveBtn(savebutton);
             if (firstSettings == 1)
             {
                 textBox5.Text = "1";
@@ -183,10 +177,10 @@ namespace WindowsFormsApp1.Views
 
         private void loadButton()
         {
-            button3.Enabled = true;
-            button2.Enabled = true;
-            button4.Enabled = true;
-            button5.Enabled = false;
+            deletebutton.Enabled = true;
+            addbutton.Enabled = true;
+            updatebutton.Enabled = true;
+            savebutton.Enabled = false;
             button6.Enabled = false;
             txtTen.Enabled = false;
             txtHo.Enabled = false;
@@ -297,10 +291,10 @@ namespace WindowsFormsApp1.Views
             comboBox1.Enabled = true;
             comboBox2.Enabled = true;
             dataGridView1.Enabled = false;
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
+            deletebutton.Enabled = false;
+            addbutton.Enabled = false;
+            updatebutton.Enabled = false;
+            savebutton.Enabled = true;
             button6.Enabled = true;
             enableTextBox();
             action = "update";
@@ -339,8 +333,8 @@ namespace WindowsFormsApp1.Views
             {
                
                     button1.Enabled = false;
-                    button3.Enabled = false;
-                    button4.Enabled = false;
+                    deletebutton.Enabled = false;
+                    updatebutton.Enabled = false;
                 
             }
             else
@@ -348,14 +342,14 @@ namespace WindowsFormsApp1.Views
                 if (textBox5.Text == "0")
                 {
                     button1.Enabled = false;
-                    button3.Enabled = false;
-                    button4.Enabled = false;
+                    deletebutton.Enabled = false;
+                    updatebutton.Enabled = false;
                 }
                 else
                 {
                     button1.Enabled = true;
-                    button3.Enabled = true;
-                    button4.Enabled = true;
+                    deletebutton.Enabled = true;
+                    updatebutton.Enabled = true;
                 }
             }
         }
@@ -365,17 +359,17 @@ namespace WindowsFormsApp1.Views
             if (textBox5.Text == "0")
             {
                 button7.Enabled = true;
-                button3.Enabled = false;
-                button4.Enabled = false;
-                button5.Enabled = false;
+                deletebutton.Enabled = false;
+                updatebutton.Enabled = false;
+                savebutton.Enabled = false;
                 button6.Enabled = false;
                 button1.Enabled = false;
             }
             else
             {
                 button7.Enabled = false;
-                button3.Enabled = true;
-                button4.Enabled = true;
+                deletebutton.Enabled = true;
+                updatebutton.Enabled = true;
                 button1.Enabled = true;
             }
         }
@@ -407,6 +401,11 @@ namespace WindowsFormsApp1.Views
         }
 
         private void button8_Click(object sender, EventArgs e)
+        {
+            UserViews_Load(sender, e);
+        }
+
+        private void closebutton_Click(object sender, EventArgs e)
         {
             UserViews_Load(sender, e);
         }

@@ -1,10 +1,10 @@
 txtServerName@DESKTOP-VT4SFHD
 txtDataBase@mynewdtb
-txtDV@ng
+txtDV@Người
 txtTGBD@17:00
-txtTGHD@00:01
+txtTGHD@00:05
 txtTGKT@18:00
 txtUsername@sa
 txtPass@123456
-txtSave@C:\Program Files (x86)\VietNhatJP\VietNhatJP\backup
-txtPicture@C:\Users\namhn\OneDrive\Documents\download (1).jpg
+txtSave@C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Release\backup\
+txtPicture@C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Release\picture\logo.jpg

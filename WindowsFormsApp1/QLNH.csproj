@@ -120,6 +120,7 @@
     <Compile Include="Views\BranchSelection.Designer.cs">
       <DependentUpon>BranchSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\buttonStyle.cs" />
     <Compile Include="Views\DatGheViews.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +133,7 @@
     <Compile Include="Views\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Fonts.cs" />
     <Compile Include="Views\FrmTongKet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +147,7 @@
       <DependentUpon>GroupUserViews.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MyDataGridViews\MyDataGridView.cs" />
+    <Compile Include="Views\myTab\MyTab.cs" />
     <Compile Include="Views\PersonalInforViews.cs">
       <SubType>UserControl</SubType>
     </Compile>

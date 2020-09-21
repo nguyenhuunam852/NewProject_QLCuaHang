@@ -26,6 +26,7 @@ namespace WindowsFormsApp1.Views
         }
         private void ViewsSucKhoe_Load(object sender, EventArgs e)
         {
+
             textBox2.Visible = false;
             loadPermission();
             loadbutton();
@@ -39,12 +40,17 @@ namespace WindowsFormsApp1.Views
         }
         private void loadbutton()
         {
-            button3.Enabled = false;
-            button2.Enabled = true;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button1.Enabled = false;
-            textBox1.Enabled = false;
+            btnUpdate = buttonStyle.updateBtn(btnUpdate);
+            addbutton = buttonStyle.createBtn(addbutton);
+            deletebtn = buttonStyle.deleteBtn(deletebtn);
+            cancelbutton = buttonStyle.closeBtn(cancelbutton);
+            savebtn = buttonStyle.saveBtn(savebtn);
+            deletebtn.Enabled = false;
+            addbutton.Enabled = true;
+            btnUpdate.Enabled = false;
+            savebtn.Enabled = false;
+            cancelbutton.Enabled = false;
+            txtThem.Enabled = false;
         }
         private void DataBinding()
         {
@@ -52,8 +58,8 @@ namespace WindowsFormsApp1.Views
             label8.DataBindings.Clear();
             label8.DataBindings.Add("Text", dataGridView1.DataSource, "id", false, DataSourceUpdateMode.Never);
 
-            textBox1.DataBindings.Clear();
-            textBox1.DataBindings.Add("Text", dataGridView1.DataSource, "name", false, DataSourceUpdateMode.Never);
+            txtThem.DataBindings.Clear();
+            txtThem.DataBindings.Add("Text", dataGridView1.DataSource, "name", false, DataSourceUpdateMode.Never);
 
             textBox2.DataBindings.Clear();
             textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "available", false, DataSourceUpdateMode.Never);
@@ -62,73 +68,81 @@ namespace WindowsFormsApp1.Views
         private void button2_Click(object sender, EventArgs e)
         {
             act = "insert";
-            textBox1.Text = "";
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button1.Enabled = true;
-            textBox1.Enabled = true;
+            txtThem.Focus();
+            txtThem.Text = "";
+            deletebtn.Enabled = false;
+            addbutton.Enabled = false;
+            btnUpdate.Enabled = false;
+            savebtn.Enabled = true;
+            cancelbutton.Enabled = true;
+            txtThem.Enabled = true;
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void Save()
         {
+            if(txtThem.Text=="")
+            {
+                MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (act == "insert")
             {
-                int check = Controllers.SucKhoeControllers.insertSucKhoe(textBox1.Text);
+                
+                int check = Controllers.SucKhoeControllers.insertSucKhoe(txtThem.Text);
                 if (check > 0)
                 {
-                    MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
                     KhachHangViews.khv.load();
-                    ViewsSucKhoe_Load(sender, e);
-          
                 }
             }
             if (act == "update")
             {
-                int check = Controllers.SucKhoeControllers.updateSucKhoe(label8.Text,textBox1.Text);
+                int check = Controllers.SucKhoeControllers.updateSucKhoe(label8.Text, txtThem.Text);
                 if (check > 0)
                 {
                     MessageBox.Show("Thay đổi tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
                     KhachHangViews.khv.load();
-                    ViewsSucKhoe_Load(sender, e);
+                
 
                 }
             }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Save();
+            ViewsSucKhoe_Load(sender, e);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             act = "update";
-            button3.Enabled = false;
-            button2.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = true;
-            button1.Enabled = true;
-            textBox1.Enabled = true;
+            deletebtn.Enabled = false;
+            addbutton.Enabled = false;
+            btnUpdate.Enabled = false;
+            savebtn.Enabled = true;
+            cancelbutton.Enabled = true;
+            txtThem.Enabled = true;
         }
         private void loadPermission()
         {
         
             if (MyPermission.getpermission("Health", "insert") == 0)
             {
-                button2.Visible = false;
+                addbutton.Visible = false;
             }
             if (MyPermission.getpermission("Health", "update") == 0)
             {
-                button4.Visible = false;
+                btnUpdate.Visible = false;
                 button6.Visible = false;
             }
             if (MyPermission.getpermission("Health", "delete") == 0)
             {
-                button3.Visible = false;
+                deletebtn.Visible = false;
             }
             if (MyPermission.getpermission("Health", "update") == 0 && MyPermission.getpermission("Health", "insert") == 0)
             {
-                button5.Visible = false;
-                button1.Visible = false;
+                savebtn.Visible = false;
+                cancelbutton.Visible = false;
             }
         }
 
@@ -139,10 +153,10 @@ namespace WindowsFormsApp1.Views
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && act == "")
+            if (txtThem.Text != "" && act == "")
             {
-                button3.Enabled = true;
-                button4.Enabled = true;
+                deletebtn.Enabled = true;
+                btnUpdate.Enabled = true;
             }
         }
 
@@ -164,17 +178,17 @@ namespace WindowsFormsApp1.Views
             if (textBox2.Text == "0")
             {
                 button6.Enabled = true;
-                button2.Enabled = true;
-                button3.Enabled = false;
-                button4.Enabled = false;
-                button5.Enabled = false;
-                button1.Enabled = false;
+                addbutton.Enabled = true;
+                deletebtn.Enabled = false;
+                btnUpdate.Enabled = false;
+                savebtn.Enabled = false;
+                cancelbutton.Enabled = false;
             }
             else
             {
                 button6.Enabled = false;
-                button3.Enabled =true;
-                button4.Enabled = true;
+                deletebtn.Enabled =true;
+                btnUpdate.Enabled = true;
                
             }
         }
@@ -200,20 +214,20 @@ namespace WindowsFormsApp1.Views
 
                 if (textBox2.Text == "0")
                 {
-                    button3.Enabled = false;
-                    button4.Enabled = false;
+                    deletebtn.Enabled = false;
+                    btnUpdate.Enabled = false;
                 }
                 else
                 {
-                    button3.Enabled = true;
-                    button4.Enabled = true;
+                    deletebtn.Enabled = true;
+                    btnUpdate.Enabled = true;
                 }
             }
             else
             {
 
-                button3.Enabled = false;
-                button4.Enabled = false;
+                deletebtn.Enabled = false;
+                btnUpdate.Enabled = false;
 
             }
         }
@@ -221,6 +235,25 @@ namespace WindowsFormsApp1.Views
         private void button8_Click(object sender, EventArgs e)
         {
             ViewsSucKhoe_Load(sender, e);
+        }
+
+        private void ViewsSucKhoe_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Save();
+                ViewsSucKhoe_Load(sender, e);
+            }
         }
     }
 }

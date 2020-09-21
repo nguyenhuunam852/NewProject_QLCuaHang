@@ -44,7 +44,7 @@ namespace WindowsFormsApp1.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int check=BranchControllers.insertBranch(textBox1.Text, textBox2.Text);
+            int check=BranchControllers.insertBranch(textBox1.Text, textBox2.Text,txtManhanh.Text);
             if(check>0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

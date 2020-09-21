@@ -36,15 +36,16 @@
             this.updateat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.closebutton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.savebutton = new System.Windows.Forms.Button();
+            this.updatebutton = new System.Windows.Forms.Button();
+            this.deletebutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addbutton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permission = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,6 @@
             this.option = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -125,11 +125,12 @@
             // 
             this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.closebutton);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.savebutton);
+            this.groupBox3.Controls.Add(this.addbutton);
+            this.groupBox3.Controls.Add(this.updatebutton);
+            this.groupBox3.Controls.Add(this.deletebutton);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
@@ -140,6 +141,16 @@
             this.groupBox3.Text = "Group User";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(253, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(89, 47);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "Reload";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(90, 195);
@@ -149,15 +160,15 @@
             this.textBox2.Text = "agss";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
-            // button1
+            // closebutton
             // 
-            this.button1.Location = new System.Drawing.Point(146, 147);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Hủy";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.closebutton.Location = new System.Drawing.Point(130, 109);
+            this.closebutton.Name = "closebutton";
+            this.closebutton.Size = new System.Drawing.Size(31, 23);
+            this.closebutton.TabIndex = 18;
+            this.closebutton.Text = "Hủy";
+            this.closebutton.UseVisualStyleBackColor = true;
+            this.closebutton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -169,35 +180,35 @@
             this.label8.Text = "id";
             this.label8.TextChanged += new System.EventHandler(this.label8_TextChanged);
             // 
-            // button5
+            // savebutton
             // 
-            this.button5.Location = new System.Drawing.Point(65, 147);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Lưu";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.savebutton.Location = new System.Drawing.Point(99, 109);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(31, 23);
+            this.savebutton.TabIndex = 14;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.UseVisualStyleBackColor = true;
+            this.savebutton.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // updatebutton
             // 
-            this.button4.Location = new System.Drawing.Point(146, 108);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Sửa";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.updatebutton.Location = new System.Drawing.Point(68, 109);
+            this.updatebutton.Name = "updatebutton";
+            this.updatebutton.Size = new System.Drawing.Size(31, 23);
+            this.updatebutton.TabIndex = 13;
+            this.updatebutton.Text = "Sửa";
+            this.updatebutton.UseVisualStyleBackColor = true;
+            this.updatebutton.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // deletebutton
             // 
-            this.button3.Location = new System.Drawing.Point(65, 108);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.deletebutton.Location = new System.Drawing.Point(37, 109);
+            this.deletebutton.Name = "deletebutton";
+            this.deletebutton.Size = new System.Drawing.Size(31, 23);
+            this.deletebutton.TabIndex = 12;
+            this.deletebutton.Text = "Xóa";
+            this.deletebutton.UseVisualStyleBackColor = true;
+            this.deletebutton.Click += new System.EventHandler(this.button3_Click);
             // 
             // label3
             // 
@@ -216,15 +227,15 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button2
+            // addbutton
             // 
-            this.button2.Location = new System.Drawing.Point(161, 250);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 32);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.addbutton.Location = new System.Drawing.Point(6, 109);
+            this.addbutton.Name = "addbutton";
+            this.addbutton.Size = new System.Drawing.Size(31, 22);
+            this.addbutton.TabIndex = 11;
+            this.addbutton.Text = "Thêm";
+            this.addbutton.UseVisualStyleBackColor = true;
+            this.addbutton.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView2
             // 
@@ -240,9 +251,9 @@
             this.update,
             this.delete,
             this.option});
-            this.dataGridView2.Location = new System.Drawing.Point(375, -3);
+            this.dataGridView2.Location = new System.Drawing.Point(375, 14);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(409, 536);
+            this.dataGridView2.Size = new System.Drawing.Size(409, 519);
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -329,16 +340,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(253, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(89, 47);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "Reload";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // GroupUserViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,7 +350,6 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
             this.Name = "GroupUserViews";
             this.Size = new System.Drawing.Size(784, 536);
             this.Load += new System.EventHandler(this.GroupUserViews_Load);
@@ -367,14 +367,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button savebutton;
+        private System.Windows.Forms.Button updatebutton;
+        private System.Windows.Forms.Button deletebutton;
+        private System.Windows.Forms.Button addbutton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button closebutton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn permission;

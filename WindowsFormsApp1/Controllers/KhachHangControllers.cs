@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.Controllers
         {
             return RandomString(4) + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
         }
-        public static int insertKhachHang(string id,string ten,string ho,string sdt,string email,string diachi,string ns,string idlkh,int sex,DataTable dsbenh)
+        public static int insertKhachHang(string id,string ten,string ho,string sdt,string email,string diachi,string ns,string idlkh,int sex,DataTable dsbenh, string text)
         {
             KhachHang kh = new KhachHang();
             kh.pcode = id;
@@ -35,6 +35,7 @@ namespace WindowsFormsApp1.Controllers
             kh.pidlkh = idlkh;
             kh.pgt = sex;
             kh.pdsb = dsbenh;
+            kh.pcustomerid = text;
             return kh.insertKH();
         }
         public static DataSet LoadLoaiKh()
@@ -69,7 +70,7 @@ namespace WindowsFormsApp1.Controllers
             KhachHang kh = new KhachHang(id);
             return kh.xoaKH();
         }
-        public static int updateKhachHang(int id,string code, string ten,string ho, string sdt, string email, string diachi, string ns,string idlkh,int sex,DataTable dtb)
+        public static int updateKhachHang(int id,string code, string ten,string ho, string sdt, string email, string diachi, string ns,string idlkh,int sex,DataTable dtb,string mkh)
         {
            
             KhachHang kh = new KhachHang();
@@ -84,6 +85,7 @@ namespace WindowsFormsApp1.Controllers
             kh.pidlkh = idlkh;
             kh.pgt = sex;
             kh.pdsb = dtb;
+            kh.pcustomerid = mkh;
             return kh.updateKH();
 
 
@@ -144,6 +146,13 @@ namespace WindowsFormsApp1.Controllers
         internal static DataSet LoadLoaiKh1()
         {
             return LoaiKhachHang.LayDSLoaiKH1();
+        }
+
+        internal static string getMaKHMoi()
+        {
+            string machinhanh = Branch.getmachinhanh(User.getUser().pbranch.ToString());
+            int idkh = Branch.getslkh(User.getUser().pbranch.ToString())+1;
+            return machinhanh+"-" + idkh.ToString();
         }
     }
 }

@@ -15,11 +15,12 @@ namespace WindowsFormsApp1.Controllers
             return Branch.getData();
         }
 
-        internal static int insertBranch(string text1, string text2)
+        internal static int insertBranch(string text1, string text2,string txtmanhanh)
         {
             Branch br = new Branch();
             br.pname = text1;
             br.paddress = text2;
+            br.pcode = txtmanhanh;
             return br.InsertBranch();
         }
     }

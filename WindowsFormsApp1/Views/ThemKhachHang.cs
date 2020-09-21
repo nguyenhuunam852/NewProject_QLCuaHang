@@ -21,38 +21,23 @@ namespace WindowsFormsApp1.Views
         DataTable listhealth = new DataTable();
         private void ThemKhachHang_Load(object sender, EventArgs e)
         {
-            foreach(Control c in groupBox3.Controls)
-            {
-                if(c is TextBox)
-                {
-                    c.TextChanged += C_TextChanged;
-                }
-                if(c is MaskedTextBox)
-                {
-                    c.TextChanged += C_TextChanged1;
-                }
-            }
-            label11.Visible = false;
-           
-            textBox8.Visible = false;
-            textBox9.Visible = false;
+        
             groupBox3.Enabled = true;
             groupBox2.Enabled = true;
+            textBox6.Text = KhachHangControllers.getMaKHMoi();
             textBox5.Text = KhachHangControllers.getMaMoi();
             textBox5.Enabled = false;
             listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
-            dataGridView3.DataSource = listhealth;
             pdtb = new DataTable();
             pdtb.Columns.Add("idcustomer", typeof(int));
             pdtb.Columns.Add("idhealth", typeof(int));
             pdtb.Columns.Add("name", typeof(String));
             pdtb.Columns.Add("createat", typeof(DateTime));
-            dataGridView2.DataSource = pdtb;
-            textBox9.DataBindings.Clear();
-            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-            textBox8.DataBindings.Clear();
-            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
             loadDataGridViewTenLoai();
+            warnHo.Visible = false;
+            warnSDT.Visible = false;
+            warnTen.Visible = false;
+            warnDC.Visible = false;
         }
 
         private void C_TextChanged1(object sender, EventArgs e)
@@ -85,27 +70,25 @@ namespace WindowsFormsApp1.Views
         private void button5_Click(object sender, EventArgs e)
         {
             int t = 0;
-            foreach(Control c in groupBox3.Controls)
+            if (txtHo.Text == "")
             {
-
-                if (c is TextBox)
-                {
-                    if (c.Text == "")
-                    {
-                        c.Text = "Điền thêm thông tin";
-                        c.ForeColor = Color.Red;
-                        t += 1;
-                    }
-                }
-                if (c is MaskedTextBox)
-                {
-                    if (c.Text == "00/00/0000")
-                    {
-                        c.Text = "00/00/0000";
-                        c.ForeColor = Color.Red;
-                        t += 1;
-                    }
-                }
+                warnHo.Visible = true;
+                return;
+            }
+            if (txtTen.Text == "")
+            {
+                warnTen.Visible = true;
+                return;
+            }
+            if (txtDC.Text == "")
+            {
+                warnDC.Visible = true;
+                return;
+            }
+            if(textBox2.Text=="")
+            {
+                warnSDT.Visible = true;
+                return;
             }
             if(t>0)
             {
@@ -117,7 +100,7 @@ namespace WindowsFormsApp1.Views
             string ho = txtHo.Text;
             string sdt = textBox2.Text;
             string email = textBox3.Text;
-            string dc = textBox4.Text;
+            string dc = txtDC.Text;
             string ns = maskedTextBox1.Text;
             int gt = 1;
             if (comboBox2.Text == "Nữ")
@@ -133,7 +116,7 @@ namespace WindowsFormsApp1.Views
                 gt = 0;
             }
             string idlkh = comboBox1.SelectedValue.ToString();
-            int check = Controllers.KhachHangControllers.insertKhachHang(id, ten,ho, sdt, email, dc, ns, idlkh, gt, pdtb);
+            int check = Controllers.KhachHangControllers.insertKhachHang(id, ten,ho, sdt, email, dc, ns, idlkh, gt, pdtb, textBox6.Text);
             if (check > 0)
             {
                 MessageBox.Show("Thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,52 +130,7 @@ namespace WindowsFormsApp1.Views
             
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            foreach (DataRow row in listhealth.Rows)
-            {
-                if (row["id"].ToString() == textBox8.Text)
-                {
-                    DataRow newrow = pdtb.NewRow();
-                    newrow["idhealth"] = row["id"].ToString();
-                    newrow["name"] = row["name"].ToString();
-                    newrow["createat"] = DateTime.Now.ToString();
-                    pdtb.Rows.Add(newrow);
-                    break;
-                }
-            }
-            dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
-            dataGridView2.DataSource = pdtb;
-            textBox9.DataBindings.Clear();
-            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-            textBox8.DataBindings.Clear();
-            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            foreach (DataRow row in pdtb.Rows)
-            {
-                if (row["idhealth"].ToString() == textBox9.Text)
-                {
-                    pdtb.Rows.Remove(row);
-                    break;
-                }
-            }
-            dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
-            dataGridView2.DataSource = pdtb;
-            textBox9.DataBindings.Clear();
-            textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-            textBox8.DataBindings.Clear();
-            textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            TextBox tb = sender as TextBox;
-            dataGridView3.DataSource = Controllers.SucKhoeControllers.timkiem(tb.Text, pdtb).Tables[0];
-        }
-
+   
         private void button9_Click(object sender, EventArgs e)
         {
             ThemBenhNhanh tbn = new ThemBenhNhanh();
@@ -203,11 +141,6 @@ namespace WindowsFormsApp1.Views
                 {
                     MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
-                    dataGridView3.DataSource = Controllers.SucKhoeControllers.getBenhAvailable(pdtb).Tables[0];
-                    textBox9.DataBindings.Clear();
-                    textBox9.DataBindings.Add("Text", dataGridView2.DataSource, "idhealth", true, DataSourceUpdateMode.Never);
-                    textBox8.DataBindings.Clear();
-                    textBox8.DataBindings.Add("Text", dataGridView3.DataSource, "id", true, DataSourceUpdateMode.Never);
                 }
                 else
                 {
@@ -235,34 +168,187 @@ namespace WindowsFormsApp1.Views
           
         }
 
-        private void textBox8_Enter(object sender, EventArgs e)
-        {
-            label11.Visible = true;
-        }
+     
 
         private void txtHo_Enter(object sender, EventArgs e)
         {
             return;
         }
 
-        private void textBox8_Leave(object sender, EventArgs e)
-        {
-            label11.Visible = false;
-        }
+      
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void textBox1_Enter(object sender, EventArgs e)
+        DataTable dtb = new DataTable();
+        int sig = 0;
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            label11.Visible = true;
+            if (sig == 0)
+            {
+                TextBox txt = sender as TextBox;
+
+                dtb = SucKhoeControllers.timkiem(txt.Text, pdtb).Tables[0];
+                if (txt.Text == "" || dtb.Rows.Count == 0)
+                {
+                    comboBox3.Enabled = false;
+                    comboBox3.Text = "";
+
+                }
+                else
+                {
+                    comboBox3.Enabled = true;
+                    comboBox3.DataSource = dtb;
+                    comboBox3.DisplayMember = "name";
+                    comboBox3.ValueMember = "id";
+                    comboBox3.DroppedDown = true;
+                }
+
+                comboBox3.SelectedIndex = -1;
+                Cursor.Current = Cursors.Default;
+            }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void comboBox3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            label11.Visible = false;
+            ComboBox cb = sender as ComboBox;
+
+            if (dtb.Rows.Count > 0 && textBox1.Text != "")
+            {
+                sig = 1;
+                textBox1.Text = comboBox3.Text;
+            }
+            textBox1.Focus();
+        }
+
+        private void comboBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (sig == 1)
+            {
+                textBox1.Text = comboBox3.Text;
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (comboBox3.SelectedIndex != -1)
+                {
+
+                    comboBox3.Enabled = false;
+                    sig = 0;
+                    if (dtb.Rows.Count == 0)
+                    {
+                        DataRow dtr = pdtb.NewRow();
+                        
+                        dtr["idcustomer"] = 0;
+                        
+    
+            
+                        dtr["idhealth"] = 0;
+                        dtr["name"] = textBox1.Text;
+                        dtr["createat"] = DateTime.Now;
+                        pdtb.Rows.Add(dtr);
+
+                    }
+                    else
+                    {
+                        DataRow dtr = pdtb.NewRow();
+                        dtr["idcustomer"] = 0;
+                        dtr["idhealth"] = comboBox3.SelectedValue.ToString();
+                        dtr["name"] = textBox1.Text;
+                        dtr["createat"] = DateTime.Now;
+                        pdtb.Rows.Add(dtr);
+
+                    }
+                }
+                else
+                {
+                    DataRow dtr = pdtb.NewRow();                
+                    dtr["idcustomer"] = 0;
+                    dtr["idhealth"] = 0;
+                    dtr["name"] = textBox1.Text;
+                    dtr["createat"] = DateTime.Now;
+                    pdtb.Rows.Add(dtr);
+
+                }
+                textBox1.Text = "";
+
+                comboBox3.Enabled = true;
+                loadpdtb();
+            }
+
+            if (e.KeyCode == Keys.Up)
+            {
+                if (comboBox3.SelectedIndex == 0)
+                {
+                    comboBox3.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox3.SelectedIndex -= 1;
+                }
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                if (comboBox3.SelectedIndex == comboBox3.Items.Count - 1)
+                {
+                    comboBox3.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox3.SelectedIndex += 1;
+                }
+            }
+        }
+        private void loadpdtb()
+        {
+
+            flowLayoutPanel1.Controls.Clear();
+            foreach (DataRow dtr in pdtb.Rows)
+            {
+                Label btn = new Label();
+                btn.Click += Btn_Click;
+                myTab.MyTab mt = new myTab.MyTab();
+                btn.Name = dtr["idhealth"].ToString();
+                btn = mt.getbuttonx(btn);
+                Label slb = new Label();
+                slb.Text = dtr["name"].ToString();
+                slb = mt.getLabel(slb);
+                Panel pn = new Panel();
+
+                pn = mt.createTab(slb, btn);
+                pn.Margin = new Padding(0, 0, 0, 0);
+                flowLayoutPanel1.Controls.Add(pn);
+            }
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+
+            Label lb = sender as Label;
+            foreach (DataRow ctr in pdtb.Rows)
+            {
+                if (ctr["idhealth"].ToString() == lb.Name)
+                {
+                    pdtb.Rows.Remove(ctr);
+                    break;
+                }
+            }
+            loadpdtb();
         }
     }
+
 }

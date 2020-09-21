@@ -73,6 +73,7 @@ namespace WindowsFormsApp1.Views
                 if (dlr == DialogResult.OK)
                 {
                         FrmMain.getFrmMain().khoiphucdatabase1();
+                    this.DialogResult = DialogResult.Yes;
                 }
    
             }

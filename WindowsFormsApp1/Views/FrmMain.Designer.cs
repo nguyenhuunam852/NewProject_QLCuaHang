@@ -257,7 +257,6 @@
             this.groupBox2.Size = new System.Drawing.Size(784, 562);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // FrmMain
             // 

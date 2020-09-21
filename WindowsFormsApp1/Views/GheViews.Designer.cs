@@ -33,17 +33,17 @@ namespace WindowsFormsApp1.Views
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLuu = new System.Windows.Forms.Button();
+            this.savebutton = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnHuy = new System.Windows.Forms.Button();
+            this.closebutton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbbtrangthai = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenGhe = new System.Windows.Forms.TextBox();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.deletebutton = new System.Windows.Forms.Button();
+            this.updatebutton = new System.Windows.Forms.Button();
+            this.addbutton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -81,13 +81,13 @@ namespace WindowsFormsApp1.Views
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.btnLuu);
+            this.groupBox2.Controls.Add(this.savebutton);
             this.groupBox2.Controls.Add(this.groupBox5);
-            this.groupBox2.Controls.Add(this.btnHuy);
+            this.groupBox2.Controls.Add(this.closebutton);
             this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.btnXoa);
-            this.groupBox2.Controls.Add(this.btnSua);
-            this.groupBox2.Controls.Add(this.btnThem);
+            this.groupBox2.Controls.Add(this.deletebutton);
+            this.groupBox2.Controls.Add(this.updatebutton);
+            this.groupBox2.Controls.Add(this.addbutton);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(432, 3);
             this.groupBox2.Name = "groupBox2";
@@ -96,18 +96,18 @@ namespace WindowsFormsApp1.Views
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control";
             // 
-            // btnLuu
+            // savebutton
             // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.savebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuu.Location = new System.Drawing.Point(9, 134);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(171, 21);
-            this.btnLuu.TabIndex = 11;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.savebutton.Location = new System.Drawing.Point(105, 45);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(31, 21);
+            this.savebutton.TabIndex = 11;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.UseVisualStyleBackColor = true;
+            this.savebutton.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // groupBox5
             // 
@@ -121,19 +121,19 @@ namespace WindowsFormsApp1.Views
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Ghế được khôi phục";
             // 
-            // btnHuy
+            // closebutton
             // 
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.closebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuy.Location = new System.Drawing.Point(9, 112);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnHuy.Size = new System.Drawing.Size(171, 21);
-            this.btnHuy.TabIndex = 12;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            this.closebutton.Location = new System.Drawing.Point(137, 45);
+            this.closebutton.Name = "closebutton";
+            this.closebutton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.closebutton.Size = new System.Drawing.Size(31, 21);
+            this.closebutton.TabIndex = 12;
+            this.closebutton.Text = "Hủy";
+            this.closebutton.UseVisualStyleBackColor = true;
+            this.closebutton.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // groupBox4
             // 
@@ -184,44 +184,44 @@ namespace WindowsFormsApp1.Views
             this.txtTenGhe.Size = new System.Drawing.Size(81, 20);
             this.txtTenGhe.TabIndex = 7;
             // 
-            // btnXoa
+            // deletebutton
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.deletebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Location = new System.Drawing.Point(9, 68);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(171, 19);
-            this.btnXoa.TabIndex = 9;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.deletebutton.Location = new System.Drawing.Point(41, 45);
+            this.deletebutton.Name = "deletebutton";
+            this.deletebutton.Size = new System.Drawing.Size(31, 19);
+            this.deletebutton.TabIndex = 9;
+            this.deletebutton.Text = "Xóa";
+            this.deletebutton.UseVisualStyleBackColor = true;
+            this.deletebutton.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnSua
+            // updatebutton
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.updatebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.Location = new System.Drawing.Point(9, 89);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(171, 21);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.updatebutton.Location = new System.Drawing.Point(73, 45);
+            this.updatebutton.Name = "updatebutton";
+            this.updatebutton.Size = new System.Drawing.Size(31, 21);
+            this.updatebutton.TabIndex = 8;
+            this.updatebutton.Text = "Sửa";
+            this.updatebutton.UseVisualStyleBackColor = true;
+            this.updatebutton.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnThem
+            // addbutton
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.addbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.Location = new System.Drawing.Point(9, 45);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(171, 19);
-            this.btnThem.TabIndex = 3;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.button1_Click);
+            this.addbutton.Location = new System.Drawing.Point(9, 45);
+            this.addbutton.Name = "addbutton";
+            this.addbutton.Size = new System.Drawing.Size(31, 19);
+            this.addbutton.TabIndex = 3;
+            this.addbutton.Text = "Thêm";
+            this.addbutton.UseVisualStyleBackColor = true;
+            this.addbutton.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
@@ -391,16 +391,16 @@ namespace WindowsFormsApp1.Views
         public System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button addbutton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtTenGhe;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button deletebutton;
+        private System.Windows.Forms.Button updatebutton;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button savebutton;
+        private System.Windows.Forms.Button closebutton;
         private System.Windows.Forms.ComboBox cbbtrangthai;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button button1;
