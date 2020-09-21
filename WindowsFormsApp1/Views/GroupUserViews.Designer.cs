@@ -29,23 +29,17 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idbranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updateat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.closebutton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.savebutton = new System.Windows.Forms.Button();
+            this.addbutton = new System.Windows.Forms.Button();
             this.updatebutton = new System.Windows.Forms.Button();
             this.deletebutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.addbutton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.permission = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +50,12 @@
             this.option = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idbranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updateat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -77,49 +77,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(355, 249);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "name";
-            this.name.Name = "name";
-            // 
-            // idbranch
-            // 
-            this.idbranch.DataPropertyName = "idbranch";
-            this.idbranch.HeaderText = "idbranch";
-            this.idbranch.Name = "idbranch";
-            this.idbranch.Visible = false;
-            // 
-            // createat
-            // 
-            this.createat.DataPropertyName = "createat";
-            this.createat.HeaderText = "ngày tạo";
-            this.createat.Name = "createat";
-            this.createat.Visible = false;
-            // 
-            // updateat
-            // 
-            this.updateat.DataPropertyName = "updateat";
-            this.updateat.HeaderText = "updateat";
-            this.updateat.Name = "updateat";
-            this.updateat.Visible = false;
-            // 
-            // available
-            // 
-            this.available.DataPropertyName = "available";
-            this.available.FalseValue = "0";
-            this.available.HeaderText = "Hoat dong";
-            this.available.Name = "available";
-            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.available.TrueValue = "1";
             // 
             // groupBox3
             // 
@@ -190,6 +147,16 @@
             this.savebutton.UseVisualStyleBackColor = true;
             this.savebutton.Click += new System.EventHandler(this.button5_Click);
             // 
+            // addbutton
+            // 
+            this.addbutton.Location = new System.Drawing.Point(6, 109);
+            this.addbutton.Name = "addbutton";
+            this.addbutton.Size = new System.Drawing.Size(31, 22);
+            this.addbutton.TabIndex = 11;
+            this.addbutton.Text = "Thêm";
+            this.addbutton.UseVisualStyleBackColor = true;
+            this.addbutton.Click += new System.EventHandler(this.button2_Click);
+            // 
             // updatebutton
             // 
             this.updatebutton.Location = new System.Drawing.Point(68, 109);
@@ -226,16 +193,6 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // addbutton
-            // 
-            this.addbutton.Location = new System.Drawing.Point(6, 109);
-            this.addbutton.Name = "addbutton";
-            this.addbutton.Size = new System.Drawing.Size(31, 22);
-            this.addbutton.TabIndex = 11;
-            this.addbutton.Text = "Thêm";
-            this.addbutton.UseVisualStyleBackColor = true;
-            this.addbutton.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView2
             // 
@@ -340,6 +297,50 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "name";
+            this.name.Name = "name";
+            // 
+            // idbranch
+            // 
+            this.idbranch.DataPropertyName = "idbranch";
+            this.idbranch.HeaderText = "idbranch";
+            this.idbranch.Name = "idbranch";
+            this.idbranch.Visible = false;
+            // 
+            // createat
+            // 
+            this.createat.DataPropertyName = "createat";
+            this.createat.HeaderText = "ngày tạo";
+            this.createat.Name = "createat";
+            this.createat.Visible = false;
+            // 
+            // updateat
+            // 
+            this.updateat.DataPropertyName = "updateat";
+            this.updateat.HeaderText = "updateat";
+            this.updateat.Name = "updateat";
+            this.updateat.Visible = false;
+            // 
+            // available
+            // 
+            this.available.DataPropertyName = "available";
+            this.available.FalseValue = "0";
+            this.available.HeaderText = "Hoat dong";
+            this.available.Name = "available";
+            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.available.TrueValue = "1";
+            // 
             // GroupUserViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,13 +385,13 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn delete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn option;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn idbranch;
         private System.Windows.Forms.DataGridViewTextBoxColumn createat;
         private System.Windows.Forms.DataGridViewTextBoxColumn updateat;
         private System.Windows.Forms.DataGridViewCheckBoxColumn available;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button7;
     }
 }

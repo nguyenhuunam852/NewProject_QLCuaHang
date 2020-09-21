@@ -175,7 +175,38 @@ namespace WindowsFormsApp1.Views
             return;
         }
 
-      
+        private void LoadPermission()
+        {
+            if (MyPermission.getpermission("Customer", "insert") == 0)
+            {
+                button5.Visible = false;
+            }
+        
+       
+            if (MyPermission.getpermission("HealCustomer", "view") == 0)
+            {
+                groupBox2.Visible = false;
+            }
+            if (MyPermission.getpermission("HealCustomer", "insert") == 0)
+            {
+                textBox1.Enabled = false;
+            }
+            if (MyPermission.getpermission("HealCustomer", "delete") == 0)
+            {
+            }
+            if (MyPermission.getpermission("Health", "view") == 0)
+            {
+            }
+
+            if (MyPermission.getpermission("TypeCustomer", "view") == 0)
+            {
+                button10.Enabled = false;
+            }
+            if (MyPermission.getpermission("TypeCustomer", "insert") == 0)
+            {
+                button10.Visible = false;
+            }
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -337,17 +368,20 @@ namespace WindowsFormsApp1.Views
 
         private void Btn_Click(object sender, EventArgs e)
         {
-
-            Label lb = sender as Label;
-            foreach (DataRow ctr in pdtb.Rows)
+            if (MyPermission.getpermission("HealCustomer", "delete") == 1)
             {
-                if (ctr["idhealth"].ToString() == lb.Name)
+
+                Label lb = sender as Label;
+                foreach (DataRow ctr in pdtb.Rows)
                 {
-                    pdtb.Rows.Remove(ctr);
-                    break;
+                    if (ctr["idhealth"].ToString() == lb.Name)
+                    {
+                        pdtb.Rows.Remove(ctr);
+                        break;
+                    }
                 }
+                loadpdtb();
             }
-            loadpdtb();
         }
     }
 

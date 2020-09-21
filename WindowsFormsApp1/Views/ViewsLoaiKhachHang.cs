@@ -87,8 +87,7 @@ namespace WindowsFormsApp1.Views
             closebutton.Enabled = true;
             textBox1.Enabled = true;
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void save()
         {
             if (act == "insert")
             {
@@ -98,8 +97,7 @@ namespace WindowsFormsApp1.Views
                     MessageBox.Show("Thêm tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
                     KhachHangViews.khv.load();
-                    ViewsLoaiKhachHang_Load(sender, e);
-                    
+
 
                 }
             }
@@ -111,10 +109,13 @@ namespace WindowsFormsApp1.Views
                     MessageBox.Show("Thay đổi tinh trang", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     act = "";
                     KhachHangViews.khv.load();
-                    ViewsLoaiKhachHang_Load(sender, e);
 
                 }
             }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -228,6 +229,15 @@ namespace WindowsFormsApp1.Views
         private void button7_Click(object sender, EventArgs e)
         {
             ViewsLoaiKhachHang_Load(sender, e);
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                save();
+                ViewsLoaiKhachHang_Load(sender, e);
+            }
         }
     }
 }

@@ -37,5 +37,10 @@ namespace WindowsFormsApp1.Views
 
             }
         }
+
+        private void ThemNhanhLoaiKH_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

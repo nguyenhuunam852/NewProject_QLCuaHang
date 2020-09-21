@@ -53,6 +53,15 @@ namespace WindowsFormsApp1.Views
             
             textBox2.Visible = false;
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                savebutton.PerformClick();
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void loadPermission()
         {
             if (MyPermission.getpermission("Permission", "view") == 0)

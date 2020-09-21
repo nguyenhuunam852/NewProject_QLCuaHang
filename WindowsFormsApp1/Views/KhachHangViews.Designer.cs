@@ -33,7 +33,7 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.typecustomercbb = new System.Windows.Forms.ComboBox();
             this.typecustomerbtn = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBoxTen = new System.Windows.Forms.TextBox();
@@ -175,20 +175,20 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.typecustomercbb);
             this.panel1.Controls.Add(this.typecustomerbtn);
             this.panel1.Location = new System.Drawing.Point(45, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(86, 24);
             this.panel1.TabIndex = 36;
             // 
-            // comboBox1
+            // typecustomercbb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(61, 21);
-            this.comboBox1.TabIndex = 8;
+            this.typecustomercbb.FormattingEnabled = true;
+            this.typecustomercbb.Location = new System.Drawing.Point(0, 0);
+            this.typecustomercbb.Name = "typecustomercbb";
+            this.typecustomercbb.Size = new System.Drawing.Size(61, 21);
+            this.typecustomercbb.TabIndex = 8;
             // 
             // typecustomerbtn
             // 
@@ -664,9 +664,9 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(127, 257);
+            this.button11.Location = new System.Drawing.Point(127, 255);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(89, 27);
+            this.button11.Size = new System.Drawing.Size(89, 29);
             this.button11.TabIndex = 25;
             this.button11.Text = "Khôi phục";
             this.button11.UseVisualStyleBackColor = true;
@@ -687,7 +687,6 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(784, 604);
             this.Load += new System.EventHandler(this.KhachHangViews_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KhachHangViews_KeyDown);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -734,7 +733,7 @@
         private System.Windows.Forms.TextBox textBoxHo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox typecustomercbb;
         private System.Windows.Forms.Button typecustomerbtn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox textBox1;

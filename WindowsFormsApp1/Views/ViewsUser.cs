@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.Views
         public int firstSettings = 0;
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            savebutton.Focus();
             dataGridView1.Enabled = false;
 
             deletebutton.Enabled = false;
@@ -77,7 +77,15 @@ namespace WindowsFormsApp1.Views
             }
          
         }
-        
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                savebutton.PerformClick();
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void UserViews_Load(object sender, EventArgs e)
         {
             updatebutton = buttonStyle.updateBtn(updatebutton);

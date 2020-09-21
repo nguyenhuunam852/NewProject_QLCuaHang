@@ -6,5 +6,5 @@ txtTGHD@00:05
 txtTGKT@18:00
 txtUsername@sa
 txtPass@123456
-txtSave@C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\backup\
+txtSave@C:\Users\namhn\OneDrive\Desktop
 txtPicture@C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\picture\logo.jpg

@@ -54,6 +54,15 @@ namespace WindowsFormsApp1.Views
         }
         private int px = 0;
         private int py = 0;
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                savebutton.PerformClick();
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void GheViews_Load(object sender, EventArgs e)
         {
             updatebutton = buttonStyle.updateBtn(updatebutton);
@@ -72,7 +81,7 @@ namespace WindowsFormsApp1.Views
        
 
         }
-
+   
         private void GroupBox1_MouseMove(object sender, MouseEventArgs e)
         {
             px = e.X;
@@ -464,8 +473,8 @@ namespace WindowsFormsApp1.Views
                     MessageBox.Show("Có lỗi xảy ra", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
+            if (signal=="update")
+             {
                 int check = Controllers.GheControllers.suathongtinGhe(txtId.Text,tt, txtTenGhe.Text);
                 if(check>0)
                 {
@@ -478,6 +487,7 @@ namespace WindowsFormsApp1.Views
                     MessageBox.Show("Có lỗi xảy ra", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            signal = "";
         }
 
         private void btnSua_Click(object sender, EventArgs e)

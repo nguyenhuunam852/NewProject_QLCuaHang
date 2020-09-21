@@ -38,14 +38,14 @@
             this.deletebutton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idbranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updateat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -148,6 +148,7 @@
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // dataGridView1
             // 
@@ -167,11 +168,32 @@
             this.dataGridView1.Size = new System.Drawing.Size(784, 448);
             this.dataGridView1.TabIndex = 5;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(3, 96);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(174, 26);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "Khôi phục";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(188, 96);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(153, 26);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "Reload";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // id
             // 
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "id";
             this.id.Name = "id";
+            this.id.Visible = false;
             // 
             // name
             // 
@@ -209,26 +231,6 @@
             this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.available.TrueValue = "1";
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(3, 96);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(174, 26);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "Khôi phục";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(188, 96);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(153, 26);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Reload";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // ViewsLoaiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,13 +262,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn idbranch;
         private System.Windows.Forms.DataGridViewTextBoxColumn createat;
         private System.Windows.Forms.DataGridViewTextBoxColumn updateat;
         private System.Windows.Forms.DataGridViewCheckBoxColumn available;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button7;
     }
 }

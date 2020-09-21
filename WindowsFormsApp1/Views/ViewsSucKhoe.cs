@@ -24,6 +24,15 @@ namespace WindowsFormsApp1.Views
             dataGridView1 = MyDataGridViews.MyDataGridView.getMyDataGridView(dataGridView1);
             dataGridView1.DataSource = SucKhoeControllers.getData().Tables[0];
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                savebtn.PerformClick();
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void ViewsSucKhoe_Load(object sender, EventArgs e)
         {
 
