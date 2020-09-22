@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNH", "WindowsFormsApp1\QL
 EndProject
 Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "VietNhatJP", "VietNhatJP\VietNhatJP.aiproj", "{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "update", "update", "{FAB4CE51-04BA-4E22-98CA-E2581A7400F9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		abc|Any CPU = abc|Any CPU
