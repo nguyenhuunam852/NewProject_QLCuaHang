@@ -92,6 +92,7 @@ namespace WindowsFormsApp1.Views
         {
             object[] ghe = Controllers.GheControllers.themGhe1("1", txtTenGhe.Text,px,py);
             groupBox1.Controls.Add(createLabel(ghe));
+            DatGheViews.refreshGroupBox();
             GheViews_Load(sender, e);
         }
 

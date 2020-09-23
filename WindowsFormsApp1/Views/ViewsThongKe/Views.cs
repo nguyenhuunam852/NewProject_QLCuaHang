@@ -173,9 +173,9 @@ namespace WindowsFormsApp1.Views.ViewsThongKe
                     {
                         comboBox1.Items.Add(i);
                     }
-                    comboBox1.SelectedIndex = comboBox1.Items.Count - 2;
+                    comboBox1.SelectedIndex = 0;
                 }
-                GetStaticalinMonth();
+          
             }
             if(signal==3)
             {

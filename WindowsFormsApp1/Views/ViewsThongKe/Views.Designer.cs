@@ -110,12 +110,12 @@
             this.ngaybatdau,
             this.soluong,
             this.soluongkhmoi});
-            this.dataGridView1.Location = new System.Drawing.Point(428, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(431, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(344, 182);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 348);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -174,9 +174,9 @@
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(428, 227);
+            this.groupBox1.Location = new System.Drawing.Point(428, 393);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(344, 343);
+            this.groupBox1.Size = new System.Drawing.Size(344, 177);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -217,7 +217,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 94);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(344, 243);
+            this.dataGridView3.Size = new System.Drawing.Size(344, 77);
             this.dataGridView3.TabIndex = 5;
             // 
             // id1
@@ -286,13 +286,13 @@
             this.Column3});
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView2.Location = new System.Drawing.Point(428, 39);
+            this.dataGridView2.Location = new System.Drawing.Point(431, 39);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(344, 182);
+            this.dataGridView2.Size = new System.Drawing.Size(344, 348);
             this.dataGridView2.TabIndex = 10;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
@@ -346,13 +346,13 @@
             this.Column4});
             this.dataGridView4.EnableHeadersVisualStyles = false;
             this.dataGridView4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView4.Location = new System.Drawing.Point(428, 39);
+            this.dataGridView4.Location = new System.Drawing.Point(431, 39);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(344, 182);
+            this.dataGridView4.Size = new System.Drawing.Size(344, 348);
             this.dataGridView4.TabIndex = 11;
             this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
             // 
@@ -406,13 +406,13 @@
             this.Column9});
             this.dataGridView5.EnableHeadersVisualStyles = false;
             this.dataGridView5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dataGridView5.Location = new System.Drawing.Point(428, 39);
+            this.dataGridView5.Location = new System.Drawing.Point(431, 39);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
             this.dataGridView5.RowHeadersVisible = false;
             this.dataGridView5.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView5.Size = new System.Drawing.Size(344, 182);
+            this.dataGridView5.Size = new System.Drawing.Size(344, 348);
             this.dataGridView5.TabIndex = 12;
             this.dataGridView5.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellDoubleClick);
             // 

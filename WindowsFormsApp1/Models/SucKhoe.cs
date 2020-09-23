@@ -62,7 +62,7 @@ namespace WindowsFormsApp1.Models
         {
             string[] paras = new string[2] { "@ten", "@temp" };
             object[] values = new object[2] { ten,dtb };
-            return Models.Connection.FillDataSet1("FindHealth", CommandType.StoredProcedure,ten,dtb);
+            return Models.Connection.FillDataSet1("FindHealth1", CommandType.StoredProcedure,ten,dtb);
         }
 
         internal int UpdateSK()
@@ -70,6 +70,13 @@ namespace WindowsFormsApp1.Models
             string[] paras = new string[] { "@id","@name" };
             object[] values = new object[] { id,ten };
             return Models.Connection.Excute_Sql("updateHealth", CommandType.StoredProcedure, paras, values);
+        }
+
+        internal DataTable TimTatCa()
+        {
+            string[] paras = new string[1] { "@ten" };
+            object[] values = new object[1] { ten};
+            return Models.Connection.FillDataSet("FindHealth", CommandType.StoredProcedure, paras,values).Tables[0];
         }
 
         internal int Restore()

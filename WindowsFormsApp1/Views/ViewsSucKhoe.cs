@@ -264,5 +264,12 @@ namespace WindowsFormsApp1.Views
                 ViewsSucKhoe_Load(sender, e);
             }
         }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            DataTable a = SucKhoeControllers.findHealth1(textBox1.Text);
+            dataGridView1.DataSource = a;
+
+        }
     }
 }

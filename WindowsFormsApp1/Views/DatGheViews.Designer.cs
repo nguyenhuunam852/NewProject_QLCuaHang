@@ -176,7 +176,7 @@
             this.txtType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtType.Location = new System.Drawing.Point(113, 82);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(236, 21);
+            this.txtType.Size = new System.Drawing.Size(90, 21);
             this.txtType.TabIndex = 19;
             // 
             // label10

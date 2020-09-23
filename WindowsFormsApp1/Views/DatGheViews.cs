@@ -580,7 +580,7 @@ namespace WindowsFormsApp1.Views
             if (MyPermission.getpermission("Customer", "view") == 1)
             {
 
-                if (sig == 0)
+                if (sig == 0 && textBox5.Text.Length>=3)
                 {
                     TextBox txt = sender as TextBox;
                     a = KhachHangControllers.TimKiemTatCa1(txt.Text).Tables[0];

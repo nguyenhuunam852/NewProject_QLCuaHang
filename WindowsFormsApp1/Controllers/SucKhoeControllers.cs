@@ -68,5 +68,12 @@ namespace WindowsFormsApp1.Controllers
             return sk.Restore();
                
         }
+
+        internal static DataTable findHealth1(string text)
+        {
+            SucKhoe sk = new SucKhoe();
+            sk.pten = text;
+            return sk.TimTatCa();
+        }
     }
 }

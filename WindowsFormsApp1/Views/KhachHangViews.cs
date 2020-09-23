@@ -241,6 +241,8 @@ namespace WindowsFormsApp1.Views
             action = "insert";
             label10.Text = "";
            
+
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -441,6 +443,7 @@ namespace WindowsFormsApp1.Views
                 pdtb.Columns.Add("createat", typeof(DateTime));
                 deletebutton.Enabled = false;
                 updatebutton.Enabled = false;
+                loadpdtb();
             }
 
 
@@ -687,15 +690,6 @@ namespace WindowsFormsApp1.Views
         }
 
       
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.Enter)
-            {
-                savebutton.PerformClick();
-            }
-
-            return true;
-        }
       
     }
 }
