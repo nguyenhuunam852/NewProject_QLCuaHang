@@ -251,3 +251,8 @@ C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLCH.exe
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLCH.pdb
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\LinqToExcel.dll
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\Remotion.Data.Linq.dll
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\Remotion.dll
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\Remotion.Interfaces.dll
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\LinqToExcel.xml

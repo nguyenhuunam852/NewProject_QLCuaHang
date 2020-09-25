@@ -186,5 +186,21 @@ namespace WindowsFormsApp1.Models
             string sql = "exec FindInfor1 N'" + id + "'," + User.getUser().pbranch;
             return Models.Connection.FillDataSet(sql);
         }
+
+        internal static int ThemDSLKH(DataTable type)
+        {
+            string[] paras = new string[1] { "@type" };
+            object[] values = new object[1] { type };
+            return Models.Connection.Excute_Sql("insertlistTypeCustomer", CommandType.StoredProcedure, paras, values);
+
+        }
+
+        internal static int ThemDSKH(DataTable addCustomer)
+        {
+            string[] paras = new string[2] { "@idbr", "@listcustomer" };
+            object[] values = new object[2] { User.getUser().pbranch,addCustomer };
+            return Models.Connection.Excute_Sql("insertlistCustomer", CommandType.StoredProcedure, paras, values);
+
+        }
     }
 }

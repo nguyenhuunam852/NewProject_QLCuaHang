@@ -11,7 +11,9 @@ using WindowsFormsApp1.Controllers;
 using System.Drawing.Text;
 using System.Xaml.Permissions;
 using System.Drawing.Drawing2D;
-
+using System.IO;
+using LinqToExcel;
+using WindowsFormsApp1.Excel;
 
 namespace WindowsFormsApp1.Views
 {
@@ -709,6 +711,89 @@ namespace WindowsFormsApp1.Views
                 }
             }
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.ShowDialog();
+            if (of.FileName != "")
+            {
+                string file = of.FileName;
+                string ext = Path.GetExtension(file);
+                if (ext.ToLower() == ".xls" || ext.ToLower().Equals(".xlsx") || ext.ToLower().Equals(".csv"))
+                {
+                    var excel = new ExcelQueryFactory(file);
+                    var customer = from hv in excel.Worksheet<Customer>("Sheet1")
+                                  select hv;
+                    List<string> typename = new List<string>();
+                    DataTable type = new DataTable();
+                    type.Columns.Add("name");
+                    foreach (var item in customer)
+                    {
+                       if(typename.Contains(item.nameoftype)==false)
+                        {
+                            typename.Add(item.nameoftype);
+                        }
+                    }
+                    foreach(var it in typename)
+                    {
+                        type.Rows.Add(it);
+                    }
+                    int check = KhachHangControllers.ThemDsLoaiKhachHang(type);
+                    DataTable addCustomer = new DataTable();
+                    addCustomer.Columns.Add("code");
+                    addCustomer.Columns.Add("lastname");
+                    addCustomer.Columns.Add("firstname");
+                    addCustomer.Columns.Add("email");
+                    addCustomer.Columns.Add("address");
+                    addCustomer.Columns.Add("birthday");
+                    addCustomer.Columns.Add("phone");
+                    addCustomer.Columns.Add("sex");
+                    addCustomer.Columns.Add("type");
+                    addCustomer.Columns.Add("createat");
+                    addCustomer.Columns.Add("customerid");
+                    addCustomer.Columns.Add("available");
+                    foreach (var item in customer)
+                    {
+                        int gt=0;
+                        if (item.sex=="Nam")
+                        {
+                             gt = 1;
+                        }
+                        if (item.sex == "Nữ")
+                        {
+                            gt = 0;
+                        }
+                        else
+                        {
+                            gt = 2;
+                        }
+                        string[] gdt = item.creatat.Split('-');
+                        string[] gdt1 = gdt[0].Split('/');
+                        string[] gdt2 = gdt[1].Split(':');
+
+                        DateTime dt = new DateTime(int.Parse(gdt1[2]),int.Parse(gdt1[1]),int.Parse(gdt1[0]),int.Parse(gdt2[0]),int.Parse(gdt2[1]), int.Parse(gdt2[2]));
+                        addCustomer.Rows.Add(item.code,item.lname,item.fname,item.email,item.address,item.birthday,item.phone,gt,item.nameoftype,dt.ToString(),item.customerid,item.available);
+                    }
+                    int check1 = KhachHangControllers.ThemDsKhachHang(addCustomer);
+
+
+
+                    //DataTable dt = new DataTable();
+                    //dt.Columns.Add("MaHocVien");
+                    //dt.Columns.Add("HoTen");
+                    //dt.Columns.Add("LopHoc");
+
+                    //foreach (var item in hocvien)
+                    //{
+                    //    dt.Rows.Add(item.MaHocVien, item.HoTen, item.LopHoc);
+                    //}
+                    //dt.AcceptChanges();
+
+
+                }
+            }
         }
     }
 }

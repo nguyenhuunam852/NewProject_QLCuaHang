@@ -70,10 +70,12 @@
             this.button11 = new System.Windows.Forms.Button();
             this.exportbutton = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.hovataen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.create = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,7 +86,6 @@
             this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -484,8 +485,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hovataen,
             this.customerid,
-            this.idl,
             this.id,
+            this.type,
             this.create,
             this.loaikh,
             this.ho,
@@ -593,6 +594,21 @@
             this.exportbutton.UseVisualStyleBackColor = true;
             this.exportbutton.Click += new System.EventHandler(this.exportbutton_Click);
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(591, 255);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 29);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Import";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // hovataen
             // 
             this.hovataen.DataPropertyName = "hoten";
@@ -606,19 +622,19 @@
             this.customerid.HeaderText = "customerid";
             this.customerid.Name = "customerid";
             // 
-            // idl
-            // 
-            this.idl.DataPropertyName = "idlkh";
-            this.idl.HeaderText = "idlkh";
-            this.idl.Name = "idl";
-            this.idl.Visible = false;
-            // 
             // id
             // 
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "id";
             this.id.Name = "id";
             this.id.Visible = false;
+            // 
+            // type
+            // 
+            this.type.DataPropertyName = "Type";
+            this.type.HeaderText = "type";
+            this.type.Name = "type";
+            this.type.Visible = false;
             // 
             // create
             // 
@@ -629,10 +645,9 @@
             // 
             // loaikh
             // 
-            this.loaikh.DataPropertyName = "type";
+            this.loaikh.DataPropertyName = "nameoftype";
             this.loaikh.HeaderText = "Loại Khách Hàng";
             this.loaikh.Name = "loaikh";
-            this.loaikh.Visible = false;
             // 
             // ho
             // 
@@ -687,16 +702,6 @@
             this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.available.TrueValue = "1";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(591, 255);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 29);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Import";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // KhachHangViews
             // 
@@ -772,10 +777,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button exportbutton;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hovataen;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idl;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn create;
         private System.Windows.Forms.DataGridViewTextBoxColumn loaikh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ho;
@@ -786,6 +793,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn sex;
         private System.Windows.Forms.DataGridViewCheckBoxColumn available;
-        private System.Windows.Forms.Button button2;
     }
 }

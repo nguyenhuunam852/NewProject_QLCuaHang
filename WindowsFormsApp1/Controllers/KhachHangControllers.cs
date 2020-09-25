@@ -188,10 +188,11 @@ namespace WindowsFormsApp1.Controllers
                     }
                 }
             }
+       
             DateTime csvtime = DateTime.Now;
             string time = csvtime.ToString("HH_mm_ss");
             string Path = path+@"\" + time + ".csv";
-            workbook.SaveAs(Path , Microsoft.Office.Interop.Excel.XlFileFormat.xlCSV);
+            workbook.SaveAs(Path , 62);
             // Exit from the application  
             app.Quit();
             if (File.Exists(Path))
@@ -199,6 +200,16 @@ namespace WindowsFormsApp1.Controllers
                 return 1;
             }
             return 0;
+        }
+
+        internal static int ThemDsLoaiKhachHang(DataTable type)
+        {
+            return KhachHang.ThemDSLKH(type);
+        }
+
+        internal static int ThemDsKhachHang(DataTable addCustomer)
+        {
+            return KhachHang.ThemDSKH(addCustomer);
         }
     }
 }
