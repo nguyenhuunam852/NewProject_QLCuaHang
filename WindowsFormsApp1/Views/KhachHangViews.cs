@@ -12,6 +12,7 @@ using System.Drawing.Text;
 using System.Xaml.Permissions;
 using System.Drawing.Drawing2D;
 
+
 namespace WindowsFormsApp1.Views
 {
     public partial class KhachHangViews : UserControl
@@ -179,10 +180,11 @@ namespace WindowsFormsApp1.Views
             label10.DataBindings.Clear();
             label10.DataBindings.Add("Text", dataGridView1.DataSource, "id", false, DataSourceUpdateMode.Never);
         }
-
+        DataTable dtb_customer;
         private void loadDataGridView()
         {
-            dataGridView1.DataSource = Controllers.KhachHangControllers.getData().Tables[0];
+            dtb_customer = Controllers.KhachHangControllers.getData().Tables[0];
+            dataGridView1.DataSource = dtb_customer;
 
             listhealth = Controllers.KhachHangControllers.getAllBenhLi1().Tables[0];
 
@@ -689,7 +691,24 @@ namespace WindowsFormsApp1.Views
             }
         }
 
-      
-      
+        private void exportbutton_Click(object sender, EventArgs e)
+        {
+            DialogResult dlr= folderBrowserDialog1.ShowDialog();
+            if (dlr == DialogResult.OK)
+            {
+                int check = KhachHangControllers.ExportData(dtb_customer,folderBrowserDialog1.SelectedPath);
+                if(check==1)
+                {
+                    MessageBox.Show("Lưu File thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Lưu File thất bại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+
+        }
     }
 }

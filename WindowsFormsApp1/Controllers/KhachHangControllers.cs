@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Models;
+
 
 namespace WindowsFormsApp1.Controllers
 {
@@ -153,6 +155,50 @@ namespace WindowsFormsApp1.Controllers
             string machinhanh = Branch.getmachinhanh(User.getUser().pbranch.ToString());
             int idkh = Branch.getslkh(User.getUser().pbranch.ToString())+1;
             return machinhanh+"-" + idkh.ToString();
+        }
+
+        internal static int ExportData(DataTable dtb,string path)
+        {
+            
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            app.Visible = false;
+            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.ActiveSheet;
+            worksheet.Name = "Customer";
+            for (int i = 1; i < dtb.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i] = dtb.Columns[i - 1].ColumnName;
+            }
+            for (int i = 0; i < dtb.Rows.Count ; i++)
+            {
+                for (int j = 0; j < dtb.Columns.Count; j++)
+                {
+                    DateTime dateTime;
+                    if (DateTime.TryParse(dtb.Rows[i][j].ToString(), out dateTime) == true)
+                    {
+                        DateTime getdate = DateTime.Parse(dtb.Rows[i][j].ToString());
+                        string date = getdate.Day + "/" + getdate.Month + "/" + getdate.Year + "-" + getdate.Hour + ":" + getdate.Minute + ":" + getdate.Second;
+                        worksheet.Cells[i + 2, j + 1] = date;
+                    }
+                    else
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dtb.Rows[i][j].ToString();
+                    }
+                }
+            }
+            DateTime csvtime = DateTime.Now;
+            string time = csvtime.ToString("HH_mm_ss");
+            string Path = path+@"\" + time + ".csv";
+            workbook.SaveAs(Path , Microsoft.Office.Interop.Excel.XlFileFormat.xlCSV);
+            // Exit from the application  
+            app.Quit();
+            if (File.Exists(Path))
+            {
+                return 1;
+            }
+            return 0;
         }
     }
 }
