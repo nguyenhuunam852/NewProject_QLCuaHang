@@ -72,7 +72,7 @@ namespace WindowsFormsApp1.Views
                 DialogResult dlr = MessageBox.Show("Hiện tại không có tài khoản nào trong database hãy khôi phục ngay", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 if (dlr == DialogResult.OK)
                 {
-                        FrmMain.getFrmMain().khoiphucdatabase1();
+                    FrmMain.getFrmMain().khoiphucdatabase1();
                     this.DialogResult = DialogResult.Yes;
                 }
    

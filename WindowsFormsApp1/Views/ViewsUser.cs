@@ -20,6 +20,15 @@ namespace WindowsFormsApp1.Views
         public static ViewsUser vu = new ViewsUser();
         string action = "";
         public int firstSettings = 0;
+        public static ViewsUser getUserView()
+        {
+            if(vu==null)
+            {
+                vu = new ViewsUser();
+            }
+            return vu;
+        }
+        public int sig = 0;
         private void button2_Click(object sender, EventArgs e)
         {
             savebutton.Focus();
@@ -172,6 +181,11 @@ namespace WindowsFormsApp1.Views
             comboBox1.DataSource = Controllers.GroupUserControllers.getData1().Tables[0];
             comboBox1.DisplayMember = "name";
             comboBox1.ValueMember = "id";
+            if (sig == 1)
+            {
+                comboBox1.SelectedValue = 1;
+                comboBox1.Enabled = false;
+            }
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboBox2.Items.Clear();
             comboBox2.Items.Insert(0, "Nam");

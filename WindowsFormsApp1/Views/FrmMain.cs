@@ -301,6 +301,16 @@ namespace WindowsFormsApp1.Views
                 this.Close();
             }
         }
+        public void themTk()
+        {
+            groupBox2.Hide();
+            FrmDangNhap.getFrom().Hide();
+            setting = 1;
+            ViewsUser buv = ViewsUser.getUserView();
+            buv.sig = 1;
+            ThemTabPages(buv, 1, "Backup");
+            
+        }
         public void khoiphucdatabase1()
         {
             groupBox2.Hide();
