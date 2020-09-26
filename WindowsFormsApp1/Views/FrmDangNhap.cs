@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
+using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1.Views
 {
@@ -72,8 +73,7 @@ namespace WindowsFormsApp1.Views
                 DialogResult dlr = MessageBox.Show("Hiện tại không có tài khoản nào trong database hãy khôi phục ngay", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 if (dlr == DialogResult.OK)
                 {
-                    FrmMain.getFrmMain().khoiphucdatabase1();
-                    this.DialogResult = DialogResult.Yes;
+                    FrmMain.getFrmMain().ThemUser();
                 }
    
             }
@@ -81,8 +81,13 @@ namespace WindowsFormsApp1.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.No;
             this.Close();
+        }
+
+        private void FrmDangNhap_VisibleChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

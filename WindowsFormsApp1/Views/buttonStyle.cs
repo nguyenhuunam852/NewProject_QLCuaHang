@@ -13,7 +13,14 @@ namespace WindowsFormsApp1.Views
     {
         public static Button createBtn(Button addbutton)
         {
-            addbutton.BackColor = Color.LightPink;
+            if (addbutton.Enabled == true)
+            {
+                addbutton.BackColor = Color.LightPink;
+            }
+            else
+            {
+                addbutton.BackColor = Color.DarkRed;
+            }
             addbutton.EnabledChanged += Addbutton_EnabledChanged;
             addbutton.Size = new Size(31, 27);
             addbutton.Font = Fonts.FontAwesome;
@@ -38,8 +45,14 @@ namespace WindowsFormsApp1.Views
 
         public static Button updateBtn(Button updatebutton)
         {
-
-            updatebutton.BackColor = Color.LightGreen;
+            if (updatebutton.Enabled == true)
+            {
+                updatebutton.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                updatebutton.BackColor = Color.DarkGreen;
+            }
             updatebutton.Size = new Size(31, 27);
             updatebutton.EnabledChanged += Updatebutton_EnabledChanged;
             updatebutton.Font = Fonts.FontAwesome;
@@ -63,8 +76,14 @@ namespace WindowsFormsApp1.Views
 
         public static Button deleteBtn(Button deletebutton)
         {
-
-            deletebutton.BackColor = Color.LightBlue;
+            if (deletebutton.Enabled == true)
+            {
+                deletebutton.BackColor = Color.LightBlue;
+            }
+            else
+            {
+                deletebutton.BackColor = Color.DarkBlue;
+            }
             deletebutton.Size = new Size(31, 27);
             deletebutton.EnabledChanged += Deletebutton_EnabledChanged;
             deletebutton.Font = Fonts.FontAwesome;
@@ -88,8 +107,14 @@ namespace WindowsFormsApp1.Views
 
         public static Button saveBtn(Button savebutton)
         {
-
-            savebutton.BackColor = Color.LightYellow;
+            if (savebutton.Enabled == true)
+            {
+                savebutton.BackColor = Color.LightYellow;
+            }
+            else
+            {
+                savebutton.BackColor = Color.DarkGoldenrod;
+            }
             savebutton.Size = new Size(31, 27);
             savebutton.EnabledChanged += Savebutton_EnabledChanged;
             savebutton.Font = Fonts.FontAwesome;
@@ -113,8 +138,14 @@ namespace WindowsFormsApp1.Views
 
         public static Button closeBtn(Button cancelbutton)
         {
-
-            cancelbutton.BackColor = Color.LightSteelBlue;
+            if (cancelbutton.Enabled == true)
+            {
+                cancelbutton.BackColor = Color.LightSteelBlue;
+            }
+            else
+            {
+                cancelbutton.BackColor = Color.DarkSlateBlue;
+            }
             cancelbutton.Size = new Size(31, 27);
             cancelbutton.EnabledChanged += Cancelbutton_EnabledChanged;
             cancelbutton.Font = Fonts.FontAwesome;

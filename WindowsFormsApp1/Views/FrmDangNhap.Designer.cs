@@ -107,6 +107,7 @@
             this.Name = "FrmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDangNhap";
+            this.VisibleChanged += new System.EventHandler(this.FrmDangNhap_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

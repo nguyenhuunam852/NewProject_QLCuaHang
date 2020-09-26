@@ -309,7 +309,7 @@ namespace WindowsFormsApp1.Views
                 {
                     DataRow dtr = pdtb.NewRow();                
                     dtr["idcustomer"] = 0;
-                    dtr["idhealth"] = 0;
+                    dtr["idhealth"] = (DateTime.Now.Hour * 10000 + DateTime.Now.Minute * 10 + DateTime.Now.Millisecond).ToString();
                     dtr["name"] = textBox1.Text;
                     dtr["createat"] = DateTime.Now;
                     pdtb.Rows.Add(dtr);

@@ -33,7 +33,7 @@ namespace WindowsFormsApp1.Views
         {
             savebutton.Focus();
             dataGridView1.Enabled = false;
-
+            closebutton.Enabled = true;
             deletebutton.Enabled = false;
             addbutton.Enabled = false;
             updatebutton.Enabled = false;
@@ -97,11 +97,6 @@ namespace WindowsFormsApp1.Views
         }
         private void UserViews_Load(object sender, EventArgs e)
         {
-            updatebutton = buttonStyle.updateBtn(updatebutton);
-            addbutton = buttonStyle.createBtn(addbutton);
-            deletebutton = buttonStyle.deleteBtn(deletebutton);
-            closebutton = buttonStyle.closeBtn(closebutton);
-            savebutton = buttonStyle.saveBtn(savebutton);
             if (firstSettings == 1)
             {
                 textBox5.Text = "1";
@@ -130,9 +125,9 @@ namespace WindowsFormsApp1.Views
        
             label10.Text = "";
             DataBinding();
-
            
-            
+
+
         }
         private void C_TextChanged1(object sender, EventArgs e)
         {
@@ -168,8 +163,7 @@ namespace WindowsFormsApp1.Views
             comboBox1.DataBindings.Add("SelectedValue", dataGridView1.DataSource, "idgroup", false, DataSourceUpdateMode.Never);
             comboBox2.DataBindings.Clear();
             comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", false, DataSourceUpdateMode.Never);
-            comboBox2.DataBindings.Clear();
-            comboBox2.DataBindings.Add("Text", dataGridView1.DataSource, "sex", false, DataSourceUpdateMode.Never);
+          
         }
         private void loadDataGridView()
         {
@@ -199,9 +193,15 @@ namespace WindowsFormsApp1.Views
 
         private void loadButton()
         {
-            deletebutton.Enabled = true;
+            updatebutton = buttonStyle.updateBtn(updatebutton);
+            addbutton = buttonStyle.createBtn(addbutton);
+            deletebutton = buttonStyle.deleteBtn(deletebutton);
+            closebutton = buttonStyle.closeBtn(closebutton);
+            savebutton = buttonStyle.saveBtn(savebutton);
+            deletebutton.Enabled = false;
             addbutton.Enabled = true;
-            updatebutton.Enabled = true;
+            updatebutton.Enabled = false;
+            closebutton.Enabled = false;
             savebutton.Enabled = false;
             button6.Enabled = false;
             txtTen.Enabled = false;
@@ -210,6 +210,7 @@ namespace WindowsFormsApp1.Views
             textBox3.Enabled = false;
             textBox4.Enabled = false;
             maskedTextBox1.Enabled = false;
+          
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -312,6 +313,7 @@ namespace WindowsFormsApp1.Views
         {
             comboBox1.Enabled = true;
             comboBox2.Enabled = true;
+            closebutton.Enabled = true;
             dataGridView1.Enabled = false;
             deletebutton.Enabled = false;
             addbutton.Enabled = false;

@@ -77,6 +77,35 @@ namespace WindowsFormsApp1.Views
         {
             ThemTabPages(GheViews.dv, 2 , "Quản lí ghế");
         }
+        public void ThemUser()
+        {
+            FrmDangNhap.getFrom().Hide();
+            BranchSelection bs = new BranchSelection();
+            DialogResult dlr1 = bs.ShowDialog();
+            setting = 1;
+            if (dlr1 == DialogResult.OK)
+            {
+                SettingViews.stv = null;
+                FrmMain.dongALL();
+                FrmMain.getFrmMain().firstsetting = 1;
+
+                while (User.getUser().pid == null)
+                {
+                    FrmMain.getFrmMain().getSetting();
+                }
+
+            }
+            if (dlr1 == DialogResult.Abort)
+            {
+                GroupUserControllers.insertAdmin(bs.br);
+                SettingViews.stv = null;
+                FrmMain.dongALL();
+
+                FrmMain.getFrmMain().gotoQLUser();
+
+            }
+
+        }
         private bool checkPath(string path)
         {
             Regex driveCheck = new Regex(@"^[a-zA-Z]:\\$");
@@ -198,7 +227,7 @@ namespace WindowsFormsApp1.Views
                             MessageBox.Show("Sai tài khoản và mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             
                         }
-                        else if (dlr == DialogResult.Cancel)
+                        else if (dlr == DialogResult.No)
                         {
                             this.Close();
                             close = 1;
@@ -307,7 +336,7 @@ namespace WindowsFormsApp1.Views
             FrmDangNhap.getFrom().Hide();
             setting = 1;
             ViewsUser buv = ViewsUser.getUserView();
-            buv.sig = 1;
+            buv.firstSettings = 1;
             ThemTabPages(buv, 1, "Backup");
             
         }
