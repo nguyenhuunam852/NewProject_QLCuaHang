@@ -61,17 +61,6 @@
             this.deletebutton = new System.Windows.Forms.Button();
             this.addbutton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.exportbutton = new System.Windows.Forms.Button();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.button2 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.hovataen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +75,17 @@
             this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.available = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.exportbutton = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -504,6 +504,100 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // hovataen
+            // 
+            this.hovataen.DataPropertyName = "hoten";
+            this.hovataen.HeaderText = "Họ và Tên";
+            this.hovataen.Name = "hovataen";
+            this.hovataen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // customerid
+            // 
+            this.customerid.DataPropertyName = "customerid";
+            this.customerid.HeaderText = "customerid";
+            this.customerid.Name = "customerid";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // type
+            // 
+            this.type.DataPropertyName = "Type";
+            this.type.HeaderText = "type";
+            this.type.Name = "type";
+            this.type.Visible = false;
+            // 
+            // create
+            // 
+            this.create.DataPropertyName = "CreateAt";
+            this.create.HeaderText = "Ngày tạo";
+            this.create.Name = "create";
+            this.create.Visible = false;
+            // 
+            // loaikh
+            // 
+            this.loaikh.DataPropertyName = "nameoftype";
+            this.loaikh.HeaderText = "Loại Khách Hàng";
+            this.loaikh.Name = "loaikh";
+            // 
+            // ho
+            // 
+            this.ho.DataPropertyName = "lastname";
+            this.ho.HeaderText = "Họ";
+            this.ho.Name = "ho";
+            this.ho.Visible = false;
+            // 
+            // ten
+            // 
+            this.ten.DataPropertyName = "firstname";
+            this.ten.HeaderText = "Tên ";
+            this.ten.Name = "ten";
+            this.ten.Visible = false;
+            // 
+            // sdt
+            // 
+            this.sdt.DataPropertyName = "phone";
+            this.sdt.HeaderText = "Số điện thoại";
+            this.sdt.Name = "sdt";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            // 
+            // dc
+            // 
+            this.dc.DataPropertyName = "address";
+            this.dc.HeaderText = "Địa chỉ";
+            this.dc.Name = "dc";
+            // 
+            // ngaysinh
+            // 
+            this.ngaysinh.DataPropertyName = "birthday";
+            this.ngaysinh.HeaderText = "Ngày sinh";
+            this.ngaysinh.Name = "ngaysinh";
+            // 
+            // sex
+            // 
+            this.sex.DataPropertyName = "sex";
+            this.sex.HeaderText = "Giới tính";
+            this.sex.Name = "sex";
+            // 
+            // available
+            // 
+            this.available.DataPropertyName = "available";
+            this.available.FalseValue = "0";
+            this.available.HeaderText = "Available";
+            this.available.Name = "available";
+            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.available.TrueValue = "1";
+            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(0, 276);
@@ -608,100 +702,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // hovataen
-            // 
-            this.hovataen.DataPropertyName = "hoten";
-            this.hovataen.HeaderText = "Họ và Tên";
-            this.hovataen.Name = "hovataen";
-            this.hovataen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // customerid
-            // 
-            this.customerid.DataPropertyName = "customerid";
-            this.customerid.HeaderText = "customerid";
-            this.customerid.Name = "customerid";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // type
-            // 
-            this.type.DataPropertyName = "Type";
-            this.type.HeaderText = "type";
-            this.type.Name = "type";
-            this.type.Visible = false;
-            // 
-            // create
-            // 
-            this.create.DataPropertyName = "CreateAt";
-            this.create.HeaderText = "Ngày tạo";
-            this.create.Name = "create";
-            this.create.Visible = false;
-            // 
-            // loaikh
-            // 
-            this.loaikh.DataPropertyName = "nameoftype";
-            this.loaikh.HeaderText = "Loại Khách Hàng";
-            this.loaikh.Name = "loaikh";
-            // 
-            // ho
-            // 
-            this.ho.DataPropertyName = "lastname";
-            this.ho.HeaderText = "Họ";
-            this.ho.Name = "ho";
-            this.ho.Visible = false;
-            // 
-            // ten
-            // 
-            this.ten.DataPropertyName = "firstname";
-            this.ten.HeaderText = "Tên ";
-            this.ten.Name = "ten";
-            this.ten.Visible = false;
-            // 
-            // sdt
-            // 
-            this.sdt.DataPropertyName = "phone";
-            this.sdt.HeaderText = "Số điện thoại";
-            this.sdt.Name = "sdt";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // dc
-            // 
-            this.dc.DataPropertyName = "address";
-            this.dc.HeaderText = "Địa chỉ";
-            this.dc.Name = "dc";
-            // 
-            // ngaysinh
-            // 
-            this.ngaysinh.DataPropertyName = "birthday";
-            this.ngaysinh.HeaderText = "Ngày sinh";
-            this.ngaysinh.Name = "ngaysinh";
-            // 
-            // sex
-            // 
-            this.sex.DataPropertyName = "sex";
-            this.sex.HeaderText = "Giới tính";
-            this.sex.Name = "sex";
-            // 
-            // available
-            // 
-            this.available.DataPropertyName = "available";
-            this.available.FalseValue = "0";
-            this.available.HeaderText = "Available";
-            this.available.Name = "available";
-            this.available.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.available.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.available.TrueValue = "1";
             // 
             // KhachHangViews
             // 
