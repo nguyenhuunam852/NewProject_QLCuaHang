@@ -46,6 +46,17 @@ namespace WindowsFormsApp1.Views
             clearTExtBox();
             action = "insert";
             label10.Text = "";
+            foreach (Control c in groupBox3.Controls)
+            {
+                if (c is TextBox && c.Name != "textBox5")
+                {
+                    c.TextChanged += C_TextChanged;
+                }
+                if (c is MaskedTextBox)
+                {
+                    c.TextChanged+= C_TextChanged1;
+                }
+            }
         }
         private void enableTextBox()
         {

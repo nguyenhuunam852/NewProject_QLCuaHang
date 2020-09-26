@@ -332,17 +332,32 @@ namespace WindowsFormsApp1.Views
                 }
                 if (MyPermission.getpermission("Desk", "update") == 1)
                 {
+                    MenuItem item3 = cm.MenuItems.Add("Copy");
+                    item3.Click += Item3_Click;
+                    MenuItem item4 = cm.MenuItems.Add("Sửa thông tin");
+                    item4.Click += Item4_Click;
                     MenuItem item1 = cm.MenuItems.Add("Bảo trì");
                     item1.Click += Item1_Click;
                     MenuItem item2 = cm.MenuItems.Add("Đưa vào hoạt động");
                     item2.Click += Item2_Click;
-                    MenuItem item3 = cm.MenuItems.Add("Copy");
-                    item3.Click += Item3_Click; ;
+                    
                     lbl.ContextMenu = cm;
                 
         
                 }
             }
+        }
+
+        private void Item4_Click(object sender, EventArgs e)
+        {
+            updatebutton.Enabled = false;
+            deletebutton.Enabled = false;
+
+            savebutton.Enabled = true;
+            closebutton.Enabled = true;
+            txtTenGhe.Enabled = true;
+            cbbtrangthai.Enabled = true;
+            signal = "update";
         }
 
         private void Item3_Click(object sender, EventArgs e)

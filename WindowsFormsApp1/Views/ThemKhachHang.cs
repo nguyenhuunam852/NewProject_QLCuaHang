@@ -38,6 +38,8 @@ namespace WindowsFormsApp1.Views
             warnSDT.Visible = false;
             warnTen.Visible = false;
             warnDC.Visible = false;
+            addbutton = buttonStyle.createBtn(addbutton);
+            savebutton = buttonStyle.saveBtn(savebutton);
         }
 
         private void C_TextChanged1(object sender, EventArgs e)
@@ -179,7 +181,7 @@ namespace WindowsFormsApp1.Views
         {
             if (MyPermission.getpermission("Customer", "insert") == 0)
             {
-                button5.Visible = false;
+                savebutton.Visible = false;
             }
         
        
@@ -200,11 +202,11 @@ namespace WindowsFormsApp1.Views
 
             if (MyPermission.getpermission("TypeCustomer", "view") == 0)
             {
-                button10.Enabled = false;
+                addbutton.Enabled = false;
             }
             if (MyPermission.getpermission("TypeCustomer", "insert") == 0)
             {
-                button10.Visible = false;
+                addbutton.Visible = false;
             }
         }
 

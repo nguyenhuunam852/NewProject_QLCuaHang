@@ -29,9 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.warnDC = new System.Windows.Forms.Label();
+            this.warnSDT = new System.Windows.Forms.Label();
+            this.warnTen = new System.Windows.Forms.Label();
+            this.warnHo = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtHo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.addbutton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -48,17 +54,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.savebutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.warnHo = new System.Windows.Forms.Label();
-            this.warnTen = new System.Windows.Forms.Label();
-            this.warnSDT = new System.Windows.Forms.Label();
-            this.warnDC = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtHo);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.button10);
+            this.groupBox3.Controls.Add(this.addbutton);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.comboBox1);
@@ -97,6 +97,63 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Khách hàng";
             // 
+            // warnDC
+            // 
+            this.warnDC.AutoSize = true;
+            this.warnDC.ForeColor = System.Drawing.Color.Red;
+            this.warnDC.Location = new System.Drawing.Point(198, 169);
+            this.warnDC.Name = "warnDC";
+            this.warnDC.Size = new System.Drawing.Size(19, 13);
+            this.warnDC.TabIndex = 31;
+            this.warnDC.Text = "*R";
+            // 
+            // warnSDT
+            // 
+            this.warnSDT.AutoSize = true;
+            this.warnSDT.ForeColor = System.Drawing.Color.Red;
+            this.warnSDT.Location = new System.Drawing.Point(198, 105);
+            this.warnSDT.Name = "warnSDT";
+            this.warnSDT.Size = new System.Drawing.Size(19, 13);
+            this.warnSDT.TabIndex = 30;
+            this.warnSDT.Text = "*R";
+            // 
+            // warnTen
+            // 
+            this.warnTen.AutoSize = true;
+            this.warnTen.ForeColor = System.Drawing.Color.Red;
+            this.warnTen.Location = new System.Drawing.Point(197, 74);
+            this.warnTen.Name = "warnTen";
+            this.warnTen.Size = new System.Drawing.Size(19, 13);
+            this.warnTen.TabIndex = 29;
+            this.warnTen.Text = "*R";
+            // 
+            // warnHo
+            // 
+            this.warnHo.AutoSize = true;
+            this.warnHo.ForeColor = System.Drawing.Color.Red;
+            this.warnHo.Location = new System.Drawing.Point(197, 46);
+            this.warnHo.Name = "warnHo";
+            this.warnHo.Size = new System.Drawing.Size(19, 13);
+            this.warnHo.TabIndex = 28;
+            this.warnHo.Text = "*R";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(92, 291);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Mã KH";
+            // 
             // txtHo
             // 
             this.txtHo.Location = new System.Drawing.Point(92, 39);
@@ -114,15 +171,15 @@
             this.label10.TabIndex = 25;
             this.label10.Text = "Họ";
             // 
-            // button10
+            // addbutton
             // 
-            this.button10.Location = new System.Drawing.Point(197, 258);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(26, 23);
-            this.button10.TabIndex = 24;
-            this.button10.Text = "Thêm nhanh loai KH";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.addbutton.Location = new System.Drawing.Point(197, 258);
+            this.addbutton.Name = "addbutton";
+            this.addbutton.Size = new System.Drawing.Size(26, 23);
+            this.addbutton.TabIndex = 24;
+            this.addbutton.Text = "Thêm nhanh loai KH";
+            this.addbutton.UseVisualStyleBackColor = true;
+            this.addbutton.Click += new System.EventHandler(this.button10_Click);
             // 
             // label9
             // 
@@ -256,16 +313,16 @@
             this.txtTen.Size = new System.Drawing.Size(100, 20);
             this.txtTen.TabIndex = 2;
             // 
-            // button5
+            // savebutton
             // 
-            this.button5.Location = new System.Drawing.Point(248, 321);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 26);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Lưu";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.TabIndexChanged += new System.EventHandler(this.button5_TabIndexChanged);
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.savebutton.Location = new System.Drawing.Point(248, 321);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(109, 26);
+            this.savebutton.TabIndex = 10;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.UseVisualStyleBackColor = true;
+            this.savebutton.TabIndexChanged += new System.EventHandler(this.button5_TabIndexChanged);
+            this.savebutton.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox2
             // 
@@ -316,63 +373,6 @@
             this.comboBox3.SelectionChangeCommitted += new System.EventHandler(this.comboBox3_SelectionChangeCommitted);
             this.comboBox3.TextChanged += new System.EventHandler(this.comboBox3_TextChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 298);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Mã KH";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(92, 291);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 27;
-            // 
-            // warnHo
-            // 
-            this.warnHo.AutoSize = true;
-            this.warnHo.ForeColor = System.Drawing.Color.Red;
-            this.warnHo.Location = new System.Drawing.Point(197, 46);
-            this.warnHo.Name = "warnHo";
-            this.warnHo.Size = new System.Drawing.Size(19, 13);
-            this.warnHo.TabIndex = 28;
-            this.warnHo.Text = "*R";
-            // 
-            // warnTen
-            // 
-            this.warnTen.AutoSize = true;
-            this.warnTen.ForeColor = System.Drawing.Color.Red;
-            this.warnTen.Location = new System.Drawing.Point(197, 74);
-            this.warnTen.Name = "warnTen";
-            this.warnTen.Size = new System.Drawing.Size(19, 13);
-            this.warnTen.TabIndex = 29;
-            this.warnTen.Text = "*R";
-            // 
-            // warnSDT
-            // 
-            this.warnSDT.AutoSize = true;
-            this.warnSDT.ForeColor = System.Drawing.Color.Red;
-            this.warnSDT.Location = new System.Drawing.Point(198, 105);
-            this.warnSDT.Name = "warnSDT";
-            this.warnSDT.Size = new System.Drawing.Size(19, 13);
-            this.warnSDT.TabIndex = 30;
-            this.warnSDT.Text = "*R";
-            // 
-            // warnDC
-            // 
-            this.warnDC.AutoSize = true;
-            this.warnDC.ForeColor = System.Drawing.Color.Red;
-            this.warnDC.Location = new System.Drawing.Point(198, 169);
-            this.warnDC.Name = "warnDC";
-            this.warnDC.Size = new System.Drawing.Size(19, 13);
-            this.warnDC.TabIndex = 31;
-            this.warnDC.Text = "*R";
-            // 
             // ThemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,7 +380,7 @@
             this.ClientSize = new System.Drawing.Size(617, 371);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.savebutton);
             this.Name = "ThemKhachHang";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ThemKhachHang_Load);
@@ -411,8 +411,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button savebutton;
+        private System.Windows.Forms.Button addbutton;
         private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtTen;
