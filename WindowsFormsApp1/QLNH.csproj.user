@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory />
-    <InstallUrlHistory />
+    <PublishUrlHistory>ftp://huunamute.name.vn/|C:\Users\namhn\OneDrive\Desktop\publicFolder\|\\localhost\Users\namhn\OneDrive\Desktop\publicFolder\|https://huunamute.name.vn/|publish\</PublishUrlHistory>
+    <InstallUrlHistory>https://huunamute.name.vn/|\\localhost\Users\namhn\OneDrive\Desktop\publicFolder\</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>\\localhost\Users\namhn\OneDrive\Desktop\publicFolder\|\\localhost\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>

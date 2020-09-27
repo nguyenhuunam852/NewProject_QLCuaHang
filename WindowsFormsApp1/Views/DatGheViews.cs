@@ -13,6 +13,9 @@ using System.IO;
 using WindowsFormsApp1.Models;
 using System.Collections.Specialized;
 using WindowsFormsApp1.Views.ViewsThongKe;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace WindowsFormsApp1.Views
 {
@@ -657,6 +660,7 @@ namespace WindowsFormsApp1.Views
         {
             DateTime dt = DateTime.Now;
             FrmTongKet ftk = new FrmTongKet(dt);
+
             DialogResult wait = ftk.ShowDialog();
             if (wait == DialogResult.OK)
             {
@@ -696,6 +700,7 @@ namespace WindowsFormsApp1.Views
 
                     }
                 }
+               
             }
         }
 

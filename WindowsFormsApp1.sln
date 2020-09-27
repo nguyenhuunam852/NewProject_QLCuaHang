@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLNH", "WindowsFormsApp1\QLNH.csproj", "{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}"
 EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "VietNhatJP", "VietNhatJP\VietNhatJP.aiproj", "{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		abc|Any CPU = abc|Any CPU
@@ -23,14 +21,6 @@ Global
 		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8C46D08-AC7C-49F6-9E7A-C61D14E2E1F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.abc|Any CPU.ActiveCfg = DefaultBuild
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.abc|Any CPU.Build.0 = DefaultBuild
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.All|Any CPU.ActiveCfg = DefaultBuild
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.All|Any CPU.Build.0 = DefaultBuild
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.Debug|Any CPU.ActiveCfg = DefaultBuild
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.Debug|Any CPU.Build.0 = DefaultBuild
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.Release|Any CPU.ActiveCfg = DefaultBuild
-		{07A50E3C-4A35-457D-BF5A-7DDBA0740A5A}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

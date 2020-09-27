@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,6 +91,26 @@ namespace WindowsFormsApp1.Views
         private void FrmDangNhap_VisibleChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://dev.hahe.vn/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.Timeout = TimeSpan.FromSeconds(30.0);
+
+            var values = new JObject();
+            values.Add("totalcustome", "10");
+            values.Add("totalnewcustome", "11");
+            values.Add("apptoken", "123456789");
+            values.Add("usetoken", "abc");
+
+            // this is not set!!!
+            HttpContent content = new StringContent(values.ToString(), Encoding.UTF8, "application/json");
+
+            var response = client.PostAsJsonAsync("devapi", content).Result;
+            return;
         }
     }
 }
