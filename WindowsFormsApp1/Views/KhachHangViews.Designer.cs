@@ -433,7 +433,7 @@
             // 
             // closebutton
             // 
-            this.closebutton.Location = new System.Drawing.Point(153, 187);
+            this.closebutton.Location = new System.Drawing.Point(302, 216);
             this.closebutton.Name = "closebutton";
             this.closebutton.Size = new System.Drawing.Size(31, 23);
             this.closebutton.TabIndex = 15;
@@ -443,7 +443,7 @@
             // 
             // savebutton
             // 
-            this.savebutton.Location = new System.Drawing.Point(121, 187);
+            this.savebutton.Location = new System.Drawing.Point(302, 187);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(31, 23);
             this.savebutton.TabIndex = 9;

@@ -64,14 +64,14 @@
             this.groupBox3.Controls.Add(this.addbutton);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(525, 76);
+            this.groupBox3.Size = new System.Drawing.Size(564, 76);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin";
             // 
             // cancelbutton
             // 
-            this.cancelbutton.Location = new System.Drawing.Point(361, 26);
+            this.cancelbutton.Location = new System.Drawing.Point(438, 40);
             this.cancelbutton.Name = "cancelbutton";
             this.cancelbutton.Size = new System.Drawing.Size(30, 27);
             this.cancelbutton.TabIndex = 18;
@@ -81,7 +81,7 @@
             // 
             // savebtn
             // 
-            this.savebtn.Location = new System.Drawing.Point(331, 26);
+            this.savebtn.Location = new System.Drawing.Point(438, 10);
             this.savebtn.Name = "savebtn";
             this.savebtn.Size = new System.Drawing.Size(30, 27);
             this.savebtn.TabIndex = 14;

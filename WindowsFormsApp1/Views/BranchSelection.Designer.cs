@@ -31,6 +31,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtManhanh = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,8 +41,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtManhanh = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Apptokentxt = new System.Windows.Forms.TextBox();
+            this.useTokentxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +67,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.useTokentxt);
+            this.groupBox1.Controls.Add(this.Apptokentxt);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtManhanh);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button4);
@@ -72,12 +80,28 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 103);
+            this.groupBox1.Location = new System.Drawing.Point(0, 114);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(601, 153);
+            this.groupBox1.Size = new System.Drawing.Size(601, 184);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm nhánh";
+            // 
+            // txtManhanh
+            // 
+            this.txtManhanh.Location = new System.Drawing.Point(104, 82);
+            this.txtManhanh.Name = "txtManhanh";
+            this.txtManhanh.Size = new System.Drawing.Size(220, 20);
+            this.txtManhanh.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Mã nhánh";
             // 
             // button4
             // 
@@ -151,27 +175,43 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Mã nhánh";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "App Token";
             // 
-            // txtManhanh
+            // Apptokentxt
             // 
-            this.txtManhanh.Location = new System.Drawing.Point(104, 82);
-            this.txtManhanh.Name = "txtManhanh";
-            this.txtManhanh.Size = new System.Drawing.Size(220, 20);
-            this.txtManhanh.TabIndex = 6;
+            this.Apptokentxt.Location = new System.Drawing.Point(104, 110);
+            this.Apptokentxt.Name = "Apptokentxt";
+            this.Apptokentxt.Size = new System.Drawing.Size(220, 20);
+            this.Apptokentxt.TabIndex = 8;
+            // 
+            // useTokentxt
+            // 
+            this.useTokentxt.Location = new System.Drawing.Point(104, 136);
+            this.useTokentxt.Name = "useTokentxt";
+            this.useTokentxt.Size = new System.Drawing.Size(220, 20);
+            this.useTokentxt.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 143);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Use Token";
             // 
             // BranchSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 256);
+            this.ClientSize = new System.Drawing.Size(601, 298);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
@@ -202,5 +242,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtManhanh;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox Apptokentxt;
+        private System.Windows.Forms.TextBox useTokentxt;
+        private System.Windows.Forms.Label label6;
     }
 }

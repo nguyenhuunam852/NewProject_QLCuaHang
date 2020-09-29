@@ -40,6 +40,7 @@
             this.QlGroupUser = new System.Windows.Forms.ToolStripMenuItem();
             this.QLsetting = new System.Windows.Forms.ToolStripMenuItem();
             this.QLbackUp = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmsTag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +68,7 @@
             this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.QLGhe,
             this.QLkhachhang,
             this.QLloaiKH,
@@ -184,6 +186,16 @@
             this.QLbackUp.Text = "BACKUP";
             this.QLbackUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(139, 24);
+            this.toolStripMenuItem1.Text = "CHI NHÁNH";
+            this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // dangToolStripMenuItem
             // 
@@ -317,5 +329,6 @@
         public System.Windows.Forms.MenuStrip msUserControl;
         public System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QLCH.exe" size="305632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QLCH.exe" size="312800">
       <assemblyIdentity name="QLCH" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RPfxFTfpky+06E4945HtOzgKfzpmH4fX1TPR4D3nC9k=</dsig:DigestValue>
+        <dsig:DigestValue>IeWJ2iCd/W6LL6WakG0v+W1r6028JA/oXothZ3l1S14=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

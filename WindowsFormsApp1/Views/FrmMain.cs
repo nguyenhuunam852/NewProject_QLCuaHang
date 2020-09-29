@@ -177,6 +177,7 @@ namespace WindowsFormsApp1.Views
                         DialogResult dlr = FrmDangNhap.getFrom().ShowDialog();
                         if (dlr == DialogResult.OK)
                         {
+                            BranchControllers.getInformationofBranch(User.getUser().pbranch);
                             groupBox2.Visible = false;
                             int sig = 0;
                             int check;
@@ -525,6 +526,11 @@ namespace WindowsFormsApp1.Views
         private void TabHienThi_MouseMove(object sender, MouseEventArgs e)
         {
            
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(BranchForm.GetBranchForm(), 12, "Chi nhánh");
         }
     }
 }

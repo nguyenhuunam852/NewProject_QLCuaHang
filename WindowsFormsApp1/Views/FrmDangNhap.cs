@@ -92,8 +92,7 @@ namespace WindowsFormsApp1.Views
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        void test()
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://dev.hahe.vn/");
@@ -101,8 +100,8 @@ namespace WindowsFormsApp1.Views
             client.Timeout = TimeSpan.FromSeconds(30.0);
 
             var values = new JObject();
-            values.Add("totalcustome", "10");
-            values.Add("totalnewcustome", "11");
+            values.Add("totalcustomer", "10");
+            values.Add("totalnewcustomer", "11");
             values.Add("apptoken", "123456789");
             values.Add("usetoken", "abc");
 
@@ -111,6 +110,10 @@ namespace WindowsFormsApp1.Views
 
             var response = client.PostAsJsonAsync("devapi", content).Result;
             return;
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

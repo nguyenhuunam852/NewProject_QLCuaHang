@@ -34,17 +34,57 @@ namespace WindowsFormsApp1.Models
             get { return address; }
             set { address = value; }
         }
+        private string token1;
+        public string ptoken1
+        {
+            get { return token1; }
+            set { token1 = value; }
+        }
+
+        public void getInformation(int pbranch)
+        {
+            string[] paras = new string[] { "@id" };
+            object[] values = new object[] { pbranch };
+            DataTable dtb= Models.Connection.FillDataSet("getInforofBranch", CommandType.StoredProcedure, paras, values).Tables[0];
+            name = dtb.Rows[0]["name"].ToString();
+            address = dtb.Rows[0]["address"].ToString();
+            code = dtb.Rows[0]["code"].ToString();
+            token1 = dtb.Rows[0]["apptoken"].ToString();
+            token2 = dtb.Rows[0]["usetoken"].ToString();
+        }
+
+        internal int updateBranch()
+        {
+            string[] paras = new string[] { "@id", "@name", "@address", "@code", "@apptoken", "@usetoken" };
+            object[] values = new object[] { User.getUser().pbranch,name,address,code,token1,token2 };
+            return Models.Connection.Excute_Sql("updateBranch", CommandType.StoredProcedure, paras, values);
+        }
+
+        private string token2;
+        public string ptoken2
+        {
+            get { return token2; }
+            set { token2 = value; }
+        }
+
         public static DataTable getData()
         {
             return Models.Connection.FillDataSet("getAllBranch", CommandType.StoredProcedure).Tables[0];
         }
-
+        public static Branch br;
+        public static Branch getBranch()
+        {
+            if(br==null)
+            {
+                br = new Branch();
+            }
+            return br;
+        }
         public int InsertBranch()
         {
-            string[] paras = new string[3] { "@name", "@address","@code" };
-            object[] values = new object[3] { name, address,code };
+            string[] paras = new string[5] { "@name", "@address","@code", "@apptoken", "@usetoken" };
+            object[] values = new object[5] { name, address,code,token1,token2 };
             return Models.Connection.Excute_Sql("insertBranch", CommandType.StoredProcedure, paras, values);
-
         }
 
         internal static string getmachinhanh(string machinhanh)

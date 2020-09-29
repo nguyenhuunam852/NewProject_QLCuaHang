@@ -265,3 +265,4 @@ C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\SharpUpdate.dll
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\SharpUpdate.pdb
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Views.BranchForm.resources

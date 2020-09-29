@@ -101,7 +101,7 @@ namespace WindowsFormsApp1.Views
             this.savebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.savebutton.Location = new System.Drawing.Point(105, 45);
+            this.savebutton.Location = new System.Drawing.Point(9, 70);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(31, 21);
             this.savebutton.TabIndex = 11;
@@ -126,7 +126,7 @@ namespace WindowsFormsApp1.Views
             this.closebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.closebutton.Location = new System.Drawing.Point(137, 45);
+            this.closebutton.Location = new System.Drawing.Point(9, 97);
             this.closebutton.Name = "closebutton";
             this.closebutton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.closebutton.Size = new System.Drawing.Size(31, 21);
