@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="QLCH.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="QLCH" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="QLCH" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="QLCH.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QLCH.exe" size="302560">
-      <assemblyIdentity name="QLCH" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QLCH.exe" size="305632">
+      <assemblyIdentity name="QLCH" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AR0TfwHQgb6zMUJ7pzz7Tt4G9TWYo/LKVZYBiXG/QF8=</dsig:DigestValue>
+        <dsig:DigestValue>RPfxFTfpky+06E4945HtOzgKfzpmH4fX1TPR4D3nC9k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UvMFoIclpjUsA/o0FkKwFIG97/xeVhRHtTXUMHXaHjs=</dsig:DigestValue>
+        <dsig:DigestValue>mL+alX1r8wOVN6M/zX4Wz2nx582pBnHqP9Eiwm2vID0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

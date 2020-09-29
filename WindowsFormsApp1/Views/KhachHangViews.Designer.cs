@@ -224,6 +224,7 @@
             this.textBoxTen.Name = "textBoxTen";
             this.textBoxTen.Size = new System.Drawing.Size(93, 20);
             this.textBoxTen.TabIndex = 2;
+            this.textBoxTen.Leave += new System.EventHandler(this.textBoxTen_Leave);
             // 
             // textBoxHo
             // 
@@ -234,6 +235,8 @@
             this.textBoxHo.Name = "textBoxHo";
             this.textBoxHo.Size = new System.Drawing.Size(93, 20);
             this.textBoxHo.TabIndex = 1;
+            this.textBoxHo.TextChanged += new System.EventHandler(this.textBoxHo_TextChanged);
+            this.textBoxHo.Leave += new System.EventHandler(this.textBoxHo_Leave);
             // 
             // label8
             // 
@@ -322,6 +325,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(94, 20);
             this.textBox3.TabIndex = 4;
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // label6
             // 
@@ -380,6 +384,7 @@
             this.maskedTextBox1.TabIndex = 6;
             this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.Leave += new System.EventHandler(this.maskedTextBox1_Leave);
             // 
             // textBox2
             // 
@@ -390,6 +395,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(93, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // label4
             // 

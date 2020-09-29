@@ -161,6 +161,7 @@
             this.txtHo.Size = new System.Drawing.Size(100, 20);
             this.txtHo.TabIndex = 1;
             this.txtHo.Enter += new System.EventHandler(this.txtHo_Enter);
+            this.txtHo.Leave += new System.EventHandler(this.txtHo_Leave);
             // 
             // label10
             // 
@@ -236,9 +237,11 @@
             this.maskedTextBox1.Location = new System.Drawing.Point(121, 195);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PromptChar = '0';
             this.maskedTextBox1.Size = new System.Drawing.Size(71, 20);
             this.maskedTextBox1.TabIndex = 6;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.Leave += new System.EventHandler(this.maskedTextBox1_Leave);
             // 
             // label7
             // 
@@ -280,6 +283,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 4;
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // label4
             // 
@@ -296,6 +300,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // label3
             // 
@@ -312,6 +317,7 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(100, 20);
             this.txtTen.TabIndex = 2;
+            this.txtTen.Leave += new System.EventHandler(this.txtTen_Leave);
             // 
             // savebutton
             // 

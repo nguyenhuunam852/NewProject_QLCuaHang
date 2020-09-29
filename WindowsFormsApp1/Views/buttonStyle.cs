@@ -115,7 +115,7 @@ namespace WindowsFormsApp1.Views
             {
                 savebutton.BackColor = Color.DarkGoldenrod;
             }
-            savebutton.Size = new Size(31, 27);
+            savebutton.Size = new Size(70, 27);
             savebutton.EnabledChanged += Savebutton_EnabledChanged;
             savebutton.Font = Fonts.FontAwesome;
             savebutton.Text = Fonts.fa.floppy_o;
@@ -128,7 +128,7 @@ namespace WindowsFormsApp1.Views
             Button btn = sender as Button;
             if (btn.Enabled == true)
             {
-                btn.BackColor = Color.LightYellow;
+                btn.BackColor = Color.LightSkyBlue;
             }
             else
             {
@@ -146,7 +146,7 @@ namespace WindowsFormsApp1.Views
             {
                 cancelbutton.BackColor = Color.DarkSlateBlue;
             }
-            cancelbutton.Size = new Size(31, 27);
+            cancelbutton.Size = new Size(70, 27);
             cancelbutton.EnabledChanged += Cancelbutton_EnabledChanged;
             cancelbutton.Font = Fonts.FontAwesome;
             cancelbutton.Text = Fonts.fa.ban;

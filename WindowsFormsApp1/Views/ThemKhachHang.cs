@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
@@ -53,7 +54,39 @@ namespace WindowsFormsApp1.Views
             TextBox tb = sender as TextBox;
             tb.ForeColor = Color.Black;
         }
-
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
+        }
+        public static bool IsName(string name)
+        {
+            return Regex.IsMatch(name, @"^[\p{L}\p{M}' \.\-]+$");
+        }
+        public static bool IsDate(string tempDate)
+        {
+            DateTime fromDateValue;
+            var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd" };
+            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out fromDateValue))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void loadDataGridViewTenLoai()
         {
 
@@ -383,6 +416,56 @@ namespace WindowsFormsApp1.Views
                     }
                 }
                 loadpdtb();
+            }
+        }
+
+        private void txtHo_Leave(object sender, EventArgs e)
+        {
+            if (txtHo.Text != "" && IsName(txtHo.Text) == false)
+            {
+                MessageBox.Show("Kiểm tra lại Họ vì Họ không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHo.Text = "";
+                txtHo.Focus();
+            }
+        }
+
+        private void txtTen_Leave(object sender, EventArgs e)
+        { 
+            if (txtTen.Text != "" && IsName(txtTen.Text) == false)
+            {
+                MessageBox.Show("Kiểm tra lại Tên vì Tên không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTen.Text = "";
+                txtTen.Focus();
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text != "" && IsPhoneNumber(textBox2.Text) == false)
+            {
+                MessageBox.Show("Kiểm tra lại Sdt vì Sdt không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox2.Text = "";
+                textBox2.Focus();
+            }
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (textBox3.Text != "" && IsValidEmail(textBox3.Text) == false)
+            {
+                MessageBox.Show("Kiểm tra lại Email vì email không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox3.Text = "";
+                textBox3.Focus();
+            }
+        }
+
+        private void maskedTextBox1_Leave(object sender, EventArgs e)
+        {
+            if (IsDate(maskedTextBox1.Text) == false && maskedTextBox1.Text != "00/00/0000")
+            {
+                MessageBox.Show("kiểm tra lại ngày vì không đúng Format hoặc ngày sinh không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                maskedTextBox1.Text = "00/00/0000";
+                maskedTextBox1.Focus();
             }
         }
     }

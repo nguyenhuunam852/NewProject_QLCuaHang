@@ -14,6 +14,7 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using LinqToExcel;
 using WindowsFormsApp1.Excel;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1.Views
 {
@@ -120,6 +121,19 @@ namespace WindowsFormsApp1.Views
             savebutton = buttonStyle.saveBtn(savebutton);
             warnDC.Visible = false;
             loadAgain();
+        }
+        public static bool IsDate(string tempDate)
+        {
+            DateTime fromDateValue;
+            var formats = new[] { "dd/MM/yyyy", "yyyy-MM-dd" };
+            if (DateTime.TryParseExact(tempDate, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out fromDateValue))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void LoadPermission()
@@ -794,6 +808,79 @@ namespace WindowsFormsApp1.Views
 
                 }
             }
+        }
+
+        private void maskedTextBox1_Leave(object sender, EventArgs e)
+        {
+            if(IsDate(maskedTextBox1.Text)==false && maskedTextBox1.Text!= "00/00/0000")
+            {
+                MessageBox.Show("kiểm tra lại ngày vì không đúng Format hoặc ngày sinh không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                maskedTextBox1.Text = "00/00/0000";
+                maskedTextBox1.Focus();
+            }
+        }
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
+        }
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if(textBox3.Text!="" && IsValidEmail(textBox3.Text)==false)
+            {
+                MessageBox.Show("Kiểm tra lại Email vì email không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox3.Text = "";
+                textBox3.Focus();
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text != "" && IsPhoneNumber(textBox2.Text) == false)
+            {
+                MessageBox.Show("Kiểm tra lại Sdt vì Sdt không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox2.Text = "";
+                textBox2.Focus();
+            }
+        }
+        public static bool IsName(string name)
+        {
+            return Regex.IsMatch(name, @"^[\p{L}\p{M}' \.\-]+$");
+        }
+        private void textBoxHo_Leave(object sender, EventArgs e)
+        {
+            if (textBoxHo.Text != "" && IsName(textBoxHo.Text) == false)
+            {
+                MessageBox.Show("Kiểm tra lại Họ vì Họ không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxHo.Text = "";
+                textBoxHo.Focus();
+            }
+        }
+
+        private void textBoxTen_Leave(object sender, EventArgs e)
+        {
+            if (textBoxTen.Text != "" && IsName(textBoxTen.Text) == false)
+            {
+                MessageBox.Show("Kiểm tra lại Tên vì Tên không hợp lệ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxTen.Text = "";
+                textBoxTen.Focus();
+            }
+        }
+
+        private void textBoxHo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
