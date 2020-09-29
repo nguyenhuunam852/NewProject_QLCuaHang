@@ -1,6 +1,6 @@
 txtServerName@DESKTOP-VT4SFHD
-txtDataBase@mynewdtb
-txtDV@ag
+txtDataBase@vietnhatjp
+txtDV@abc
 txtTGBD@17:00
 txtTGHD@00:30
 txtTGKT@18:00

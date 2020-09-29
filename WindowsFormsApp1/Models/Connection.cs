@@ -7,9 +7,11 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using WindowsFormsApp1.Views;
+
 
 namespace WindowsFormsApp1.Models
 {
@@ -85,6 +87,20 @@ namespace WindowsFormsApp1.Models
                 string server1 = @"Data Source=" + dts + "\\" + ins + ";User ID=" + usn + ";Password=" + passw;
                 SqlConnection sql = new SqlConnection(server1);
                 sql.Open();
+                string script = File.ReadAllText(@"Data\\Data.sql");
+                IEnumerable<string> commandStrings = Regex.Split(script, @"^\s*GO\s*$", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+                foreach (string commandString in commandStrings)
+                {
+                    if (!string.IsNullOrWhiteSpace(commandString.Trim()))
+                    {
+                        using (var command = new SqlCommand(commandString, sql))
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+     
                 server = server1;
                 sql.Close();
                 return 1;

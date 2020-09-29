@@ -263,3 +263,5 @@ C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLCH.exe.manifest
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLCH.application
 C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\obj\Debug\QLNH.csprojAssemblyReference.cache
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\SharpUpdate.dll
+C:\Users\namhn\OneDrive\Desktop\NewProject_QLCuaHang2\WindowsFormsApp1\bin\Debug\SharpUpdate.pdb

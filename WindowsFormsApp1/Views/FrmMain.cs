@@ -12,6 +12,9 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Controllers;
 using WindowsFormsApp1.Models;
 using System.Text.RegularExpressions;
+using SharpUpdate;
+using System.Reflection;
+
 namespace WindowsFormsApp1.Views
 {
     public partial class FrmMain : Form
@@ -136,6 +139,7 @@ namespace WindowsFormsApp1.Views
             loadAllPage();
             msUserControl.Visible = false;
             groupBox2.Visible =true;
+
             if (getFirstSetting() == 1)
             {
                
@@ -366,9 +370,15 @@ namespace WindowsFormsApp1.Views
             }
 
         }
-
+        private SharpUpdater updater;
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            label1.Text = ProductVersion;
+            updater = new SharpUpdater(Assembly.GetExecutingAssembly(), this, new Uri("https://namute17110185.000webhostapp.com/update.xml"));
+            updater.DoUpdate();
+
+
+
             Image myimage = new Bitmap(Directory.GetCurrentDirectory()+"\\picture\\bgp.jpg");
             groupBox2.BackgroundImage = myimage;
             

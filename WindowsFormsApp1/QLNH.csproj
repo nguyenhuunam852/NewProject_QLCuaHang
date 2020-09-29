@@ -393,6 +393,11 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Downloads\SharpUpdate-master\SharpUpdate-master\SharpUpdate\SharpUpdate.csproj">
+      <Project>{811c1d69-764f-4335-8363-b93a1d106268}</Project>
+      <Name>SharpUpdate</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
