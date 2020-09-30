@@ -833,7 +833,15 @@ namespace WindowsFormsApp1.Views
         }
         public static bool IsPhoneNumber(string number)
         {
-            return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
+            foreach (var a in number)
+            {
+                var isNumeric = int.TryParse(a.ToString(), out int n);
+                if (isNumeric == false)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         private void textBox3_Leave(object sender, EventArgs e)
         {
