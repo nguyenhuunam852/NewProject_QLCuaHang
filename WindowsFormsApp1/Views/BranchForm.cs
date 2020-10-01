@@ -35,6 +35,9 @@ namespace WindowsFormsApp1.Views
 
         private void BranchForm_Load(object sender, EventArgs e)
         {
+            savebutton = buttonStyle.saveBtn(savebutton);
+            closebutton = buttonStyle.closeBtn(closebutton);
+
             apptokentxt.Enabled = false;
             usetokentxt.Enabled = false;
             tennhanhtxt.Enabled = false;
@@ -48,6 +51,12 @@ namespace WindowsFormsApp1.Views
             updatebutton.Enabled = true;
             savebutton.Enabled = false;
             closebutton.Enabled = false ;
+            if (MyPermission.getpermission("Branch", "update") == 0)
+            {
+                updatebutton.Visible = false;
+                savebutton.Visible = false;
+                closebutton.Visible = false;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -73,6 +82,11 @@ namespace WindowsFormsApp1.Views
         private void closebutton_Click(object sender, EventArgs e)
         {
             BranchForm_Load(sender, e);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+       
         }
     }
 }

@@ -126,8 +126,11 @@ namespace WindowsFormsApp1.Views
                 {
                     MenuItem item = cm1.MenuItems.Add("Tam dung");
                     item.Click += Item_Click;
-                    MenuItem item1 = cm1.MenuItems.Add("Ket thuc");
-                    item1.Click += Item1_Click;
+                    if (MyPermission.getpermission("DeskCustomer", "delete") == 1)
+                    {
+                        MenuItem item1 = cm1.MenuItems.Add("Ket thuc");
+                        item1.Click += Item1_Click;
+                    }
                 }
                 lb.ContextMenu = cm1;
             }
@@ -390,7 +393,10 @@ namespace WindowsFormsApp1.Views
             label2.Visible = false;
             txtId.Visible = false;
             groupBox4.Enabled = false;
-            LoadDuLieu();
+            if (MyPermission.getpermission("Desk", "view") == 1)
+            {
+                LoadDuLieu();
+            }
             taoTrangThai();
             lbs = GheViews.getgroupBox();
             txtCode.Enabled = false;
@@ -400,7 +406,7 @@ namespace WindowsFormsApp1.Views
             txtDC.Enabled = false;
             MtxtNS.Enabled = false;
           
-            if (lbs.Count == 0)
+            if (lbs.Count == 0 && MyPermission.getpermission("Desk", "view") == 1)
             {
                 themUI();
             }

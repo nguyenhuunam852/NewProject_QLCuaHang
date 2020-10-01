@@ -39,12 +39,12 @@
             this.apptokentxt = new System.Windows.Forms.TextBox();
             this.usetokentxt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.updatebutton = new System.Windows.Forms.Button();
-            this.closebutton = new System.Windows.Forms.Button();
-            this.tennhanhtxt = new System.Windows.Forms.TextBox();
-            this.codetxt = new System.Windows.Forms.TextBox();
-            this.dctxt = new System.Windows.Forms.TextBox();
             this.savebutton = new System.Windows.Forms.Button();
+            this.dctxt = new System.Windows.Forms.TextBox();
+            this.codetxt = new System.Windows.Forms.TextBox();
+            this.tennhanhtxt = new System.Windows.Forms.TextBox();
+            this.closebutton = new System.Windows.Forms.Button();
+            this.updatebutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,10 +155,52 @@
             this.groupBox1.Controls.Add(this.manhanhlb);
             this.groupBox1.Location = new System.Drawing.Point(24, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(418, 408);
+            this.groupBox1.Size = new System.Drawing.Size(418, 396);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tên chi nhánh";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // savebutton
+            // 
+            this.savebutton.Location = new System.Drawing.Point(294, 298);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(75, 29);
+            this.savebutton.TabIndex = 16;
+            this.savebutton.Text = "Lưu";
+            this.savebutton.UseVisualStyleBackColor = true;
+            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
+            // 
+            // dctxt
+            // 
+            this.dctxt.Location = new System.Drawing.Point(123, 135);
+            this.dctxt.Name = "dctxt";
+            this.dctxt.Size = new System.Drawing.Size(255, 20);
+            this.dctxt.TabIndex = 15;
+            // 
+            // codetxt
+            // 
+            this.codetxt.Location = new System.Drawing.Point(123, 86);
+            this.codetxt.Name = "codetxt";
+            this.codetxt.Size = new System.Drawing.Size(255, 20);
+            this.codetxt.TabIndex = 14;
+            // 
+            // tennhanhtxt
+            // 
+            this.tennhanhtxt.Location = new System.Drawing.Point(123, 39);
+            this.tennhanhtxt.Name = "tennhanhtxt";
+            this.tennhanhtxt.Size = new System.Drawing.Size(255, 20);
+            this.tennhanhtxt.TabIndex = 13;
+            // 
+            // closebutton
+            // 
+            this.closebutton.Location = new System.Drawing.Point(294, 333);
+            this.closebutton.Name = "closebutton";
+            this.closebutton.Size = new System.Drawing.Size(75, 29);
+            this.closebutton.TabIndex = 12;
+            this.closebutton.Text = "Hủy";
+            this.closebutton.UseVisualStyleBackColor = true;
+            this.closebutton.Click += new System.EventHandler(this.closebutton_Click);
             // 
             // updatebutton
             // 
@@ -169,47 +211,6 @@
             this.updatebutton.Text = "Sửa thông tin";
             this.updatebutton.UseVisualStyleBackColor = true;
             this.updatebutton.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // closebutton
-            // 
-            this.closebutton.Location = new System.Drawing.Point(303, 333);
-            this.closebutton.Name = "closebutton";
-            this.closebutton.Size = new System.Drawing.Size(75, 29);
-            this.closebutton.TabIndex = 12;
-            this.closebutton.Text = "Hủy";
-            this.closebutton.UseVisualStyleBackColor = true;
-            this.closebutton.Click += new System.EventHandler(this.closebutton_Click);
-            // 
-            // tennhanhtxt
-            // 
-            this.tennhanhtxt.Location = new System.Drawing.Point(123, 39);
-            this.tennhanhtxt.Name = "tennhanhtxt";
-            this.tennhanhtxt.Size = new System.Drawing.Size(255, 20);
-            this.tennhanhtxt.TabIndex = 13;
-            // 
-            // codetxt
-            // 
-            this.codetxt.Location = new System.Drawing.Point(123, 86);
-            this.codetxt.Name = "codetxt";
-            this.codetxt.Size = new System.Drawing.Size(255, 20);
-            this.codetxt.TabIndex = 14;
-            // 
-            // dctxt
-            // 
-            this.dctxt.Location = new System.Drawing.Point(123, 135);
-            this.dctxt.Name = "dctxt";
-            this.dctxt.Size = new System.Drawing.Size(255, 20);
-            this.dctxt.TabIndex = 15;
-            // 
-            // savebutton
-            // 
-            this.savebutton.Location = new System.Drawing.Point(222, 333);
-            this.savebutton.Name = "savebutton";
-            this.savebutton.Size = new System.Drawing.Size(75, 29);
-            this.savebutton.TabIndex = 16;
-            this.savebutton.Text = "Lưu";
-            this.savebutton.UseVisualStyleBackColor = true;
-            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
             // 
             // BranchForm
             // 

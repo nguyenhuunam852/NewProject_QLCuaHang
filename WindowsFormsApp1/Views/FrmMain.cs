@@ -32,6 +32,7 @@ namespace WindowsFormsApp1.Views
         int setting = 0;
         public int firstsetting = 0;
         internal static List<byte> typePages = new List<byte>();
+        private List<Label> not_active_tab = new List<Label>();
         public static FrmMain getFrmMain()
         {
             if(frm==null)
@@ -78,7 +79,7 @@ namespace WindowsFormsApp1.Views
         }
         private void quảnLíBànToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(GheViews.dv, 2 , "Quản lí ghế");
+           
         }
         public void ThemUser()
         {
@@ -137,7 +138,7 @@ namespace WindowsFormsApp1.Views
             DateTime dateTime = DateTime.Now;
             RemoveAll();
             loadAllPage();
-            msUserControl.Visible = false;
+            flowLayoutPanel1.Visible = false;
             groupBox2.Visible =true;
 
             if (getFirstSetting() == 1)
@@ -225,7 +226,24 @@ namespace WindowsFormsApp1.Views
                             }
                             LoadAgain();
                             loadPermissionMs();
-                            msUserControl.Visible = true;
+                            foreach (Control control in flowLayoutPanel1.Controls)
+                            {
+                                Label lb = control as Label;
+                                if (control.BackColor == Color.MidnightBlue)
+                                {
+                                    if (not_active_tab.Contains(lb) == false)
+                                    {
+                                        lb.Visible = false;
+                                        lb.MouseHover += Control_MouseHover;
+                                        lb.MouseLeave += Control_MouseLeave;
+                                    }
+                                    else
+                                    {
+                                        lb.Visible = false;
+                                    }
+                                }
+                            }
+                            flowLayoutPanel1.Visible = true;
                         }
                         else if (dlr == DialogResult.Abort)
                         {
@@ -245,38 +263,42 @@ namespace WindowsFormsApp1.Views
 
         private void loadPermissionMs()
         {
-            if (MyPermission.getpermission("DeskCustomer", "view") == 1)
+            if (MyPermission.getpermission("DeskCustomer", "view") == 0)
             {
-                ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
+                not_active_tab.Add(TabQlDatGhe);
             }
           
             if (MyPermission.getpermission("Desk", "view") == 0)
             {
-                QLGhe.Visible = false;
+                not_active_tab.Add(TabGhe);
+            }
+            if (MyPermission.getpermission("Branch", "view") == 0)
+            {
+                not_active_tab.Add(Tabthongtinchinhanh);
             }
             if (MyPermission.getpermission("Customer", "view") == 0)
             {
-                QLkhachhang.Visible = false;
+                not_active_tab.Add(TabKhachHang);
             }
             if (MyPermission.getpermission("TypeCustomer", "view") == 0)
             {
-                QLloaiKH.Visible = false;
+                not_active_tab.Add(TabLoaiKhachHang);
             }
             if (MyPermission.getpermission("Health", "view") == 0)
             {
-                QLsk.Visible = false;
+                not_active_tab.Add(TabSucKhoe);
             }
             if (MyPermission.getpermission("History", "view") == 0 && MyPermission.getpermission("Statical","view")==0)
             {
-                QLlichSu.Visible = false;
+                not_active_tab.Add(TabThongKe);
             }
             if (MyPermission.getpermission("User", "view") == 0)
             {
-                QLuser.Visible = false;
+                not_active_tab.Add(TabUsers);
             }
             if (MyPermission.getpermission("Groupuser", "view") == 0)
             {
-                QlGroupUser.Visible = false;
+                not_active_tab.Add(TabGroupUsers);
             }
            
           
@@ -365,7 +387,7 @@ namespace WindowsFormsApp1.Views
         }
         private void LoadAgain()
         {
-            foreach(ToolStripMenuItem tsmi in msUserControl.Items)
+            foreach(Control tsmi in flowLayoutPanel1.Controls)
             {
                 tsmi.Visible = true;
             }
@@ -374,23 +396,40 @@ namespace WindowsFormsApp1.Views
         private SharpUpdater updater;
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            label1.Text = ProductVersion;
-            updater = new SharpUpdater(Assembly.GetExecutingAssembly(), this, new Uri("https://namute17110185.000webhostapp.com/update.xml"));
-            updater.DoUpdate();
-
-
+            //label1.Text = ProductVersion;
+            //updater = new SharpUpdater(Assembly.GetExecutingAssembly(), this, new Uri("https://namute17110185.000webhostapp.com/update.xml"));
+            //updater.DoUpdate();
+            
+          
 
             Image myimage = new Bitmap(Directory.GetCurrentDirectory()+"\\picture\\bgp.jpg");
             groupBox2.BackgroundImage = myimage;
-            
+          
             setting = 0;
             getSetting();
+
+          
 
             if (User.getUser().pid == null && close != 1 && setting !=1)
             {
                 FrmMain_Load(sender, e);
             }
         }
+
+        private void Control_MouseLeave(object sender, EventArgs e)
+        {
+            Label lb = sender as Label;
+            lb.BackColor = Color.MidnightBlue;
+            lb.ForeColor = Color.White;
+        }
+
+        private void Control_MouseHover(object sender, EventArgs e)
+        {
+            Label lb = sender as Label;
+            lb.BackColor = Color.White;
+            lb.ForeColor = Color.Black;
+        }
+
         private int getFirstSetting()
         {
            return MainControllers.ReadFile();
@@ -448,7 +487,7 @@ namespace WindowsFormsApp1.Views
 
         private void quảnLíKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(KhachHangViews.khv, 3, "Khách Hàng");
+          
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -458,7 +497,7 @@ namespace WindowsFormsApp1.Views
 
         private void lịchSửVàThốngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemTabPages(ThongKeViews.tkv, 4, "Thống kê");
+          
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -498,9 +537,7 @@ namespace WindowsFormsApp1.Views
         }
         private void dangToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainControllers.DangXuat();
-            loadAllPage();
-            FrmMain_Load(sender, e);
+          
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -530,7 +567,240 @@ namespace WindowsFormsApp1.Views
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+          
+        }
+        int thd = 0;
+        private void TabHoatDong_Click(object sender, EventArgs e)
+        {
+            if(thd==0)
+            {
+                if (!not_active_tab.Contains(TabQlDatGhe))
+                {
+                    TabQlDatGhe.Visible = true;
+                }
+                if (!not_active_tab.Contains(TabThongTinCaNhan))
+                {
+                    TabThongTinCaNhan.Visible = true;
+                }
+                if (!not_active_tab.Contains(Tabthongtinchinhanh))
+                {
+                    Tabthongtinchinhanh.Visible = true;
+                }
+                if (!not_active_tab.Contains(TabThongKe))
+                {
+                    TabThongKe.Visible = true;
+                }
+                thd += 1;
+            }
+            else if(thd==1)
+            {
+                TabQlDatGhe.Visible = false;
+                TabThongTinCaNhan.Visible = false;
+                Tabthongtinchinhanh.Visible = false;
+                TabThongKe.Visible = false;
+                thd -= 1;
+            }
+        }
+        int tql = 0;
+        private void TabQuanLi_Click(object sender, EventArgs e)
+        {
+            if (tql == 0)
+            {
+                if (!not_active_tab.Contains(TabGhe))
+                {
+                    TabGhe.Visible = true;
+                }
+                if (!not_active_tab.Contains(TabKhachHang))
+                {
+                    TabKhachHang.Visible = true;
+                }
+                if (!not_active_tab.Contains(TabLoaiKhachHang))
+                {
+                    TabLoaiKhachHang.Visible = true;
+                }
+                if (!not_active_tab.Contains(TabSucKhoe))
+                {
+                    TabSucKhoe.Visible = true;
+                }
+                if (!not_active_tab.Contains(TabUsers))
+                {
+                    TabUsers.Visible = true;
+                }
+                if (!not_active_tab.Contains(TabGroupUsers))
+                {
+                    TabGroupUsers.Visible = true;
+                }
+                tql += 1;
+            }
+            else if(tql==1)
+            {
+                TabGhe.Visible = false;
+                TabKhachHang.Visible = false;
+                TabLoaiKhachHang.Visible = false;
+                TabSucKhoe.Visible = false;
+                TabUsers.Visible = false;
+                TabGroupUsers.Visible = false;
+                tql -= 1;
+            }
+        }
+        int tcd = 0;
+        private void TabCaiDat_Click(object sender, EventArgs e)
+        {
+            if (tcd == 0)
+            {
+                TabSettings.Visible = true;
+                TabBackUps.Visible = true;
+                TabUpdate.Visible = true;
+                tcd += 1;
+            }
+            else if(tcd==1)
+            {
+                TabSettings.Visible = false;
+                TabBackUps.Visible = false;
+                TabUpdate.Visible = false;
+                tcd -= 1;
+            }
+
+        }
+
+        private void TabQlDatGhe_MouseHover(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TabThongTinCaNhan_MouseHover(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void Tabthongtinchinhanh_Click(object sender, EventArgs e)
+        {
             ThemTabPages(BranchForm.GetBranchForm(), 12, "Chi nhánh");
+        }
+
+        private void TabThongKe_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(ThongKeViews.tkv, 4, "Thống kê");
+        }
+
+        private void TabGhe_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(GheViews.dv, 2, "Quản lí ghế");
+        }
+
+        private void TabKhachHang_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(KhachHangViews.khv, 3, "Khách Hàng");
+        }
+
+        private void TabThongTinCaNhan_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(PersonalInforViews.piv, 8, "Personal Information");
+        }
+
+        private void Tabthongtinchinhanh_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TabThongKe_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TabGhe_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TabKhachHang_MouseHover(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TabLoaiKhachHang_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TabSucKhoe_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TabUsers_MouseHover(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TabGroupUsers_Move(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TabSettings_Click(object sender, EventArgs e)
+        {
+            SettingViews st = SettingViews.getViews();
+            st.kt = 1;
+            ThemTabPages(st, 5, "Settings");
+        }
+
+        private void TabSettings_MouseHover(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TabBackUps_MouseHover(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void TabUpdate_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TabQlDatGhe_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(DatGheViews.getView(), 1, "Quản lí đặt ghế");
+        }
+
+        private void TabLoaiKhachHang_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(ViewsLoaiKhachHang.vlkh, 10, "Loại khách hàng");
+        }
+
+        private void TabSucKhoe_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(ViewsSucKhoe.vsk, 9, "Sức khỏe");
+        }
+
+        private void TabUsers_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(ViewsUser.vu, 7, "Users");
+        }
+
+        private void TabGroupUsers_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(GroupUserViews.guv, 6, "Group Users");
+        }
+
+        private void TabBackUps_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(BackupViews.bu, 11, "Backup");
+        }
+
+        private void TabUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            MainControllers.DangXuat();
+            loadAllPage();
+            not_active_tab = new List<Label>();
+            FrmMain_Load(sender, e);
         }
     }
 }

@@ -198,6 +198,7 @@ namespace WindowsFormsApp1.Views
         // Cấu trúc object { ghe.pid, ghe.ptinhtrang, ghe.ptrangthai, ghe.plx, ghe.ply };
         private void button1_Click(object sender, EventArgs e)
         {
+            txtTenGhe.Focus();
             updatebutton.Enabled = false;
             deletebutton.Enabled = false;
           

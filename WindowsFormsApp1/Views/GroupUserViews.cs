@@ -290,7 +290,7 @@ namespace WindowsFormsApp1.Views
                 }
                 if (a == "Branch")
                 {
-                    string[] per = new string[4] { "insert","update", "delete","option" };
+                    string[] per = new string[3] { "insert", "delete","option" };
                     disableCell(i, per);
                 }
 
@@ -301,6 +301,11 @@ namespace WindowsFormsApp1.Views
                 }
 
                 if (a == "HealCustomer")
+                {
+                    string[] per = new string[1] { "update" };
+                    disableCell(i, per);
+                }
+                if(a=="DeskCustomer")
                 {
                     string[] per = new string[1] { "update" };
                     disableCell(i, per);

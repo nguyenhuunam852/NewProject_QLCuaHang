@@ -29,184 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.msUserControl = new System.Windows.Forms.MenuStrip();
-            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLGhe = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLkhachhang = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLloaiKH = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLsk = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLlichSu = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLuser = new System.Windows.Forms.ToolStripMenuItem();
-            this.QlGroupUser = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLsetting = new System.Windows.Forms.ToolStripMenuItem();
-            this.QLbackUp = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmsTag = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.đóngTấtCảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đóngTrangHiệnTạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabHienThi = new System.Windows.Forms.TabControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.TabHoatDong = new System.Windows.Forms.Label();
+            this.TabQlDatGhe = new System.Windows.Forms.Label();
+            this.TabThongTinCaNhan = new System.Windows.Forms.Label();
+            this.Tabthongtinchinhanh = new System.Windows.Forms.Label();
+            this.TabThongKe = new System.Windows.Forms.Label();
+            this.TabQuanLi = new System.Windows.Forms.Label();
+            this.TabGhe = new System.Windows.Forms.Label();
+            this.TabKhachHang = new System.Windows.Forms.Label();
+            this.TabLoaiKhachHang = new System.Windows.Forms.Label();
+            this.TabSucKhoe = new System.Windows.Forms.Label();
+            this.TabUsers = new System.Windows.Forms.Label();
+            this.TabGroupUsers = new System.Windows.Forms.Label();
+            this.TabCaiDat = new System.Windows.Forms.Label();
+            this.TabSettings = new System.Windows.Forms.Label();
+            this.TabBackUps = new System.Windows.Forms.Label();
+            this.TabUpdate = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.msUserControl.SuspendLayout();
             this.cntmsTag.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // msUserControl
-            // 
-            this.msUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.msUserControl.AutoSize = false;
-            this.msUserControl.BackColor = System.Drawing.Color.RoyalBlue;
-            this.msUserControl.Dock = System.Windows.Forms.DockStyle.None;
-            this.msUserControl.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.msUserControl.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.msUserControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thôngTinCáNhânToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.QLGhe,
-            this.QLkhachhang,
-            this.QLloaiKH,
-            this.QLsk,
-            this.QLlichSu,
-            this.QLuser,
-            this.QlGroupUser,
-            this.QLsetting,
-            this.QLbackUp,
-            this.dangToolStripMenuItem});
-            this.msUserControl.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.msUserControl.Location = new System.Drawing.Point(2, 121);
-            this.msUserControl.Name = "msUserControl";
-            this.msUserControl.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.msUserControl.Size = new System.Drawing.Size(143, 441);
-            this.msUserControl.TabIndex = 1;
-            // 
-            // thôngTinCáNhânToolStripMenuItem
-            // 
-            this.thôngTinCáNhânToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.thôngTinCáNhânToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
-            this.thôngTinCáNhânToolStripMenuItem.Text = "CÁ NHÂN";
-            this.thôngTinCáNhânToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
-            // 
-            // QLGhe
-            // 
-            this.QLGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLGhe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLGhe.Name = "QLGhe";
-            this.QLGhe.Size = new System.Drawing.Size(139, 24);
-            this.QLGhe.Text = "GHẾ";
-            this.QLGhe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLGhe.Click += new System.EventHandler(this.quảnLíBànToolStripMenuItem_Click);
-            // 
-            // QLkhachhang
-            // 
-            this.QLkhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLkhachhang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLkhachhang.Name = "QLkhachhang";
-            this.QLkhachhang.Size = new System.Drawing.Size(139, 24);
-            this.QLkhachhang.Text = "KHÁCH HÀNG";
-            this.QLkhachhang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLkhachhang.Click += new System.EventHandler(this.quảnLíKháchHàngToolStripMenuItem_Click);
-            // 
-            // QLloaiKH
-            // 
-            this.QLloaiKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLloaiKH.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLloaiKH.Name = "QLloaiKH";
-            this.QLloaiKH.Size = new System.Drawing.Size(139, 24);
-            this.QLloaiKH.Text = "LOẠI KH";
-            this.QLloaiKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLloaiKH.Click += new System.EventHandler(this.quảnLíTypeKháchHàngToolStripMenuItem_Click);
-            // 
-            // QLsk
-            // 
-            this.QLsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLsk.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLsk.Name = "QLsk";
-            this.QLsk.Size = new System.Drawing.Size(139, 24);
-            this.QLsk.Text = "SỨC KHỎE";
-            this.QLsk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLsk.Click += new System.EventHandler(this.QLsk_Click);
-            // 
-            // QLlichSu
-            // 
-            this.QLlichSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLlichSu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLlichSu.Name = "QLlichSu";
-            this.QLlichSu.Size = new System.Drawing.Size(139, 24);
-            this.QLlichSu.Text = "THỐNG KÊ";
-            this.QLlichSu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLlichSu.Click += new System.EventHandler(this.lịchSửVàThốngKêToolStripMenuItem_Click);
-            // 
-            // QLuser
-            // 
-            this.QLuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLuser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLuser.Name = "QLuser";
-            this.QLuser.Size = new System.Drawing.Size(139, 24);
-            this.QLuser.Text = "USERS";
-            this.QLuser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLuser.Click += new System.EventHandler(this.quảnLíUserToolStripMenuItem_Click);
-            // 
-            // QlGroupUser
-            // 
-            this.QlGroupUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QlGroupUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QlGroupUser.Name = "QlGroupUser";
-            this.QlGroupUser.Size = new System.Drawing.Size(139, 24);
-            this.QlGroupUser.Text = "GROUP USER";
-            this.QlGroupUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QlGroupUser.Click += new System.EventHandler(this.quảnLíGroupUSerToolStripMenuItem_Click);
-            // 
-            // QLsetting
-            // 
-            this.QLsetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLsetting.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLsetting.Name = "QLsetting";
-            this.QLsetting.Size = new System.Drawing.Size(139, 24);
-            this.QLsetting.Text = "SETTINGS";
-            this.QLsetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLsetting.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // QLbackUp
-            // 
-            this.QLbackUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.QLbackUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QLbackUp.Name = "QLbackUp";
-            this.QLbackUp.Size = new System.Drawing.Size(139, 24);
-            this.QLbackUp.Text = "BACKUP";
-            this.QLbackUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QLbackUp.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
-            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(139, 24);
-            this.toolStripMenuItem1.Text = "CHI NHÁNH";
-            this.toolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // dangToolStripMenuItem
-            // 
-            this.dangToolStripMenuItem.BackColor = System.Drawing.Color.Red;
-            this.dangToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dangToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dangToolStripMenuItem.Name = "dangToolStripMenuItem";
-            this.dangToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
-            this.dangToolStripMenuItem.Text = "ĐĂNG XUẤT";
-            this.dangToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dangToolStripMenuItem.Click += new System.EventHandler(this.dangToolStripMenuItem_Click);
             // 
             // cntmsTag
             // 
@@ -247,13 +101,272 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.msUserControl);
             this.groupBox1.Location = new System.Drawing.Point(-1, -7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(148, 574);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Controls.Add(this.TabHoatDong);
+            this.flowLayoutPanel1.Controls.Add(this.TabQlDatGhe);
+            this.flowLayoutPanel1.Controls.Add(this.TabThongTinCaNhan);
+            this.flowLayoutPanel1.Controls.Add(this.Tabthongtinchinhanh);
+            this.flowLayoutPanel1.Controls.Add(this.TabThongKe);
+            this.flowLayoutPanel1.Controls.Add(this.TabQuanLi);
+            this.flowLayoutPanel1.Controls.Add(this.TabGhe);
+            this.flowLayoutPanel1.Controls.Add(this.TabKhachHang);
+            this.flowLayoutPanel1.Controls.Add(this.TabLoaiKhachHang);
+            this.flowLayoutPanel1.Controls.Add(this.TabSucKhoe);
+            this.flowLayoutPanel1.Controls.Add(this.TabUsers);
+            this.flowLayoutPanel1.Controls.Add(this.TabGroupUsers);
+            this.flowLayoutPanel1.Controls.Add(this.TabCaiDat);
+            this.flowLayoutPanel1.Controls.Add(this.TabSettings);
+            this.flowLayoutPanel1.Controls.Add(this.TabBackUps);
+            this.flowLayoutPanel1.Controls.Add(this.TabUpdate);
+            this.flowLayoutPanel1.Controls.Add(this.label17);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 115);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(148, 454);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // TabHoatDong
+            // 
+            this.TabHoatDong.BackColor = System.Drawing.Color.SlateBlue;
+            this.TabHoatDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabHoatDong.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabHoatDong.Location = new System.Drawing.Point(3, 0);
+            this.TabHoatDong.Name = "TabHoatDong";
+            this.TabHoatDong.Size = new System.Drawing.Size(144, 23);
+            this.TabHoatDong.TabIndex = 0;
+            this.TabHoatDong.Text = "Hoạt Động";
+            this.TabHoatDong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabHoatDong.Click += new System.EventHandler(this.TabHoatDong_Click);
+            // 
+            // TabQlDatGhe
+            // 
+            this.TabQlDatGhe.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabQlDatGhe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabQlDatGhe.Location = new System.Drawing.Point(3, 23);
+            this.TabQlDatGhe.Name = "TabQlDatGhe";
+            this.TabQlDatGhe.Size = new System.Drawing.Size(142, 23);
+            this.TabQlDatGhe.TabIndex = 1;
+            this.TabQlDatGhe.Text = "QL Đặt Ghế";
+            this.TabQlDatGhe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabQlDatGhe.Visible = false;
+            this.TabQlDatGhe.Click += new System.EventHandler(this.TabQlDatGhe_Click);
+            this.TabQlDatGhe.MouseHover += new System.EventHandler(this.TabQlDatGhe_MouseHover);
+            // 
+            // TabThongTinCaNhan
+            // 
+            this.TabThongTinCaNhan.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabThongTinCaNhan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabThongTinCaNhan.Location = new System.Drawing.Point(3, 46);
+            this.TabThongTinCaNhan.Name = "TabThongTinCaNhan";
+            this.TabThongTinCaNhan.Size = new System.Drawing.Size(142, 23);
+            this.TabThongTinCaNhan.TabIndex = 2;
+            this.TabThongTinCaNhan.Text = "Thông Tin Cá Nhân";
+            this.TabThongTinCaNhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabThongTinCaNhan.Click += new System.EventHandler(this.TabThongTinCaNhan_Click);
+            this.TabThongTinCaNhan.MouseHover += new System.EventHandler(this.TabThongTinCaNhan_MouseHover);
+            // 
+            // Tabthongtinchinhanh
+            // 
+            this.Tabthongtinchinhanh.BackColor = System.Drawing.Color.MidnightBlue;
+            this.Tabthongtinchinhanh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Tabthongtinchinhanh.Location = new System.Drawing.Point(3, 69);
+            this.Tabthongtinchinhanh.Name = "Tabthongtinchinhanh";
+            this.Tabthongtinchinhanh.Size = new System.Drawing.Size(142, 23);
+            this.Tabthongtinchinhanh.TabIndex = 3;
+            this.Tabthongtinchinhanh.Text = "Thông Tin Chi Nhánh";
+            this.Tabthongtinchinhanh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Tabthongtinchinhanh.Click += new System.EventHandler(this.Tabthongtinchinhanh_Click);
+            this.Tabthongtinchinhanh.MouseHover += new System.EventHandler(this.Tabthongtinchinhanh_MouseHover);
+            // 
+            // TabThongKe
+            // 
+            this.TabThongKe.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabThongKe.Location = new System.Drawing.Point(3, 92);
+            this.TabThongKe.Name = "TabThongKe";
+            this.TabThongKe.Size = new System.Drawing.Size(142, 23);
+            this.TabThongKe.TabIndex = 9;
+            this.TabThongKe.Text = "Thống kê";
+            this.TabThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabThongKe.Visible = false;
+            this.TabThongKe.Click += new System.EventHandler(this.TabThongKe_Click);
+            this.TabThongKe.MouseHover += new System.EventHandler(this.TabThongKe_MouseHover);
+            // 
+            // TabQuanLi
+            // 
+            this.TabQuanLi.BackColor = System.Drawing.Color.SlateBlue;
+            this.TabQuanLi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabQuanLi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabQuanLi.Location = new System.Drawing.Point(3, 115);
+            this.TabQuanLi.Name = "TabQuanLi";
+            this.TabQuanLi.Size = new System.Drawing.Size(144, 23);
+            this.TabQuanLi.TabIndex = 4;
+            this.TabQuanLi.Text = "Quản lí ";
+            this.TabQuanLi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabQuanLi.Click += new System.EventHandler(this.TabQuanLi_Click);
+            // 
+            // TabGhe
+            // 
+            this.TabGhe.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabGhe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabGhe.Location = new System.Drawing.Point(3, 138);
+            this.TabGhe.Name = "TabGhe";
+            this.TabGhe.Size = new System.Drawing.Size(142, 23);
+            this.TabGhe.TabIndex = 5;
+            this.TabGhe.Text = "QL Ghế";
+            this.TabGhe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabGhe.Visible = false;
+            this.TabGhe.Click += new System.EventHandler(this.TabGhe_Click);
+            this.TabGhe.MouseHover += new System.EventHandler(this.TabGhe_MouseHover);
+            // 
+            // TabKhachHang
+            // 
+            this.TabKhachHang.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabKhachHang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabKhachHang.Location = new System.Drawing.Point(3, 161);
+            this.TabKhachHang.Name = "TabKhachHang";
+            this.TabKhachHang.Size = new System.Drawing.Size(142, 23);
+            this.TabKhachHang.TabIndex = 6;
+            this.TabKhachHang.Text = "QL Khách Hàng";
+            this.TabKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabKhachHang.Visible = false;
+            this.TabKhachHang.Click += new System.EventHandler(this.TabKhachHang_Click);
+            this.TabKhachHang.MouseHover += new System.EventHandler(this.TabKhachHang_MouseHover);
+            // 
+            // TabLoaiKhachHang
+            // 
+            this.TabLoaiKhachHang.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabLoaiKhachHang.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabLoaiKhachHang.Location = new System.Drawing.Point(3, 184);
+            this.TabLoaiKhachHang.Name = "TabLoaiKhachHang";
+            this.TabLoaiKhachHang.Size = new System.Drawing.Size(142, 23);
+            this.TabLoaiKhachHang.TabIndex = 7;
+            this.TabLoaiKhachHang.Text = "QL Loại Khách Hàng";
+            this.TabLoaiKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabLoaiKhachHang.Visible = false;
+            this.TabLoaiKhachHang.Click += new System.EventHandler(this.TabLoaiKhachHang_Click);
+            this.TabLoaiKhachHang.MouseHover += new System.EventHandler(this.TabLoaiKhachHang_MouseHover);
+            // 
+            // TabSucKhoe
+            // 
+            this.TabSucKhoe.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabSucKhoe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabSucKhoe.Location = new System.Drawing.Point(3, 207);
+            this.TabSucKhoe.Name = "TabSucKhoe";
+            this.TabSucKhoe.Size = new System.Drawing.Size(142, 23);
+            this.TabSucKhoe.TabIndex = 8;
+            this.TabSucKhoe.Text = "QL Sức Khỏe";
+            this.TabSucKhoe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabSucKhoe.Visible = false;
+            this.TabSucKhoe.Click += new System.EventHandler(this.TabSucKhoe_Click);
+            this.TabSucKhoe.MouseHover += new System.EventHandler(this.TabSucKhoe_MouseHover);
+            // 
+            // TabUsers
+            // 
+            this.TabUsers.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabUsers.Location = new System.Drawing.Point(3, 230);
+            this.TabUsers.Name = "TabUsers";
+            this.TabUsers.Size = new System.Drawing.Size(142, 23);
+            this.TabUsers.TabIndex = 10;
+            this.TabUsers.Text = "QL Users";
+            this.TabUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabUsers.Visible = false;
+            this.TabUsers.Click += new System.EventHandler(this.TabUsers_Click);
+            this.TabUsers.MouseHover += new System.EventHandler(this.TabUsers_MouseHover);
+            // 
+            // TabGroupUsers
+            // 
+            this.TabGroupUsers.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabGroupUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabGroupUsers.Location = new System.Drawing.Point(3, 253);
+            this.TabGroupUsers.Name = "TabGroupUsers";
+            this.TabGroupUsers.Size = new System.Drawing.Size(142, 23);
+            this.TabGroupUsers.TabIndex = 11;
+            this.TabGroupUsers.Text = "QL Group Users";
+            this.TabGroupUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabGroupUsers.Visible = false;
+            this.TabGroupUsers.Click += new System.EventHandler(this.TabGroupUsers_Click);
+            this.TabGroupUsers.Move += new System.EventHandler(this.TabGroupUsers_Move);
+            // 
+            // TabCaiDat
+            // 
+            this.TabCaiDat.BackColor = System.Drawing.Color.SlateBlue;
+            this.TabCaiDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabCaiDat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabCaiDat.Location = new System.Drawing.Point(3, 276);
+            this.TabCaiDat.Name = "TabCaiDat";
+            this.TabCaiDat.Size = new System.Drawing.Size(144, 23);
+            this.TabCaiDat.TabIndex = 12;
+            this.TabCaiDat.Text = "Cài Đặt";
+            this.TabCaiDat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabCaiDat.Click += new System.EventHandler(this.TabCaiDat_Click);
+            // 
+            // TabSettings
+            // 
+            this.TabSettings.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabSettings.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabSettings.Location = new System.Drawing.Point(3, 299);
+            this.TabSettings.Name = "TabSettings";
+            this.TabSettings.Size = new System.Drawing.Size(142, 23);
+            this.TabSettings.TabIndex = 13;
+            this.TabSettings.Text = "Settings";
+            this.TabSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabSettings.Visible = false;
+            this.TabSettings.Click += new System.EventHandler(this.TabSettings_Click);
+            this.TabSettings.MouseHover += new System.EventHandler(this.TabSettings_MouseHover);
+            // 
+            // TabBackUps
+            // 
+            this.TabBackUps.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabBackUps.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabBackUps.Location = new System.Drawing.Point(3, 322);
+            this.TabBackUps.Name = "TabBackUps";
+            this.TabBackUps.Size = new System.Drawing.Size(142, 23);
+            this.TabBackUps.TabIndex = 14;
+            this.TabBackUps.Text = "Backups";
+            this.TabBackUps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabBackUps.Visible = false;
+            this.TabBackUps.Click += new System.EventHandler(this.TabBackUps_Click);
+            this.TabBackUps.MouseHover += new System.EventHandler(this.TabBackUps_MouseHover);
+            // 
+            // TabUpdate
+            // 
+            this.TabUpdate.BackColor = System.Drawing.Color.MidnightBlue;
+            this.TabUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TabUpdate.Location = new System.Drawing.Point(3, 345);
+            this.TabUpdate.Name = "TabUpdate";
+            this.TabUpdate.Size = new System.Drawing.Size(142, 23);
+            this.TabUpdate.TabIndex = 16;
+            this.TabUpdate.Text = "Update";
+            this.TabUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TabUpdate.Visible = false;
+            this.TabUpdate.Click += new System.EventHandler(this.TabUpdate_Click);
+            this.TabUpdate.MouseHover += new System.EventHandler(this.TabUpdate_MouseHover);
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Red;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(3, 368);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(144, 23);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Đăng Xuất";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // pictureBox1
             // 
@@ -290,17 +403,15 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TabHienThi);
-            this.MainMenuStrip = this.msUserControl;
             this.Name = "FrmMain";
             this.Text = "FromMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrmMain_MouseMove);
-            this.msUserControl.ResumeLayout(false);
-            this.msUserControl.PerformLayout();
             this.cntmsTag.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -309,26 +420,31 @@
         }
 
         #endregion
-        private System.Windows.Forms.ToolStripMenuItem QLGhe;
         private System.Windows.Forms.ContextMenuStrip cntmsTag;
         private System.Windows.Forms.ToolStripMenuItem đóngTấtCảToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đóngTrangHiệnTạiToolStripMenuItem;
         private System.Windows.Forms.TabControl TabHienThi;
-        private System.Windows.Forms.ToolStripMenuItem QLkhachhang;
-        private System.Windows.Forms.ToolStripMenuItem QLlichSu;
-        private System.Windows.Forms.ToolStripMenuItem QLsetting;
-        private System.Windows.Forms.ToolStripMenuItem QLuser;
-        private System.Windows.Forms.ToolStripMenuItem QlGroupUser;
-        private System.Windows.Forms.ToolStripMenuItem QLloaiKH;
-        private System.Windows.Forms.ToolStripMenuItem QLsk;
-        private System.Windows.Forms.ToolStripMenuItem dangToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem QLbackUp;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.MenuStrip msUserControl;
         public System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label TabHoatDong;
+        private System.Windows.Forms.Label TabQlDatGhe;
+        private System.Windows.Forms.Label TabThongTinCaNhan;
+        private System.Windows.Forms.Label Tabthongtinchinhanh;
+        private System.Windows.Forms.Label TabQuanLi;
+        private System.Windows.Forms.Label TabGhe;
+        private System.Windows.Forms.Label TabKhachHang;
+        private System.Windows.Forms.Label TabLoaiKhachHang;
+        private System.Windows.Forms.Label TabSucKhoe;
+        private System.Windows.Forms.Label TabThongKe;
+        private System.Windows.Forms.Label TabUsers;
+        private System.Windows.Forms.Label TabGroupUsers;
+        private System.Windows.Forms.Label TabCaiDat;
+        private System.Windows.Forms.Label TabSettings;
+        private System.Windows.Forms.Label TabBackUps;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label TabUpdate;
     }
 }
