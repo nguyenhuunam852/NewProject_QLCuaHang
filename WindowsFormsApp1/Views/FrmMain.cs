@@ -396,9 +396,8 @@ namespace WindowsFormsApp1.Views
         private SharpUpdater updater;
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //label1.Text = ProductVersion;
-            //updater = new SharpUpdater(Assembly.GetExecutingAssembly(), this, new Uri("https://namute17110185.000webhostapp.com/update.xml"));
-            //updater.DoUpdate();
+            label1.Text = ProductVersion;
+        
             
           
 
@@ -792,7 +791,8 @@ namespace WindowsFormsApp1.Views
 
         private void TabUpdate_Click(object sender, EventArgs e)
         {
-
+            updater = new SharpUpdater(Assembly.GetExecutingAssembly(), this, new Uri("https://namute17110185.000webhostapp.com/vietnhatjp/update.xml"));
+            updater.DoUpdate();
         }
 
         private void label17_Click(object sender, EventArgs e)
